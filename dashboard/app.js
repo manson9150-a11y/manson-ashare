@@ -27,8 +27,8 @@ function render(){
  $('mode-link').href=demo?'./':'?demo=1';$('mode-link').textContent=demo?'返回正式工作台 ↗':'查看演示 ↗';
  $('mode-banner').hidden=!demo;
  $('mode-banner').textContent='DEMO / 演示模式 · 以下企业、事件、价格和评分均为模拟数据，不代表真实市场或投资建议。';
- $('date-label').textContent=state.date?state.date.replaceAll('-',' / '):'等待首次运行';
- $('updated').textContent=state.as_of_time?`研究截点 ${state.as_of_time.slice(11,16)} · 北京时间`:'云端部署后自动更新';
+ $('date-label').textContent=state.date?state.date.replaceAll('-',' / '):'等待正式行情';
+ $('updated').textContent=state.as_of_time?`研究截点 ${state.as_of_time.slice(11,16)} · 北京时间`:'首次交易日收盘扫描后更新';
  document.querySelectorAll('[data-stage]').forEach(el=>el.classList.toggle('current',el.dataset.stage===state.stage));
  $('environment').textContent=m.environment||'待确认';$('market-score').textContent=num(m.score,0);
  $('market-meter').style.width=`${Math.max(0,Math.min(100,m.score||0))}%`;
