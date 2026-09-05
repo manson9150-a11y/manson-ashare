@@ -1,0 +1,27 @@
+name: Tests and offline dry run
+on:
+  push:
+    branches: [main]
+    paths-ignore: ['data/**', 'reports/**', 'dashboard/data/**']
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+          cache-dependency-path: requirements.lock
+      - run: pip install -r requirements.lock && pip install --no-deps -e .
+      - run: pytest -q
+      - run: python -m src.cli --demo --stage full_pipeline --date 2026-09-04
+      - uses: actions/upload-artifact@v4
+        with:
+          name: offline-verification
+          path: artifacts/demo
+          retention-days: 7

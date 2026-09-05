@@ -1,0 +1,101 @@
+{
+  "mode": "READ_ONLY_DIAGNOSTIC",
+  "not_a_trading_report": true,
+  "checked_at": "2026-09-05T19:13:21.089345+08:00",
+  "quote_date": "2026-09-04",
+  "universe": 5556,
+  "quotes": 5548,
+  "quality": {
+    "status": "YELLOW",
+    "coverage": 0.9984,
+    "accepted": 5547,
+    "rejected": [
+      {
+        "code": "920289",
+        "reason": "EXTREME_VALUE_OR_CORPORATE_ACTION",
+        "timestamp": "2026-09-04T15:35:14+08:00"
+      }
+    ],
+    "conflicts": [],
+    "expected_trade_date": "2026-09-04",
+    "as_of_time": "2026-09-05T19:13:21.089345+08:00"
+  },
+  "sector_count": 49,
+  "mapped_codes": 3005,
+  "market": {
+    "score": 45.41,
+    "environment": "正常",
+    "basis": "BREADTH_MVP",
+    "up": 2443,
+    "down": 2914,
+    "flat": 190,
+    "breadth": 0.4404182440959077,
+    "median_return": -0.17,
+    "amount": 2050537557000.0,
+    "limit_up_count": 42,
+    "limit_down_count": 9,
+    "missing_factors": [
+      "炸板率",
+      "昨日涨停溢价",
+      "首板/连板梯队",
+      "1进2/2进3/3进4晋级率",
+      "最高板高度/梯队完整度",
+      "成交额相对5/10/20日均值",
+      "指数5/10/20日趋势",
+      "高位股亏钱效应",
+      "短线情绪周期",
+      "主力资金",
+      "外部市场"
+    ]
+  },
+  "sources": [
+    {
+      "source_name": "eastmoney",
+      "operation": "universe",
+      "success": false,
+      "fetched_at": "2026-09-05T19:13:22.385997+08:00",
+      "timestamp": null,
+      "reliability_level": 0.8,
+      "fallback_priority": 0,
+      "is_fallback": false,
+      "count": 0,
+      "error": "RemoteProtocolError"
+    },
+    {
+      "source_name": "tencent",
+      "operation": "universe",
+      "success": true,
+      "fetched_at": "2026-09-05T19:13:30.866020+08:00",
+      "timestamp": "2026-09-05T19:13:30.864745+08:00",
+      "reliability_level": 0.8,
+      "fallback_priority": 1,
+      "is_fallback": true,
+      "count": 5556,
+      "error": null
+    },
+    {
+      "source_name": "eastmoney",
+      "operation": "quotes",
+      "success": false,
+      "fetched_at": "2026-09-05T19:13:33.028874+08:00",
+      "timestamp": null,
+      "reliability_level": 0.8,
+      "fallback_priority": 0,
+      "is_fallback": false,
+      "count": 0,
+      "error": "RemoteProtocolError"
+    },
+    {
+      "source_name": "tencent",
+      "operation": "quotes",
+      "success": true,
+      "fetched_at": "2026-09-05T19:13:51.082855+08:00",
+      "timestamp": "2026-09-05T19:13:51.073793+08:00",
+      "reliability_level": 0.8,
+      "fallback_priority": 1,
+      "is_fallback": true,
+      "count": 5548,
+      "error": null
+    }
+  ]
+}

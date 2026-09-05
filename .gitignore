@@ -1,0 +1,12 @@
+.venv/
+.env
+.env.*
+!.env.example
+*service*account*.json
+*.pem
+__pycache__/
+.pytest_cache/
+*.egg-info/
+.DS_Store
+.cache/
+artifacts/

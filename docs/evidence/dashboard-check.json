@@ -1,0 +1,9 @@
+{
+  "desktop": "PASS",
+  "mobile": "PASS",
+  "stock_detail": "PASS",
+  "filters": "PASS",
+  "production_empty_state": "PASS",
+  "javascript_errors": [],
+  "stock_rows": 30
+}

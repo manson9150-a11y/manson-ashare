@@ -1,0 +1,102 @@
+timezone: Asia/Shanghai
+sources:
+  timeout_seconds: 12
+  attempts: 2
+  workers: 4
+  request_interval_seconds: 0.15
+  history_bars: 100
+  max_history_stocks: 250
+  sector_membership_limit: 12
+  membership_max_age_days: 7
+  expected_universe_min: 4500
+  min_market_coverage: 0.85
+  min_history_coverage: 0.7
+  max_source_failures: 6
+  enabled: [eastmoney, tencent, sina]
+quality:
+  max_abs_change_pct: 45
+  conflict_price_pct: 0.5
+  intraday_max_age_minutes: 8
+  required_bars: 61
+market:
+  strong_threshold: 70
+  weak_threshold: 45
+  weights: {breadth: 0.65, median_return: 0.35}
+  median_scale: 12
+sector:
+  strong_threshold: 70
+  strengthening_threshold: 60
+  weak_threshold: 40
+  high_return_20d: 25
+  concentration_warning: 0.45
+  weights: {breadth: 0.5, momentum: 0.3, trend: 0.2}
+  momentum_scale: 10
+  min_factor_coverage: 0.7
+  allowed: [正在加强, 持续强势, 启动观察]
+position:
+  startup: {max_return_5d: 15, max_distance_ma20: 8, min_amount_ratio: 1.1}
+  trend: {max_distance_ma20: 15, min_return_20d: 0}
+  high: {return_20d: 40, distance_ma20: 20, return_5d: 25}
+  pullback: {max_abs_distance_ma20: 6, max_amount_ratio: 1.0}
+  exclude: {min_slope_ma20: -0.5, breakdown_distance: -5, breakdown_volume: 1.5, max_return_20d: 100}
+atr:
+  period: 14
+  warning_multiple: 2
+  extreme_multiple: 3
+  high_natr: 7
+risk:
+  weak_market_penalty: 15
+  high_position_penalty: 25
+  atr_warning_penalty: 15
+  atr_extreme_penalty: 30
+  min_amount: 50000000
+  exclude_st: true
+  hard_event_types: [监管处罚, 重大减持, 重大诉讼, 重大利空]
+  high_threshold: 45
+  medium_threshold: 20
+scoring:
+  weights: {trend: 0.3, sector: 0.3, position: 0.25, volume: 0.15}
+  trend_base: 45
+  trend_return_multiplier: 1.5
+  trend_alignment_bonus: 15
+  volume_base: 40
+  volume_multiplier: 25
+  position_scores: {启动观察: 90, 趋势观察: 80, 回调观察: 75, 高位观察: 20, 排除: 0}
+  deep_weights: {board_quality: 20, theme: 20, ladder: 15, capital: 15, catalyst: 10, dragon: 10, external: 5, reward_risk: 5}
+candidate_pool:
+  limit_pool_max: 30
+  trend_pool_max: 30
+  catalyst_pool_max: 3
+  evening_limit_max: 15
+  overnight_max: 12
+  premarket_max: 10
+  midday_max: 5
+  min_score: 50
+catalyst:
+  freshness_hours: 72
+  independent_min_impact: 70
+  independent_min_reliability: 0.9
+  independent_min_directness: 0.8
+  partly_priced_return: 10
+  mostly_priced_return: 25
+  overpriced_return: 40
+  positive_keywords: {订单: 公司订单, 合同: 重大合同, 业绩: 业绩, 并购: 并购, 重组: 重组, 获批: 产品获批, 涨价: 涨价, 突破: 技术突破, 合作: 重大合作, 扩产: 扩产}
+  risk_keywords: {减持: 重大减持, 处罚: 监管处罚, 诉讼: 重大诉讼, 立案: 监管处罚, 问询: 问询函, 解禁: 解禁, 异动: 异动公告}
+validation:
+  strong_return: 3
+  confirmed_return: 0
+  weak_return: -2
+  invalid_return: -5
+ai:
+  enabled: false
+  max_candidates: 25
+  max_output_tokens: 6000
+storage:
+  max_snapshot_bars: 65
+  evaluation_window_days: 40
+stages:
+  '0730': {label: 隔夜确认, time: '07:30', deadline: '08:29'}
+  '0830': {label: 盘前终审, time: '08:30', deadline: '09:25'}
+  '1135': {label: 午盘确认, time: '11:35', deadline: '12:45'}
+  '1600': {label: 收盘扫描, time: '16:00', deadline: '20:00'}
+  '2130': {label: 晚间二筛, time: '21:30', deadline: '23:59'}

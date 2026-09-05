@@ -1,0 +1,27 @@
+{
+  "run_id": "d6cd32912ccb4ca3830249b1f58651a5",
+  "date": "2026-09-05",
+  "stage": "1600",
+  "stage_label": "收盘扫描",
+  "mode": "live",
+  "started_at": "2026-09-05T19:15:36.065035+08:00",
+  "as_of_time": "2026-09-05T16:00:00+08:00",
+  "status": "NON_TRADING_DAY",
+  "warnings": [
+    "休市；未采集或生成伪行情报告"
+  ],
+  "errors": [],
+  "data_quality": {
+    "status": "RED"
+  },
+  "pools": {
+    "POOL_A": [],
+    "POOL_B": [],
+    "POOL_C": []
+  },
+  "sectors": [],
+  "market": {},
+  "eliminations": [],
+  "missing_factors": [],
+  "finished_at": "2026-09-05T19:15:36.096746+08:00"
+}
