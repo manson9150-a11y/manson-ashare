@@ -13,5 +13,7 @@ def market_score(quotes, config, quality):
     score = round(max(0, min(100, breadth * 100 * w['breadth'] + max(0, min(100, 50 + median * config['market']['median_scale'])) * w['median_return'])), 2)
     limits_up = [q for q in quotes if q.limit_up_price is not None and abs(q.price - q.limit_up_price) < 0.0051]
     limits_down = [q for q in quotes if q.limit_down_price is not None and abs(q.price - q.limit_down_price) < 0.0051]
-    has_limits = any(q.limit_up_price is not None for q in quotes)
-    return {'score': score, 'environment': '强' if score >= config['market']['strong_threshold'] else '正常' if score >= config['market']['weak_threshold'] else '偏弱', 'basis': 'BREADTH_MVP', 'up': up, 'down': down, 'flat': len(changes)-up-down, 'breadth': breadth, 'median_return': median, 'amount': sum(q.amount for q in quotes), 'limit_up_count': len(limits_up) if has_limits else None, 'limit_down_count': len(limits_down) if has_limits else None, 'missing_factors': MISSING}
+    up_coverage = sum(q.limit_up_price is not None for q in quotes) / len(quotes)
+    down_coverage = sum(q.limit_down_price is not None for q in quotes) / len(quotes)
+    missing = MISSING + (['全市场涨跌停价覆盖'] if min(up_coverage, down_coverage) < 1 else [])
+    return {'score': score, 'environment': '强' if score >= config['market']['strong_threshold'] else '正常' if score >= config['market']['weak_threshold'] else '偏弱', 'basis': 'BREADTH_MVP', 'up': up, 'down': down, 'flat': len(changes)-up-down, 'breadth': breadth, 'median_return': median, 'amount': sum(q.amount for q in quotes), 'limit_up_count': len(limits_up) if up_coverage == 1 else None, 'limit_down_count': len(limits_down) if down_coverage == 1 else None, 'known_limit_up_count':len(limits_up), 'known_limit_down_count':len(limits_down), 'limit_up_price_coverage':up_coverage, 'limit_down_price_coverage':down_coverage, 'missing_factors': missing}

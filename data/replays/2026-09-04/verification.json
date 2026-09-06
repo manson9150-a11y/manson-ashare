@@ -1,0 +1,53 @@
+{
+  "date": "2026-09-04",
+  "availability_cutoff": "2026-09-04T23:59:59+08:00",
+  "mode": "retrospective",
+  "status": "RETROSPECTIVE_COMPLETE",
+  "valid_quotes": 5547,
+  "histories_checked": 250,
+  "quote_crosscheck": {
+    "matched": 5547,
+    "conflicts": 0,
+    "fields": [
+      "close",
+      "previous_close",
+      "open",
+      "high",
+      "low"
+    ],
+    "latest_provider_timestamp": "2026-09-04T08:15:00+00:00"
+  },
+  "checks": [
+    "All quotes belong to target date including same-day post-close updates",
+    "No later trading-day bars; every history ends on target date",
+    "Independent MA20, 20-day return and Wilder ATR checks for all 250 histories",
+    "Unique ranked candidates above unchanged minimum score",
+    "Production live status remains separate"
+  ],
+  "retrospective": {
+    "market_date": "2026-09-04",
+    "original_stage_time": "2026-09-04T16:00:00+08:00",
+    "availability_cutoff": "2026-09-04T23:59:59+08:00",
+    "quote_basis": "目标交易日收盘数据，允许同日盘后接口更新，不模拟16:00即时可用性",
+    "computed_at": "2026-09-06T10:58:25.929491+08:00",
+    "membership_observed_at": "2026-09-05T15:43:00.867506+08:00",
+    "membership_is_historical": false,
+    "historical_universe_verified": false,
+    "historical_risk_feed_verified": false,
+    "not_a_point_in_time_backtest": true
+  },
+  "pool_counts": {
+    "POOL_A": 0,
+    "POOL_B": 30,
+    "POOL_C": 0
+  },
+  "files": {
+    "candidates.json": "8e4d9853ebaa2c3e8016173e1aba1e4f627c82eba55d5460f368b263292db2d4",
+    "membership.json": "5dd82c99021da07f7657165b71fa577bc4c7f33c5a70075c1f1f2aad6c2cc063",
+    "factor_snapshot.parquet": "cac00795c2083e4f76bd2dcbedca3c224fdd0c0125d8b2180de6caff47de8d9f",
+    "history_bars.parquet": "29e9fffbade4f83a4579d7a23a77dd095091bd183d0cdc01ffbdaf2af67807e4",
+    "rules.json": "9dc9614d5653d13d9124367191df1b2e47c21d4f048d31b55ce15f3522c3fcf7",
+    "source_logs.json": "07a0aed1a94379c173c7d87f9b09c720f37db8953a8c7ceaa014eea312db039d",
+    "daily_quotes.parquet": "52d04bea28f1ed7a892a007ce6812fde96cb0b5ebd253ae2175ff19302727272"
+  }
+}

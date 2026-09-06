@@ -6,29 +6,38 @@ const pct = value => value == null ? '—' : `${Number(value)>0?'+':''}${num(val
 const color = value => Number(value)>0?'positive':Number(value)<0?'negative':'';
 const positions=['启动观察','趋势观察','高位观察','回调观察','排除'];
 const demo=new URLSearchParams(location.search).get('demo')==='1';
+const replayParam=new URLSearchParams(location.search).get('replay');
+const replayDate=!demo&&/^\d{4}-\d{2}-\d{2}$/.test(replayParam||'')?replayParam:null;
 let state={},activePool='POOL_A',downloadURL;
 function pill(label){return `<span class="pill ${/高位|高|极端|退潮|转弱/.test(label)?'red':/启动|中|警告/.test(label)?'orange':''}">${esc(label)}</span>`;}
 async function load(){
  $('refresh').disabled=true;
  try{
-  const response=await fetch(`data/${demo?'demo':'latest'}.json`,{cache:'no-store'});
+  const response=await fetch(`data/${demo?'demo':replayDate?`replays/${replayDate}`:'latest'}.json`,{cache:'no-store'});
   if(!response.ok)throw new Error('EMPTY');
   state=await response.json();
   if(!demo && state.mode==='demo')throw new Error('DEMO_IN_PRODUCTION');
+  if(replayDate&&(state.mode!=='retrospective'||state.date!==replayDate))throw new Error('REPLAY_MISMATCH');
+  if(!replayDate&&!demo&&state.mode==='retrospective')throw new Error('REPLAY_IN_PRODUCTION');
+  if(replayDate&&!(state.pools?.[activePool]?.length)){
+   activePool=Object.keys(state.pools||{}).find(k=>state.pools[k].length)||'POOL_A';
+   document.querySelectorAll('[data-pool]').forEach(b=>b.setAttribute('aria-selected',String(b.dataset.pool===activePool)));
+  }
  }catch(error){
-  state={mode:'live',status:'NOT_STARTED',pools:{POOL_A:[],POOL_B:[],POOL_C:[]},market:{},sectors:[],data_quality:{status:'PENDING'},warnings:['尚未收到正式云端报告。请先把仓库连接 GitHub Actions；演示入口仅展示模拟数据。']};
+  state={mode:replayDate?'retrospective':'live',status:replayDate?'REPLAY_UNAVAILABLE':'NOT_STARTED',pools:{POOL_A:[],POOL_B:[],POOL_C:[]},market:{},sectors:[],data_quality:{status:'PENDING'},warnings:[replayDate?'所选历史复盘不存在或读取失败。':'尚未收到正式云端报告；首次交易日收盘扫描后更新。']};
  }
  render();
- if(!demo){try{const r=await fetch('data/run_status.json',{cache:'no-store'});if(r.ok){const s=await r.json();if(s.status!=='COMPLETE'){$('run-banner').hidden=false;$('run-banner').textContent=`最近任务：${s.date} ${s.stage} · ${s.status}。${(s.warnings||[]).join(' ')}`;}}}catch{}}
+ $('run-banner').hidden=true;
+ if(!demo&&!replayDate){try{const r=await fetch('data/run_status.json',{cache:'no-store'});if(r.ok){const s=await r.json();if(s.status!=='COMPLETE'){$('run-banner').hidden=false;$('run-banner').textContent=`最近任务：${s.date} ${s.stage} · ${s.status}。${(s.warnings||[]).join(' ')}`;}}}catch{}}
  $('refresh').disabled=false;
 }
 function render(){
  const m=state.market||{},q=state.data_quality||{};
- $('mode-link').href=demo?'./':'?demo=1';$('mode-link').textContent=demo?'返回正式工作台 ↗':'查看演示 ↗';
- $('mode-banner').hidden=!demo;
- $('mode-banner').textContent='DEMO / 演示模式 · 以下企业、事件、价格和评分均为模拟数据，不代表真实市场或投资建议。';
+ $('mode-link').href=demo||replayDate?'./':'?demo=1';$('mode-link').textContent=demo||replayDate?'返回正式工作台 ↗':'查看演示 ↗';
+ $('mode-banner').hidden=!demo&&!replayDate;
+ $('mode-banner').textContent=replayDate?`${replayDate} 历史收盘复盘 · 使用当日收盘行情，含同日盘后接口补齐；使用事后行业分类。历史风险公告及盘前午盘快照未完整核验，非16:00时点回测。`:'DEMO / 演示模式 · 以下企业、事件、价格和评分均为模拟数据，不代表真实市场或投资建议。';
  $('date-label').textContent=state.date?state.date.replaceAll('-',' / '):'等待正式行情';
- $('updated').textContent=state.as_of_time?`研究截点 ${state.as_of_time.slice(11,16)} · 北京时间`:'首次交易日收盘扫描后更新';
+ $('updated').textContent=replayDate&&state.date?'收盘数据 · 含当日盘后补齐':state.as_of_time?`研究截点 ${state.as_of_time.slice(11,16)} · 北京时间`:'首次交易日收盘扫描后更新';
  document.querySelectorAll('[data-stage]').forEach(el=>el.classList.toggle('current',el.dataset.stage===state.stage));
  $('environment').textContent=m.environment||'待确认';$('market-score').textContent=num(m.score,0);
  $('market-meter').style.width=`${Math.max(0,Math.min(100,m.score||0))}%`;
@@ -60,6 +69,7 @@ function render(){
 function renderStocks(){
  const group=(state.pools?.[activePool]||[]).filter(s=>(!$('sector-filter').value||s.sector===$('sector-filter').value)&&(!$('position-filter').value||s.position_type===$('position-filter').value)&&(!$('risk-filter').value||s.risk===$('risk-filter').value)).sort((a,b)=>(b[$('sort').value]??-1)-(a[$('sort').value]??-1));
  $('shown-count').textContent=`${group.length} 只候选`;
+ $('pool-note').hidden=!state.pool_notes?.[activePool];$('pool-note').textContent=state.pool_notes?.[activePool]||'';
  $('stock-rows').innerHTML=group.map(s=>`<tr><td><button class="stock-name" data-code="${esc(s.stock_code)}">${esc(s.stock_name)}<small>${esc(s.stock_code)}</small></button></td><td>${esc(s.sector)}</td><td>${num(s.price)}<span class="second-line ${color(s.change_pct)}">${pct(s.change_pct)}</span></td>${[5,10,20].map(n=>`<td class="${color(s['return_'+n+'d'])}">${pct(s['return_'+n+'d'])}</td>`).join('')}<td>${pct(s.distance_ma20)}</td><td>${num(s.atr)}<span class="second-line">${num(s.natr)}%</span></td><td>${pill(s.position_type)}<span class="second-line">${esc(s.risk)}风险</span></td><td>${num(s.sector_score,0)}</td><td class="stock-score">${num(s.total_score,1)}</td></tr>`).join('')||'<tr><td colspan="11" class="empty">当前没有满足条件的候选。<br>保留空池，也是规则系统的一种判断。</td></tr>';
  document.querySelectorAll('[data-code]').forEach(b=>b.addEventListener('click',()=>showDetail(b.dataset.code)));
 }

@@ -4,6 +4,8 @@ def fmt(x,digits=2):return '—' if x is None else f'{x:.{digits}f}' if isinstan
 def stage_markdown(run):
     m=run.get('market',{})
     lines=[f"## {run['stage'][:2]}:{run['stage'][2:]} {run['stage_label']}",f"\n时间戳：{run['as_of_time']} ｜ Run ID：{run['run_id']}",f"\n模式：{'演示模拟数据，不是市场判断' if run['mode']=='demo' else '真实数据任务'}",f"\n状态：{run['status']} ｜ 数据质量：{run['data_quality']['status']}",f"\n市场：{m.get('environment') or '数据不足，不评级'} ｜ Market Score：{fmt(m.get('score'))}",f"行情基准日：{run.get('quote_date','—')}；评分口径：{m.get('basis','—')}。"]
+    if run['mode']=='retrospective':
+        lines[2]='\n模式：历史收盘复盘（含事后板块分类限制；非时点回测）'
     for warning in run.get('warnings',[]):lines.append(f'\n- {warning}')
     if run.get('afternoon_message'):lines.append('\n**'+run['afternoon_message']+'**')
     lines+=['\n### 板块强弱','\n|板块|类型|分数|状态|历史因子覆盖|','|---|---|---:|---|---:|']
@@ -14,7 +16,8 @@ def stage_markdown(run):
         for s in group:
             probability='未校准/未输出' if s.get('subjective_probability') is None else f"{s['subjective_probability']:.0%}（主观）"
             lines.append(f"|{s['rank']}|{s['stock_code']} {fmt(s['stock_name'])}|{fmt(s['sector'])}|{s['position_type']}|{fmt(s['total_score'])}|{fmt(s['tradability_score'])}|{probability}|{s['atr_state']}|")
-        if not group:lines.append('\n无符合条件候选，不补足数量。')
+        if run.get('pool_notes',{}).get(pool):lines.append('\n'+run['pool_notes'][pool])
+        if not group and not run.get('pool_notes',{}).get(pool):lines.append('\n无符合条件候选，不补足数量。')
         for s in group:
             lines += [f"\n#### {s['stock_code']} {s['stock_name']}",f"- 板数：{fmt(s.get('board_count'))}；Market/Sector：{fmt(s.get('market_score'))}/{fmt(s.get('sector_score'))}；风险：{s['risk']}",f"- 5/10/20日：{fmt(s.get('return_5d'))}% / {fmt(s.get('return_10d'))}% / {fmt(s.get('return_20d'))}%；MA20距离：{fmt(s.get('distance_ma20'))}%",f"- 正因子：{s['positive_factor']}",f"- 负因子：{s['negative_factor']}",f"- 验证：{s['validation_condition']}",f"- 失效：{s['invalidation_condition']}"]
             if s.get('validation_label'):lines.append(f"- 午盘验证：{s['validation_label']}；上午真实涨跌 {fmt(s['morning_return'])}%")

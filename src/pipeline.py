@@ -266,7 +266,7 @@ class Pipeline:
             if run['status']=='COMPLETE': outbox.enqueue(day,run['stage'],text)
             run['google_docs']=outbox.flush()
             if run['status']!='COMPLETE': run['google_docs']['current_report']='DEGRADED_LOCAL_ONLY'
-        else: run['google_docs']={'status':'DEMO_DISABLED'}
+        else: run['google_docs']={'status':'DEMO_DISABLED' if self.mode=='demo' else 'RETROSPECTIVE_SEPARATE'}
         history=copy.deepcopy(run)
         for f in history.get('factors',{}).values(): f.pop('bars',None)
         for group in history['pools'].values():
