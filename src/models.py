@@ -44,6 +44,8 @@ class Event(Record):
     title: str
     event_time: datetime
     publish_time: datetime
+    publish_time_precision: Literal['second', 'date'] = 'second'
+    first_seen_at: datetime | None = None
     source: str
     url: str
     reliability: float = Field(ge=0, le=1)
@@ -53,10 +55,10 @@ class Event(Record):
     impact_score: float | None = Field(default=None, ge=0, le=100)
     verified: bool = False
     canonical_id: str | None = None
-    @field_validator("publish_time", "event_time")
+    @field_validator("publish_time", "event_time", "first_seen_at")
     @classmethod
     def aware(cls, value):
-        if value.tzinfo is None:
+        if value is not None and value.tzinfo is None:
             raise ValueError("timezone required")
         return value
 
@@ -71,3 +73,4 @@ class SourceLog(Record):
     is_fallback: bool
     count: int = 0
     error: str | None = None
+    http_status: int | None = None

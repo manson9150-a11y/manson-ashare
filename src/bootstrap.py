@@ -60,7 +60,7 @@ def build(project, source_path, target, now=None):
            'stage_label': '周末初始化（实际生成时间见下方）', 'mode': 'bootstrap',
            'started_at': now.isoformat(), 'as_of_time': now.isoformat(), 'status': 'RUNNING',
            'warnings': ['周末初始化：按当前时点重新检查已保存收盘候选，不代表历史晚间任务已执行。']
-                       + source.get('warnings', []),
+                       + ['原始收盘复盘限制：' + w for w in source.get('warnings', [])],
            'errors': [], 'eliminations': [], 'pools': {}, 'data_quality': {}}
     origin = {'target_date': str(target), 'created_at': now.isoformat(),
               'market_date': str(market_day), 'source_run_id': source['run_id'],

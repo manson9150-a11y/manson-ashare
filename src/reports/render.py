@@ -27,6 +27,11 @@ def stage_markdown(run):
     if run.get('validations'):
         lines+=['\n### 08:30全部候选验证']
         for s in run['validations']:lines.append(f"- {s['stock_code']} {s['stock_name']}：{s['validation_label']}；{fmt(s.get('morning_return'))}%")
+    if run.get('events'):
+        lines.append('\n### 公告与风险线索（标题未经正文核验）')
+        for e in run['events']:
+            when = e['publish_time'][:10]+'（仅日期）' if e.get('publish_time_precision')=='date' else e['publish_time']
+            lines.append(f"- {e['stock_code']} · {fmt(e['title'])} · {when} · {e['source']} · {e['url']}")
     lines+=['\n### 数据缺口', '\n'+ '、'.join(run.get('missing_factors',[])), '\n### 淘汰记录']
     for s in run.get('eliminations',[])[:40]:lines.append(f"- {s.get('stock_code',s.get('code'))}：{s.get('reason',s.get('exclusion_reason'))}")
     lines+=['\n这是规则研究记录。评分和主观概率不是收益承诺；没有可靠数据时不输出交易候选。']

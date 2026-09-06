@@ -11,7 +11,7 @@ from src.utils.calendar import TradingCalendar, CalendarUnknown, TZ, stage_time
 from src.utils.io import read_json, write_json, clean
 from src.collectors.base import Collector, Unavailable
 from src.collectors.public import EastmoneyAdapter, TencentAdapter, SinaAdapter
-from src.collectors.announcements import AnnouncementAdapter
+from src.collectors.announcements import AnnouncementAdapter, CninfoAnnouncementAdapter
 from src.normalizers.quality import validate_quotes, validate_bars
 from src.factors.technical import technical
 from src.market.engine import market_score
@@ -30,7 +30,7 @@ class Pipeline:
         self.config=config or yaml.safe_load((self.project/'config/settings.yaml').read_text())
         self.calendar=TradingCalendar(self.project/'config/calendar.json')
         self.collector=Collector([c(self.config) for c in [EastmoneyAdapter,TencentAdapter,SinaAdapter] if c.source_name in self.config['sources']['enabled']])
-        self.announcements=Collector([AnnouncementAdapter(self.config)])
+        self.announcements=Collector([CninfoAnnouncementAdapter(self.config, self.output/'data/latest/announcement_first_seen.json'), AnnouncementAdapter(self.config)])
     def stage_path(self, day, stage):
         return self.output/'data/history'/day.strftime('%Y/%m/%d')/stage/'stage_results.json'
     def status_only(self, run, status, message):
@@ -202,9 +202,12 @@ class Pipeline:
             for item in (previous or {}).get('events',[]):
                 try: events.append(Event.model_validate({k:v for k,v in item.items() if k not in {'expectation','expectation_basis'}}))
                 except ValueError: pass
-            try: events.extend(self.announcements.fetch('events',codes=candidate_codes[:self.config['ai']['max_candidates']]))
+            try: events.extend(self.announcements.fetch('events',codes=candidate_codes))
             except Unavailable: run['warnings'].append('公告源不可用；仅保留已知事件。')
         event_rows=expectation(events,factors,as_of,self.config)
+        date_only=sum(e.publish_time_precision=='date' for e in events)
+        if date_only:
+            run['warnings'].append(f'公告列表中{date_only}条仅精确到日期：当天记录须在研究截点前已被系统观察才纳入；首次观察时间独立保存，不冒充发布时间。标题分类仍须正文核验。')
         stocks=analyze_stocks(quotes,factors,sectors,membership,event_rows,market,self.config,limit_pool)
         run['eliminations'] += [{'stock_code':s['stock_code'],'reason':s['exclusion_reason']} for s in stocks if s['position_type']=='排除']
         if stage=='1135':

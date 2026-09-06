@@ -1,0 +1,31 @@
+name: Verify free announcement sources
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'src/collectors/announcements.py'
+      - 'src/collectors/verify_announcements.py'
+      - '.github/workflows/verify-announcements.yml'
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+          cache-dependency-path: requirements.lock
+      - run: pip install -r requirements.lock && pip install --no-deps -e .
+      - name: Read public announcements for the initialization candidates
+        run: python -u -m src.collectors.verify_announcements
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: announcement-source-verification
+          path: artifacts/announcement-verification
+          retention-days: 14

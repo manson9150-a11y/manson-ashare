@@ -2,15 +2,23 @@ import hashlib
 import re
 from datetime import datetime
 from src.models import Event
+from src.utils.calendar import TZ
 
 def deduplicate(events, as_of):
-    result={}
+    result={}; aliases={}
     for e in events:
         if e.publish_time>as_of or e.event_time>as_of:
             continue
+        if (e.publish_time_precision == 'date'
+                and e.publish_time.astimezone(TZ).date() == as_of.astimezone(TZ).date()
+                and (e.first_seen_at is None or e.first_seen_at > as_of)):
+            continue
         # Prefer official document/canonical ids; title fallback handles exact syndication.
         normalized=re.sub(r'[\W_]+','',e.title).lower()
-        key=e.canonical_id or f'{e.stock_code}:{e.event_type}:{e.event_time.date()}:{normalized}'
+        title_key=f'{e.stock_code}:{e.event_type}:{e.event_time.astimezone(TZ).date()}:{normalized}'
+        canonical_key=f'{e.stock_code}:{e.canonical_id}' if e.canonical_id else title_key
+        key=aliases.get(canonical_key, aliases.get(title_key, canonical_key))
+        aliases[canonical_key]=aliases[title_key]=key
         if key not in result or (e.reliability,e.publish_time)>(result[key].reliability,result[key].publish_time):
             result[key]=e
     return list(result.values())

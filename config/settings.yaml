@@ -1,4 +1,7 @@
 timezone: Asia/Shanghai
+announcements:
+  lookback_days: 7
+  max_pages_per_stock: 3
 sources:
   timeout_seconds: 12
   attempts: 2
@@ -81,7 +84,7 @@ catalyst:
   mostly_priced_return: 25
   overpriced_return: 40
   positive_keywords: {订单: 公司订单, 合同: 重大合同, 业绩: 业绩, 并购: 并购, 重组: 重组, 获批: 产品获批, 涨价: 涨价, 突破: 技术突破, 合作: 重大合作, 扩产: 扩产}
-  risk_keywords: {减持: 重大减持, 处罚: 监管处罚, 诉讼: 重大诉讼, 立案: 监管处罚, 问询: 问询函, 解禁: 解禁, 异动: 异动公告}
+  risk_keywords: {减持: 重大减持, 处罚: 监管处罚, 诉讼: 重大诉讼, 立案: 监管处罚, 问询: 问询函, 解禁: 解禁, 异动: 异动公告, 异常波动: 异动公告}
 validation:
   strong_return: 3
   confirmed_return: 0
