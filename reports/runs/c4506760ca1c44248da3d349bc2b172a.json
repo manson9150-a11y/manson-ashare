@@ -1,0 +1,20 @@
+{
+  "run_id": "c4506760ca1c44248da3d349bc2b172a",
+  "date": "2026-09-06",
+  "stage": "2130",
+  "status": "COMPLETE",
+  "started_at": "2026-09-06T21:32:30.028424+08:00",
+  "finished_at": "2026-09-06T21:33:16.116950+08:00",
+  "source_success_rate": 1.0,
+  "failed_sources": [],
+  "stock_count": 30,
+  "sector_count": 49,
+  "candidate_count": 30,
+  "google_docs": {
+    "status": "SYNCED",
+    "sent": 1,
+    "failed": 0
+  },
+  "dashboard_updated_at": "2026-09-06T21:33:16.116943+08:00",
+  "errors": []
+}

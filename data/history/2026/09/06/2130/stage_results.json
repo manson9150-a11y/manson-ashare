@@ -3,10 +3,10 @@
   "date": "2026-09-06",
   "stage": "2130",
   "stage_label": "周末晚间二筛",
-  "mode": "bootstrap",
+  "mode": "live",
   "started_at": "2026-09-06T21:32:30.028424+08:00",
   "as_of_time": "2026-09-06T21:33:16.107248+08:00",
-  "status": "BOOTSTRAP_READY",
+  "status": "COMPLETE",
   "warnings": [
     "周末晚间研究：行情沿用2026-09-04收盘，按本次实际研究截点刷新公告并二筛；不生成休市日行情。",
     "承接初始化名单，仅筛选已有候选；事后行业分类和历史公告风险缺口仍保留，本轮不计入常规效果统计。",
@@ -6001,14 +6001,13 @@
   },
   "bootstrap_origin": {
     "target_date": "2026-09-07",
-    "created_at": "2026-09-06T21:33:16.107248+08:00",
+    "created_at": "2026-09-06T16:20:22.610227+08:00",
     "market_date": "2026-09-04",
     "source_run_id": "85fa0e7033174a8093a2d1e5c651b968",
     "source_sha256": "eb3b2c91f4a264be71c59652fe027de834272ca565fab3764401d23c272d9b69",
     "membership_observed_at": "2026-09-05T15:43:00.867506+08:00",
     "historical_risk_feed_verified": false,
-    "scope": "仅首次隔夜确认可用；实际盘前刷新事件，继承事后分类和历史公告缺口。",
-    "weekend_evening_run_id": "c4506760ca1c44248da3d349bc2b172a"
+    "scope": "仅首次隔夜确认可用；实际盘前刷新事件，继承事后分类和历史公告缺口。"
   },
   "predecessor": {
     "date": "2026-09-06",
