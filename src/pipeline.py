@@ -62,10 +62,19 @@ class Pipeline:
         previous=None; key=predecessor(day,stage,self.calendar)
         if key:
             previous=read_json(self.stage_path(*key))
-            if not previous or previous.get('status')!='COMPLETE' or previous.get('data_quality',{}).get('status')=='RED' or datetime.fromisoformat(previous['as_of_time'])>=as_of or previous.get('mode')!=self.mode:
+            initialization = None
+            if previous is None and self.mode == 'live' and stage == '0730':
+                from src.bootstrap import load_seed
+                initialization = load_seed(self.output, day, as_of, self.calendar, self.config)
+                if initialization:
+                    previous = initialization
+            if not initialization and (not previous or previous.get('status')!='COMPLETE' or previous.get('data_quality',{}).get('status')=='RED' or datetime.fromisoformat(previous['as_of_time'])>=as_of or previous.get('mode')!=self.mode):
                 run['status']='MISSING_PREDECESSOR'; run['warnings'].append(f'缺少有效正式前序：{key[0]} {key[1]}；不重新海选。')
                 return self.finish(run)
-            run['predecessor']={'date':str(key[0]),'stage':key[1],'run_id':previous['run_id']}
+            run['predecessor']={'date':previous['date'],'stage':'BOOTSTRAP' if initialization else key[1],'run_id':previous['run_id']}
+            if previous.get('bootstrap_origin'):
+                run['bootstrap_origin'] = copy.deepcopy(previous['bootstrap_origin'])
+                run['warnings'].append('首次启动链：承接周末初始化快照；使用事后行业分类，历史公告风险未完整核验。本轮不计入常规因子效果统计。')
         try: self.compute(run,day,stage,as_of,previous)
         except Exception as exc:
             run['status']='DEGRADED'; run['data_quality']['status']='RED'; run['errors'].append({'module':'pipeline','error':type(exc).__name__})
@@ -115,7 +124,8 @@ class Pipeline:
             sectors=previous['sectors']; market=previous['market']
             run['data_quality']=previous['data_quality'].copy(); run['data_quality']['as_of_time']=as_of.isoformat()
             if any(q.timestamp>as_of or q.timestamp.astimezone(TZ).date()!=expected for q in quotes): raise ValueError('invalid predecessor quote time')
-            run['warnings'].append(f'行情沿用 {expected} 正式收盘快照；本阶段仅刷新事件。隔夜变量未接入，市场分为前收盘参考。')
+            basis = '初始化所用收盘行情' if run.get('bootstrap_origin') else '正式收盘快照'
+            run['warnings'].append(f'行情沿用 {expected} {basis}；本阶段仅刷新事件。隔夜变量未接入，市场分为前收盘参考。')
             limit_pool=previous.get('limit_pool',[])
         else:
             universe=demo.universe if demo else self.collector.fetch('universe')
@@ -237,7 +247,13 @@ class Pipeline:
         run['status']='DEGRADED' if run['data_quality']['status']=='RED' else 'COMPLETE'
         run['ai']={'status':'DEMO_DISABLED'} if demo else enhance(run['pools'],self.config,as_of)
         run['quotes']=[q.model_dump(mode='json') for q in quotes]; run['factors']=factors
-        try: run['evaluation']=update_outcomes(self.output,run,self.calendar,self.config)
+        if run.get('bootstrap_origin'):
+            run['missing_factors'] += ['初始化历史公告风险完整核验', '初始化当时行业成分快照']
+            run['data_quality']['status'] = 'RED' if run['data_quality']['status']=='RED' else 'YELLOW'
+            for group in run['pools'].values():
+                for stock in group:
+                    stock['negative_factor'] += '；初始化历史公告风险及当时行业归属未完整核验'
+        try: run['evaluation']={} if run.get('bootstrap_origin') else update_outcomes(self.output,run,self.calendar,self.config)
         except Exception as exc: run['errors'].append({'module':'evaluation','error':type(exc).__name__})
     def finish(self, run):
         run['source_logs']=self.collector.logs+self.announcements.logs; logs=run['source_logs']

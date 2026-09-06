@@ -6,6 +6,9 @@ def stage_markdown(run):
     lines=[f"## {run['stage'][:2]}:{run['stage'][2:]} {run['stage_label']}",f"\n时间戳：{run['as_of_time']} ｜ Run ID：{run['run_id']}",f"\n模式：{'演示模拟数据，不是市场判断' if run['mode']=='demo' else '真实数据任务'}",f"\n状态：{run['status']} ｜ 数据质量：{run['data_quality']['status']}",f"\n市场：{m.get('environment') or '数据不足，不评级'} ｜ Market Score：{fmt(m.get('score'))}",f"行情基准日：{run.get('quote_date','—')}；评分口径：{m.get('basis','—')}。"]
     if run['mode']=='retrospective':
         lines[2]='\n模式：历史收盘复盘（含事后板块分类限制；非时点回测）'
+    if run['mode']=='bootstrap':
+        lines[0]='## 周末初始化快照'
+        lines[2]='\n模式：首次启动用初始化数据；不是历史晚间任务记录'
     for warning in run.get('warnings',[]):lines.append(f'\n- {warning}')
     if run.get('afternoon_message'):lines.append('\n**'+run['afternoon_message']+'**')
     lines+=['\n### 板块强弱','\n|板块|类型|分数|状态|历史因子覆盖|','|---|---|---:|---|---:|']

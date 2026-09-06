@@ -50640,6 +50640,8 @@
   "dashboard_updated_at": "2026-09-06T10:58:28.361066+08:00",
   "finished_at": "2026-09-06T10:58:28.361078+08:00",
   "google_docs": {
-    "status": "RETROSPECTIVE_SEPARATE"
+    "status": "SYNCED_MANUAL_ARCHIVE",
+    "section": "历史复盘归档（补写）",
+    "verified_on": "2026-09-06"
   }
 }
