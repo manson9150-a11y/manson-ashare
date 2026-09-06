@@ -45,7 +45,8 @@ class Pipeline:
         run={'run_id':uuid.uuid4().hex,'date':str(day),'stage':stage,'stage_label':self.config['stages'][stage]['label'],'mode':self.mode,'started_at':now.isoformat(),'as_of_time':as_of.isoformat(),'status':'RUNNING','warnings':[],'errors':[],'data_quality':{'status':'RED'},'pools':{'POOL_A':[],'POOL_B':[],'POOL_C':[]},'sectors':[],'market':{},'eliminations':[],'missing_factors':[]}
         try: trading=self.calendar.is_trading_day(day)
         except CalendarUnknown as e: return self.status_only(run,'CALENDAR_UNVERIFIED',str(e))
-        if not trading: return self.status_only(run,'NON_TRADING_DAY','休市；未采集或生成伪行情报告')
+        weekend_target = self.config.get('weekend_evenings', {}).get(str(day)) if self.mode=='live' and stage=='2130' else None
+        if not trading and not weekend_target: return self.status_only(run,'NON_TRADING_DAY','休市；未采集或生成伪行情报告')
         if self.mode=='live':
             deadline=datetime.fromisoformat(f"{day}T{self.config['stages'][stage]['deadline']}:00").replace(tzinfo=TZ)
             if now.date()!=day or now<as_of or now>deadline:
@@ -59,6 +60,8 @@ class Pipeline:
         if existing and existing.get('status')=='COMPLETE':
             existing['google_docs']=DocsOutbox(self.output).flush() if self.mode=='live' else {'status':'DEMO_DISABLED'}
             return existing
+        if not trading and weekend_target:
+            return self.weekend_evening(run, day, date.fromisoformat(weekend_target), as_of)
         previous=None; key=predecessor(day,stage,self.calendar)
         if key:
             previous=read_json(self.stage_path(*key))
@@ -81,6 +84,35 @@ class Pipeline:
             run['warnings'].append('关键数据采集或计算失败；保留已有结果，不输出正式候选。')
             run['pools']={k:[] for k in run['pools']}
         return self.finish(run)
+    def weekend_evening(self, run, day, target, as_of):
+        from src.bootstrap import load_seed
+        previous = load_seed(self.output, target, as_of, self.calendar, self.config)
+        if not previous:
+            return self.status_only(run, 'MISSING_PREDECESSOR', '周末晚间二筛缺少有效初始化快照。')
+        market_day = self.calendar.previous(target)
+        run['stage_label'] = '周末晚间二筛'
+        run['weekend_review'] = {'market_date': str(market_day), 'next_trading_date': str(target)}
+        run['bootstrap_origin'] = copy.deepcopy(previous['bootstrap_origin'])
+        run['predecessor'] = {'date': previous['date'], 'stage': 'BOOTSTRAP', 'run_id': previous['run_id']}
+        run['warnings'] = [f'周末晚间研究：行情沿用{market_day}收盘，按本次实际研究截点刷新公告并二筛；不生成休市日行情。',
+                           '承接初始化名单，仅筛选已有候选；事后行业分类和历史公告风险缺口仍保留，本轮不计入常规效果统计。']
+        try:
+            self.compute(run, market_day, '2130', as_of, copy.deepcopy(previous))
+            for group in run['pools'].values():
+                for stock in group:
+                    stock['date'] = str(day)
+        except Exception as exc:
+            run.update(status='DEGRADED', data_quality={'status':'RED'})
+            run['errors'].append({'module':'weekend_evening','error':type(exc).__name__})
+            run['warnings'].append('周末二筛失败，保留之前的初始化快照。')
+            run['pools']={k:[] for k in run['pools']}
+        result = self.finish(run)
+        if result['status'] == 'COMPLETE':
+            seed = copy.deepcopy(result)
+            seed.update(mode='bootstrap', status='BOOTSTRAP_READY')
+            seed['bootstrap_origin'].update(created_at=seed['as_of_time'], weekend_evening_run_id=seed['run_id'])
+            write_json(self.output/'data/bootstrap'/f'{target}.json', seed)
+        return result
     def membership(self, quotes, as_of):
         groups={}
         for q in quotes:
@@ -204,6 +236,11 @@ class Pipeline:
                 except ValueError: pass
             try: events.extend(self.announcements.fetch('events',codes=candidate_codes))
             except Unavailable: run['warnings'].append('公告源不可用；仅保留已知事件。')
+        if run.get('weekend_review'):
+            observed = datetime.now(TZ)
+            if observed.date() == date.fromisoformat(run['date']):
+                as_of = max(as_of, observed)
+                run['as_of_time'] = as_of.isoformat()
         event_rows=expectation(events,factors,as_of,self.config)
         date_only=sum(e.publish_time_precision=='date' for e in events)
         if date_only:

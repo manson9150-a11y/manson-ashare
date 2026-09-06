@@ -37,6 +37,7 @@ function render(){
  $('mode-banner').hidden=!demo&&!replayDate&&!state.bootstrap_origin;
  $('mode-banner').textContent=replayDate?`${replayDate} 历史收盘复盘 · 使用当日收盘行情，含同日盘后接口补齐；使用事后行业分类。历史风险公告及盘前午盘快照未完整核验，非16:00时点回测。`:'DEMO / 演示模式 · 以下企业、事件、价格和评分均为模拟数据，不代表真实市场或投资建议。';
  if(!demo&&!replayDate&&state.bootstrap_origin)$('mode-banner').textContent='首次启动链 · 承接周末初始化快照；行情基准、事后行业分类和历史公告缺口见报告。本轮不计入常规因子效果统计。';
+ if(!demo&&!replayDate&&state.weekend_review)$('mode-banner').textContent=`${state.date} 周末晚间二筛 · 沿用${state.quote_date}收盘行情并刷新公告；承接初始化候选，保留事后分类与历史风险缺口。`;
  $('date-label').textContent=state.date?state.date.replaceAll('-',' / '):'等待正式行情';
  $('updated').textContent=replayDate&&state.date?'收盘数据 · 含当日盘后补齐':state.as_of_time?`研究截点 ${state.as_of_time.slice(11,16)} · 北京时间`:'首次交易日收盘扫描后更新';
  document.querySelectorAll('[data-stage]').forEach(el=>el.classList.toggle('current',el.dataset.stage===state.stage));

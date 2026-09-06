@@ -1,4 +1,6 @@
 timezone: Asia/Shanghai
+weekend_evenings:
+  '2026-09-06': '2026-09-07'
 announcements:
   lookback_days: 7
   max_pages_per_stock: 3

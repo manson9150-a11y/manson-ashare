@@ -5,7 +5,8 @@ from src.pipeline import Pipeline
 from src.utils.calendar import TZ
 from src.utils.io import read_json
 STAGES=['0730','0830','1135','1600','2130']
-SCHEDULE={'30 23 * * 0-4':'0730','30 0 * * 1-5':'0830','35 3 * * 1-5':'1135','0 8 * * 1-5':'1600','30 13 * * 1-5':'2130'}
+SPECIAL_EVENING_SCHEDULE='30 13 6 9 *'
+SCHEDULE={'30 23 * * 0-4':'0730','30 0 * * 1-5':'0830','35 3 * * 1-5':'1135','0 8 * * 1-5':'1600','30 13 * * 1-5':'2130',SPECIAL_EVENING_SCHEDULE:'2130'}
 def main():
     parser=argparse.ArgumentParser(description='MANSON A-share batch research')
     parser.add_argument('--stage',choices=STAGES+['full_pipeline'],default='1600'); parser.add_argument('--schedule',default='')
@@ -16,6 +17,8 @@ def main():
     output=args.output or (project/'artifacts/demo' if args.demo else project)
     if args.demo and output.resolve()==project: parser.error('Demo cannot write to production root')
     pipeline=Pipeline(project,output,'demo' if args.demo else 'live')
+    if args.schedule==SPECIAL_EVENING_SCHEDULE and str(day) not in pipeline.config.get('weekend_evenings',{}):
+        print(json.dumps({'date':str(day),'status':'SPECIAL_SESSION_NOT_CONFIGURED'})); return
     if args.replay:
         result=read_json(pipeline.stage_path(day,stage))
         if result is None: parser.error('No stored snapshot; current APIs must not reconstruct old stages')

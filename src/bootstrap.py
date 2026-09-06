@@ -29,7 +29,7 @@ def load_seed(root, day, as_of, calendar, config):
             return None
         quotes = {q['code']: q for q in seed['quotes']}
         codes = {s['stock_code'] for group in seed['pools'].values() for s in group}
-        if not codes or codes != set(quotes) or not codes <= set(seed['factors']):
+        if codes != set(quotes) or not codes <= set(seed['factors']):
             return None
         if any(datetime.fromisoformat(q['timestamp']).astimezone(TZ).date() != market_day
                or datetime.fromisoformat(q['timestamp']) > observed for q in quotes.values()):

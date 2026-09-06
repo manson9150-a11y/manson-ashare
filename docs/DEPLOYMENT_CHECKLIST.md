@@ -13,6 +13,8 @@
 
 后续可在 Actions → Verify Google Docs connection → Run workflow 重复检查认证和读写能力。
 
+2026-09-06 21:30已配置一次周末晚间二筛，沿用9月4日收盘行情并更新公告，成功后发布网站、归档Google文档并更新次日初始化。91项测试包含周末日期和时间限制、晚间到次日衔接、重复运行幂等与空池连续性；仍需在计划时点后确认实际采集和发布结果。截图中的 `?replay=2026-09-04` 固定保留历史复盘，今晚新结果查看网站首页。
+
 ## 1. GitHub
 
 - 登录GitHub Desktop，把 `manson-ashare` 本地仓库发布到自己的GitHub账号，分支main。
