@@ -36,11 +36,16 @@ async function load(){
  if(!demo&&!replayDate){try{const r=await fetch('data/run_status.json',{cache:'no-store'});if(r.ok){const s=await r.json();if(s.status!=='COMPLETE'){$('run-banner').hidden=false;$('run-banner').textContent=`最近任务：${s.date} ${s.stage} · ${s.status}。${(s.warnings||[]).join(' ')}`;}}}catch{}}
  $('refresh').disabled=false;
 }
+function beijingTime(value){
+ const d=new Date(value);
+ return value&&Number.isFinite(d.getTime())?new Intl.DateTimeFormat('zh-CN',{timeZone:'Asia/Shanghai',year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',hour12:false}).format(d)+'（北京时间）':'不可用';
+}
+function wudaoError(code){return ({MEMBERS_TIME_UNKNOWN:'部分成分缺少更新时间',TRUNCATED_MEMBERS:'部分题材成分返回不完整',MEMBERS_TIME_INVALID:'部分成分时间不符合要求',DATE_MISMATCH:'返回交易日不符',STALE_INTRADAY:'午盘快照过旧',HTTP_429:'接口限流',DAILY_LIMIT_EXCEEDED:'今日接口额度已用完',FREE_TIER_MARKET_OPEN_RESTRICTED:'接口开盘时段受限',NOT_CONFIGURED:'尚未配置密钥'})[code]||'部分数据暂不可用';}
 function renderWudao(){
  const w=state.wudao||wudaoSupplement;
  $('sectors').hidden=demo||!!replayDate;
  const panel=w?.featured;
- $('wudao-note').textContent=w?`${w.supplement?'接入后补充观察 · 不修改原阶段报告。 ':''}悟道 ${w.status} · 行情 ${w.trade_date} · 题材快照 ${panel?.snapshot_time||'不可用'}。原始强度不是百分制评分，题材之间成分可能重叠。${w.errors?.length?' 采集缺口：'+w.errors.join('、'):''}`:'本阶段尚未接入悟道；下方为旧分类的规则评分。';
+ $('wudao-note').textContent=w?`${w.supplement?'接入后补充观察 · 不修改原阶段报告。 ':''}悟道 ${{OK:'采集成功',PARTIAL:'部分成功',UNAVAILABLE:'暂不可用'}[w.status]||'待确认'} · 行情 ${w.trade_date} · 题材快照 ${beijingTime(panel?.snapshot_time)}。原始强度不是百分制评分，题材之间成分可能重叠。${w.errors?.length?' 采集缺口：'+[...new Set(w.errors.map(wudaoError))].join('、'):''}`:'本阶段尚未接入悟道；下方为旧分类的规则评分。';
  $('wudao-rows').innerHTML=(panel?.rows||[]).map((r,i)=>`<tr><td><span class="rank-number ${i<3?'top':''}">${String(i+1).padStart(2,'0')}</span><span class="sector-name">${esc(r.themeName)}</span></td><td>${num(r.strength,0)}</td><td class="${color(r.pctChg)}">${pct(r.pctChg)}</td><td>${num(r.amount==null?null:r.amount/1e8)}</td><td>${num(r.mainNetAmount==null?null:r.mainNetAmount/1e8)}</td></tr>`).join('')||'<tr><td colspan="5" class="empty">悟道热点暂不可用；未用旧榜冒充最新热点。</td></tr>';
  $('wudao-industry').innerHTML=(w?.industry?.rows||[]).map((r,i)=>`<tr><td>${i+1} · ${esc(r.themeName)}</td><td>${pct(r.pctChg)}</td><td>${num(r.mainNetAmount==null?null:r.mainNetAmount/1e8)}</td></tr>`).join('')||'<tr><td colspan="3" class="empty">无有效行业快照。</td></tr>';
 }
