@@ -105,3 +105,8 @@ stages:
   '1135': {label: 午盘确认, time: '11:35', deadline: '12:45'}
   '1600': {label: 收盘扫描, time: '16:00', deadline: '20:00'}
   '2130': {label: 晚间二筛, time: '21:30', deadline: '23:59'}
+
+wudao:
+  enabled: true
+  member_theme_limit: 10
+  intraday_max_age_minutes: 20

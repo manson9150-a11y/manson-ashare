@@ -10,6 +10,7 @@ from src.models import Quote, Event
 from src.utils.calendar import TradingCalendar, CalendarUnknown, TZ, stage_time
 from src.utils.io import read_json, write_json, clean
 from src.collectors.base import Collector, Unavailable
+from src.collectors.wudao import WudaoResearch
 from src.collectors.public import EastmoneyAdapter, TencentAdapter, SinaAdapter
 from src.collectors.announcements import AnnouncementAdapter, CninfoAnnouncementAdapter
 from src.normalizers.quality import validate_quotes, validate_bars
@@ -28,6 +29,7 @@ class Pipeline:
     def __init__(self, project, output=None, mode='live', config=None):
         self.project=Path(project).resolve(); self.output=Path(output or project).resolve(); self.mode=mode
         self.config=config or yaml.safe_load((self.project/'config/settings.yaml').read_text())
+        self.wudao=WudaoResearch(self.config)
         self.calendar=TradingCalendar(self.project/'config/calendar.json')
         self.collector=Collector([c(self.config) for c in [EastmoneyAdapter,TencentAdapter,SinaAdapter] if c.source_name in self.config['sources']['enabled']])
         self.announcements=Collector([CninfoAnnouncementAdapter(self.config, self.output/'data/latest/announcement_first_seen.json'), AnnouncementAdapter(self.config)])
@@ -141,6 +143,11 @@ class Pipeline:
             run['warnings'].append('DEMO / 模拟数据：所有企业、事件和评分仅用于流程测试。')
         expected=day if stage in ('1135','1600','2130') else self.calendar.previous(day)
         run['quote_date']=str(expected)
+        if self.mode=='live' and self.config.get('wudao',{}).get('enabled',False):
+            run['wudao']=self.wudao.collect(expected,as_of,stage)
+            if run['wudao']['status']!='OK':
+                run['warnings'].append('悟道采集未完整成功：'+','.join(run['wudao']['errors'])+'；可用数据明确展示，其余沿用原接口，不能声称已覆盖全市场题材。')
+            run['warnings'].append('悟道热点按题材强度和行业涨幅展示；系统规则分独立计算。前十题材成分为当前分类，仅用于本次及后续研究。')
         if stage in ('0730','0830','2130'):
             quotes=[Quote.model_validate(q) for q in previous.get('quotes',[])]
             factors=previous.get('factors',{}); membership=previous.get('membership',[])
@@ -157,7 +164,7 @@ class Pipeline:
             run['data_quality']=previous['data_quality'].copy(); run['data_quality']['as_of_time']=as_of.isoformat()
             if any(q.timestamp>as_of or q.timestamp.astimezone(TZ).date()!=expected for q in quotes): raise ValueError('invalid predecessor quote time')
             basis = '初始化所用收盘行情' if run.get('bootstrap_origin') else '正式收盘快照'
-            run['warnings'].append(f'行情沿用 {expected} {basis}；本阶段仅刷新事件。隔夜变量未接入，市场分为前收盘参考。')
+            run['warnings'].append(f'行情沿用 {expected} {basis}；本阶段刷新事件与悟道热点参考。隔夜变量未接入，市场分为前收盘参考。')
             limit_pool=previous.get('limit_pool',[])
         else:
             universe=demo.universe if demo else self.collector.fetch('universe')
@@ -175,6 +182,9 @@ class Pipeline:
             if quality['status']=='RED':
                 run.update(market=market,status='DEGRADED'); run['warnings'].append('行情覆盖不足，市场不评级，候选池为空。'); return
             membership=demo.membership if demo else previous['membership'] if stage=='1135' else self.membership(quotes,as_of)
+            additions=run.get('wudao',{}).get('membership',[])
+            new_ids={s['id'] for s in additions}
+            membership=additions+[s for s in membership if s['id'] not in new_ids]
             initial=sector_scores(quotes,membership,{},self.config)
             good_ids={s['id'] for s in initial if s['state'] in self.config['sector']['allowed']}
             good_codes={c for s in membership if s['id'] in good_ids for c in s['codes']}
@@ -273,6 +283,7 @@ class Pipeline:
             sector['history'][stage]=sector['score']
         for group in selected.values():
             for s in group:
+                s['wudao_themes']=[m['name'] for m in run.get('wudao',{}).get('membership',[]) if s['stock_code'] in m['codes']]
                 for st in self.config['stages']:
                     old=read_json(self.stage_path(day,st),{})
                     match=next((x for g in old.get('pools',{}).values() for x in g if x['stock_code']==s['stock_code']),None)
@@ -296,7 +307,7 @@ class Pipeline:
         try: run['evaluation']={} if run.get('bootstrap_origin') else update_outcomes(self.output,run,self.calendar,self.config)
         except Exception as exc: run['errors'].append({'module':'evaluation','error':type(exc).__name__})
     def finish(self, run):
-        run['source_logs']=self.collector.logs+self.announcements.logs; logs=run['source_logs']
+        run['source_logs']=self.collector.logs+self.announcements.logs+self.wudao.logs; logs=run['source_logs']
         run['source_success_rate']=sum(l['success'] for l in logs)/len(logs) if logs else None
         run['failed_sources']=sorted({l['source_name'] for l in logs if not l['success']})
         run['stock_count']=run.get('valid_quote_count',len(run.get('quotes',[]))); run['sector_count']=len(run.get('sectors',[])); run['candidate_count']=sum(map(len,run['pools'].values()))

@@ -1,0 +1,71 @@
+name: Verify Wudao Research
+on:
+  workflow_dispatch:
+    inputs:
+      publish_supplement:
+        description: 'Publish a current-time hotspot supplement without changing prior stage reports'
+        type: boolean
+        default: true
+concurrency:
+  group: manson-production-data
+  cancel-in-progress: false
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+          cache-dependency-path: requirements.lock
+      - run: pip install -r requirements.lock && pip install --no-deps -e .
+      - name: Read-only live verification
+        env:
+          WUDAO_API_KEY: ${{ secrets.WUDAO_API_KEY }}
+          PUBLISH: ${{ inputs.publish_supplement }}
+        run: |
+          if [ "$PUBLISH" = "true" ]; then
+            python -m src.collectors.verify_wudao --publish-supplement
+          else
+            python -m src.collectors.verify_wudao
+          fi
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: wudao-verification
+          path: artifacts/wudao-probe.json
+      - name: Persist current-time supplement
+        if: inputs.publish_supplement
+        run: |
+          git config user.name 'manson-research[bot]'
+          git config user.email 'manson-research[bot]@users.noreply.github.com'
+          git add dashboard/data/wudao.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'data: publish current-time Wudao hotspot supplement [skip ci]'
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
+      - uses: actions/configure-pages@v5
+        if: inputs.publish_supplement
+      - uses: actions/upload-pages-artifact@v3
+        if: inputs.publish_supplement
+        with:
+          path: dashboard
+  deploy:
+    needs: verify
+    if: inputs.publish_supplement
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/deploy-pages@v4
+        id: deployment

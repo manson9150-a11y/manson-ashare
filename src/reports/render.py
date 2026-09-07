@@ -11,7 +11,17 @@ def stage_markdown(run):
         lines[2]='\n模式：首次启动用初始化数据；不是历史晚间任务记录'
     for warning in run.get('warnings',[]):lines.append(f'\n- {warning}')
     if run.get('afternoon_message'):lines.append('\n**'+run['afternoon_message']+'**')
-    lines+=['\n### 板块强弱','\n|板块|类型|分数|状态|历史因子覆盖|','|---|---|---:|---|---:|']
+    w=run.get('wudao')
+    if w:
+        lines += ['\n### 悟道热点参考', f"状态：{w['status']}；行情日期：{w['trade_date']}。原始题材强度不是系统百分制评分。"]
+        for key,label in [('featured','题材强度榜'),('industry','行业涨幅榜')]:
+            panel=w.get(key)
+            if panel:
+                lines += [f"\n{label}；快照：{panel['snapshot_time']}", '|板块|强度|涨跌幅|','|---|---:|---:|']
+                for row in panel['rows']:
+                    lines.append(f"|{fmt(row['themeName'])}|{fmt(row.get('strength'),0)}|{fmt(row.get('pctChg'))}%|")
+        if w.get('errors'): lines.append('采集缺口：'+','.join(w['errors']))
+    lines+=['\n### 已覆盖成分规则评分','\n|板块|类型|分数|状态|历史因子覆盖|','|---|---|---:|---|---:|']
     for s in run.get('sectors',[])[:10]:lines.append(f"|{fmt(s['name'])}|{s['kind']}|{fmt(s['score'])}|{s['state']}|{s['factor_coverage']:.0%}|")
     for pool,label in NAMES.items():
         lines += [f'\n### {label}','\n|排名|代码 名称|板块|位置|综合分|交易性|主观概率|ATR状态|','|---:|---|---|---|---:|---:|---|---|']
@@ -23,6 +33,7 @@ def stage_markdown(run):
         if not group and not run.get('pool_notes',{}).get(pool):lines.append('\n无符合条件候选，不补足数量。')
         for s in group:
             lines += [f"\n#### {s['stock_code']} {s['stock_name']}",f"- 板数：{fmt(s.get('board_count'))}；Market/Sector：{fmt(s.get('market_score'))}/{fmt(s.get('sector_score'))}；风险：{s['risk']}",f"- 5/10/20日：{fmt(s.get('return_5d'))}% / {fmt(s.get('return_10d'))}% / {fmt(s.get('return_20d'))}%；MA20距离：{fmt(s.get('distance_ma20'))}%",f"- 正因子：{s['positive_factor']}",f"- 负因子：{s['negative_factor']}",f"- 验证：{s['validation_condition']}",f"- 失效：{s['invalidation_condition']}"]
+            if s.get('wudao_themes'):lines.append('\n- 悟道题材归属：'+'、'.join(s['wudao_themes']))
             if s.get('validation_label'):lines.append(f"- 午盘验证：{s['validation_label']}；上午真实涨跌 {fmt(s['morning_return'])}%")
     if run.get('validations'):
         lines+=['\n### 08:30全部候选验证']

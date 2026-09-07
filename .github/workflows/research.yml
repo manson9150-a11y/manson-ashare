@@ -45,6 +45,7 @@ jobs:
           TZ: Asia/Shanghai
           EVENT_SCHEDULE: ${{ github.event.schedule }}
           RUN_STAGE: ${{ inputs.run_stage || '1600' }}
+          WUDAO_API_KEY: ${{ secrets.WUDAO_API_KEY }}
           GOOGLE_DOC_ID: ${{ secrets.GOOGLE_DOC_ID }}
           GOOGLE_SERVICE_ACCOUNT_JSON: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_JSON }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}

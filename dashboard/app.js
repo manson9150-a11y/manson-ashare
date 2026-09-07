@@ -8,10 +8,11 @@ const positions=['启动观察','趋势观察','高位观察','回调观察','�
 const demo=new URLSearchParams(location.search).get('demo')==='1';
 const replayParam=new URLSearchParams(location.search).get('replay');
 const replayDate=!demo&&/^\d{4}-\d{2}-\d{2}$/.test(replayParam||'')?replayParam:null;
+let wudaoSupplement=null;
 let state={},activePool='POOL_A',downloadURL;
 function pill(label){return `<span class="pill ${/高位|高|极端|退潮|转弱/.test(label)?'red':/启动|中|警告/.test(label)?'orange':''}">${esc(label)}</span>`;}
 async function load(){
- $('refresh').disabled=true;
+ $('refresh').disabled=true;wudaoSupplement=null;
  try{
   const response=await fetch(`data/${demo?'demo':replayDate?`replays/${replayDate}`:'latest'}.json`,{cache:'no-store'});
   if(!response.ok)throw new Error('EMPTY');
@@ -26,12 +27,25 @@ async function load(){
  }catch(error){
   state={mode:replayDate?'retrospective':'live',status:replayDate?'REPLAY_UNAVAILABLE':'NOT_STARTED',pools:{POOL_A:[],POOL_B:[],POOL_C:[]},market:{},sectors:[],data_quality:{status:'PENDING'},warnings:[replayDate?'所选历史复盘不存在或读取失败。':'尚未收到正式云端报告；首次交易日收盘扫描后更新。']};
  }
+ if(!demo&&!replayDate&&!state.wudao){try{
+  const r=await fetch('data/wudao.json',{cache:'no-store'});
+  if(r.ok){const w=await r.json();if(w.trade_date===state.quote_date&&Date.parse(w.requested_at)>=Date.parse(state.as_of_time))wudaoSupplement=w;}
+ }catch{}}
  render();
  $('run-banner').hidden=true;
  if(!demo&&!replayDate){try{const r=await fetch('data/run_status.json',{cache:'no-store'});if(r.ok){const s=await r.json();if(s.status!=='COMPLETE'){$('run-banner').hidden=false;$('run-banner').textContent=`最近任务：${s.date} ${s.stage} · ${s.status}。${(s.warnings||[]).join(' ')}`;}}}catch{}}
  $('refresh').disabled=false;
 }
+function renderWudao(){
+ const w=state.wudao||wudaoSupplement;
+ $('sectors').hidden=demo||!!replayDate;
+ const panel=w?.featured;
+ $('wudao-note').textContent=w?`${w.supplement?'接入后补充观察 · 不修改原阶段报告。 ':''}悟道 ${w.status} · 行情 ${w.trade_date} · 题材快照 ${panel?.snapshot_time||'不可用'}。原始强度不是百分制评分，题材之间成分可能重叠。${w.errors?.length?' 采集缺口：'+w.errors.join('、'):''}`:'本阶段尚未接入悟道；下方为旧分类的规则评分。';
+ $('wudao-rows').innerHTML=(panel?.rows||[]).map((r,i)=>`<tr><td><span class="rank-number ${i<3?'top':''}">${String(i+1).padStart(2,'0')}</span><span class="sector-name">${esc(r.themeName)}</span></td><td>${num(r.strength,0)}</td><td class="${color(r.pctChg)}">${pct(r.pctChg)}</td><td>${num(r.amount==null?null:r.amount/1e8)}</td><td>${num(r.mainNetAmount==null?null:r.mainNetAmount/1e8)}</td></tr>`).join('')||'<tr><td colspan="5" class="empty">悟道热点暂不可用；未用旧榜冒充最新热点。</td></tr>';
+ $('wudao-industry').innerHTML=(w?.industry?.rows||[]).map((r,i)=>`<tr><td>${i+1} · ${esc(r.themeName)}</td><td>${pct(r.pctChg)}</td><td>${num(r.mainNetAmount==null?null:r.mainNetAmount/1e8)}</td></tr>`).join('')||'<tr><td colspan="3" class="empty">无有效行业快照。</td></tr>';
+}
 function render(){
+ renderWudao();
  const m=state.market||{},q=state.data_quality||{};
  $('mode-link').href=demo||replayDate?'./':'?demo=1';$('mode-link').textContent=demo||replayDate?'返回正式工作台 ↗':'查看演示 ↗';
  $('mode-banner').hidden=!demo&&!replayDate&&!state.bootstrap_origin;
