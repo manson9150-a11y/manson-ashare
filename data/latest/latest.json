@@ -1,11 +1,11 @@
 {
-  "run_id": "c7de21a5905d43f99a2040b54c01e761",
+  "run_id": "d001bdd9c0aa4d008b004aa138255d4a",
   "date": "2026-09-07",
-  "stage": "0730",
-  "stage_label": "隔夜确认",
+  "stage": "0830",
+  "stage_label": "盘前终审",
   "mode": "live",
-  "started_at": "2026-09-07T07:39:17.732298+08:00",
-  "as_of_time": "2026-09-07T07:39:17.732298+08:00",
+  "started_at": "2026-09-07T08:49:12.332625+08:00",
+  "as_of_time": "2026-09-07T08:49:12.332625+08:00",
   "status": "COMPLETE",
   "warnings": [
     "首次启动链：承接周末初始化快照；使用事后行业分类，历史公告风险未完整核验。本轮不计入常规因子效果统计。",
@@ -27,7 +27,7 @@
     ],
     "conflicts": [],
     "expected_trade_date": "2026-09-04",
-    "as_of_time": "2026-09-07T07:39:17.732298+08:00",
+    "as_of_time": "2026-09-07T08:49:12.332625+08:00",
     "history_coverage": 1.0,
     "sector_mapping_coverage": 0.47358932756444927,
     "missing_amount_history_count": 195
@@ -164,12 +164,19 @@
         "validation_condition": "板块维持扩散，价格守住MA20（8.5355），ATR不过热",
         "invalidation_condition": "板块转弱、放量跌破MA20或出现重大风险公告",
         "exclusion_reason": null,
-        "rank_history": [],
+        "rank_history": [
+          {
+            "date": "2026-09-07",
+            "stage": "0730",
+            "rank": 1,
+            "score": 83.39
+          }
+        ],
         "pool": "POOL_B",
         "transition": "维持",
         "rank": 1,
         "date": "2026-09-07",
-        "stage": "0730"
+        "stage": "0830"
       },
       {
         "code": "600685",
@@ -282,7 +289,7 @@
             "source": "cninfo_announcements",
             "url": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600685&announcementId=1225548850&orgId=gssh0600685&announcementTime=2026-09-05",
             "reliability": 0.95,
-            "freshness": 0.22701492168981485,
+            "freshness": 0.2108320500578703,
             "directness": 1.0,
             "priced_in_score": 12.633996937212844,
             "impact_score": null,
@@ -321,12 +328,19 @@
         "validation_condition": "板块维持扩散，价格守住MA20（26.1515），ATR不过热",
         "invalidation_condition": "板块转弱、放量跌破MA20或出现重大风险公告",
         "exclusion_reason": null,
-        "rank_history": [],
+        "rank_history": [
+          {
+            "date": "2026-09-07",
+            "stage": "0730",
+            "rank": 2,
+            "score": 79.94
+          }
+        ],
         "pool": "POOL_B",
         "transition": "维持",
         "rank": 2,
         "date": "2026-09-07",
-        "stage": "0730"
+        "stage": "0830"
       },
       {
         "code": "600737",
@@ -435,12 +449,19 @@
         "validation_condition": "板块维持扩散，价格守住MA20（14.5835），ATR不过热",
         "invalidation_condition": "板块转弱、放量跌破MA20或出现重大风险公告",
         "exclusion_reason": null,
-        "rank_history": [],
+        "rank_history": [
+          {
+            "date": "2026-09-07",
+            "stage": "0730",
+            "rank": 3,
+            "score": 79.94
+          }
+        ],
         "pool": "POOL_B",
         "transition": "维持",
         "rank": 3,
         "date": "2026-09-07",
-        "stage": "0730"
+        "stage": "0830"
       },
       {
         "code": "601988",
@@ -571,12 +592,19 @@
         "validation_condition": "板块维持扩散，价格守住MA20（6.162），ATR不过热",
         "invalidation_condition": "板块转弱、放量跌破MA20或出现重大风险公告",
         "exclusion_reason": null,
-        "rank_history": [],
+        "rank_history": [
+          {
+            "date": "2026-09-07",
+            "stage": "0730",
+            "rank": 4,
+            "score": 78.56
+          }
+        ],
         "pool": "POOL_B",
         "transition": "维持",
         "rank": 4,
         "date": "2026-09-07",
-        "stage": "0730"
+        "stage": "0830"
       },
       {
         "code": "601169",
@@ -685,12 +713,19 @@
         "validation_condition": "板块维持扩散，价格守住MA20（5.1635），ATR不过热",
         "invalidation_condition": "板块转弱、放量跌破MA20或出现重大风险公告",
         "exclusion_reason": null,
-        "rank_history": [],
+        "rank_history": [
+          {
+            "date": "2026-09-07",
+            "stage": "0730",
+            "rank": 5,
+            "score": 77.45
+          }
+        ],
         "pool": "POOL_B",
         "transition": "维持",
         "rank": 5,
         "date": "2026-09-07",
-        "stage": "0730"
+        "stage": "0830"
       },
       {
         "code": "000768",
@@ -799,12 +834,19 @@
         "validation_condition": "板块维持扩散，价格守住MA20（21.575），ATR不过热",
         "invalidation_condition": "板块转弱、放量跌破MA20或出现重大风险公告",
         "exclusion_reason": null,
-        "rank_history": [],
+        "rank_history": [
+          {
+            "date": "2026-09-07",
+            "stage": "0730",
+            "rank": 6,
+            "score": 77.23
+          }
+        ],
         "pool": "POOL_B",
         "transition": "维持",
         "rank": 6,
         "date": "2026-09-07",
-        "stage": "0730"
+        "stage": "0830"
       },
       {
         "code": "300133",
@@ -913,12 +955,19 @@
         "validation_condition": "板块维持扩散，价格守住MA20（7.1865），ATR不过热",
         "invalidation_condition": "板块转弱、放量跌破MA20或出现重大风险公告",
         "exclusion_reason": null,
-        "rank_history": [],
+        "rank_history": [
+          {
+            "date": "2026-09-07",
+            "stage": "0730",
+            "rank": 7,
+            "score": 77.08
+          }
+        ],
         "pool": "POOL_B",
         "transition": "维持",
         "rank": 7,
         "date": "2026-09-07",
-        "stage": "0730"
+        "stage": "0830"
       },
       {
         "code": "002142",
@@ -1027,12 +1076,19 @@
         "validation_condition": "板块维持扩散，价格守住MA20（33.3635），ATR不过热",
         "invalidation_condition": "板块转弱、放量跌破MA20或出现重大风险公告",
         "exclusion_reason": null,
-        "rank_history": [],
+        "rank_history": [
+          {
+            "date": "2026-09-07",
+            "stage": "0730",
+            "rank": 8,
+            "score": 76.29
+          }
+        ],
         "pool": "POOL_B",
         "transition": "维持",
         "rank": 8,
         "date": "2026-09-07",
-        "stage": "0730"
+        "stage": "0830"
       },
       {
         "code": "601939",
@@ -1141,12 +1197,19 @@
         "validation_condition": "板块维持扩散，价格守住MA20（10.596），ATR不过热",
         "invalidation_condition": "板块转弱、放量跌破MA20或出现重大风险公告",
         "exclusion_reason": null,
-        "rank_history": [],
+        "rank_history": [
+          {
+            "date": "2026-09-07",
+            "stage": "0730",
+            "rank": 9,
+            "score": 76.0
+          }
+        ],
         "pool": "POOL_B",
         "transition": "维持",
         "rank": 9,
         "date": "2026-09-07",
-        "stage": "0730"
+        "stage": "0830"
       },
       {
         "code": "002017",
@@ -1277,305 +1340,19 @@
         "validation_condition": "板块维持扩散，价格守住MA20（15.101500000000001），ATR不过热",
         "invalidation_condition": "板块转弱、放量跌破MA20或出现重大风险公告",
         "exclusion_reason": null,
-        "rank_history": [],
+        "rank_history": [
+          {
+            "date": "2026-09-07",
+            "stage": "0730",
+            "rank": 10,
+            "score": 75.97
+          }
+        ],
         "pool": "POOL_B",
         "transition": "维持",
         "rank": 10,
         "date": "2026-09-07",
-        "stage": "0730"
-      },
-      {
-        "code": "601601",
-        "name": "中国太保",
-        "price": 34.21,
-        "previous_close": 34.04,
-        "open": 33.92,
-        "high": 34.92,
-        "low": 33.92,
-        "volume": 52790300.0,
-        "amount": 1816190000.0,
-        "change_pct": 0.5,
-        "turnover": 0.77,
-        "volume_ratio": 1.01,
-        "float_cap": 234169000000.0,
-        "timestamp": "2026-09-04T16:14:57+08:00",
-        "fetched_at": "2026-09-06T10:50:36.810960+08:00",
-        "source": "tencent",
-        "reliability": 0.8,
-        "fallback": false,
-        "cached": false,
-        "suspended": false,
-        "industry": null,
-        "limit_up_price": 37.44,
-        "limit_down_price": 30.64,
-        "bars_count": 100,
-        "ma5": 33.230000000000004,
-        "distance_ma5": 2.949142341257893,
-        "slope_ma5": 1.4904404129253201,
-        "ma10": 32.440999999999995,
-        "distance_ma10": 5.452976172127877,
-        "slope_ma10": 1.1820847108726884,
-        "ma20": 31.381,
-        "distance_ma20": 9.01500908192856,
-        "slope_ma20": 0.4384841889642832,
-        "ma60": 31.113,
-        "distance_ma60": 9.954038504805073,
-        "slope_ma60": 0.11530437673963334,
-        "return_1d": 0.4994124559341895,
-        "return_3d": 3.4472331418203828,
-        "return_5d": 7.680201447906843,
-        "return_10d": 12.45890861275476,
-        "return_20d": 8.706704798220532,
-        "amount_mean_5d": null,
-        "amount_ratio_5d": null,
-        "amount_mean_10d": null,
-        "amount_ratio_10d": null,
-        "amount_mean_20d": null,
-        "amount_ratio_20d": null,
-        "atr": 0.8740785817464914,
-        "natr": 2.555038239539583,
-        "move_atr": 0.19546183231456585,
-        "bull_alignment": true,
-        "new_high_5d": false,
-        "new_high_20d": false,
-        "breakout": false,
-        "consecutive_up_2": true,
-        "consecutive_up_3": false,
-        "history_source": "tencent",
-        "as_of_time": "2026-09-04T23:59:59+08:00",
-        "stock_code": "601601",
-        "stock_name": "中国太保",
-        "sector": "金融行业",
-        "sector_id": "sina:new_jrhy",
-        "sector_score": 75.11,
-        "sector_state": "持续强势",
-        "market_score": 45.41,
-        "position_type": "趋势观察",
-        "atr_state": "正常",
-        "atr_risk": 0,
-        "risk_score": 0,
-        "risk": "低",
-        "hard_risk": false,
-        "total_score": 75.82,
-        "score_coverage": 0.85,
-        "scores": {
-          "trend": 73.06005719733079,
-          "sector": 75.11,
-          "position": 80,
-          "volume": null
-        },
-        "tradability_score": 75.82,
-        "subjective_probability": null,
-        "probability_basis": "未校准，不输出伪精确概率",
-        "deep_score": null,
-        "deep_components": {
-          "board_quality": null,
-          "theme": null,
-          "ladder": null,
-          "capital": null,
-          "catalyst": null,
-          "dragon": null,
-          "external": null,
-          "reward_risk": null
-        },
-        "board_count": null,
-        "is_limit_up": false,
-        "limit_details": {},
-        "volume_type": "成交额历史缺失",
-        "events": [
-          {
-            "event_id": "2f8cfbd4c5c98ece6632",
-            "stock_code": "601601",
-            "event_type": "其他公告",
-            "title": "中国太保H股公告",
-            "event_time": "2026-09-02T00:00:00+08:00",
-            "publish_time": "2026-09-02T00:00:00+08:00",
-            "publish_time_precision": "date",
-            "first_seen_at": "2026-09-06T16:20:44.093371+08:00",
-            "source": "cninfo_announcements",
-            "url": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=601601&announcementId=1225540951&orgId=9900004003&announcementTime=2026-09-02",
-            "reliability": 0.95,
-            "freshness": 0,
-            "directness": 1.0,
-            "priced_in_score": 21.766761995551327,
-            "impact_score": null,
-            "verified": false,
-            "canonical_id": "cninfo:1225540951:601601",
-            "expectation": "Fresh Catalyst",
-            "expectation_basis": "规则代理：新鲜度与20日涨幅；未证明因果关系"
-          }
-        ],
-        "independent_catalyst": false,
-        "catalyst_score": null,
-        "expectation_score": null,
-        "positive_factor": "MA5>MA10>MA20，趋势与位置满足规则",
-        "negative_factor": "未读取完整公告正文；需人工核验；初始化历史公告风险及当时行业归属未完整核验",
-        "validation_condition": "板块维持扩散，价格守住MA20（31.381），ATR不过热",
-        "invalidation_condition": "板块转弱、放量跌破MA20或出现重大风险公告",
-        "exclusion_reason": null,
-        "rank_history": [],
-        "pool": "POOL_B",
-        "transition": "维持",
-        "rank": 11,
-        "date": "2026-09-07",
-        "stage": "0730"
-      },
-      {
-        "code": "000564",
-        "name": "供销大集",
-        "price": 1.6,
-        "previous_close": 1.6,
-        "open": 1.6,
-        "high": 1.64,
-        "low": 1.56,
-        "volume": 610955000.0,
-        "amount": 983890000.0,
-        "change_pct": 0.0,
-        "turnover": 4.05,
-        "volume_ratio": 0.96,
-        "float_cap": 24152000000.0,
-        "timestamp": "2026-09-04T16:14:39+08:00",
-        "fetched_at": "2026-09-06T10:51:05.122503+08:00",
-        "source": "tencent",
-        "reliability": 0.8,
-        "fallback": false,
-        "cached": false,
-        "suspended": false,
-        "industry": null,
-        "limit_up_price": 1.76,
-        "limit_down_price": 1.44,
-        "bars_count": 100,
-        "ma5": 1.6,
-        "distance_ma5": 0.0,
-        "slope_ma5": 0.5025125628140614,
-        "ma10": 1.542,
-        "distance_ma10": 3.761348897535677,
-        "slope_ma10": 1.1147540983606596,
-        "ma20": 1.5034999999999998,
-        "distance_ma20": 6.418357166611255,
-        "slope_ma20": 0.6358768406961035,
-        "ma60": 1.4258333333333333,
-        "distance_ma60": 12.215078901227372,
-        "slope_ma60": 0.18737557090993118,
-        "return_1d": 0.0,
-        "return_3d": -3.6144578313252906,
-        "return_5d": 2.564102564102577,
-        "return_10d": 11.888111888111897,
-        "return_20d": 13.475177304964546,
-        "amount_mean_5d": null,
-        "amount_ratio_5d": null,
-        "amount_mean_10d": null,
-        "amount_ratio_10d": null,
-        "amount_mean_20d": null,
-        "amount_ratio_20d": null,
-        "atr": 0.07705344247592347,
-        "natr": 4.815840154745216,
-        "move_atr": 0.0,
-        "bull_alignment": true,
-        "new_high_5d": false,
-        "new_high_20d": false,
-        "breakout": false,
-        "consecutive_up_2": false,
-        "consecutive_up_3": false,
-        "history_source": "tencent",
-        "as_of_time": "2026-09-04T23:59:59+08:00",
-        "stock_code": "000564",
-        "stock_name": "供销大集",
-        "sector": "商业百货",
-        "sector_id": "sina:new_sybh",
-        "sector_score": 67.78,
-        "sector_state": "正在加强",
-        "market_score": 45.41,
-        "position_type": "趋势观察",
-        "atr_state": "正常",
-        "atr_risk": 0,
-        "risk_score": 0,
-        "risk": "低",
-        "hard_risk": false,
-        "total_score": 75.76,
-        "score_coverage": 0.85,
-        "scores": {
-          "trend": 80.21276595744682,
-          "sector": 67.78,
-          "position": 80,
-          "volume": null
-        },
-        "tradability_score": 75.76,
-        "subjective_probability": null,
-        "probability_basis": "未校准，不输出伪精确概率",
-        "deep_score": null,
-        "deep_components": {
-          "board_quality": null,
-          "theme": null,
-          "ladder": null,
-          "capital": null,
-          "catalyst": null,
-          "dragon": null,
-          "external": null,
-          "reward_risk": null
-        },
-        "board_count": null,
-        "is_limit_up": false,
-        "limit_details": {},
-        "volume_type": "成交额历史缺失",
-        "events": [
-          {
-            "event_id": "016696f3927b854e019b",
-            "stock_code": "000564",
-            "event_type": "重大合同",
-            "title": "关于为全资子公司提供业务合同履约担保的公告",
-            "event_time": "2026-09-02T00:00:00+08:00",
-            "publish_time": "2026-09-02T00:00:00+08:00",
-            "publish_time_precision": "date",
-            "first_seen_at": "2026-09-06T16:20:46.051921+08:00",
-            "source": "cninfo_announcements",
-            "url": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=000564&announcementId=1225541286&orgId=gssz0000564&announcementTime=2026-09-02",
-            "reliability": 0.95,
-            "freshness": 0,
-            "directness": 1.0,
-            "priced_in_score": 33.687943262411366,
-            "impact_score": null,
-            "verified": false,
-            "canonical_id": "cninfo:1225541286:000564",
-            "expectation": "Partially Priced",
-            "expectation_basis": "规则代理：新鲜度与20日涨幅；未证明因果关系"
-          },
-          {
-            "event_id": "9d43d6618619e36f9bee",
-            "stock_code": "000564",
-            "event_type": "其他公告",
-            "title": "关于回购公司股份的进展公告",
-            "event_time": "2026-09-02T00:00:00+08:00",
-            "publish_time": "2026-09-02T00:00:00+08:00",
-            "publish_time_precision": "date",
-            "first_seen_at": "2026-09-06T16:20:46.052064+08:00",
-            "source": "cninfo_announcements",
-            "url": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=000564&announcementId=1225541283&orgId=gssz0000564&announcementTime=2026-09-02",
-            "reliability": 0.95,
-            "freshness": 0,
-            "directness": 1.0,
-            "priced_in_score": 33.687943262411366,
-            "impact_score": null,
-            "verified": false,
-            "canonical_id": "cninfo:1225541283:000564",
-            "expectation": "Partially Priced",
-            "expectation_basis": "规则代理：新鲜度与20日涨幅；未证明因果关系"
-          }
-        ],
-        "independent_catalyst": false,
-        "catalyst_score": null,
-        "expectation_score": null,
-        "positive_factor": "MA5>MA10>MA20，趋势与位置满足规则",
-        "negative_factor": "未读取完整公告正文；需人工核验；初始化历史公告风险及当时行业归属未完整核验",
-        "validation_condition": "板块维持扩散，价格守住MA20（1.5034999999999998），ATR不过热",
-        "invalidation_condition": "板块转弱、放量跌破MA20或出现重大风险公告",
-        "exclusion_reason": null,
-        "rank_history": [],
-        "pool": "POOL_B",
-        "transition": "维持",
-        "rank": 12,
-        "date": "2026-09-07",
-        "stage": "0730"
+        "stage": "0830"
       }
     ],
     "POOL_C": []
@@ -1599,7 +1376,8 @@
       "history": {
         "1600": 92.24,
         "2130": 92.24,
-        "0730": 92.24
+        "0730": 92.24,
+        "0830": 92.24
       },
       "missing_factors": [
         "龙头/先锋身份",
@@ -1637,7 +1415,8 @@
       "history": {
         "1600": 88.21,
         "2130": 88.21,
-        "0730": 88.21
+        "0730": 88.21,
+        "0830": 88.21
       },
       "missing_factors": [
         "龙头/先锋身份",
@@ -1675,7 +1454,8 @@
       "history": {
         "1600": 85.69,
         "2130": 85.69,
-        "0730": 85.69
+        "0730": 85.69,
+        "0830": 85.69
       },
       "missing_factors": [
         "龙头/先锋身份",
@@ -1713,7 +1493,8 @@
       "history": {
         "1600": 84.13,
         "2130": 84.13,
-        "0730": 84.13
+        "0730": 84.13,
+        "0830": 84.13
       },
       "missing_factors": [
         "龙头/先锋身份",
@@ -1751,7 +1532,8 @@
       "history": {
         "1600": 76.78,
         "2130": 76.78,
-        "0730": 76.78
+        "0730": 76.78,
+        "0830": 76.78
       },
       "missing_factors": [
         "龙头/先锋身份",
@@ -1789,7 +1571,8 @@
       "history": {
         "1600": 75.11,
         "2130": 75.11,
-        "0730": 75.11
+        "0730": 75.11,
+        "0830": 75.11
       },
       "missing_factors": [
         "龙头/先锋身份",
@@ -1827,7 +1610,8 @@
       "history": {
         "1600": 71.68,
         "2130": 71.68,
-        "0730": 71.68
+        "0730": 71.68,
+        "0830": 71.68
       },
       "missing_factors": [
         "龙头/先锋身份",
@@ -1865,7 +1649,8 @@
       "history": {
         "1600": 70.73,
         "2130": 70.73,
-        "0730": 70.73
+        "0730": 70.73,
+        "0830": 70.73
       },
       "missing_factors": [
         "龙头/先锋身份",
@@ -1903,7 +1688,8 @@
       "history": {
         "1600": 69.97,
         "2130": 69.97,
-        "0730": 69.97
+        "0730": 69.97,
+        "0830": 69.97
       },
       "missing_factors": [
         "龙头/先锋身份",
@@ -1941,7 +1727,8 @@
       "history": {
         "1600": 68.55,
         "2130": 68.55,
-        "0730": 68.55
+        "0730": 68.55,
+        "0830": 68.55
       },
       "missing_factors": [
         "龙头/先锋身份",
@@ -1979,7 +1766,8 @@
       "history": {
         "1600": 68.12,
         "2130": 68.12,
-        "0730": 68.12
+        "0730": 68.12,
+        "0830": 68.12
       },
       "missing_factors": [
         "龙头/先锋身份",
@@ -2017,7 +1805,8 @@
       "history": {
         "1600": 67.78,
         "2130": 67.78,
-        "0730": 67.78
+        "0730": 67.78,
+        "0830": 67.78
       },
       "missing_factors": [
         "龙头/先锋身份",
@@ -2055,7 +1844,8 @@
       "history": {
         "1600": 65.69,
         "2130": 65.69,
-        "0730": 65.69
+        "0730": 65.69,
+        "0830": 65.69
       },
       "missing_factors": [
         "龙头/先锋身份",
@@ -2093,7 +1883,8 @@
       "history": {
         "1600": 65.41,
         "2130": 65.41,
-        "0730": 65.41
+        "0730": 65.41,
+        "0830": 65.41
       },
       "missing_factors": [
         "龙头/先锋身份",
@@ -2131,7 +1922,8 @@
       "history": {
         "1600": 62.81,
         "2130": 62.81,
-        "0730": 62.81
+        "0730": 62.81,
+        "0830": 62.81
       },
       "missing_factors": [
         "龙头/先锋身份",
@@ -2169,7 +1961,8 @@
       "history": {
         "1600": 60.91,
         "2130": 60.91,
-        "0730": 60.91
+        "0730": 60.91,
+        "0830": 60.91
       },
       "missing_factors": [
         "龙头/先锋身份",
@@ -2207,7 +2000,8 @@
       "history": {
         "1600": 59.23,
         "2130": 59.23,
-        "0730": 59.23
+        "0730": 59.23,
+        "0830": 59.23
       },
       "missing_factors": [
         "龙头/先锋身份",
@@ -2245,7 +2039,8 @@
       "history": {
         "1600": 58.75,
         "2130": 58.75,
-        "0730": 58.75
+        "0730": 58.75,
+        "0830": 58.75
       },
       "missing_factors": [
         "龙头/先锋身份",
@@ -2283,7 +2078,8 @@
       "history": {
         "1600": 58.68,
         "2130": 58.68,
-        "0730": 58.68
+        "0730": 58.68,
+        "0830": 58.68
       },
       "missing_factors": [
         "龙头/先锋身份",
@@ -2321,7 +2117,8 @@
       "history": {
         "1600": 58.11,
         "2130": 58.11,
-        "0730": 58.11
+        "0730": 58.11,
+        "0830": 58.11
       },
       "missing_factors": [
         "龙头/先锋身份",
@@ -2359,7 +2156,8 @@
       "history": {
         "1600": 55.39,
         "2130": 55.39,
-        "0730": 55.39
+        "0730": 55.39,
+        "0830": 55.39
       },
       "missing_factors": [
         "龙头/先锋身份",
@@ -2397,7 +2195,8 @@
       "history": {
         "1600": 54.92,
         "2130": 54.92,
-        "0730": 54.92
+        "0730": 54.92,
+        "0830": 54.92
       },
       "missing_factors": [
         "龙头/先锋身份",
@@ -2435,7 +2234,8 @@
       "history": {
         "1600": 52.23,
         "2130": 52.23,
-        "0730": 52.23
+        "0730": 52.23,
+        "0830": 52.23
       },
       "missing_factors": [
         "龙头/先锋身份",
@@ -2473,7 +2273,8 @@
       "history": {
         "1600": 51.89,
         "2130": 51.89,
-        "0730": 51.89
+        "0730": 51.89,
+        "0830": 51.89
       },
       "missing_factors": [
         "龙头/先锋身份",
@@ -2511,7 +2312,8 @@
       "history": {
         "1600": 50.98,
         "2130": 50.98,
-        "0730": 50.98
+        "0730": 50.98,
+        "0830": 50.98
       },
       "missing_factors": [
         "龙头/先锋身份",
@@ -2549,7 +2351,8 @@
       "history": {
         "1600": 50.54,
         "2130": 50.54,
-        "0730": 50.54
+        "0730": 50.54,
+        "0830": 50.54
       },
       "missing_factors": [
         "龙头/先锋身份",
@@ -2587,7 +2390,8 @@
       "history": {
         "1600": 50.24,
         "2130": 50.24,
-        "0730": 50.24
+        "0730": 50.24,
+        "0830": 50.24
       },
       "missing_factors": [
         "龙头/先锋身份",
@@ -2625,7 +2429,8 @@
       "history": {
         "1600": 50.17,
         "2130": 50.17,
-        "0730": 50.17
+        "0730": 50.17,
+        "0830": 50.17
       },
       "missing_factors": [
         "龙头/先锋身份",
@@ -2663,7 +2468,8 @@
       "history": {
         "1600": 48.99,
         "2130": 48.99,
-        "0730": 48.99
+        "0730": 48.99,
+        "0830": 48.99
       },
       "missing_factors": [
         "龙头/先锋身份",
@@ -2701,7 +2507,8 @@
       "history": {
         "1600": 46.88,
         "2130": 46.88,
-        "0730": 46.88
+        "0730": 46.88,
+        "0830": 46.88
       },
       "missing_factors": [
         "龙头/先锋身份",
@@ -2739,7 +2546,8 @@
       "history": {
         "1600": 46.19,
         "2130": 46.19,
-        "0730": 46.19
+        "0730": 46.19,
+        "0830": 46.19
       },
       "missing_factors": [
         "龙头/先锋身份",
@@ -2777,7 +2585,8 @@
       "history": {
         "1600": 44.95,
         "2130": 44.95,
-        "0730": 44.95
+        "0730": 44.95,
+        "0830": 44.95
       },
       "missing_factors": [
         "龙头/先锋身份",
@@ -2815,7 +2624,8 @@
       "history": {
         "1600": 44.21,
         "2130": 44.21,
-        "0730": 44.21
+        "0730": 44.21,
+        "0830": 44.21
       },
       "missing_factors": [
         "龙头/先锋身份",
@@ -2853,7 +2663,8 @@
       "history": {
         "1600": 44.02,
         "2130": 44.02,
-        "0730": 44.02
+        "0730": 44.02,
+        "0830": 44.02
       },
       "missing_factors": [
         "龙头/先锋身份",
@@ -2891,7 +2702,8 @@
       "history": {
         "1600": 43.79,
         "2130": 43.79,
-        "0730": 43.79
+        "0730": 43.79,
+        "0830": 43.79
       },
       "missing_factors": [
         "龙头/先锋身份",
@@ -2929,7 +2741,8 @@
       "history": {
         "1600": 43.15,
         "2130": 43.15,
-        "0730": 43.15
+        "0730": 43.15,
+        "0830": 43.15
       },
       "missing_factors": [
         "龙头/先锋身份",
@@ -2967,7 +2780,8 @@
       "history": {
         "1600": 42.81,
         "2130": 42.81,
-        "0730": 42.81
+        "0730": 42.81,
+        "0830": 42.81
       },
       "missing_factors": [
         "龙头/先锋身份",
@@ -3005,7 +2819,8 @@
       "history": {
         "1600": 41.48,
         "2130": 41.48,
-        "0730": 41.48
+        "0730": 41.48,
+        "0830": 41.48
       },
       "missing_factors": [
         "龙头/先锋身份",
@@ -3043,7 +2858,8 @@
       "history": {
         "1600": 41.33,
         "2130": 41.33,
-        "0730": 41.33
+        "0730": 41.33,
+        "0830": 41.33
       },
       "missing_factors": [
         "龙头/先锋身份",
@@ -3081,7 +2897,8 @@
       "history": {
         "1600": 41.19,
         "2130": 41.19,
-        "0730": 41.19
+        "0730": 41.19,
+        "0830": 41.19
       },
       "missing_factors": [
         "龙头/先锋身份",
@@ -3119,7 +2936,8 @@
       "history": {
         "1600": 40.85,
         "2130": 40.85,
-        "0730": 40.85
+        "0730": 40.85,
+        "0830": 40.85
       },
       "missing_factors": [
         "龙头/先锋身份",
@@ -3157,7 +2975,8 @@
       "history": {
         "1600": 38.66,
         "2130": 38.66,
-        "0730": 38.66
+        "0730": 38.66,
+        "0830": 38.66
       },
       "missing_factors": [
         "龙头/先锋身份",
@@ -3195,7 +3014,8 @@
       "history": {
         "1600": 38.35,
         "2130": 38.35,
-        "0730": 38.35
+        "0730": 38.35,
+        "0830": 38.35
       },
       "missing_factors": [
         "龙头/先锋身份",
@@ -3233,7 +3053,8 @@
       "history": {
         "1600": 37.61,
         "2130": 37.61,
-        "0730": 37.61
+        "0730": 37.61,
+        "0830": 37.61
       },
       "missing_factors": [
         "龙头/先锋身份",
@@ -3271,7 +3092,8 @@
       "history": {
         "1600": 35.56,
         "2130": 35.56,
-        "0730": 35.56
+        "0730": 35.56,
+        "0830": 35.56
       },
       "missing_factors": [
         "龙头/先锋身份",
@@ -3309,7 +3131,8 @@
       "history": {
         "1600": 34.06,
         "2130": 34.06,
-        "0730": 34.06
+        "0730": 34.06,
+        "0830": 34.06
       },
       "missing_factors": [
         "龙头/先锋身份",
@@ -3347,7 +3170,8 @@
       "history": {
         "1600": 23.11,
         "2130": 23.11,
-        "0730": 23.11
+        "0730": 23.11,
+        "0830": 23.11
       },
       "missing_factors": [
         "龙头/先锋身份",
@@ -3385,7 +3209,8 @@
       "history": {
         "1600": 22.4,
         "2130": 22.4,
-        "0730": 22.4
+        "0730": 22.4,
+        "0830": 22.4
       },
       "missing_factors": [
         "龙头/先锋身份",
@@ -3423,7 +3248,8 @@
       "history": {
         "1600": 21.18,
         "2130": 21.18,
-        "0730": 21.18
+        "0730": 21.18,
+        "0830": 21.18
       },
       "missing_factors": [
         "龙头/先锋身份",
@@ -3495,12 +3321,12 @@
     "初始化历史公告风险完整核验",
     "初始化当时行业成分快照"
   ],
-  "scheduled_for": "2026-09-07T07:30:00+08:00",
-  "schedule_delay_seconds": 557.732298,
+  "scheduled_for": "2026-09-07T08:30:00+08:00",
+  "schedule_delay_seconds": 1152.332625,
   "predecessor": {
-    "date": "2026-09-06",
-    "stage": "BOOTSTRAP",
-    "run_id": "c4506760ca1c44248da3d349bc2b172a"
+    "date": "2026-09-07",
+    "stage": "0730",
+    "run_id": "c7de21a5905d43f99a2040b54c01e761"
   },
   "bootstrap_origin": {
     "target_date": "2026-09-07",
@@ -3548,7 +3374,7 @@
       "source": "cninfo_announcements",
       "url": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600685&announcementId=1225548850&orgId=gssh0600685&announcementTime=2026-09-05",
       "reliability": 0.95,
-      "freshness": 0.22701492168981485,
+      "freshness": 0.2108320500578703,
       "directness": 1.0,
       "priced_in_score": 12.633996937212844,
       "impact_score": null,
@@ -3697,11 +3523,11 @@
       "reliability": 0.95,
       "freshness": 0,
       "directness": 1.0,
-      "priced_in_score": 28.287461773700283,
+      "priced_in_score": null,
       "impact_score": null,
       "verified": false,
       "canonical_id": "cninfo:1225546574:600893",
-      "expectation": "Partially Priced",
+      "expectation": null,
       "expectation_basis": "规则代理：新鲜度与20日涨幅；未证明因果关系"
     },
     {
@@ -3718,11 +3544,11 @@
       "reliability": 0.95,
       "freshness": 0,
       "directness": 1.0,
-      "priced_in_score": 19.92031872509964,
+      "priced_in_score": null,
       "impact_score": null,
       "verified": false,
       "canonical_id": "cninfo:1225540698:601398",
-      "expectation": "Fresh Catalyst",
+      "expectation": null,
       "expectation_basis": "规则代理：新鲜度与20日涨幅；未证明因果关系"
     },
     {
@@ -3737,13 +3563,13 @@
       "source": "cninfo_announcements",
       "url": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=601288&announcementId=1225549635&orgId=jjxt0000020&announcementTime=2026-09-05",
       "reliability": 0.95,
-      "freshness": 0.22701492168981485,
+      "freshness": 0.2108320500578703,
       "directness": 1.0,
-      "priced_in_score": 18.933539412673895,
+      "priced_in_score": null,
       "impact_score": null,
       "verified": false,
       "canonical_id": "cninfo:1225549635:601288",
-      "expectation": "Fresh Catalyst",
+      "expectation": null,
       "expectation_basis": "规则代理：新鲜度与20日涨幅；未证明因果关系"
     },
     {
@@ -3760,11 +3586,11 @@
       "reliability": 0.95,
       "freshness": 0,
       "directness": 1.0,
-      "priced_in_score": 18.45151953690305,
+      "priced_in_score": null,
       "impact_score": null,
       "verified": false,
       "canonical_id": "cninfo:1225544702:601328",
-      "expectation": "Fresh Catalyst",
+      "expectation": null,
       "expectation_basis": "规则代理：新鲜度与20日涨幅；未证明因果关系"
     },
     {
@@ -3781,11 +3607,11 @@
       "reliability": 0.95,
       "freshness": 0,
       "directness": 1.0,
-      "priced_in_score": 18.45151953690305,
+      "priced_in_score": null,
       "impact_score": null,
       "verified": false,
       "canonical_id": "cninfo:1225544166:601328",
-      "expectation": "Fresh Catalyst",
+      "expectation": null,
       "expectation_basis": "规则代理：新鲜度与20日涨幅；未证明因果关系"
     },
     {
@@ -3802,11 +3628,11 @@
       "reliability": 0.95,
       "freshness": 0,
       "directness": 1.0,
-      "priced_in_score": 18.45151953690305,
+      "priced_in_score": null,
       "impact_score": null,
       "verified": false,
       "canonical_id": "cninfo:1225538964:601328",
-      "expectation": "Fresh Catalyst",
+      "expectation": null,
       "expectation_basis": "规则代理：新鲜度与20日涨幅；未证明因果关系"
     },
     {
@@ -3823,11 +3649,11 @@
       "reliability": 0.95,
       "freshness": 0,
       "directness": 1.0,
-      "priced_in_score": 22.761333832896195,
+      "priced_in_score": null,
       "impact_score": null,
       "verified": false,
       "canonical_id": "cninfo:1225543317:601318",
-      "expectation": "Fresh Catalyst",
+      "expectation": null,
       "expectation_basis": "规则代理：新鲜度与20日涨幅；未证明因果关系"
     },
     {
@@ -3844,11 +3670,11 @@
       "reliability": 0.95,
       "freshness": 0,
       "directness": 1.0,
-      "priced_in_score": 22.761333832896195,
+      "priced_in_score": null,
       "impact_score": null,
       "verified": false,
       "canonical_id": "cninfo:1225541592:601318",
-      "expectation": "Fresh Catalyst",
+      "expectation": null,
       "expectation_basis": "规则代理：新鲜度与20日涨幅；未证明因果关系"
     },
     {
@@ -3865,11 +3691,11 @@
       "reliability": 0.95,
       "freshness": 0,
       "directness": 1.0,
-      "priced_in_score": 15.04297994269338,
+      "priced_in_score": null,
       "impact_score": null,
       "verified": false,
       "canonical_id": "cninfo:1225543744:000776",
-      "expectation": "Fresh Catalyst",
+      "expectation": null,
       "expectation_basis": "规则代理：新鲜度与20日涨幅；未证明因果关系"
     },
     {
@@ -3886,11 +3712,11 @@
       "reliability": 0.95,
       "freshness": 0,
       "directness": 1.0,
-      "priced_in_score": 15.04297994269338,
+      "priced_in_score": null,
       "impact_score": null,
       "verified": false,
       "canonical_id": "cninfo:1225541287:000776",
-      "expectation": "Fresh Catalyst",
+      "expectation": null,
       "expectation_basis": "规则代理：新鲜度与20日涨幅；未证明因果关系"
     },
     {
@@ -3907,11 +3733,11 @@
       "reliability": 0.95,
       "freshness": 0,
       "directness": 1.0,
-      "priced_in_score": 15.04297994269338,
+      "priced_in_score": null,
       "impact_score": null,
       "verified": false,
       "canonical_id": "cninfo:1225541359:000776",
-      "expectation": "Fresh Catalyst",
+      "expectation": null,
       "expectation_basis": "规则代理：新鲜度与20日涨幅；未证明因果关系"
     },
     {
@@ -3928,11 +3754,11 @@
       "reliability": 0.95,
       "freshness": 0,
       "directness": 1.0,
-      "priced_in_score": 37.28813559322036,
+      "priced_in_score": null,
       "impact_score": null,
       "verified": false,
       "canonical_id": "cninfo:1225540840:600026",
-      "expectation": "Partially Priced",
+      "expectation": null,
       "expectation_basis": "规则代理：新鲜度与20日涨幅；未证明因果关系"
     },
     {
@@ -3949,11 +3775,11 @@
       "reliability": 0.95,
       "freshness": 0,
       "directness": 1.0,
-      "priced_in_score": 37.28813559322036,
+      "priced_in_score": null,
       "impact_score": null,
       "verified": false,
       "canonical_id": "cninfo:1225540838:600026",
-      "expectation": "Partially Priced",
+      "expectation": null,
       "expectation_basis": "规则代理：新鲜度与20日涨幅；未证明因果关系"
     },
     {
@@ -3970,11 +3796,11 @@
       "reliability": 0.95,
       "freshness": 0,
       "directness": 1.0,
-      "priced_in_score": 37.28813559322036,
+      "priced_in_score": null,
       "impact_score": null,
       "verified": false,
       "canonical_id": "cninfo:1225540836:600026",
-      "expectation": "Partially Priced",
+      "expectation": null,
       "expectation_basis": "规则代理：新鲜度与20日涨幅；未证明因果关系"
     },
     {
@@ -3989,13 +3815,13 @@
       "source": "cninfo_announcements",
       "url": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600887&announcementId=1225547701&orgId=gssh0600887&announcementTime=2026-09-05",
       "reliability": 0.95,
-      "freshness": 0.22701492168981485,
+      "freshness": 0.2108320500578703,
       "directness": 1.0,
-      "priced_in_score": 6.199923693246845,
+      "priced_in_score": null,
       "impact_score": null,
       "verified": false,
       "canonical_id": "cninfo:1225547701:600887",
-      "expectation": "Fresh Catalyst",
+      "expectation": null,
       "expectation_basis": "规则代理：新鲜度与20日涨幅；未证明因果关系"
     },
     {
@@ -4010,13 +3836,13 @@
       "source": "cninfo_announcements",
       "url": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600887&announcementId=1225547678&orgId=gssh0600887&announcementTime=2026-09-05",
       "reliability": 0.95,
-      "freshness": 0.22701492168981485,
+      "freshness": 0.2108320500578703,
       "directness": 1.0,
-      "priced_in_score": 6.199923693246845,
+      "priced_in_score": null,
       "impact_score": null,
       "verified": false,
       "canonical_id": "cninfo:1225547678:600887",
-      "expectation": "Fresh Catalyst",
+      "expectation": null,
       "expectation_basis": "规则代理：新鲜度与20日涨幅；未证明因果关系"
     },
     {
@@ -4033,11 +3859,11 @@
       "reliability": 0.95,
       "freshness": 0,
       "directness": 1.0,
-      "priced_in_score": 6.199923693246845,
+      "priced_in_score": null,
       "impact_score": null,
       "verified": false,
       "canonical_id": "cninfo:1225536213:600887",
-      "expectation": "Fresh Catalyst",
+      "expectation": null,
       "expectation_basis": "规则代理：新鲜度与20日涨幅；未证明因果关系"
     },
     {
@@ -4052,13 +3878,13 @@
       "source": "cninfo_announcements",
       "url": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=601336&announcementId=1225549968&orgId=GD040482&announcementTime=2026-09-05",
       "reliability": 0.95,
-      "freshness": 0.22701492168981485,
+      "freshness": 0.2108320500578703,
       "directness": 1.0,
-      "priced_in_score": 6.55291790306628,
+      "priced_in_score": null,
       "impact_score": null,
       "verified": false,
       "canonical_id": "cninfo:1225549968:601336",
-      "expectation": "Fresh Catalyst",
+      "expectation": null,
       "expectation_basis": "规则代理：新鲜度与20日涨幅；未证明因果关系"
     },
     {
@@ -4075,11 +3901,11 @@
       "reliability": 0.95,
       "freshness": 0,
       "directness": 1.0,
-      "priced_in_score": 6.55291790306628,
+      "priced_in_score": null,
       "impact_score": null,
       "verified": false,
       "canonical_id": "cninfo:1225543605:601336",
-      "expectation": "Fresh Catalyst",
+      "expectation": null,
       "expectation_basis": "规则代理：新鲜度与20日涨幅；未证明因果关系"
     },
     {
@@ -4096,11 +3922,11 @@
       "reliability": 0.95,
       "freshness": 0,
       "directness": 1.0,
-      "priced_in_score": 6.084070796460173,
+      "priced_in_score": null,
       "impact_score": null,
       "verified": false,
       "canonical_id": "cninfo:1225542473:000783",
-      "expectation": "Fresh Catalyst",
+      "expectation": null,
       "expectation_basis": "规则代理：新鲜度与20日涨幅；未证明因果关系"
     },
     {
@@ -4115,13 +3941,13 @@
       "source": "cninfo_announcements",
       "url": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600999&announcementId=1225548959&orgId=qsgn0000118&announcementTime=2026-09-05",
       "reliability": 0.95,
-      "freshness": 0.22701492168981485,
+      "freshness": 0.2108320500578703,
       "directness": 1.0,
-      "priced_in_score": 4.670329670329654,
+      "priced_in_score": null,
       "impact_score": null,
       "verified": false,
       "canonical_id": "cninfo:1225548959:600999",
-      "expectation": "Fresh Catalyst",
+      "expectation": null,
       "expectation_basis": "规则代理：新鲜度与20日涨幅；未证明因果关系"
     },
     {
@@ -4138,11 +3964,11 @@
       "reliability": 0.95,
       "freshness": 0,
       "directness": 1.0,
-      "priced_in_score": 3.889032927145486,
+      "priced_in_score": null,
       "impact_score": null,
       "verified": false,
       "canonical_id": "cninfo:1225543754:601628",
-      "expectation": "Fresh Catalyst",
+      "expectation": null,
       "expectation_basis": "规则代理：新鲜度与20日涨幅；未证明因果关系"
     },
     {
@@ -4159,102 +3985,22 @@
       "reliability": 0.95,
       "freshness": 0,
       "directness": 1.0,
-      "priced_in_score": 3.889032927145486,
+      "priced_in_score": null,
       "impact_score": null,
       "verified": false,
       "canonical_id": "cninfo:1225543748:601628",
-      "expectation": "Fresh Catalyst",
+      "expectation": null,
       "expectation_basis": "规则代理：新鲜度与20日涨幅；未证明因果关系"
     }
   ],
   "transitions": [
     {
-      "stock_code": "600887",
+      "stock_code": "601601",
       "transition": "淘汰",
       "reason": "排名未进入阶段上限"
     },
     {
-      "stock_code": "601628",
-      "transition": "淘汰",
-      "reason": "排名未进入阶段上限"
-    },
-    {
-      "stock_code": "000783",
-      "transition": "淘汰",
-      "reason": "排名未进入阶段上限"
-    },
-    {
-      "stock_code": "601328",
-      "transition": "淘汰",
-      "reason": "排名未进入阶段上限"
-    },
-    {
-      "stock_code": "601318",
-      "transition": "淘汰",
-      "reason": "排名未进入阶段上限"
-    },
-    {
-      "stock_code": "600016",
-      "transition": "淘汰",
-      "reason": "排名未进入阶段上限"
-    },
-    {
-      "stock_code": "600415",
-      "transition": "淘汰",
-      "reason": "排名未进入阶段上限"
-    },
-    {
-      "stock_code": "600026",
-      "transition": "淘汰",
-      "reason": "排名未进入阶段上限"
-    },
-    {
-      "stock_code": "601336",
-      "transition": "淘汰",
-      "reason": "排名未进入阶段上限"
-    },
-    {
-      "stock_code": "601288",
-      "transition": "淘汰",
-      "reason": "排名未进入阶段上限"
-    },
-    {
-      "stock_code": "600893",
-      "transition": "淘汰",
-      "reason": "排名未进入阶段上限"
-    },
-    {
-      "stock_code": "601398",
-      "transition": "淘汰",
-      "reason": "排名未进入阶段上限"
-    },
-    {
-      "stock_code": "600999",
-      "transition": "淘汰",
-      "reason": "排名未进入阶段上限"
-    },
-    {
-      "stock_code": "000001",
-      "transition": "淘汰",
-      "reason": "排名未进入阶段上限"
-    },
-    {
-      "stock_code": "000997",
-      "transition": "淘汰",
-      "reason": "排名未进入阶段上限"
-    },
-    {
-      "stock_code": "000776",
-      "transition": "淘汰",
-      "reason": "排名未进入阶段上限"
-    },
-    {
-      "stock_code": "600103",
-      "transition": "淘汰",
-      "reason": "排名未进入阶段上限"
-    },
-    {
-      "stock_code": "600036",
+      "stock_code": "000564",
       "transition": "淘汰",
       "reason": "排名未进入阶段上限"
     }
@@ -4262,7 +4008,7 @@
   "limit_pool": [],
   "position_counts": {
     "启动观察": 0,
-    "趋势观察": 30,
+    "趋势观察": 12,
     "高位观察": 0,
     "回调观察": 0,
     "排除": 0
@@ -4277,7 +4023,7 @@
       "source_name": "cninfo_announcements",
       "operation": "events",
       "success": false,
-      "fetched_at": "2026-09-07T07:39:44.803154+08:00",
+      "fetched_at": "2026-09-07T08:49:40.438294+08:00",
       "timestamp": null,
       "reliability_level": 0.95,
       "fallback_priority": 0,
@@ -4290,7 +4036,7 @@
       "source_name": "eastmoney_announcements",
       "operation": "events",
       "success": false,
-      "fetched_at": "2026-09-07T07:39:46.896976+08:00",
+      "fetched_at": "2026-09-07T08:49:42.223490+08:00",
       "timestamp": null,
       "reliability_level": 0.85,
       "fallback_priority": 1,
@@ -4305,11 +4051,11 @@
     "cninfo_announcements",
     "eastmoney_announcements"
   ],
-  "stock_count": 30,
+  "stock_count": 12,
   "sector_count": 49,
-  "candidate_count": 12,
-  "dashboard_updated_at": "2026-09-07T07:39:46.903004+08:00",
-  "finished_at": "2026-09-07T07:39:46.903010+08:00",
+  "candidate_count": 10,
+  "dashboard_updated_at": "2026-09-07T08:49:42.250282+08:00",
+  "finished_at": "2026-09-07T08:49:42.250290+08:00",
   "google_docs": {
     "status": "SYNCED",
     "sent": 1,

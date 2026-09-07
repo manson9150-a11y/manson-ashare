@@ -1,0 +1,23 @@
+{
+  "run_id": "d001bdd9c0aa4d008b004aa138255d4a",
+  "date": "2026-09-07",
+  "stage": "0830",
+  "status": "COMPLETE",
+  "started_at": "2026-09-07T08:49:12.332625+08:00",
+  "finished_at": "2026-09-07T08:49:42.250290+08:00",
+  "source_success_rate": 0.0,
+  "failed_sources": [
+    "cninfo_announcements",
+    "eastmoney_announcements"
+  ],
+  "stock_count": 12,
+  "sector_count": 49,
+  "candidate_count": 10,
+  "google_docs": {
+    "status": "SYNCED",
+    "sent": 1,
+    "failed": 0
+  },
+  "dashboard_updated_at": "2026-09-07T08:49:42.250282+08:00",
+  "errors": []
+}
