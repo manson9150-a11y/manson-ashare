@@ -1,17 +1,18 @@
 {
-  "run_id": "c6edbbfc24914f1b97563702a75586ce",
+  "run_id": "4e3c7dbb580e41a4b416e0b8faeaa996",
   "date": "2026-09-08",
-  "stage": "0730",
-  "stage_label": "隔夜确认",
+  "stage": "0830",
+  "stage_label": "盘前终审",
   "mode": "live",
-  "started_at": "2026-09-08T07:39:40.585162+08:00",
-  "as_of_time": "2026-09-08T07:39:40.585162+08:00",
+  "started_at": "2026-09-08T08:49:34.768880+08:00",
+  "as_of_time": "2026-09-08T08:49:34.768880+08:00",
   "status": "COMPLETE",
   "warnings": [
     "悟道采集未完整成功：MEMBERS_TIME_UNKNOWN；可用数据明确展示，其余沿用原接口，不能声称已覆盖全市场题材。",
     "悟道热点按题材强度和行业涨幅展示；系统规则分独立计算。前十题材成分为当前分类，仅用于本次及后续研究。",
     "行情沿用 2026-09-07 正式收盘快照；本阶段刷新事件与悟道热点参考。隔夜变量未接入，市场分为前收盘参考。",
-    "公告列表中84条仅精确到日期：当天记录须在研究截点前已被系统观察才纳入；首次观察时间独立保存，不冒充发布时间。标题分类仍须正文核验。"
+    "公告源不可用；仅保留已知事件。",
+    "公告列表中59条仅精确到日期：当天记录须在研究截点前已被系统观察才纳入；首次观察时间独立保存，不冒充发布时间。标题分类仍须正文核验。"
   ],
   "errors": [],
   "data_quality": {
@@ -21,7 +22,7 @@
     "rejected": [],
     "conflicts": [],
     "expected_trade_date": "2026-09-07",
-    "as_of_time": "2026-09-08T07:39:40.585162+08:00",
+    "as_of_time": "2026-09-08T08:49:34.768880+08:00",
     "history_coverage": 0.98,
     "sector_mapping_coverage": 0.47305820868624976
   },
@@ -830,12 +831,19 @@
         "validation_condition": "板块维持扩散，价格守住MA20（1.5145），ATR不过热",
         "invalidation_condition": "板块转弱、放量跌破MA20或出现重大风险公告",
         "exclusion_reason": null,
-        "rank_history": [],
+        "rank_history": [
+          {
+            "date": "2026-09-08",
+            "stage": "0730",
+            "rank": 1,
+            "score": 80.52
+          }
+        ],
         "pool": "POOL_B",
         "transition": "维持",
         "rank": 1,
         "date": "2026-09-08",
-        "stage": "0730",
+        "stage": "0830",
         "wudao_themes": []
       },
       {
@@ -1597,12 +1605,19 @@
         "validation_condition": "板块维持扩散，价格守住MA20（14.711000000000002），ATR不过热",
         "invalidation_condition": "板块转弱、放量跌破MA20或出现重大风险公告",
         "exclusion_reason": null,
-        "rank_history": [],
+        "rank_history": [
+          {
+            "date": "2026-09-08",
+            "stage": "0730",
+            "rank": 2,
+            "score": 80.12
+          }
+        ],
         "pool": "POOL_B",
         "transition": "维持",
         "rank": 2,
         "date": "2026-09-08",
-        "stage": "0730",
+        "stage": "0830",
         "wudao_themes": []
       },
       {
@@ -2407,12 +2422,19 @@
         "validation_condition": "板块维持扩散，价格守住MA20（11.751000000000001），ATR不过热",
         "invalidation_condition": "板块转弱、放量跌破MA20或出现重大风险公告",
         "exclusion_reason": null,
-        "rank_history": [],
+        "rank_history": [
+          {
+            "date": "2026-09-08",
+            "stage": "0730",
+            "rank": 3,
+            "score": 78.58
+          }
+        ],
         "pool": "POOL_B",
         "transition": "维持",
         "rank": 3,
         "date": "2026-09-08",
-        "stage": "0730",
+        "stage": "0830",
         "wudao_themes": [
           "国产芯片概念"
         ]
@@ -3198,12 +3220,19 @@
         "validation_condition": "板块维持扩散，价格守住MA20（8.9045），ATR不过热",
         "invalidation_condition": "板块转弱、放量跌破MA20或出现重大风险公告",
         "exclusion_reason": null,
-        "rank_history": [],
+        "rank_history": [
+          {
+            "date": "2026-09-08",
+            "stage": "0730",
+            "rank": 4,
+            "score": 76.2
+          }
+        ],
         "pool": "POOL_B",
         "transition": "维持",
         "rank": 4,
         "date": "2026-09-08",
-        "stage": "0730",
+        "stage": "0830",
         "wudao_themes": []
       },
       {
@@ -3965,12 +3994,19 @@
         "validation_condition": "板块维持扩散，价格守住MA20（16.551），ATR不过热",
         "invalidation_condition": "板块转弱、放量跌破MA20或出现重大风险公告",
         "exclusion_reason": null,
-        "rank_history": [],
+        "rank_history": [
+          {
+            "date": "2026-09-08",
+            "stage": "0730",
+            "rank": 5,
+            "score": 74.95
+          }
+        ],
         "pool": "POOL_B",
         "transition": "维持",
         "rank": 5,
         "date": "2026-09-08",
-        "stage": "0730",
+        "stage": "0830",
         "wudao_themes": []
       },
       {
@@ -4754,12 +4790,19 @@
         "validation_condition": "板块维持扩散，价格守住MA20（24.5085），ATR不过热",
         "invalidation_condition": "板块转弱、放量跌破MA20或出现重大风险公告",
         "exclusion_reason": null,
-        "rank_history": [],
+        "rank_history": [
+          {
+            "date": "2026-09-08",
+            "stage": "0730",
+            "rank": 6,
+            "score": 74.68
+          }
+        ],
         "pool": "POOL_B",
         "transition": "维持",
         "rank": 6,
         "date": "2026-09-08",
-        "stage": "0730",
+        "stage": "0830",
         "wudao_themes": []
       },
       {
@@ -5732,12 +5775,19 @@
         "validation_condition": "板块维持扩散，价格守住MA20（34.717），ATR不过热",
         "invalidation_condition": "板块转弱、放量跌破MA20或出现重大风险公告",
         "exclusion_reason": null,
-        "rank_history": [],
+        "rank_history": [
+          {
+            "date": "2026-09-08",
+            "stage": "0730",
+            "rank": 7,
+            "score": 73.98
+          }
+        ],
         "pool": "POOL_B",
         "transition": "维持",
         "rank": 7,
         "date": "2026-09-08",
-        "stage": "0730",
+        "stage": "0830",
         "wudao_themes": [
           "光通信设备",
           "核心城市算力"
@@ -6524,12 +6574,19 @@
         "validation_condition": "板块维持扩散，价格守住MA20（6.28），ATR不过热",
         "invalidation_condition": "板块转弱、放量跌破MA20或出现重大风险公告",
         "exclusion_reason": null,
-        "rank_history": [],
+        "rank_history": [
+          {
+            "date": "2026-09-08",
+            "stage": "0730",
+            "rank": 8,
+            "score": 73.48
+          }
+        ],
         "pool": "POOL_B",
         "transition": "维持",
         "rank": 8,
         "date": "2026-09-08",
-        "stage": "0730",
+        "stage": "0830",
         "wudao_themes": []
       },
       {
@@ -7291,12 +7348,19 @@
         "validation_condition": "板块维持扩散，价格守住MA20（64.266），ATR不过热",
         "invalidation_condition": "板块转弱、放量跌破MA20或出现重大风险公告",
         "exclusion_reason": null,
-        "rank_history": [],
+        "rank_history": [
+          {
+            "date": "2026-09-08",
+            "stage": "0730",
+            "rank": 9,
+            "score": 73.09
+          }
+        ],
         "pool": "POOL_B",
         "transition": "维持",
         "rank": 9,
         "date": "2026-09-08",
-        "stage": "0730",
+        "stage": "0830",
         "wudao_themes": []
       },
       {
@@ -8185,1611 +8249,19 @@
         "validation_condition": "板块维持扩散，价格守住MA20（23.1065），ATR不过热",
         "invalidation_condition": "板块转弱、放量跌破MA20或出现重大风险公告",
         "exclusion_reason": null,
-        "rank_history": [],
+        "rank_history": [
+          {
+            "date": "2026-09-08",
+            "stage": "0730",
+            "rank": 10,
+            "score": 72.3
+          }
+        ],
         "pool": "POOL_B",
         "transition": "维持",
         "rank": 10,
         "date": "2026-09-08",
-        "stage": "0730",
-        "wudao_themes": []
-      },
-      {
-        "code": "600095",
-        "name": "湘财股份",
-        "price": 9.63,
-        "previous_close": 10.17,
-        "open": 9.87,
-        "high": 10.1,
-        "low": 9.52,
-        "volume": 118465199.0,
-        "amount": 1145184828.0,
-        "change_pct": -5.309734513274334,
-        "turnover": null,
-        "volume_ratio": null,
-        "float_cap": null,
-        "timestamp": "2026-09-07T15:34:59+08:00",
-        "fetched_at": "2026-09-07T16:15:48.299335+08:00",
-        "source": "sina",
-        "reliability": 0.8,
-        "fallback": true,
-        "cached": false,
-        "suspended": false,
-        "industry": null,
-        "limit_up_price": null,
-        "limit_down_price": null,
-        "bars_count": 101,
-        "ma5": 9.738000000000001,
-        "distance_ma5": -1.1090573012939031,
-        "slope_ma5": 0.22643062988887408,
-        "ma10": 9.385,
-        "distance_ma10": 2.6105487480021505,
-        "slope_ma10": 1.955458989679526,
-        "ma20": 8.663,
-        "distance_ma20": 11.162414867828696,
-        "slope_ma20": 0.8439555322740322,
-        "ma60": 8.315333333333333,
-        "distance_ma60": 15.810149923835493,
-        "slope_ma60": 0.3560293673941617,
-        "return_1d": -5.309734513274334,
-        "return_3d": 0.31250000000000444,
-        "return_5d": 1.1554621848739677,
-        "return_10d": 22.988505747126453,
-        "return_20d": 17.72616136919316,
-        "amount_mean_5d": null,
-        "amount_ratio_5d": null,
-        "amount_mean_10d": null,
-        "amount_ratio_10d": null,
-        "amount_mean_20d": null,
-        "amount_ratio_20d": null,
-        "atr": 0.4417384841257711,
-        "natr": 4.587107831004892,
-        "move_atr": 1.157534269716772,
-        "bull_alignment": true,
-        "new_high_5d": false,
-        "new_high_20d": false,
-        "breakout": false,
-        "consecutive_up_2": false,
-        "consecutive_up_3": false,
-        "history_source": "tencent",
-        "as_of_time": "2026-09-07T16:14:28.529786+08:00",
-        "bars": [
-          {
-            "timestamp": "2026-06-08T07:00:00+00:00",
-            "open": 7.72,
-            "close": 7.62,
-            "high": 7.86,
-            "low": 7.54,
-            "volume": 23017100.0,
-            "amount": null,
-            "source": "tencent"
-          },
-          {
-            "timestamp": "2026-06-09T07:00:00+00:00",
-            "open": 7.66,
-            "close": 7.66,
-            "high": 7.69,
-            "low": 7.53,
-            "volume": 16793400.0,
-            "amount": null,
-            "source": "tencent"
-          },
-          {
-            "timestamp": "2026-06-10T07:00:00+00:00",
-            "open": 7.61,
-            "close": 7.65,
-            "high": 7.67,
-            "low": 7.49,
-            "volume": 18841500.0,
-            "amount": null,
-            "source": "tencent"
-          },
-          {
-            "timestamp": "2026-06-11T07:00:00+00:00",
-            "open": 7.59,
-            "close": 7.49,
-            "high": 7.68,
-            "low": 7.41,
-            "volume": 16953600.0,
-            "amount": null,
-            "source": "tencent"
-          },
-          {
-            "timestamp": "2026-06-12T07:00:00+00:00",
-            "open": 7.51,
-            "close": 7.86,
-            "high": 7.91,
-            "low": 7.46,
-            "volume": 36715100.0,
-            "amount": null,
-            "source": "tencent"
-          },
-          {
-            "timestamp": "2026-06-15T07:00:00+00:00",
-            "open": 7.88,
-            "close": 8.09,
-            "high": 8.38,
-            "low": 7.88,
-            "volume": 43568600.0,
-            "amount": null,
-            "source": "tencent"
-          },
-          {
-            "timestamp": "2026-06-16T07:00:00+00:00",
-            "open": 8.07,
-            "close": 8.18,
-            "high": 8.25,
-            "low": 7.96,
-            "volume": 24655700.0,
-            "amount": null,
-            "source": "tencent"
-          },
-          {
-            "timestamp": "2026-06-17T07:00:00+00:00",
-            "open": 8.12,
-            "close": 8.01,
-            "high": 8.23,
-            "low": 7.97,
-            "volume": 20586300.0,
-            "amount": null,
-            "source": "tencent"
-          },
-          {
-            "timestamp": "2026-06-18T07:00:00+00:00",
-            "open": 7.98,
-            "close": 7.74,
-            "high": 8.01,
-            "low": 7.72,
-            "volume": 22446600.0,
-            "amount": null,
-            "source": "tencent"
-          },
-          {
-            "timestamp": "2026-06-22T07:00:00+00:00",
-            "open": 7.71,
-            "close": 8.27,
-            "high": 8.28,
-            "low": 7.64,
-            "volume": 47990500.0,
-            "amount": null,
-            "source": "tencent"
-          },
-          {
-            "timestamp": "2026-06-23T07:00:00+00:00",
-            "open": 8.2,
-            "close": 8.3,
-            "high": 8.52,
-            "low": 8.13,
-            "volume": 49274200.0,
-            "amount": null,
-            "source": "tencent"
-          },
-          {
-            "timestamp": "2026-06-24T07:00:00+00:00",
-            "open": 8.26,
-            "close": 7.95,
-            "high": 8.36,
-            "low": 7.9,
-            "volume": 35752500.0,
-            "amount": null,
-            "source": "tencent"
-          },
-          {
-            "timestamp": "2026-06-25T07:00:00+00:00",
-            "open": 7.95,
-            "close": 8.11,
-            "high": 8.24,
-            "low": 7.84,
-            "volume": 45497900.0,
-            "amount": null,
-            "source": "tencent"
-          },
-          {
-            "timestamp": "2026-06-26T07:00:00+00:00",
-            "open": 8.05,
-            "close": 7.57,
-            "high": 8.11,
-            "low": 7.57,
-            "volume": 39839700.0,
-            "amount": null,
-            "source": "tencent"
-          },
-          {
-            "timestamp": "2026-06-29T07:00:00+00:00",
-            "open": 7.57,
-            "close": 7.54,
-            "high": 7.66,
-            "low": 7.42,
-            "volume": 25402200.0,
-            "amount": null,
-            "source": "tencent"
-          },
-          {
-            "timestamp": "2026-06-30T07:00:00+00:00",
-            "open": 7.54,
-            "close": 7.53,
-            "high": 7.65,
-            "low": 7.41,
-            "volume": 23278700.0,
-            "amount": null,
-            "source": "tencent"
-          },
-          {
-            "timestamp": "2026-07-01T07:00:00+00:00",
-            "open": 7.51,
-            "close": 8.03,
-            "high": 8.22,
-            "low": 7.47,
-            "volume": 58843900.0,
-            "amount": null,
-            "source": "tencent"
-          },
-          {
-            "timestamp": "2026-07-02T07:00:00+00:00",
-            "open": 7.95,
-            "close": 7.82,
-            "high": 8.14,
-            "low": 7.79,
-            "volume": 36343300.0,
-            "amount": null,
-            "source": "tencent"
-          },
-          {
-            "timestamp": "2026-07-03T07:00:00+00:00",
-            "open": 7.89,
-            "close": 7.79,
-            "high": 7.96,
-            "low": 7.68,
-            "volume": 26195800.0,
-            "amount": null,
-            "source": "tencent"
-          },
-          {
-            "timestamp": "2026-07-06T07:00:00+00:00",
-            "open": 7.86,
-            "close": 7.75,
-            "high": 7.9,
-            "low": 7.69,
-            "volume": 21351000.0,
-            "amount": null,
-            "source": "tencent"
-          },
-          {
-            "timestamp": "2026-07-07T07:00:00+00:00",
-            "open": 7.7,
-            "close": 7.52,
-            "high": 7.71,
-            "low": 7.48,
-            "volume": 20882700.0,
-            "amount": null,
-            "source": "tencent"
-          },
-          {
-            "timestamp": "2026-07-08T07:00:00+00:00",
-            "open": 7.52,
-            "close": 7.5,
-            "high": 7.6,
-            "low": 7.43,
-            "volume": 13728500.0,
-            "amount": null,
-            "source": "tencent"
-          },
-          {
-            "timestamp": "2026-07-09T07:00:00+00:00",
-            "open": 7.49,
-            "close": 7.6,
-            "high": 7.63,
-            "low": 7.45,
-            "volume": 19483900.0,
-            "amount": null,
-            "source": "tencent"
-          },
-          {
-            "timestamp": "2026-07-10T07:00:00+00:00",
-            "open": 7.57,
-            "close": 7.46,
-            "high": 7.57,
-            "low": 7.3,
-            "volume": 26811900.0,
-            "amount": null,
-            "source": "tencent"
-          },
-          {
-            "timestamp": "2026-07-13T07:00:00+00:00",
-            "open": 7.42,
-            "close": 7.21,
-            "high": 7.45,
-            "low": 7.2,
-            "volume": 22285000.0,
-            "amount": null,
-            "source": "tencent"
-          },
-          {
-            "timestamp": "2026-07-14T07:00:00+00:00",
-            "open": 7.47,
-            "close": 7.65,
-            "high": 7.73,
-            "low": 7.45,
-            "volume": 49377900.0,
-            "amount": null,
-            "source": "tencent"
-          },
-          {
-            "timestamp": "2026-07-15T07:00:00+00:00",
-            "open": 7.54,
-            "close": 7.81,
-            "high": 7.86,
-            "low": 7.51,
-            "volume": 42879700.0,
-            "amount": null,
-            "source": "tencent"
-          },
-          {
-            "timestamp": "2026-07-16T07:00:00+00:00",
-            "open": 7.7,
-            "close": 7.9,
-            "high": 7.99,
-            "low": 7.68,
-            "volume": 38669400.0,
-            "amount": null,
-            "source": "tencent"
-          },
-          {
-            "timestamp": "2026-07-17T07:00:00+00:00",
-            "open": 7.91,
-            "close": 8.69,
-            "high": 8.69,
-            "low": 7.89,
-            "volume": 115301600.0,
-            "amount": null,
-            "source": "tencent"
-          },
-          {
-            "timestamp": "2026-07-20T07:00:00+00:00",
-            "open": 8.89,
-            "close": 9.12,
-            "high": 9.42,
-            "low": 8.69,
-            "volume": 158981700.0,
-            "amount": null,
-            "source": "tencent"
-          },
-          {
-            "timestamp": "2026-07-21T07:00:00+00:00",
-            "open": 8.9,
-            "close": 8.98,
-            "high": 9.03,
-            "low": 8.51,
-            "volume": 120379700.0,
-            "amount": null,
-            "source": "tencent"
-          },
-          {
-            "timestamp": "2026-07-22T07:00:00+00:00",
-            "open": 8.81,
-            "close": 9.16,
-            "high": 9.24,
-            "low": 8.62,
-            "volume": 115629900.0,
-            "amount": null,
-            "source": "tencent"
-          },
-          {
-            "timestamp": "2026-07-23T07:00:00+00:00",
-            "open": 9.0,
-            "close": 9.05,
-            "high": 9.17,
-            "low": 8.9,
-            "volume": 85689400.0,
-            "amount": null,
-            "source": "tencent"
-          },
-          {
-            "timestamp": "2026-07-24T07:00:00+00:00",
-            "open": 8.84,
-            "close": 8.53,
-            "high": 9.15,
-            "low": 8.53,
-            "volume": 75242100.0,
-            "amount": null,
-            "source": "tencent"
-          },
-          {
-            "timestamp": "2026-07-27T07:00:00+00:00",
-            "open": 8.43,
-            "close": 8.54,
-            "high": 8.56,
-            "low": 8.15,
-            "volume": 60692700.0,
-            "amount": null,
-            "source": "tencent"
-          },
-          {
-            "timestamp": "2026-07-28T07:00:00+00:00",
-            "open": 8.34,
-            "close": 8.66,
-            "high": 8.8,
-            "low": 8.32,
-            "volume": 55503100.0,
-            "amount": null,
-            "source": "tencent"
-          },
-          {
-            "timestamp": "2026-07-29T07:00:00+00:00",
-            "open": 8.56,
-            "close": 8.77,
-            "high": 8.83,
-            "low": 8.45,
-            "volume": 61509300.0,
-            "amount": null,
-            "source": "tencent"
-          },
-          {
-            "timestamp": "2026-07-30T07:00:00+00:00",
-            "open": 8.68,
-            "close": 8.71,
-            "high": 8.85,
-            "low": 8.6,
-            "volume": 47045300.0,
-            "amount": null,
-            "source": "tencent"
-          },
-          {
-            "timestamp": "2026-07-31T07:00:00+00:00",
-            "open": 8.61,
-            "close": 8.72,
-            "high": 8.78,
-            "low": 8.56,
-            "volume": 45734000.0,
-            "amount": null,
-            "source": "tencent"
-          },
-          {
-            "timestamp": "2026-08-03T07:00:00+00:00",
-            "open": 8.23,
-            "close": 8.11,
-            "high": 8.29,
-            "low": 7.86,
-            "volume": 88032200.0,
-            "amount": null,
-            "source": "tencent"
-          },
-          {
-            "timestamp": "2026-08-04T07:00:00+00:00",
-            "open": 8.17,
-            "close": 8.34,
-            "high": 8.47,
-            "low": 8.11,
-            "volume": 53550400.0,
-            "amount": null,
-            "source": "tencent"
-          },
-          {
-            "timestamp": "2026-08-05T07:00:00+00:00",
-            "open": 8.34,
-            "close": 8.37,
-            "high": 8.52,
-            "low": 8.32,
-            "volume": 38789200.0,
-            "amount": null,
-            "source": "tencent"
-          },
-          {
-            "timestamp": "2026-08-06T07:00:00+00:00",
-            "open": 8.4,
-            "close": 8.22,
-            "high": 8.43,
-            "low": 8.17,
-            "volume": 29333700.0,
-            "amount": null,
-            "source": "tencent"
-          },
-          {
-            "timestamp": "2026-08-07T07:00:00+00:00",
-            "open": 8.2,
-            "close": 8.18,
-            "high": 8.21,
-            "low": 8.06,
-            "volume": 25895700.0,
-            "amount": null,
-            "source": "tencent"
-          },
-          {
-            "timestamp": "2026-08-10T07:00:00+00:00",
-            "open": 8.18,
-            "close": 8.18,
-            "high": 8.29,
-            "low": 8.13,
-            "volume": 24672000.0,
-            "amount": null,
-            "source": "tencent"
-          },
-          {
-            "timestamp": "2026-08-11T07:00:00+00:00",
-            "open": 8.15,
-            "close": 8.13,
-            "high": 8.21,
-            "low": 8.1,
-            "volume": 20216600.0,
-            "amount": null,
-            "source": "tencent"
-          },
-          {
-            "timestamp": "2026-08-12T07:00:00+00:00",
-            "open": 8.14,
-            "close": 8.24,
-            "high": 8.27,
-            "low": 8.1,
-            "volume": 27574500.0,
-            "amount": null,
-            "source": "tencent"
-          },
-          {
-            "timestamp": "2026-08-13T07:00:00+00:00",
-            "open": 8.24,
-            "close": 8.15,
-            "high": 8.35,
-            "low": 8.14,
-            "volume": 34405400.0,
-            "amount": null,
-            "source": "tencent"
-          },
-          {
-            "timestamp": "2026-08-14T07:00:00+00:00",
-            "open": 8.13,
-            "close": 7.94,
-            "high": 8.18,
-            "low": 7.91,
-            "volume": 33710300.0,
-            "amount": null,
-            "source": "tencent"
-          },
-          {
-            "timestamp": "2026-08-17T07:00:00+00:00",
-            "open": 7.94,
-            "close": 8.07,
-            "high": 8.08,
-            "low": 7.85,
-            "volume": 24888000.0,
-            "amount": null,
-            "source": "tencent"
-          },
-          {
-            "timestamp": "2026-08-18T07:00:00+00:00",
-            "open": 8.05,
-            "close": 7.87,
-            "high": 8.06,
-            "low": 7.82,
-            "volume": 22811700.0,
-            "amount": null,
-            "source": "tencent"
-          },
-          {
-            "timestamp": "2026-08-19T07:00:00+00:00",
-            "open": 7.85,
-            "close": 7.68,
-            "high": 7.9,
-            "low": 7.68,
-            "volume": 22913200.0,
-            "amount": null,
-            "source": "tencent"
-          },
-          {
-            "timestamp": "2026-08-20T07:00:00+00:00",
-            "open": 7.71,
-            "close": 7.73,
-            "high": 7.76,
-            "low": 7.65,
-            "volume": 15537600.0,
-            "amount": null,
-            "source": "tencent"
-          },
-          {
-            "timestamp": "2026-08-21T07:00:00+00:00",
-            "open": 7.71,
-            "close": 7.77,
-            "high": 7.79,
-            "low": 7.65,
-            "volume": 16048800.0,
-            "amount": null,
-            "source": "tencent"
-          },
-          {
-            "timestamp": "2026-08-24T07:00:00+00:00",
-            "open": 7.78,
-            "close": 7.83,
-            "high": 7.88,
-            "low": 7.72,
-            "volume": 20347000.0,
-            "amount": null,
-            "source": "tencent"
-          },
-          {
-            "timestamp": "2026-08-25T07:00:00+00:00",
-            "open": 7.78,
-            "close": 7.88,
-            "high": 7.89,
-            "low": 7.77,
-            "volume": 16683100.0,
-            "amount": null,
-            "source": "tencent"
-          },
-          {
-            "timestamp": "2026-08-26T07:00:00+00:00",
-            "open": 7.88,
-            "close": 8.67,
-            "high": 8.67,
-            "low": 7.87,
-            "volume": 81698900.0,
-            "amount": null,
-            "source": "tencent"
-          },
-          {
-            "timestamp": "2026-08-27T07:00:00+00:00",
-            "open": 9.0,
-            "close": 9.54,
-            "high": 9.54,
-            "low": 8.99,
-            "volume": 203672100.0,
-            "amount": null,
-            "source": "tencent"
-          },
-          {
-            "timestamp": "2026-08-28T07:00:00+00:00",
-            "open": 9.75,
-            "close": 9.55,
-            "high": 10.14,
-            "low": 9.49,
-            "volume": 209221300.0,
-            "amount": null,
-            "source": "tencent"
-          },
-          {
-            "timestamp": "2026-08-31T07:00:00+00:00",
-            "open": 9.4,
-            "close": 9.52,
-            "high": 9.82,
-            "low": 9.36,
-            "volume": 121729500.0,
-            "amount": null,
-            "source": "tencent"
-          },
-          {
-            "timestamp": "2026-09-01T07:00:00+00:00",
-            "open": 9.52,
-            "close": 9.83,
-            "high": 9.96,
-            "low": 9.35,
-            "volume": 124191700.0,
-            "amount": null,
-            "source": "tencent"
-          },
-          {
-            "timestamp": "2026-09-02T07:00:00+00:00",
-            "open": 9.73,
-            "close": 9.6,
-            "high": 9.86,
-            "low": 9.54,
-            "volume": 77323300.0,
-            "amount": null,
-            "source": "tencent"
-          },
-          {
-            "timestamp": "2026-09-03T07:00:00+00:00",
-            "open": 9.69,
-            "close": 9.46,
-            "high": 9.76,
-            "low": 9.41,
-            "volume": 70196500.0,
-            "amount": null,
-            "source": "tencent"
-          },
-          {
-            "timestamp": "2026-09-04T07:00:00+00:00",
-            "open": 9.46,
-            "close": 10.17,
-            "high": 10.41,
-            "low": 9.38,
-            "volume": 171953100.0,
-            "amount": null,
-            "source": "tencent"
-          },
-          {
-            "timestamp": "2026-09-07T07:00:00+00:00",
-            "open": 9.87,
-            "close": 9.63,
-            "high": 10.1,
-            "low": 9.52,
-            "volume": 118465200.0,
-            "amount": null,
-            "source": "tencent"
-          }
-        ],
-        "stock_code": "600095",
-        "stock_name": "湘财股份",
-        "sector": "房地产",
-        "sector_id": "sina:new_fdc",
-        "sector_score": 49.05,
-        "sector_state": "启动观察",
-        "market_score": 56.01,
-        "position_type": "趋势观察",
-        "atr_state": "正常",
-        "atr_risk": 0,
-        "risk_score": 0,
-        "risk": "低",
-        "hard_risk": false,
-        "total_score": 71.4,
-        "score_coverage": 0.85,
-        "scores": {
-          "trend": 86.58924205378975,
-          "sector": 49.05,
-          "position": 80,
-          "volume": null
-        },
-        "tradability_score": 71.4,
-        "subjective_probability": null,
-        "probability_basis": "未校准，不输出伪精确概率",
-        "deep_score": null,
-        "deep_components": {
-          "board_quality": null,
-          "theme": null,
-          "ladder": null,
-          "capital": null,
-          "catalyst": null,
-          "dragon": null,
-          "external": null,
-          "reward_risk": null
-        },
-        "board_count": null,
-        "is_limit_up": false,
-        "limit_details": {},
-        "volume_type": "成交额历史缺失",
-        "events": [
-          {
-            "event_id": "8c128a58300c40956365",
-            "stock_code": "600095",
-            "event_type": "其他公告",
-            "title": "湘财股份关于控股股东之一致行动人股份解除质押的公告",
-            "event_time": "2026-09-05T00:00:00+08:00",
-            "publish_time": "2026-09-05T00:00:00+08:00",
-            "publish_time_precision": "date",
-            "first_seen_at": "2026-09-07T21:45:14.743778+08:00",
-            "source": "cninfo_announcements",
-            "url": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600095&announcementId=1225548731&orgId=gssh0600095&announcementTime=2026-09-05",
-            "reliability": 0.95,
-            "freshness": 0,
-            "directness": 1.0,
-            "priced_in_score": 44.315403422982904,
-            "impact_score": null,
-            "verified": false,
-            "canonical_id": "cninfo:1225548731:600095",
-            "expectation": "Partially Priced",
-            "expectation_basis": "规则代理：新鲜度与20日涨幅；未证明因果关系"
-          },
-          {
-            "event_id": "33ca01603d47c8e81382",
-            "stock_code": "600095",
-            "event_type": "其他公告",
-            "title": "湘财股份关于对外担保的进展公告",
-            "event_time": "2026-09-04T00:00:00+08:00",
-            "publish_time": "2026-09-04T00:00:00+08:00",
-            "publish_time_precision": "date",
-            "first_seen_at": "2026-09-07T21:45:14.743904+08:00",
-            "source": "cninfo_announcements",
-            "url": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600095&announcementId=1225546637&orgId=gssh0600095&announcementTime=2026-09-04",
-            "reliability": 0.95,
-            "freshness": 0,
-            "directness": 1.0,
-            "priced_in_score": 44.315403422982904,
-            "impact_score": null,
-            "verified": false,
-            "canonical_id": "cninfo:1225546637:600095",
-            "expectation": "Partially Priced",
-            "expectation_basis": "规则代理：新鲜度与20日涨幅；未证明因果关系"
-          }
-        ],
-        "independent_catalyst": false,
-        "catalyst_score": null,
-        "expectation_score": null,
-        "positive_factor": "MA5>MA10>MA20，趋势与位置满足规则",
-        "negative_factor": "未读取完整公告正文；需人工核验",
-        "validation_condition": "板块维持扩散，价格守住MA20（8.663），ATR不过热",
-        "invalidation_condition": "板块转弱、放量跌破MA20或出现重大风险公告",
-        "exclusion_reason": null,
-        "rank_history": [],
-        "pool": "POOL_B",
-        "transition": "维持",
-        "rank": 11,
-        "date": "2026-09-08",
-        "stage": "0730",
-        "wudao_themes": []
-      },
-      {
-        "code": "300468",
-        "name": "四方精创",
-        "price": 25.66,
-        "previous_close": 27.5,
-        "open": 26.04,
-        "high": 26.79,
-        "low": 25.35,
-        "volume": 117699737.0,
-        "amount": 3047118279.47,
-        "change_pct": -6.690909090909091,
-        "turnover": null,
-        "volume_ratio": null,
-        "float_cap": null,
-        "timestamp": "2026-09-07T15:35:00+08:00",
-        "fetched_at": "2026-09-07T16:15:35.506872+08:00",
-        "source": "sina",
-        "reliability": 0.8,
-        "fallback": true,
-        "cached": false,
-        "suspended": false,
-        "industry": null,
-        "limit_up_price": null,
-        "limit_down_price": null,
-        "bars_count": 101,
-        "ma5": 25.226000000000003,
-        "distance_ma5": 1.720447157694438,
-        "slope_ma5": 2.170919400567062,
-        "ma10": 24.372999999999998,
-        "distance_ma10": 5.2804332663193065,
-        "slope_ma10": 1.1076080643823039,
-        "ma20": 22.922,
-        "distance_ma20": 11.94485646976704,
-        "slope_ma20": 0.8446986361636544,
-        "ma60": 21.8245,
-        "distance_ma60": 17.574285779742937,
-        "slope_ma60": 0.20201556438097512,
-        "return_1d": -6.690909090909091,
-        "return_3d": 5.034793286942296,
-        "return_5d": 11.662315056570938,
-        "return_10d": 11.613745106568075,
-        "return_20d": 17.59853345554536,
-        "amount_mean_5d": null,
-        "amount_ratio_5d": null,
-        "amount_mean_10d": null,
-        "amount_ratio_10d": null,
-        "amount_mean_20d": null,
-        "amount_ratio_20d": null,
-        "atr": 1.5368510905058723,
-        "natr": 5.989287180459362,
-        "move_atr": 1.1171461459952763,
-        "bull_alignment": true,
-        "new_high_5d": false,
-        "new_high_20d": false,
-        "breakout": false,
-        "consecutive_up_2": false,
-        "consecutive_up_3": false,
-        "history_source": "tencent",
-        "as_of_time": "2026-09-07T16:14:28.529786+08:00",
-        "bars": [
-          {
-            "timestamp": "2026-06-08T07:00:00+00:00",
-            "open": 22.4,
-            "close": 22.38,
-            "high": 23.36,
-            "low": 21.94,
-            "volume": 18488500.0,
-            "amount": null,
-            "source": "tencent"
-          },
-          {
-            "timestamp": "2026-06-09T07:00:00+00:00",
-            "open": 22.52,
-            "close": 22.43,
-            "high": 22.69,
-            "low": 22.05,
-            "volume": 14036300.0,
-            "amount": null,
-            "source": "tencent"
-          },
-          {
-            "timestamp": "2026-06-10T07:00:00+00:00",
-            "open": 22.22,
-            "close": 22.5,
-            "high": 23.18,
-            "low": 22.08,
-            "volume": 21034400.0,
-            "amount": null,
-            "source": "tencent"
-          },
-          {
-            "timestamp": "2026-06-11T07:00:00+00:00",
-            "open": 22.4,
-            "close": 22.11,
-            "high": 22.47,
-            "low": 21.65,
-            "volume": 17158100.0,
-            "amount": null,
-            "source": "tencent"
-          },
-          {
-            "timestamp": "2026-06-12T07:00:00+00:00",
-            "open": 22.32,
-            "close": 23.02,
-            "high": 23.34,
-            "low": 22.23,
-            "volume": 27151400.0,
-            "amount": null,
-            "source": "tencent"
-          },
-          {
-            "timestamp": "2026-06-15T07:00:00+00:00",
-            "open": 23.51,
-            "close": 24.85,
-            "high": 24.87,
-            "low": 23.27,
-            "volume": 38288200.0,
-            "amount": null,
-            "source": "tencent"
-          },
-          {
-            "timestamp": "2026-06-16T07:00:00+00:00",
-            "open": 24.75,
-            "close": 24.09,
-            "high": 24.87,
-            "low": 23.88,
-            "volume": 29615300.0,
-            "amount": null,
-            "source": "tencent"
-          },
-          {
-            "timestamp": "2026-06-17T07:00:00+00:00",
-            "open": 24.09,
-            "close": 23.92,
-            "high": 25.26,
-            "low": 23.58,
-            "volume": 43348800.0,
-            "amount": null,
-            "source": "tencent"
-          },
-          {
-            "timestamp": "2026-06-18T07:00:00+00:00",
-            "open": 23.43,
-            "close": 23.23,
-            "high": 23.95,
-            "low": 23.19,
-            "volume": 27442000.0,
-            "amount": null,
-            "source": "tencent"
-          },
-          {
-            "timestamp": "2026-06-22T07:00:00+00:00",
-            "open": 22.94,
-            "close": 24.64,
-            "high": 24.79,
-            "low": 22.65,
-            "volume": 43728100.0,
-            "amount": null,
-            "source": "tencent"
-          },
-          {
-            "timestamp": "2026-06-23T07:00:00+00:00",
-            "open": 24.28,
-            "close": 24.78,
-            "high": 25.28,
-            "low": 24.15,
-            "volume": 39290100.0,
-            "amount": null,
-            "source": "tencent"
-          },
-          {
-            "timestamp": "2026-06-24T07:00:00+00:00",
-            "open": 24.5,
-            "close": 23.46,
-            "high": 24.63,
-            "low": 22.99,
-            "volume": 29838400.0,
-            "amount": null,
-            "source": "tencent"
-          },
-          {
-            "timestamp": "2026-06-25T07:00:00+00:00",
-            "open": 23.43,
-            "close": 22.9,
-            "high": 23.69,
-            "low": 22.74,
-            "volume": 19831400.0,
-            "amount": null,
-            "source": "tencent"
-          },
-          {
-            "timestamp": "2026-06-26T07:00:00+00:00",
-            "open": 22.73,
-            "close": 21.47,
-            "high": 22.8,
-            "low": 21.41,
-            "volume": 21562200.0,
-            "amount": null,
-            "source": "tencent"
-          },
-          {
-            "timestamp": "2026-06-29T07:00:00+00:00",
-            "open": 21.46,
-            "close": 20.9,
-            "high": 21.54,
-            "low": 20.72,
-            "volume": 18482400.0,
-            "amount": null,
-            "source": "tencent"
-          },
-          {
-            "timestamp": "2026-06-30T07:00:00+00:00",
-            "open": 20.9,
-            "close": 21.01,
-            "high": 21.22,
-            "low": 20.59,
-            "volume": 14192800.0,
-            "amount": null,
-            "source": "tencent"
-          },
-          {
-            "timestamp": "2026-07-01T07:00:00+00:00",
-            "open": 21.0,
-            "close": 21.69,
-            "high": 22.1,
-            "low": 20.65,
-            "volume": 25736000.0,
-            "amount": null,
-            "source": "tencent"
-          },
-          {
-            "timestamp": "2026-07-02T07:00:00+00:00",
-            "open": 21.69,
-            "close": 20.84,
-            "high": 22.22,
-            "low": 20.81,
-            "volume": 22035300.0,
-            "amount": null,
-            "source": "tencent"
-          },
-          {
-            "timestamp": "2026-07-03T07:00:00+00:00",
-            "open": 20.84,
-            "close": 20.75,
-            "high": 21.21,
-            "low": 20.56,
-            "volume": 15695500.0,
-            "amount": null,
-            "source": "tencent"
-          },
-          {
-            "timestamp": "2026-07-06T07:00:00+00:00",
-            "open": 20.9,
-            "close": 20.35,
-            "high": 21.24,
-            "low": 20.33,
-            "volume": 16114400.0,
-            "amount": null,
-            "source": "tencent"
-          },
-          {
-            "timestamp": "2026-07-07T07:00:00+00:00",
-            "open": 20.35,
-            "close": 19.67,
-            "high": 20.42,
-            "low": 19.54,
-            "volume": 14663100.0,
-            "amount": null,
-            "source": "tencent"
-          },
-          {
-            "timestamp": "2026-07-08T07:00:00+00:00",
-            "open": 19.8,
-            "close": 19.8,
-            "high": 20.06,
-            "low": 19.45,
-            "volume": 16638600.0,
-            "amount": null,
-            "source": "tencent"
-          },
-          {
-            "timestamp": "2026-07-09T07:00:00+00:00",
-            "open": 19.57,
-            "close": 19.8,
-            "high": 19.91,
-            "low": 19.04,
-            "volume": 18233400.0,
-            "amount": null,
-            "source": "tencent"
-          },
-          {
-            "timestamp": "2026-07-10T07:00:00+00:00",
-            "open": 19.76,
-            "close": 20.07,
-            "high": 20.63,
-            "low": 19.36,
-            "volume": 21427400.0,
-            "amount": null,
-            "source": "tencent"
-          },
-          {
-            "timestamp": "2026-07-13T07:00:00+00:00",
-            "open": 20.07,
-            "close": 19.17,
-            "high": 20.26,
-            "low": 19.07,
-            "volume": 17616400.0,
-            "amount": null,
-            "source": "tencent"
-          },
-          {
-            "timestamp": "2026-07-14T07:00:00+00:00",
-            "open": 19.01,
-            "close": 19.01,
-            "high": 19.29,
-            "low": 18.45,
-            "volume": 14600600.0,
-            "amount": null,
-            "source": "tencent"
-          },
-          {
-            "timestamp": "2026-07-15T07:00:00+00:00",
-            "open": 19.06,
-            "close": 19.32,
-            "high": 19.66,
-            "low": 18.93,
-            "volume": 13525200.0,
-            "amount": null,
-            "source": "tencent"
-          },
-          {
-            "timestamp": "2026-07-16T07:00:00+00:00",
-            "open": 19.23,
-            "close": 19.54,
-            "high": 19.76,
-            "low": 19.02,
-            "volume": 14448900.0,
-            "amount": null,
-            "source": "tencent"
-          },
-          {
-            "timestamp": "2026-07-17T07:00:00+00:00",
-            "open": 19.77,
-            "close": 18.48,
-            "high": 19.96,
-            "low": 18.38,
-            "volume": 26209100.0,
-            "amount": null,
-            "source": "tencent"
-          },
-          {
-            "timestamp": "2026-07-20T07:00:00+00:00",
-            "open": 18.61,
-            "close": 18.93,
-            "high": 19.6,
-            "low": 18.47,
-            "volume": 27332600.0,
-            "amount": null,
-            "source": "tencent"
-          },
-          {
-            "timestamp": "2026-07-21T07:00:00+00:00",
-            "open": 18.9,
-            "close": 20.46,
-            "high": 21.27,
-            "low": 18.83,
-            "volume": 47459100.0,
-            "amount": null,
-            "source": "tencent"
-          },
-          {
-            "timestamp": "2026-07-22T07:00:00+00:00",
-            "open": 19.65,
-            "close": 19.84,
-            "high": 20.3,
-            "low": 19.62,
-            "volume": 32839100.0,
-            "amount": null,
-            "source": "tencent"
-          },
-          {
-            "timestamp": "2026-07-23T07:00:00+00:00",
-            "open": 19.65,
-            "close": 19.82,
-            "high": 19.85,
-            "low": 19.37,
-            "volume": 19596000.0,
-            "amount": null,
-            "source": "tencent"
-          },
-          {
-            "timestamp": "2026-07-24T07:00:00+00:00",
-            "open": 19.64,
-            "close": 18.97,
-            "high": 19.78,
-            "low": 18.92,
-            "volume": 16226300.0,
-            "amount": null,
-            "source": "tencent"
-          },
-          {
-            "timestamp": "2026-07-27T07:00:00+00:00",
-            "open": 18.8,
-            "close": 19.76,
-            "high": 19.77,
-            "low": 18.71,
-            "volume": 17540700.0,
-            "amount": null,
-            "source": "tencent"
-          },
-          {
-            "timestamp": "2026-07-28T07:00:00+00:00",
-            "open": 19.52,
-            "close": 20.19,
-            "high": 20.33,
-            "low": 19.49,
-            "volume": 24279700.0,
-            "amount": null,
-            "source": "tencent"
-          },
-          {
-            "timestamp": "2026-07-29T07:00:00+00:00",
-            "open": 20.08,
-            "close": 20.81,
-            "high": 20.91,
-            "low": 20.05,
-            "volume": 27195000.0,
-            "amount": null,
-            "source": "tencent"
-          },
-          {
-            "timestamp": "2026-07-30T07:00:00+00:00",
-            "open": 20.81,
-            "close": 22.05,
-            "high": 22.52,
-            "low": 20.72,
-            "volume": 47410900.0,
-            "amount": null,
-            "source": "tencent"
-          },
-          {
-            "timestamp": "2026-07-31T07:00:00+00:00",
-            "open": 21.5,
-            "close": 22.27,
-            "high": 22.77,
-            "low": 21.48,
-            "volume": 44644500.0,
-            "amount": null,
-            "source": "tencent"
-          },
-          {
-            "timestamp": "2026-08-03T07:00:00+00:00",
-            "open": 22.23,
-            "close": 22.11,
-            "high": 22.35,
-            "low": 21.71,
-            "volume": 24129100.0,
-            "amount": null,
-            "source": "tencent"
-          },
-          {
-            "timestamp": "2026-08-04T07:00:00+00:00",
-            "open": 22.1,
-            "close": 22.16,
-            "high": 22.47,
-            "low": 22.0,
-            "volume": 24928600.0,
-            "amount": null,
-            "source": "tencent"
-          },
-          {
-            "timestamp": "2026-08-05T07:00:00+00:00",
-            "open": 21.96,
-            "close": 22.28,
-            "high": 22.91,
-            "low": 21.89,
-            "volume": 26806900.0,
-            "amount": null,
-            "source": "tencent"
-          },
-          {
-            "timestamp": "2026-08-06T07:00:00+00:00",
-            "open": 22.08,
-            "close": 23.71,
-            "high": 24.39,
-            "low": 22.08,
-            "volume": 66497900.0,
-            "amount": null,
-            "source": "tencent"
-          },
-          {
-            "timestamp": "2026-08-07T07:00:00+00:00",
-            "open": 23.22,
-            "close": 22.11,
-            "high": 23.3,
-            "low": 21.68,
-            "volume": 54397000.0,
-            "amount": null,
-            "source": "tencent"
-          },
-          {
-            "timestamp": "2026-08-10T07:00:00+00:00",
-            "open": 22.2,
-            "close": 21.82,
-            "high": 22.29,
-            "low": 21.76,
-            "volume": 25334100.0,
-            "amount": null,
-            "source": "tencent"
-          },
-          {
-            "timestamp": "2026-08-11T07:00:00+00:00",
-            "open": 21.87,
-            "close": 21.79,
-            "high": 22.05,
-            "low": 21.46,
-            "volume": 19062200.0,
-            "amount": null,
-            "source": "tencent"
-          },
-          {
-            "timestamp": "2026-08-12T07:00:00+00:00",
-            "open": 21.76,
-            "close": 21.88,
-            "high": 22.08,
-            "low": 21.57,
-            "volume": 17943500.0,
-            "amount": null,
-            "source": "tencent"
-          },
-          {
-            "timestamp": "2026-08-13T07:00:00+00:00",
-            "open": 22.0,
-            "close": 21.52,
-            "high": 22.22,
-            "low": 21.52,
-            "volume": 21399500.0,
-            "amount": null,
-            "source": "tencent"
-          },
-          {
-            "timestamp": "2026-08-14T07:00:00+00:00",
-            "open": 21.5,
-            "close": 21.24,
-            "high": 21.88,
-            "low": 20.95,
-            "volume": 19096400.0,
-            "amount": null,
-            "source": "tencent"
-          },
-          {
-            "timestamp": "2026-08-17T07:00:00+00:00",
-            "open": 21.22,
-            "close": 21.17,
-            "high": 21.27,
-            "low": 20.7,
-            "volume": 15433100.0,
-            "amount": null,
-            "source": "tencent"
-          },
-          {
-            "timestamp": "2026-08-18T07:00:00+00:00",
-            "open": 20.96,
-            "close": 20.92,
-            "high": 21.03,
-            "low": 20.54,
-            "volume": 18731500.0,
-            "amount": null,
-            "source": "tencent"
-          },
-          {
-            "timestamp": "2026-08-19T07:00:00+00:00",
-            "open": 20.61,
-            "close": 19.89,
-            "high": 20.75,
-            "low": 19.81,
-            "volume": 17716800.0,
-            "amount": null,
-            "source": "tencent"
-          },
-          {
-            "timestamp": "2026-08-20T07:00:00+00:00",
-            "open": 20.4,
-            "close": 21.1,
-            "high": 21.77,
-            "low": 20.4,
-            "volume": 40475000.0,
-            "amount": null,
-            "source": "tencent"
-          },
-          {
-            "timestamp": "2026-08-21T07:00:00+00:00",
-            "open": 21.91,
-            "close": 22.21,
-            "high": 23.22,
-            "low": 21.41,
-            "volume": 62315100.0,
-            "amount": null,
-            "source": "tencent"
-          },
-          {
-            "timestamp": "2026-08-24T07:00:00+00:00",
-            "open": 21.72,
-            "close": 22.99,
-            "high": 23.63,
-            "low": 21.72,
-            "volume": 64955100.0,
-            "amount": null,
-            "source": "tencent"
-          },
-          {
-            "timestamp": "2026-08-25T07:00:00+00:00",
-            "open": 22.7,
-            "close": 24.02,
-            "high": 24.29,
-            "low": 22.36,
-            "volume": 73116200.0,
-            "amount": null,
-            "source": "tencent"
-          },
-          {
-            "timestamp": "2026-08-26T07:00:00+00:00",
-            "open": 23.1,
-            "close": 23.3,
-            "high": 24.09,
-            "low": 22.8,
-            "volume": 55437500.0,
-            "amount": null,
-            "source": "tencent"
-          },
-          {
-            "timestamp": "2026-08-27T07:00:00+00:00",
-            "open": 23.27,
-            "close": 23.73,
-            "high": 23.88,
-            "low": 23.01,
-            "volume": 53019000.0,
-            "amount": null,
-            "source": "tencent"
-          },
-          {
-            "timestamp": "2026-08-28T07:00:00+00:00",
-            "open": 23.86,
-            "close": 23.57,
-            "high": 24.2,
-            "low": 23.56,
-            "volume": 42083100.0,
-            "amount": null,
-            "source": "tencent"
-          },
-          {
-            "timestamp": "2026-08-31T07:00:00+00:00",
-            "open": 22.92,
-            "close": 22.98,
-            "high": 23.48,
-            "low": 22.71,
-            "volume": 32359200.0,
-            "amount": null,
-            "source": "tencent"
-          },
-          {
-            "timestamp": "2026-09-01T07:00:00+00:00",
-            "open": 23.01,
-            "close": 24.54,
-            "high": 24.82,
-            "low": 23.01,
-            "volume": 63122600.0,
-            "amount": null,
-            "source": "tencent"
-          },
-          {
-            "timestamp": "2026-09-02T07:00:00+00:00",
-            "open": 23.99,
-            "close": 24.43,
-            "high": 25.61,
-            "low": 23.61,
-            "volume": 65547000.0,
-            "amount": null,
-            "source": "tencent"
-          },
-          {
-            "timestamp": "2026-09-03T07:00:00+00:00",
-            "open": 24.3,
-            "close": 24.0,
-            "high": 24.98,
-            "low": 23.97,
-            "volume": 47496600.0,
-            "amount": null,
-            "source": "tencent"
-          },
-          {
-            "timestamp": "2026-09-04T07:00:00+00:00",
-            "open": 26.0,
-            "close": 27.5,
-            "high": 28.8,
-            "low": 25.62,
-            "volume": 146094400.0,
-            "amount": null,
-            "source": "tencent"
-          },
-          {
-            "timestamp": "2026-09-07T07:00:00+00:00",
-            "open": 26.04,
-            "close": 25.66,
-            "high": 26.79,
-            "low": 25.35,
-            "volume": 117699700.0,
-            "amount": null,
-            "source": "tencent"
-          }
-        ],
-        "stock_code": "300468",
-        "stock_name": "四方精创",
-        "sector": "其它行业",
-        "sector_id": "sina:new_qtxy",
-        "sector_score": 48.58,
-        "sector_state": "启动观察",
-        "market_score": 56.01,
-        "position_type": "趋势观察",
-        "atr_state": "正常",
-        "atr_risk": 0,
-        "risk_score": 0,
-        "risk": "低",
-        "hard_risk": false,
-        "total_score": 71.17,
-        "score_coverage": 0.85,
-        "scores": {
-          "trend": 86.39780018331804,
-          "sector": 48.58,
-          "position": 80,
-          "volume": null
-        },
-        "tradability_score": 71.17,
-        "subjective_probability": null,
-        "probability_basis": "未校准，不输出伪精确概率",
-        "deep_score": null,
-        "deep_components": {
-          "board_quality": null,
-          "theme": null,
-          "ladder": null,
-          "capital": null,
-          "catalyst": null,
-          "dragon": null,
-          "external": null,
-          "reward_risk": null
-        },
-        "board_count": null,
-        "is_limit_up": false,
-        "limit_details": {},
-        "volume_type": "成交额历史缺失",
-        "events": [
-          {
-            "event_id": "5d7959593b436ffbfbfe",
-            "stock_code": "300468",
-            "event_type": "其他公告",
-            "title": "关于刊发H股发行聆讯后资料集的公告",
-            "event_time": "2026-09-07T07:43:31+08:00",
-            "publish_time": "2026-09-07T07:43:31+08:00",
-            "publish_time_precision": "second",
-            "first_seen_at": "2026-09-07T21:45:15.902293+08:00",
-            "source": "cninfo_announcements",
-            "url": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=300468&announcementId=1225550384&orgId=9900024029&announcementTime=2026-09-07",
-            "reliability": 0.95,
-            "freshness": 0.6675556128009259,
-            "directness": 1.0,
-            "priced_in_score": 43.996333638863405,
-            "impact_score": null,
-            "verified": false,
-            "canonical_id": "cninfo:1225550384:300468",
-            "expectation": "Partially Priced",
-            "expectation_basis": "规则代理：新鲜度与20日涨幅；未证明因果关系"
-          }
-        ],
-        "independent_catalyst": false,
-        "catalyst_score": null,
-        "expectation_score": null,
-        "positive_factor": "MA5>MA10>MA20，趋势与位置满足规则",
-        "negative_factor": "未读取完整公告正文；需人工核验",
-        "validation_condition": "板块维持扩散，价格守住MA20（22.922），ATR不过热",
-        "invalidation_condition": "板块转弱、放量跌破MA20或出现重大风险公告",
-        "exclusion_reason": null,
-        "rank_history": [],
-        "pool": "POOL_B",
-        "transition": "维持",
-        "rank": 12,
-        "date": "2026-09-08",
-        "stage": "0730",
+        "stage": "0830",
         "wudao_themes": []
       }
     ],
@@ -9812,7 +8284,7 @@
       "above_ma20_ratio": null,
       "factor_coverage": 0.0,
       "history": {
-        "0830": 42.81,
+        "0830": 84.29,
         "1135": 85.16,
         "1600": 84.29,
         "2130": 84.29,
@@ -9852,7 +8324,7 @@
       "above_ma20_ratio": 1,
       "factor_coverage": 0.1694915254237288,
       "history": {
-        "0830": 88.21,
+        "0830": 80.55,
         "1135": 78.91,
         "1600": 80.55,
         "2130": 80.55,
@@ -9892,7 +8364,7 @@
       "above_ma20_ratio": 1,
       "factor_coverage": 0.08571428571428572,
       "history": {
-        "0830": 84.13,
+        "0830": 79.62,
         "1135": 49.11,
         "1600": 79.62,
         "2130": 79.62,
@@ -9932,7 +8404,7 @@
       "above_ma20_ratio": 1,
       "factor_coverage": 0.0975609756097561,
       "history": {
-        "0830": 67.78,
+        "0830": 78.4,
         "1135": 72.4,
         "1600": 78.4,
         "2130": 78.4,
@@ -9972,7 +8444,7 @@
       "above_ma20_ratio": 1,
       "factor_coverage": 0.09375,
       "history": {
-        "0830": 71.68,
+        "0830": 74.72,
         "1135": 74.64,
         "1600": 74.72,
         "2130": 74.72,
@@ -10012,7 +8484,7 @@
       "above_ma20_ratio": null,
       "factor_coverage": 0.0,
       "history": {
-        "0830": 35.56,
+        "0830": 73.37,
         "1135": 45.23,
         "1600": 73.37,
         "2130": 73.37,
@@ -10052,7 +8524,7 @@
       "above_ma20_ratio": 0.375,
       "factor_coverage": 0.28169014084507044,
       "history": {
-        "0830": 23.11,
+        "0830": 73.13,
         "1135": 70.55,
         "1600": 73.13,
         "2130": 73.13,
@@ -10092,7 +8564,7 @@
       "above_ma20_ratio": 0.8,
       "factor_coverage": 0.09259259259259259,
       "history": {
-        "0830": 76.78,
+        "0830": 72.95,
         "1135": 66.43,
         "1600": 72.95,
         "2130": 72.95,
@@ -10132,7 +8604,7 @@
       "above_ma20_ratio": 0.6666666666666666,
       "factor_coverage": 0.15789473684210525,
       "history": {
-        "0830": 43.79,
+        "0830": 70.93,
         "1135": 64.08,
         "1600": 70.93,
         "2130": 70.93,
@@ -10172,7 +8644,7 @@
       "above_ma20_ratio": 1,
       "factor_coverage": 0.05555555555555555,
       "history": {
-        "0830": 69.97,
+        "0830": 69.79,
         "1135": 65.04,
         "1600": 69.79,
         "2130": 69.79,
@@ -10212,7 +8684,7 @@
       "above_ma20_ratio": 1,
       "factor_coverage": 0.045454545454545456,
       "history": {
-        "0830": 50.54,
+        "0830": 65.69,
         "1135": 54.21,
         "1600": 65.69,
         "2130": 65.69,
@@ -10252,7 +8724,7 @@
       "above_ma20_ratio": null,
       "factor_coverage": 0.0,
       "history": {
-        "0830": 38.35,
+        "0830": 64.22,
         "1135": 52.27,
         "1600": 64.22,
         "2130": 64.22,
@@ -10292,7 +8764,7 @@
       "above_ma20_ratio": 0.3333333333333333,
       "factor_coverage": 0.14285714285714285,
       "history": {
-        "0830": 58.75,
+        "0830": 58.66,
         "1135": 37.89,
         "1600": 58.66,
         "2130": 58.66,
@@ -10332,7 +8804,7 @@
       "above_ma20_ratio": 1,
       "factor_coverage": 0.04,
       "history": {
-        "0830": 43.15,
+        "0830": 57.94,
         "1135": 51.84,
         "1600": 57.94,
         "2130": 57.94,
@@ -10372,7 +8844,7 @@
       "above_ma20_ratio": null,
       "factor_coverage": 0.0,
       "history": {
-        "0830": 54.92,
+        "0830": 57.82,
         "1135": 30.82,
         "1600": 57.82,
         "2130": 57.82,
@@ -10412,7 +8884,7 @@
       "above_ma20_ratio": null,
       "factor_coverage": 0.0,
       "history": {
-        "0830": 58.11,
+        "0830": 57.63,
         "1135": 53.63,
         "1600": 57.63,
         "2130": 57.63,
@@ -10452,7 +8924,7 @@
       "above_ma20_ratio": 0.5263157894736842,
       "factor_coverage": 0.0979381443298969,
       "history": {
-        "0830": 40.85,
+        "0830": 56.87,
         "1135": 54.31,
         "1600": 56.87,
         "2130": 56.87,
@@ -10492,7 +8964,7 @@
       "above_ma20_ratio": 0.5,
       "factor_coverage": 0.07407407407407407,
       "history": {
-        "0830": 34.06,
+        "0830": 56.77,
         "1135": 53.07,
         "1600": 56.77,
         "2130": 56.77,
@@ -10532,7 +9004,7 @@
       "above_ma20_ratio": 0.3333333333333333,
       "factor_coverage": 0.041379310344827586,
       "history": {
-        "0830": 44.95,
+        "0830": 56.64,
         "1135": 54.2,
         "1600": 56.64,
         "2130": 56.64,
@@ -10572,7 +9044,7 @@
       "above_ma20_ratio": 0.4,
       "factor_coverage": 0.10416666666666667,
       "history": {
-        "0830": 37.61,
+        "0830": 55.96,
         "1135": 54.47,
         "1600": 55.96,
         "2130": 55.96,
@@ -10612,7 +9084,7 @@
       "above_ma20_ratio": 0,
       "factor_coverage": 0.024390243902439025,
       "history": {
-        "0830": 62.81,
+        "0830": 55.42,
         "1135": 47.71,
         "1600": 55.42,
         "2130": 55.42,
@@ -10652,7 +9124,7 @@
       "above_ma20_ratio": 0.5555555555555556,
       "factor_coverage": 0.12857142857142856,
       "history": {
-        "0830": 41.19,
+        "0830": 54.78,
         "1135": 54.27,
         "1600": 54.78,
         "2130": 54.78,
@@ -10692,7 +9164,7 @@
       "above_ma20_ratio": 0.3333333333333333,
       "factor_coverage": 0.06976744186046512,
       "history": {
-        "0830": 60.91,
+        "0830": 54.42,
         "1135": 47.82,
         "1600": 54.42,
         "2130": 54.42,
@@ -10732,7 +9204,7 @@
       "above_ma20_ratio": 1,
       "factor_coverage": 0.022727272727272728,
       "history": {
-        "0830": 58.68,
+        "0830": 54.07,
         "1135": 56.93,
         "1600": 54.07,
         "2130": 54.07,
@@ -10772,7 +9244,7 @@
       "above_ma20_ratio": 0.25,
       "factor_coverage": 0.05161290322580645,
       "history": {
-        "0830": 22.4,
+        "0830": 53.03,
         "1135": 51.03,
         "1600": 53.03,
         "2130": 53.03,
@@ -10812,7 +9284,7 @@
       "above_ma20_ratio": null,
       "factor_coverage": 0.0,
       "history": {
-        "0830": 50.17,
+        "0830": 52.29,
         "1135": 50.32,
         "1600": 52.29,
         "2130": 52.29,
@@ -10852,7 +9324,7 @@
       "above_ma20_ratio": 1,
       "factor_coverage": 0.07142857142857142,
       "history": {
-        "0830": 50.24,
+        "0830": 50.44,
         "1135": 45.54,
         "1600": 50.44,
         "2130": 50.44,
@@ -10892,7 +9364,7 @@
       "above_ma20_ratio": 0.6666666666666666,
       "factor_coverage": 0.09375,
       "history": {
-        "0830": 85.69,
+        "0830": 50.14,
         "1135": 32.57,
         "1600": 50.14,
         "2130": 50.14,
@@ -10932,7 +9404,7 @@
       "above_ma20_ratio": 1,
       "factor_coverage": 0.16666666666666666,
       "history": {
-        "0830": 38.66,
+        "0830": 49.79,
         "1135": 38.43,
         "1600": 49.79,
         "2130": 49.79,
@@ -10972,7 +9444,7 @@
       "above_ma20_ratio": 0.6666666666666666,
       "factor_coverage": 0.06060606060606061,
       "history": {
-        "0830": 65.69,
+        "0830": 49.05,
         "1135": 47.79,
         "1600": 49.05,
         "2130": 49.05,
@@ -11012,7 +9484,7 @@
       "above_ma20_ratio": 0.8571428571428571,
       "factor_coverage": 0.1346153846153846,
       "history": {
-        "0830": 46.19,
+        "0830": 48.58,
         "1135": 47.6,
         "1600": 48.58,
         "2130": 48.58,
@@ -11052,7 +9524,7 @@
       "above_ma20_ratio": null,
       "factor_coverage": 0.0,
       "history": {
-        "0830": 68.12,
+        "0830": 46.25,
         "1135": 35.45,
         "1600": 46.25,
         "2130": 46.25,
@@ -11092,7 +9564,7 @@
       "above_ma20_ratio": 0.5,
       "factor_coverage": 0.17391304347826086,
       "history": {
-        "0830": 41.48,
+        "0830": 45.92,
         "1135": 41.55,
         "1600": 45.92,
         "2130": 45.92,
@@ -11132,7 +9604,7 @@
       "above_ma20_ratio": 0.6666666666666666,
       "factor_coverage": 0.125,
       "history": {
-        "0830": 44.02,
+        "0830": 45.31,
         "1135": 45.96,
         "1600": 45.31,
         "2130": 45.31,
@@ -11172,7 +9644,7 @@
       "above_ma20_ratio": null,
       "factor_coverage": 0.0,
       "history": {
-        "0830": 68.55,
+        "0830": 44.79,
         "1135": 41.94,
         "1600": 44.79,
         "2130": 44.79,
@@ -11212,7 +9684,7 @@
       "above_ma20_ratio": 0.23809523809523808,
       "factor_coverage": 0.3230769230769231,
       "history": {
-        "0830": 21.18,
+        "0830": 44.57,
         "1135": 40.8,
         "1600": 44.57,
         "2130": 44.57,
@@ -11252,7 +9724,7 @@
       "above_ma20_ratio": 0.3333333333333333,
       "factor_coverage": 0.0967741935483871,
       "history": {
-        "0830": 48.99,
+        "0830": 44.42,
         "1135": 37.83,
         "1600": 44.42,
         "2130": 44.42,
@@ -11292,7 +9764,7 @@
       "above_ma20_ratio": 0.8571428571428571,
       "factor_coverage": 0.09333333333333334,
       "history": {
-        "0830": 59.23,
+        "0830": 43.75,
         "1135": 39.91,
         "1600": 43.75,
         "2130": 43.75,
@@ -11332,7 +9804,7 @@
       "above_ma20_ratio": 0,
       "factor_coverage": 0.037037037037037035,
       "history": {
-        "0830": 44.21,
+        "0830": 43.03,
         "1135": 41.26,
         "1600": 43.03,
         "2130": 43.03,
@@ -11372,7 +9844,7 @@
       "above_ma20_ratio": 0.6,
       "factor_coverage": 0.1590909090909091,
       "history": {
-        "0830": 55.39,
+        "0830": 42.04,
         "1135": 38.9,
         "1600": 42.04,
         "2130": 42.04,
@@ -11412,7 +9884,7 @@
       "above_ma20_ratio": null,
       "factor_coverage": 0.0,
       "history": {
-        "0830": 50.98,
+        "0830": 39.97,
         "1135": 39.22,
         "1600": 39.97,
         "2130": 39.97,
@@ -11452,7 +9924,7 @@
       "above_ma20_ratio": null,
       "factor_coverage": 0.0,
       "history": {
-        "0830": 65.41,
+        "0830": 35.18,
         "1135": 28.14,
         "1600": 35.18,
         "2130": 35.18,
@@ -11492,7 +9964,7 @@
       "above_ma20_ratio": null,
       "factor_coverage": 0.0,
       "history": {
-        "0830": 51.89,
+        "0830": 33.92,
         "1135": 26.37,
         "1600": 33.92,
         "2130": 33.92,
@@ -11532,7 +10004,7 @@
       "above_ma20_ratio": null,
       "factor_coverage": 0.0,
       "history": {
-        "0830": 46.88,
+        "0830": 31.55,
         "1135": 27.36,
         "1600": 31.55,
         "2130": 31.55,
@@ -11572,7 +10044,7 @@
       "above_ma20_ratio": null,
       "factor_coverage": 0.0,
       "history": {
-        "0830": 70.73,
+        "0830": 28.6,
         "1135": 24.03,
         "1600": 28.6,
         "2130": 28.6,
@@ -11612,7 +10084,7 @@
       "above_ma20_ratio": 1,
       "factor_coverage": 0.02564102564102564,
       "history": {
-        "0830": 41.33,
+        "0830": 27.55,
         "1135": 20.43,
         "1600": 27.55,
         "2130": 27.55,
@@ -11652,7 +10124,7 @@
       "above_ma20_ratio": null,
       "factor_coverage": 0.0,
       "history": {
-        "0830": 52.23,
+        "0830": 27.54,
         "1135": 27.07,
         "1600": 27.54,
         "2130": 27.54,
@@ -11692,7 +10164,7 @@
       "above_ma20_ratio": null,
       "factor_coverage": 0.0,
       "history": {
-        "0830": 92.24,
+        "0830": 25.08,
         "1135": 23.58,
         "1600": 25.08,
         "2130": 25.08,
@@ -11732,7 +10204,7 @@
       "above_ma20_ratio": null,
       "factor_coverage": 0.0,
       "history": {
-        "0830": 75.11,
+        "0830": 13.51,
         "1135": 14.0,
         "1600": 13.51,
         "2130": 13.51,
@@ -11808,18 +10280,18 @@
     "板块全部成分多日因子",
     "消息发布前后因果验证"
   ],
-  "scheduled_for": "2026-09-08T07:30:00+08:00",
-  "schedule_delay_seconds": 580.585162,
+  "scheduled_for": "2026-09-08T08:30:00+08:00",
+  "schedule_delay_seconds": 1174.76888,
   "predecessor": {
-    "date": "2026-09-07",
-    "stage": "2130",
-    "run_id": "07ce57ac852346088306ea7edfd34871"
+    "date": "2026-09-08",
+    "stage": "0730",
+    "run_id": "c6edbbfc24914f1b97563702a75586ce"
   },
   "quote_date": "2026-09-07",
   "wudao": {
     "status": "PARTIAL",
     "trade_date": "2026-09-07",
-    "requested_at": "2026-09-08T07:39:40.585162+08:00",
+    "requested_at": "2026-09-08T08:49:34.768880+08:00",
     "featured": {
       "rows": [
         {
@@ -12056,7 +10528,7 @@
           "688662"
         ],
         "source": "wudao_mcp",
-        "observed_at": "2026-09-08T07:39:43.102186+08:00",
+        "observed_at": "2026-09-08T08:49:36.874184+08:00",
         "metadata_updated_at": "2026-09-07T13:00:07.600000+00:00",
         "requested_name": "通信",
         "match_type": "fuzzy"
@@ -12090,7 +10562,7 @@
           "920906"
         ],
         "source": "wudao_mcp",
-        "observed_at": "2026-09-08T07:39:43.363065+08:00",
+        "observed_at": "2026-09-08T08:49:37.086361+08:00",
         "metadata_updated_at": "2026-09-07T13:00:21.075000+00:00",
         "requested_name": "机器人概念",
         "match_type": "fuzzy"
@@ -12261,7 +10733,7 @@
           "688981"
         ],
         "source": "wudao_mcp",
-        "observed_at": "2026-09-08T07:39:43.850600+08:00",
+        "observed_at": "2026-09-08T08:49:37.476806+08:00",
         "metadata_updated_at": "2026-09-07T13:01:01.302000+00:00",
         "requested_name": "芯片",
         "match_type": "fuzzy"
@@ -12376,7 +10848,7 @@
           "920808"
         ],
         "source": "wudao_mcp",
-        "observed_at": "2026-09-08T07:39:44.106806+08:00",
+        "observed_at": "2026-09-08T08:49:37.686149+08:00",
         "metadata_updated_at": "2026-09-07T13:00:49.495000+00:00",
         "requested_name": "算力",
         "match_type": "fuzzy"
@@ -12429,7 +10901,7 @@
           "920964"
         ],
         "source": "wudao_mcp",
-        "observed_at": "2026-09-08T07:39:44.351654+08:00",
+        "observed_at": "2026-09-08T08:49:37.888137+08:00",
         "metadata_updated_at": "2026-09-07T13:01:12.611000+00:00",
         "requested_name": "农业",
         "match_type": "fuzzy"
@@ -12496,7 +10968,7 @@
           "688775"
         ],
         "source": "wudao_mcp",
-        "observed_at": "2026-09-08T07:39:44.597083+08:00",
+        "observed_at": "2026-09-08T08:49:38.093281+08:00",
         "metadata_updated_at": "2026-09-07T13:01:08.142000+00:00",
         "requested_name": "AI应用",
         "match_type": "fuzzy"
@@ -12551,7 +11023,7 @@
           "605108"
         ],
         "source": "wudao_mcp",
-        "observed_at": "2026-09-08T07:39:46.097513+08:00",
+        "observed_at": "2026-09-08T08:49:39.292695+08:00",
         "metadata_updated_at": "2026-09-07T13:00:35.172000+00:00",
         "requested_name": "旅游",
         "match_type": "exact"
@@ -12560,7 +11032,7 @@
     "errors": [
       "MEMBERS_TIME_UNKNOWN"
     ],
-    "finished_at": "2026-09-08T07:39:46.097546+08:00"
+    "finished_at": "2026-09-08T08:49:39.292728+08:00"
   },
   "events": [
     {
@@ -13163,7 +11635,7 @@
       "source": "cninfo_announcements",
       "url": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=300468&announcementId=1225550384&orgId=9900024029&announcementTime=2026-09-07",
       "reliability": 0.95,
-      "freshness": 0.6675556128009259,
+      "freshness": 0.6513743484567901,
       "directness": 1.0,
       "priced_in_score": 43.996333638863405,
       "impact_score": null,
@@ -13186,11 +11658,11 @@
       "reliability": 0.95,
       "freshness": 0,
       "directness": 1.0,
-      "priced_in_score": 3.3320639756282966,
+      "priced_in_score": null,
       "impact_score": null,
       "verified": false,
       "canonical_id": "cninfo:1225547701:600887",
-      "expectation": "Fresh Catalyst",
+      "expectation": null,
       "expectation_basis": "规则代理：新鲜度与20日涨幅；未证明因果关系"
     },
     {
@@ -13207,11 +11679,11 @@
       "reliability": 0.95,
       "freshness": 0,
       "directness": 1.0,
-      "priced_in_score": 3.3320639756282966,
+      "priced_in_score": null,
       "impact_score": null,
       "verified": false,
       "canonical_id": "cninfo:1225547678:600887",
-      "expectation": "Fresh Catalyst",
+      "expectation": null,
       "expectation_basis": "规则代理：新鲜度与20日涨幅；未证明因果关系"
     },
     {
@@ -13228,11 +11700,11 @@
       "reliability": 0.95,
       "freshness": 0,
       "directness": 1.0,
-      "priced_in_score": 3.3320639756282966,
+      "priced_in_score": null,
       "impact_score": null,
       "verified": false,
       "canonical_id": "cninfo:1225536213:600887",
-      "expectation": "Fresh Catalyst",
+      "expectation": null,
       "expectation_basis": "规则代理：新鲜度与20日涨幅；未证明因果关系"
     },
     {
@@ -13249,11 +11721,11 @@
       "reliability": 0.95,
       "freshness": 0,
       "directness": 1.0,
-      "priced_in_score": 27.557494052339425,
+      "priced_in_score": null,
       "impact_score": null,
       "verified": false,
       "canonical_id": "cninfo:1225549790:002639",
-      "expectation": "Partially Priced",
+      "expectation": null,
       "expectation_basis": "规则代理：新鲜度与20日涨幅；未证明因果关系"
     },
     {
@@ -13270,11 +11742,11 @@
       "reliability": 0.95,
       "freshness": 0,
       "directness": 1.0,
-      "priced_in_score": 0.39588281868563335,
+      "priced_in_score": null,
       "impact_score": null,
       "verified": false,
       "canonical_id": "cninfo:1225549231:002600",
-      "expectation": "Fresh Catalyst",
+      "expectation": null,
       "expectation_basis": "规则代理：新鲜度与20日涨幅；未证明因果关系"
     },
     {
@@ -13291,11 +11763,11 @@
       "reliability": 0.95,
       "freshness": 0,
       "directness": 1.0,
-      "priced_in_score": 0.39588281868563335,
+      "priced_in_score": null,
       "impact_score": null,
       "verified": false,
       "canonical_id": "cninfo:1225549230:002600",
-      "expectation": "Fresh Catalyst",
+      "expectation": null,
       "expectation_basis": "规则代理：新鲜度与20日涨幅；未证明因果关系"
     },
     {
@@ -13312,11 +11784,11 @@
       "reliability": 0.95,
       "freshness": 0,
       "directness": 1.0,
-      "priced_in_score": 0.39588281868563335,
+      "priced_in_score": null,
       "impact_score": null,
       "verified": false,
       "canonical_id": "cninfo:1225541748:002600",
-      "expectation": "Fresh Catalyst",
+      "expectation": null,
       "expectation_basis": "规则代理：新鲜度与20日涨幅；未证明因果关系"
     },
     {
@@ -13333,11 +11805,11 @@
       "reliability": 0.95,
       "freshness": 0,
       "directness": 1.0,
-      "priced_in_score": 0.39588281868563335,
+      "priced_in_score": null,
       "impact_score": null,
       "verified": false,
       "canonical_id": "cninfo:1225541747:002600",
-      "expectation": "Fresh Catalyst",
+      "expectation": null,
       "expectation_basis": "规则代理：新鲜度与20日涨幅；未证明因果关系"
     },
     {
@@ -13354,11 +11826,11 @@
       "reliability": 0.95,
       "freshness": 0,
       "directness": 1.0,
-      "priced_in_score": 0.39588281868563335,
+      "priced_in_score": null,
       "impact_score": null,
       "verified": false,
       "canonical_id": "cninfo:1225541746:002600",
-      "expectation": "Fresh Catalyst",
+      "expectation": null,
       "expectation_basis": "规则代理：新鲜度与20日涨幅；未证明因果关系"
     },
     {
@@ -13375,11 +11847,11 @@
       "reliability": 0.95,
       "freshness": 0,
       "directness": 1.0,
-      "priced_in_score": 0.39588281868563335,
+      "priced_in_score": null,
       "impact_score": null,
       "verified": false,
       "canonical_id": "cninfo:1225540459:002600",
-      "expectation": "Fresh Catalyst",
+      "expectation": null,
       "expectation_basis": "规则代理：新鲜度与20日涨幅；未证明因果关系"
     },
     {
@@ -13396,11 +11868,11 @@
       "reliability": 0.95,
       "freshness": 0,
       "directness": 1.0,
-      "priced_in_score": 23.835573616755255,
+      "priced_in_score": null,
       "impact_score": null,
       "verified": false,
       "canonical_id": "cninfo:1225541996:600482",
-      "expectation": "Fresh Catalyst",
+      "expectation": null,
       "expectation_basis": "规则代理：新鲜度与20日涨幅；未证明因果关系"
     },
     {
@@ -13417,11 +11889,11 @@
       "reliability": 0.95,
       "freshness": 0,
       "directness": 1.0,
-      "priced_in_score": 23.835573616755255,
+      "priced_in_score": null,
       "impact_score": null,
       "verified": false,
       "canonical_id": "cninfo:1225541995:600482",
-      "expectation": "Fresh Catalyst",
+      "expectation": null,
       "expectation_basis": "规则代理：新鲜度与20日涨幅；未证明因果关系"
     },
     {
@@ -13438,11 +11910,11 @@
       "reliability": 0.95,
       "freshness": 0,
       "directness": 1.0,
-      "priced_in_score": 23.835573616755255,
+      "priced_in_score": null,
       "impact_score": null,
       "verified": false,
       "canonical_id": "cninfo:1225535207:600482",
-      "expectation": "Fresh Catalyst",
+      "expectation": null,
       "expectation_basis": "规则代理：新鲜度与20日涨幅；未证明因果关系"
     },
     {
@@ -13459,11 +11931,11 @@
       "reliability": 0.95,
       "freshness": 0,
       "directness": 1.0,
-      "priced_in_score": 23.835573616755255,
+      "priced_in_score": null,
       "impact_score": null,
       "verified": false,
       "canonical_id": "cninfo:1225535078:600482",
-      "expectation": "Fresh Catalyst",
+      "expectation": null,
       "expectation_basis": "规则代理：新鲜度与20日涨幅；未证明因果关系"
     },
     {
@@ -13480,11 +11952,11 @@
       "reliability": 0.95,
       "freshness": 0,
       "directness": 1.0,
-      "priced_in_score": 23.835573616755255,
+      "priced_in_score": null,
       "impact_score": null,
       "verified": false,
       "canonical_id": "cninfo:1225535009:600482",
-      "expectation": "Fresh Catalyst",
+      "expectation": null,
       "expectation_basis": "规则代理：新鲜度与20日涨幅；未证明因果关系"
     },
     {
@@ -13501,11 +11973,11 @@
       "reliability": 0.95,
       "freshness": 0,
       "directness": 1.0,
-      "priced_in_score": 23.835573616755255,
+      "priced_in_score": null,
       "impact_score": null,
       "verified": false,
       "canonical_id": "cninfo:1225534906:600482",
-      "expectation": "Fresh Catalyst",
+      "expectation": null,
       "expectation_basis": "规则代理：新鲜度与20日涨幅；未证明因果关系"
     },
     {
@@ -13522,11 +11994,11 @@
       "reliability": 0.95,
       "freshness": 0,
       "directness": 1.0,
-      "priced_in_score": 23.835573616755255,
+      "priced_in_score": null,
       "impact_score": null,
       "verified": false,
       "canonical_id": "cninfo:1225534806:600482",
-      "expectation": "Fresh Catalyst",
+      "expectation": null,
       "expectation_basis": "规则代理：新鲜度与20日涨幅；未证明因果关系"
     },
     {
@@ -13543,11 +12015,11 @@
       "reliability": 0.95,
       "freshness": 0,
       "directness": 1.0,
-      "priced_in_score": 23.835573616755255,
+      "priced_in_score": null,
       "impact_score": null,
       "verified": false,
       "canonical_id": "cninfo:1225534758:600482",
-      "expectation": "Fresh Catalyst",
+      "expectation": null,
       "expectation_basis": "规则代理：新鲜度与20日涨幅；未证明因果关系"
     },
     {
@@ -13564,11 +12036,11 @@
       "reliability": 0.95,
       "freshness": 0,
       "directness": 1.0,
-      "priced_in_score": 23.835573616755255,
+      "priced_in_score": null,
       "impact_score": null,
       "verified": false,
       "canonical_id": "cninfo:1225534743:600482",
-      "expectation": "Fresh Catalyst",
+      "expectation": null,
       "expectation_basis": "规则代理：新鲜度与20日涨幅；未证明因果关系"
     },
     {
@@ -13585,11 +12057,11 @@
       "reliability": 0.95,
       "freshness": 0,
       "directness": 1.0,
-      "priced_in_score": 23.835573616755255,
+      "priced_in_score": null,
       "impact_score": null,
       "verified": false,
       "canonical_id": "cninfo:1225534714:600482",
-      "expectation": "Fresh Catalyst",
+      "expectation": null,
       "expectation_basis": "规则代理：新鲜度与20日涨幅；未证明因果关系"
     },
     {
@@ -13606,11 +12078,11 @@
       "reliability": 0.95,
       "freshness": 0,
       "directness": 1.0,
-      "priced_in_score": 23.835573616755255,
+      "priced_in_score": null,
       "impact_score": null,
       "verified": false,
       "canonical_id": "cninfo:1225534504:600482",
-      "expectation": "Fresh Catalyst",
+      "expectation": null,
       "expectation_basis": "规则代理：新鲜度与20日涨幅；未证明因果关系"
     },
     {
@@ -13627,11 +12099,11 @@
       "reliability": 0.95,
       "freshness": 0,
       "directness": 1.0,
-      "priced_in_score": 23.835573616755255,
+      "priced_in_score": null,
       "impact_score": null,
       "verified": false,
       "canonical_id": "cninfo:1225534291:600482",
-      "expectation": "Fresh Catalyst",
+      "expectation": null,
       "expectation_basis": "规则代理：新鲜度与20日涨幅；未证明因果关系"
     },
     {
@@ -13648,11 +12120,11 @@
       "reliability": 0.95,
       "freshness": 0,
       "directness": 1.0,
-      "priced_in_score": 23.835573616755255,
+      "priced_in_score": null,
       "impact_score": null,
       "verified": false,
       "canonical_id": "cninfo:1225534196:600482",
-      "expectation": "Fresh Catalyst",
+      "expectation": null,
       "expectation_basis": "规则代理：新鲜度与20日涨幅；未证明因果关系"
     },
     {
@@ -13669,11 +12141,11 @@
       "reliability": 0.95,
       "freshness": 0,
       "directness": 1.0,
-      "priced_in_score": 45.339595375722574,
+      "priced_in_score": null,
       "impact_score": null,
       "verified": false,
       "canonical_id": "cninfo:1225542103:002017",
-      "expectation": "Partially Priced",
+      "expectation": null,
       "expectation_basis": "规则代理：新鲜度与20日涨幅；未证明因果关系"
     },
     {
@@ -13690,11 +12162,11 @@
       "reliability": 0.95,
       "freshness": 0,
       "directness": 1.0,
-      "priced_in_score": 39.56148713060059,
+      "priced_in_score": null,
       "impact_score": null,
       "verified": false,
       "canonical_id": "cninfo:1225546070:600547",
-      "expectation": "Partially Priced",
+      "expectation": null,
       "expectation_basis": "规则代理：新鲜度与20日涨幅；未证明因果关系"
     },
     {
@@ -13711,11 +12183,11 @@
       "reliability": 0.95,
       "freshness": 0,
       "directness": 1.0,
-      "priced_in_score": 12.20703125,
+      "priced_in_score": null,
       "impact_score": null,
       "verified": false,
       "canonical_id": "cninfo:1225549260:600028",
-      "expectation": "Fresh Catalyst",
+      "expectation": null,
       "expectation_basis": "规则代理：新鲜度与20日涨幅；未证明因果关系"
     },
     {
@@ -13732,11 +12204,11 @@
       "reliability": 0.95,
       "freshness": 0,
       "directness": 1.0,
-      "priced_in_score": 12.20703125,
+      "priced_in_score": null,
       "impact_score": null,
       "verified": false,
       "canonical_id": "cninfo:1225546575:600028",
-      "expectation": "Fresh Catalyst",
+      "expectation": null,
       "expectation_basis": "规则代理：新鲜度与20日涨幅；未证明因果关系"
     },
     {
@@ -13753,11 +12225,11 @@
       "reliability": 0.95,
       "freshness": 0,
       "directness": 1.0,
-      "priced_in_score": 12.20703125,
+      "priced_in_score": null,
       "impact_score": null,
       "verified": false,
       "canonical_id": "cninfo:1225544429:600028",
-      "expectation": "Fresh Catalyst",
+      "expectation": null,
       "expectation_basis": "规则代理：新鲜度与20日涨幅；未证明因果关系"
     },
     {
@@ -13774,11 +12246,11 @@
       "reliability": 0.95,
       "freshness": 0,
       "directness": 1.0,
-      "priced_in_score": 12.20703125,
+      "priced_in_score": null,
       "impact_score": null,
       "verified": false,
       "canonical_id": "cninfo:1225541756:600028",
-      "expectation": "Fresh Catalyst",
+      "expectation": null,
       "expectation_basis": "规则代理：新鲜度与20日涨幅；未证明因果关系"
     },
     {
@@ -13795,11 +12267,11 @@
       "reliability": 0.95,
       "freshness": 0,
       "directness": 1.0,
-      "priced_in_score": 12.20703125,
+      "priced_in_score": null,
       "impact_score": null,
       "verified": false,
       "canonical_id": "cninfo:1225540503:600028",
-      "expectation": "Fresh Catalyst",
+      "expectation": null,
       "expectation_basis": "规则代理：新鲜度与20日涨幅；未证明因果关系"
     },
     {
@@ -13816,11 +12288,11 @@
       "reliability": 0.95,
       "freshness": 0,
       "directness": 1.0,
-      "priced_in_score": 12.20703125,
+      "priced_in_score": null,
       "impact_score": null,
       "verified": false,
       "canonical_id": "cninfo:1225538030:600028",
-      "expectation": "Fresh Catalyst",
+      "expectation": null,
       "expectation_basis": "规则代理：新鲜度与20日涨幅；未证明因果关系"
     },
     {
@@ -13837,11 +12309,11 @@
       "reliability": 0.95,
       "freshness": 0,
       "directness": 1.0,
-      "priced_in_score": 22.204806687565302,
+      "priced_in_score": null,
       "impact_score": null,
       "verified": false,
       "canonical_id": "cninfo:1225546329:002297",
-      "expectation": "Fresh Catalyst",
+      "expectation": null,
       "expectation_basis": "规则代理：新鲜度与20日涨幅；未证明因果关系"
     },
     {
@@ -13858,11 +12330,11 @@
       "reliability": 0.95,
       "freshness": 0,
       "directness": 1.0,
-      "priced_in_score": 29.586636466591155,
+      "priced_in_score": null,
       "impact_score": null,
       "verified": false,
       "canonical_id": "cninfo:1225540840:600026",
-      "expectation": "Partially Priced",
+      "expectation": null,
       "expectation_basis": "规则代理：新鲜度与20日涨幅；未证明因果关系"
     },
     {
@@ -13879,11 +12351,11 @@
       "reliability": 0.95,
       "freshness": 0,
       "directness": 1.0,
-      "priced_in_score": 29.586636466591155,
+      "priced_in_score": null,
       "impact_score": null,
       "verified": false,
       "canonical_id": "cninfo:1225540838:600026",
-      "expectation": "Partially Priced",
+      "expectation": null,
       "expectation_basis": "规则代理：新鲜度与20日涨幅；未证明因果关系"
     },
     {
@@ -13900,97 +12372,22 @@
       "reliability": 0.95,
       "freshness": 0,
       "directness": 1.0,
-      "priced_in_score": 29.586636466591155,
+      "priced_in_score": null,
       "impact_score": null,
       "verified": false,
       "canonical_id": "cninfo:1225540836:600026",
-      "expectation": "Partially Priced",
+      "expectation": null,
       "expectation_basis": "规则代理：新鲜度与20日涨幅；未证明因果关系"
     }
   ],
   "transitions": [
     {
-      "stock_code": "002017",
+      "stock_code": "600095",
       "transition": "淘汰",
       "reason": "排名未进入阶段上限"
     },
     {
-      "stock_code": "600028",
-      "transition": "淘汰",
-      "reason": "排名未进入阶段上限"
-    },
-    {
-      "stock_code": "002703",
-      "transition": "淘汰",
-      "reason": "排名未进入阶段上限"
-    },
-    {
-      "stock_code": "600611",
-      "transition": "淘汰",
-      "reason": "排名未进入阶段上限"
-    },
-    {
-      "stock_code": "002015",
-      "transition": "淘汰",
-      "reason": "排名未进入阶段上限"
-    },
-    {
-      "stock_code": "600887",
-      "transition": "淘汰",
-      "reason": "排名未进入阶段上限"
-    },
-    {
-      "stock_code": "600026",
-      "transition": "淘汰",
-      "reason": "排名未进入阶段上限"
-    },
-    {
-      "stock_code": "002602",
-      "transition": "淘汰",
-      "reason": "排名未进入阶段上限"
-    },
-    {
-      "stock_code": "600482",
-      "transition": "淘汰",
-      "reason": "排名未进入阶段上限"
-    },
-    {
-      "stock_code": "002297",
-      "transition": "淘汰",
-      "reason": "排名未进入阶段上限"
-    },
-    {
-      "stock_code": "002155",
-      "transition": "淘汰",
-      "reason": "排名未进入阶段上限"
-    },
-    {
-      "stock_code": "600547",
-      "transition": "淘汰",
-      "reason": "排名未进入阶段上限"
-    },
-    {
-      "stock_code": "002639",
-      "transition": "淘汰",
-      "reason": "排名未进入阶段上限"
-    },
-    {
-      "stock_code": "000519",
-      "transition": "淘汰",
-      "reason": "排名未进入阶段上限"
-    },
-    {
-      "stock_code": "002518",
-      "transition": "淘汰",
-      "reason": "排名未进入阶段上限"
-    },
-    {
-      "stock_code": "002600",
-      "transition": "淘汰",
-      "reason": "排名未进入阶段上限"
-    },
-    {
-      "stock_code": "002580",
+      "stock_code": "300468",
       "transition": "淘汰",
       "reason": "排名未进入阶段上限"
     }
@@ -13998,7 +12395,7 @@
   "limit_pool": [],
   "position_counts": {
     "启动观察": 0,
-    "趋势观察": 29,
+    "趋势观察": 12,
     "高位观察": 0,
     "回调观察": 0,
     "排除": 0
@@ -14040,26 +12437,50 @@
       "top3_hit_rate": null,
       "top5_hit_rate": null,
       "definition": "同阶段/同池日等权观察组合；命中=次日收盘上涨；不含费用、滑点、停牌与涨停无法成交约束"
+    },
+    "0830/POOL_B": {
+      "sample_size": 0,
+      "win_rate": null,
+      "average_return": null,
+      "median_return": null,
+      "max_drawdown": null,
+      "next_day_limit_up_rate": null,
+      "top3_hit_rate": null,
+      "top5_hit_rate": null,
+      "definition": "同阶段/同池日等权观察组合；命中=次日收盘上涨；不含费用、滑点、停牌与涨停无法成交约束"
     }
   },
   "source_logs": [
     {
       "source_name": "cninfo_announcements",
       "operation": "events",
-      "success": true,
-      "fetched_at": "2026-09-08T07:39:58.315063+08:00",
-      "timestamp": "2026-09-08T00:00:00+08:00",
+      "success": false,
+      "fetched_at": "2026-09-08T08:50:08.008986+08:00",
+      "timestamp": null,
       "reliability_level": 0.95,
       "fallback_priority": 0,
       "is_fallback": false,
-      "count": 27,
-      "error": null,
+      "count": 0,
+      "error": "ReadTimeout",
       "http_status": null
+    },
+    {
+      "source_name": "eastmoney_announcements",
+      "operation": "events",
+      "success": false,
+      "fetched_at": "2026-09-08T08:50:09.757278+08:00",
+      "timestamp": null,
+      "reliability_level": 0.85,
+      "fallback_priority": 1,
+      "is_fallback": true,
+      "count": 0,
+      "error": "HTTPStatusError",
+      "http_status": 567
     },
     {
       "source_name": "wudao_mcp",
       "operation": "ranking_featured",
-      "fetched_at": "2026-09-08T07:39:40.721970+08:00",
+      "fetched_at": "2026-09-08T08:49:34.912780+08:00",
       "timestamp": "2026-09-07T13:06:05.082000+00:00",
       "reliability_level": 0.85,
       "fallback_priority": 0,
@@ -14070,7 +12491,7 @@
     {
       "source_name": "wudao_mcp",
       "operation": "ranking_industry",
-      "fetched_at": "2026-09-08T07:39:42.601599+08:00",
+      "fetched_at": "2026-09-08T08:49:36.435481+08:00",
       "timestamp": "2026-09-07T13:06:05.082000+00:00",
       "reliability_level": 0.85,
       "fallback_priority": 0,
@@ -14081,7 +12502,7 @@
     {
       "source_name": "wudao_mcp",
       "operation": "members",
-      "fetched_at": "2026-09-08T07:39:42.854865+08:00",
+      "fetched_at": "2026-09-08T08:49:36.673363+08:00",
       "timestamp": null,
       "reliability_level": 0.85,
       "fallback_priority": 0,
@@ -14092,7 +12513,7 @@
     {
       "source_name": "wudao_mcp",
       "operation": "members",
-      "fetched_at": "2026-09-08T07:39:43.102220+08:00",
+      "fetched_at": "2026-09-08T08:49:36.874216+08:00",
       "timestamp": null,
       "reliability_level": 0.85,
       "fallback_priority": 0,
@@ -14103,7 +12524,7 @@
     {
       "source_name": "wudao_mcp",
       "operation": "members",
-      "fetched_at": "2026-09-08T07:39:43.363090+08:00",
+      "fetched_at": "2026-09-08T08:49:37.086384+08:00",
       "timestamp": null,
       "reliability_level": 0.85,
       "fallback_priority": 0,
@@ -14114,7 +12535,7 @@
     {
       "source_name": "wudao_mcp",
       "operation": "members",
-      "fetched_at": "2026-09-08T07:39:43.850655+08:00",
+      "fetched_at": "2026-09-08T08:49:37.476859+08:00",
       "timestamp": null,
       "reliability_level": 0.85,
       "fallback_priority": 0,
@@ -14125,7 +12546,7 @@
     {
       "source_name": "wudao_mcp",
       "operation": "members",
-      "fetched_at": "2026-09-08T07:39:44.106846+08:00",
+      "fetched_at": "2026-09-08T08:49:37.686185+08:00",
       "timestamp": null,
       "reliability_level": 0.85,
       "fallback_priority": 0,
@@ -14136,7 +12557,7 @@
     {
       "source_name": "wudao_mcp",
       "operation": "members",
-      "fetched_at": "2026-09-08T07:39:44.351684+08:00",
+      "fetched_at": "2026-09-08T08:49:37.888166+08:00",
       "timestamp": null,
       "reliability_level": 0.85,
       "fallback_priority": 0,
@@ -14147,7 +12568,7 @@
     {
       "source_name": "wudao_mcp",
       "operation": "members",
-      "fetched_at": "2026-09-08T07:39:44.597115+08:00",
+      "fetched_at": "2026-09-08T08:49:38.093311+08:00",
       "timestamp": null,
       "reliability_level": 0.85,
       "fallback_priority": 0,
@@ -14159,7 +12580,7 @@
     {
       "source_name": "wudao_mcp",
       "operation": "members",
-      "fetched_at": "2026-09-08T07:39:44.991033+08:00",
+      "fetched_at": "2026-09-08T08:49:38.420288+08:00",
       "timestamp": null,
       "reliability_level": 0.85,
       "fallback_priority": 0,
@@ -14171,7 +12592,7 @@
     {
       "source_name": "wudao_mcp",
       "operation": "members",
-      "fetched_at": "2026-09-08T07:39:45.447657+08:00",
+      "fetched_at": "2026-09-08T08:49:38.728974+08:00",
       "timestamp": null,
       "reliability_level": 0.85,
       "fallback_priority": 0,
@@ -14183,7 +12604,7 @@
     {
       "source_name": "wudao_mcp",
       "operation": "members",
-      "fetched_at": "2026-09-08T07:39:45.854407+08:00",
+      "fetched_at": "2026-09-08T08:49:39.085001+08:00",
       "timestamp": null,
       "reliability_level": 0.85,
       "fallback_priority": 0,
@@ -14192,15 +12613,17 @@
       "success": true
     }
   ],
-  "source_success_rate": 0.7692307692307693,
+  "source_success_rate": 0.6428571428571429,
   "failed_sources": [
+    "cninfo_announcements",
+    "eastmoney_announcements",
     "wudao_mcp"
   ],
-  "stock_count": 29,
+  "stock_count": 12,
   "sector_count": 49,
-  "candidate_count": 12,
-  "dashboard_updated_at": "2026-09-08T07:39:58.325887+08:00",
-  "finished_at": "2026-09-08T07:39:58.325897+08:00",
+  "candidate_count": 10,
+  "dashboard_updated_at": "2026-09-08T08:50:09.807239+08:00",
+  "finished_at": "2026-09-08T08:50:09.807259+08:00",
   "google_docs": {
     "status": "SYNCED",
     "sent": 1,
