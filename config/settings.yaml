@@ -110,3 +110,11 @@ wudao:
   enabled: true
   member_theme_limit: 10
   intraday_max_age_minutes: 20
+
+# Bounded official-document discovery, independent of the trend shortlist.
+catalyst_evidence:
+  enabled: true
+  search_terms: ['重大合同', '签订合同', '业绩预告']
+  max_pages_per_term: 2
+  max_documents: 20
+  max_new_candidates: 20

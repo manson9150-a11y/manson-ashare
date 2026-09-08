@@ -65,10 +65,14 @@ class EastmoneyAdapter(Adapter):
         if operation == 'members':
             return [r['f12'] for r in self.listing('b:' + kwargs['sector_id'], 'f12')]
         if operation == 'limit_pool':
-            data = self.get('https://push2ex.eastmoney.com/getTopicZTPool', params={'ut': '7eea3edcaed734bea9cbfc24409ed9894', 'dpt': 'wz.ztzt', 'Pageindex': 0, 'pagesize': 1000, 'sort': 'fbt:asc', 'date': kwargs['day'].strftime('%Y%m%d'), '_': int(datetime.now(TZ).timestamp() * 1000)}).json().get('data')
-            if not data:
-                return []
-            return [{'code': r['c'], 'board_count': r.get('lbc'), 'first_seal': r.get('fbt'), 'last_seal': r.get('lbt'), 'break_count': r.get('zbc'), 'seal_amount': r.get('fund'), 'source': self.source_name, 'trade_date': str(kwargs['day'])} for r in data.get('pool', [])]
+            data = self.get('https://push2ex.eastmoney.com/getTopicZTPool', params={'ut': '7eea3edcaed734bea9cbfc24409ed989', 'dpt': 'wz.ztzt', 'Pageindex': 0, 'pagesize': 1000, 'sort': 'fbt:asc', 'date': kwargs['day'].strftime('%Y%m%d'), '_': int(datetime.now(TZ).timestamp() * 1000)}).json().get('data')
+            if not isinstance(data, dict) or not isinstance(data.get('pool'), list) or not data['pool']:
+                raise Unavailable('limit pool empty or unavailable; zero not verified')
+            if str(data.get('qdate')) != kwargs['day'].strftime('%Y%m%d'):
+                raise Unavailable('limit pool date mismatch')
+            if int(data.get('tc', len(data['pool']))) > len(data['pool']):
+                raise Unavailable('limit pool truncated')
+            return [{'code': r['c'], 'limit_up_price': number(r.get('p')) / 1000 if number(r.get('p')) else None, 'board_count': r.get('lbc'), 'first_seal': r.get('fbt'), 'last_seal': r.get('lbt'), 'break_count': r.get('zbc'), 'seal_amount': r.get('fund'), 'source': self.source_name, 'trade_date': str(kwargs['day'])} for r in data.get('pool', [])]
         raise Unavailable('unsupported')
     def normalize(self, payload, **kwargs):
         rows = []

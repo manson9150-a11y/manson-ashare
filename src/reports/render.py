@@ -32,6 +32,7 @@ def stage_markdown(run):
         if run.get('pool_notes',{}).get(pool):lines.append('\n'+run['pool_notes'][pool])
         if not group and not run.get('pool_notes',{}).get(pool):lines.append('\n无符合条件候选，不补足数量。')
         for s in group:
+            if s.get('derived_board_count') is not None: lines.append(f"日线推导连续涨停：{s['derived_board_count']}；非供应商确认板数，特殊交易及历史除权未完全覆盖。")
             lines += [f"\n#### {s['stock_code']} {s['stock_name']}",f"- 板数：{fmt(s.get('board_count'))}；Market/Sector：{fmt(s.get('market_score'))}/{fmt(s.get('sector_score'))}；风险：{s['risk']}",f"- 5/10/20日：{fmt(s.get('return_5d'))}% / {fmt(s.get('return_10d'))}% / {fmt(s.get('return_20d'))}%；MA20距离：{fmt(s.get('distance_ma20'))}%",f"- 正因子：{s['positive_factor']}",f"- 负因子：{s['negative_factor']}",f"- 验证：{s['validation_condition']}",f"- 失效：{s['invalidation_condition']}"]
             if s.get('wudao_themes'):lines.append('\n- 悟道题材归属：'+'、'.join(s['wudao_themes']))
             if s.get('validation_label'):lines.append(f"- 午盘验证：{s['validation_label']}；上午真实涨跌 {fmt(s['morning_return'])}%")
@@ -39,10 +40,12 @@ def stage_markdown(run):
         lines+=['\n### 08:30全部候选验证']
         for s in run['validations']:lines.append(f"- {s['stock_code']} {s['stock_name']}：{s['validation_label']}；{fmt(s.get('morning_return'))}%")
     if run.get('events'):
-        lines.append('\n### 公告与风险线索（标题未经正文核验）')
+        lines.append('\n### 公告与风险线索（逐条标注核验状态）')
         for e in run['events']:
             when = e['publish_time'][:10]+'（仅日期）' if e.get('publish_time_precision')=='date' else e['publish_time']
-            lines.append(f"- {e['stock_code']} · {fmt(e['title'])} · {when} · {e['source']} · {e['url']}")
+            lines.append(f"- {e['stock_code']} · {fmt(e['title'])} · {when} · {e['source']} · {e['url']} · {'已核验' if e.get('verified') else '待核验'}")
+            if e.get('verification'):
+                v=e['verification']; lines.append(f"  - 正文证据：{v.get('evidence',v.get('reason',''))}；{v.get('score_basis','')}")
     lines+=['\n### 数据缺口', '\n'+ '、'.join(run.get('missing_factors',[])), '\n### 淘汰记录']
     for s in run.get('eliminations',[])[:40]:lines.append(f"- {s.get('stock_code',s.get('code'))}：{s.get('reason',s.get('exclusion_reason'))}")
     lines+=['\n这是规则研究记录。评分和主观概率不是收益承诺；没有可靠数据时不输出交易候选。']

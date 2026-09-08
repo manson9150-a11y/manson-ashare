@@ -6,7 +6,10 @@ import pandas as pd
 from src.models import Quote,Event
 from src.utils.calendar import TZ
 @pytest.fixture
-def config():return yaml.safe_load((Path(__file__).parents[1]/'config/settings.yaml').read_text())
+def config():
+    result=yaml.safe_load((Path(__file__).parents[1]/'config/settings.yaml').read_text())
+    result['catalyst_evidence']['enabled']=False  # Offline tests opt in with mocked transports.
+    return result
 @pytest.fixture
 def bars():
     c=np.arange(1,81,dtype=float)+100

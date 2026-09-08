@@ -3,7 +3,7 @@ from datetime import datetime, timedelta
 from pathlib import Path
 import html
 import re
-from urllib.parse import urlencode
+from urllib.parse import urlencode, urljoin
 from src.models import Event
 from src.utils.calendar import TZ
 from .base import Adapter, Unavailable
@@ -72,6 +72,8 @@ class CninfoAnnouncementAdapter(Adapter):
             else:
                 raise Unavailable('announcement pagination budget exceeded')
         if self.cache_path:
+            persisted=read_json(self.cache_path,{})
+            for k,v in persisted.items(): self.first_seen[k]=min(self.first_seen.get(k,v),v)
             self.first_seen = {k: v for k, v in self.first_seen.items() if v[:10] >= str(start)}
             write_json(self.cache_path, self.first_seen)
         return result
@@ -98,7 +100,8 @@ class CninfoAnnouncementAdapter(Adapter):
                                     event_type=event_kind(title, self.config), event_time=published,
                                     publish_time=published, publish_time_precision=precision,
                                     first_seen_at=datetime.fromisoformat(observed), source=self.source_name,
-                                    url=url, reliability=self.reliability_level, directness=1,
+                                    url=url, document_url=urljoin("https://static.cninfo.com.cn/", row["adjunctUrl"]) if row.get("adjunctUrl") else None,
+                                    reliability=self.reliability_level, directness=1,
                                     verified=False, impact_score=None))
             except (ValueError, KeyError, TypeError, OverflowError, OSError):
                 continue

@@ -55,6 +55,8 @@ class Event(Record):
     impact_score: float | None = Field(default=None, ge=0, le=100)
     verified: bool = False
     canonical_id: str | None = None
+    document_url: str | None = None
+    verification: dict | None = None
     @field_validator("publish_time", "event_time", "first_seen_at")
     @classmethod
     def aware(cls, value):

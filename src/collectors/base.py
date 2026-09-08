@@ -53,7 +53,7 @@ class Collector:
                 continue
             try:
                 result = adapter.fetch(operation, **kwargs)
-                if result is None or (len(result) == 0 and operation not in ('events', 'limit_pool')):
+                if result is None or (len(result) == 0 and operation != 'events'):
                     raise Unavailable('empty response')
                 if accept is not None:
                     result = accept(result)

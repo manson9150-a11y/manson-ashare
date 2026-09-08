@@ -11,11 +11,14 @@ def pools(stocks,stage,config,previous=None):
     previous_by_code={s['stock_code']:s for v in (previous or {}).get('pools',{}).values() for s in v}
     previous_codes=set(previous_by_code)
     for s in stocks:
-        if stage!='1600' and s['stock_code'] not in previous_codes:
+        fresh_catalyst=stage in ('2130','0730','0830') and s['independent_catalyst']
+        if stage!='1600' and s['stock_code'] not in previous_codes and not fresh_catalyst:
             continue
         if s['position_type']=='排除' or (s['total_score'] or 0)<limits['min_score']:
             continue
-        if stage!='1600':
+        if fresh_catalyst and previous_by_code.get(s['stock_code'],{}).get('pool')!='POOL_A':
+            pool='POOL_C'
+        elif stage!='1600':
             pool=previous_by_code[s['stock_code']]['pool']
         elif s['is_limit_up']:
             pool='POOL_A'
