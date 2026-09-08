@@ -109,6 +109,8 @@ stages:
 wudao:
   enabled: true
   member_theme_limit: 10
+  member_request_budget: 4
+  member_cache_hours: 24
   intraday_max_age_minutes: 20
 
 # Bounded official-document discovery, independent of the trend shortlist.

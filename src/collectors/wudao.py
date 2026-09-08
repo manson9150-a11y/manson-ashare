@@ -1,11 +1,12 @@
 """Bounded read-only, stateless MCP client. Never invoke user watchlists."""
-from datetime import datetime
+from datetime import datetime, timedelta
 import json
 import math
 import os
 import re
 import httpx
 from src.utils.calendar import TZ
+from src.utils.io import read_json, write_json
 
 URL = 'https://stock.quicktiny.cn/api/mcp'
 ALLOWED = {'theme_intraday_capital', 'theme_stocks'}
@@ -15,7 +16,7 @@ class WudaoError(RuntimeError):
     pass
 
 class WudaoResearch:
-    def __init__(self, config, key=None, client=None):
+    def __init__(self, config, key=None, client=None, cache_path=None):
         self.config = config.get('wudao', {})
         self.key = key if key is not None else os.environ.get('WUDAO_API_KEY', '')
         self.client = client or httpx.Client(timeout=25, follow_redirects=False)
@@ -23,6 +24,25 @@ class WudaoResearch:
         self.sequence = 0
         self.ready = False
         self.stopped = False
+        self.cache_path = cache_path
+        self.member_cache = read_json(cache_path, {}) if cache_path else {}
+
+    def cached_member(self, row, as_of):
+        """Reuse validated classification only; rankings always come from this run."""
+        entry = self.member_cache.get(str(row['themeCode']), {})
+        try:
+            observed = datetime.fromisoformat(entry['observed_at'])
+            metadata = datetime.fromisoformat(entry['metadata_updated_at'])
+            # Both observation and vendor metadata must be available at decision time.
+            if (observed.tzinfo is None or metadata.tzinfo is None
+                    or not 0 <= (as_of-observed).total_seconds() <= self.config.get('member_cache_hours',24)*3600
+                    or not 0 <= (as_of-metadata).total_seconds() <= 7*86400
+                    or not entry['codes'] or not entry.get('id') or not entry.get('name')
+                    or not all(re.fullmatch(r'\d{6}', c) for c in entry['codes'])):
+                return None
+            return {**entry, 'cache_reused': True, 'requested_name': row['themeName']}
+        except (KeyError, ValueError, TypeError):
+            return None
 
     def rpc(self, method, params=None, notification=False):
         if not self.key: raise WudaoError('NOT_CONFIGURED')
@@ -142,18 +162,36 @@ class WudaoResearch:
 
     def collect(self, day, as_of, stage):
         result={'status':'UNAVAILABLE','trade_date':str(day),'requested_at':as_of.isoformat(),
-                'featured':None,'industry':None,'membership':[],'errors':[]}
+                'featured':None,'industry':None,'membership':[],'errors':[],
+                'member_requests':0,'member_cache_hits':0}
         for universe in ['featured','industry']:
             try: result[universe]=self.record('ranking_'+universe,lambda u=universe:self.ranking(day,as_of,u,stage))
             except Exception: result['errors'].append(self.logs[-1]['error'])
             if self.stopped: break
         rows=(result.get('featured') or {}).get('rows',[])
         for row in rows[:self.config.get('member_theme_limit',10)]:
-            if self.stopped: break
             try:
-                member=self.record('members',lambda r=row:self.members(r,day,as_of))
+                member = self.cached_member(row, as_of)
+                if member:
+                    result['member_cache_hits'] += 1
+                    self.logs.append(dict(source_name='wudao_mcp',operation='members_cache',success=True,
+                        count=len(member['codes']),fetched_at=member['observed_at'],
+                        timestamp=member['metadata_updated_at'],cache_reused=True))
+                else:
+                    if self.stopped: continue
+                    if result['member_requests'] >= self.config.get('member_request_budget',4):
+                        result['errors'].append('MEMBER_REQUEST_BUDGET')
+                        continue
+                    result['member_requests'] += 1
+                    member=self.record('members',lambda r=row:self.members(r,day,as_of))
+                    self.member_cache[str(row['themeCode'])] = member
                 if member['id'] not in {s['id'] for s in result['membership']}: result['membership'].append(member)
             except Exception: result['errors'].append(self.logs[-1]['error'])
+        if self.cache_path:
+            # Persist only validated public classifications, never credentials or prices.
+            self.member_cache = {k:v for k,v in self.member_cache.items()
+                                 if v.get('observed_at','')[:10] >= str(as_of.date()-timedelta(days=1))}
+            write_json(self.cache_path, self.member_cache)
         result['status']='OK' if result['featured'] and result['industry'] and not result['errors'] else 'PARTIAL' if result['featured'] or result['industry'] else 'UNAVAILABLE'
         result['errors']=sorted(set(result['errors']))
         result['finished_at']=datetime.now(TZ).isoformat()

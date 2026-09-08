@@ -10,6 +10,8 @@ from src.catalysts.engine import deduplicate
 from src.collectors.announcements import CninfoAnnouncementAdapter
 from src.utils.calendar import TZ
 from src.utils.io import write_json
+from src.utils.io import read_json
+from src.models import Event
 
 RULE_VERSION = 'official_pdf_facts_v1'
 
@@ -77,11 +79,40 @@ class CatalystEvidence:
     def __init__(self, config, output):
         self.config = config.get('catalyst_evidence', {})
         self.adapter = CninfoAnnouncementAdapter(config, output/'data/latest/announcement_first_seen.json')
+        self.verified_cache = output/'data/latest/verified_catalyst_cache.json'
+        self.freshness_hours = config['catalyst']['freshness_hours']
         self.logs = []
         self.attempted = {}
         self.remaining = self.config.get('max_documents', 20)
         self.status = {'status': 'PENDING', 'scope': '限定关键词与页数，非全市场公告完整覆盖',
                        'discovered': 0, 'eligible': 0, 'documents_read': 0, 'verified': 0, 'errors': []}
+
+    def cached_events(self, as_of):
+        result=[]
+        for row in read_json(self.verified_cache,[]):
+            try:
+                event=Event.model_validate(row)
+                proof=event.verification or {}
+                observed=datetime.fromisoformat(proof['observed_at'])
+                if (event.verified and proof.get('rule_version')==RULE_VERSION
+                        and proof.get('status')=='VERIFIED_RULE' and observed.tzinfo is not None
+                        and observed<=as_of and event.event_time<=as_of
+                        and event.first_seen_at is not None and event.first_seen_at<=as_of
+                        and 0 <= (as_of-event.publish_time).total_seconds() < self.freshness_hours*3600):
+                    result.append(event)
+            except (KeyError,TypeError,ValueError):
+                continue
+        return result
+
+    def preserve_verified(self, events):
+        # A successful earlier observation survives a later network outage. Its
+        # original publication/observation/proof times are retained, never refreshed.
+        now=datetime.now(TZ)
+        saved={e.event_id:e for e in self.cached_events(now)}
+        for event in events:
+            if event.verified and (event.verification or {}).get('status')=='VERIFIED_RULE':
+                saved[event.event_id]=event
+        write_json(self.verified_cache,[e.model_dump(mode='json') for e in saved.values()])
 
     def discover(self, as_of):
         result = []
@@ -173,4 +204,5 @@ class CatalystEvidence:
         self.status['verified'] = sum(e.verified for e in verified)
         self.status['errors'] = sorted(set(self.status['errors']))
         self.status['status'] = 'PARTIAL' if self.status['errors'] else 'BOUNDED_SCAN_COMPLETE'
+        self.preserve_verified(verified)
         return verified

@@ -170,3 +170,48 @@ def test_live_pipeline_discovers_c_without_trend_membership(tmp_path,config,monk
     assert any(s['stock_code']==event.stock_code for s in run['pools']['POOL_C'])
     assert run['catalyst_evidence']['verified']==1
     assert 'POOL_A' in run['pool_diagnostics']
+
+
+def test_live_event_cutoff_admits_observed_announcements_without_changing_quote_time(tmp_path,config):
+    from src.pipeline import Pipeline
+    from src.catalysts.engine import deduplicate
+    from pathlib import Path
+    from datetime import datetime
+    from src.utils.calendar import TZ
+    from src.models import Event
+    p=Pipeline(Path(__file__).resolve().parents[1],tmp_path,'live',config)
+    quote_time=datetime(2026,9,8,21,45,tzinfo=TZ)
+    observed=datetime(2026,9,8,21,46,tzinfo=TZ)
+    run={'date':'2026-09-08','stage':'2130','as_of_time':quote_time.isoformat()}
+    event=Event(event_id='cutoff',stock_code='688420',title='重大合同',event_type='重大合同',
+        event_time=quote_time.replace(hour=0,minute=0),publish_time=quote_time.replace(hour=0,minute=0),
+        publish_time_precision='date',first_seen_at=observed,source='cninfo',url='https://www.cninfo.com.cn/',reliability=.95)
+    assert deduplicate([event],quote_time)==[]
+    cutoff=p.event_cutoff(run,quote_time,observed)
+    assert deduplicate([event],cutoff)==[event]
+    assert run['as_of_time']==quote_time.isoformat()
+    # Historical checks cannot advance into the future; stage deadlines still bound observations.
+    assert p.event_cutoff(run,quote_time,observed.replace(day=9))==quote_time
+    assert p.event_cutoff(run,quote_time,observed.replace(hour=23,minute=59,second=30)).time().isoformat()=='23:59:00'
+    p.mode='retrospective'
+    assert p.event_cutoff(run,quote_time,observed)==quote_time
+
+
+def test_verified_event_cache_preserves_times_and_rejects_future_or_expired(tmp_path,config):
+    from src.catalysts.evidence import CatalystEvidence,RULE_VERSION
+    from src.utils.io import write_json
+    from src.models import Event
+    from datetime import datetime,timedelta
+    from src.utils.calendar import TZ
+    service=CatalystEvidence(config,tmp_path)
+    observed=datetime(2026,9,8,23,18,tzinfo=TZ)
+    event=Event(event_id='cache',stock_code='301085',title='重大合同',event_type='重大合同',
+        event_time=observed-timedelta(hours=12),publish_time=observed-timedelta(hours=12),
+        first_seen_at=observed,source='cninfo_announcements',url='https://www.cninfo.com.cn/',
+        reliability=.95,verified=True,impact_score=70,
+        verification={'status':'VERIFIED_RULE','rule_version':RULE_VERSION,'observed_at':observed.isoformat()})
+    write_json(service.verified_cache,[event.model_dump(mode='json')])
+    assert service.cached_events(observed-timedelta(seconds=1))==[]
+    cached=service.cached_events(observed+timedelta(hours=8))
+    assert cached==[event] and cached[0].first_seen_at==observed
+    assert service.cached_events(observed+timedelta(hours=73))==[]

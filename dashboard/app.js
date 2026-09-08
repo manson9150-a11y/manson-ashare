@@ -40,7 +40,7 @@ function beijingTime(value){
  const d=new Date(value);
  return value&&Number.isFinite(d.getTime())?new Intl.DateTimeFormat('zh-CN',{timeZone:'Asia/Shanghai',year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',hour12:false}).format(d)+'（北京时间）':'不可用';
 }
-function wudaoError(code){return ({MEMBERS_TIME_UNKNOWN:'部分成分缺少更新时间',TRUNCATED_MEMBERS:'部分题材成分返回不完整',MEMBERS_TIME_INVALID:'部分成分时间不符合要求',DATE_MISMATCH:'返回交易日不符',STALE_INTRADAY:'午盘快照过旧',HTTP_429:'接口限流',DAILY_LIMIT_EXCEEDED:'今日接口额度已用完',FREE_TIER_MARKET_OPEN_RESTRICTED:'接口开盘时段受限',NOT_CONFIGURED:'尚未配置密钥'})[code]||'部分数据暂不可用';}
+function wudaoError(code){return ({MEMBER_REQUEST_BUDGET:'本次成分请求预算用完，未查询项保留缺口',MEMBERS_TIME_UNKNOWN:'部分成分缺少更新时间',TRUNCATED_MEMBERS:'部分题材成分返回不完整',MEMBERS_TIME_INVALID:'部分成分时间不符合要求',DATE_MISMATCH:'返回交易日不符',STALE_INTRADAY:'午盘快照过旧',HTTP_429:'接口限流',DAILY_LIMIT_EXCEEDED:'今日接口额度已用完',FREE_TIER_MARKET_OPEN_RESTRICTED:'接口开盘时段受限',NOT_CONFIGURED:'尚未配置密钥'})[code]||'部分数据暂不可用';}
 function renderWudao(){
  const w=state.wudao||wudaoSupplement;
  $('sectors').hidden=demo||!!replayDate;

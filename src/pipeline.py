@@ -31,12 +31,20 @@ class Pipeline:
     def __init__(self, project, output=None, mode='live', config=None):
         self.project=Path(project).resolve(); self.output=Path(output or project).resolve(); self.mode=mode
         self.config=config or yaml.safe_load((self.project/'config/settings.yaml').read_text())
-        self.wudao=WudaoResearch(self.config)
+        self.wudao=WudaoResearch(self.config, cache_path=self.output/'data/latest/wudao_membership_cache.json')
         self.calendar=TradingCalendar(self.project/'config/calendar.json')
         self.collector=Collector([c(self.config) for c in [EastmoneyAdapter,TencentAdapter,SinaAdapter] if c.source_name in self.config['sources']['enabled']])
         self.announcements=Collector([CninfoAnnouncementAdapter(self.config, self.output/'data/latest/announcement_first_seen.json'), AnnouncementAdapter(self.config)])
     def stage_path(self, day, stage):
         return self.output/'data/history'/day.strftime('%Y/%m/%d')/stage/'stage_results.json'
+    def event_cutoff(self, run, as_of, observed=None):
+        """Actual live observation cutoff, separate from the frozen quote cutoff."""
+        observed=observed or datetime.now(TZ)
+        deadline=datetime.fromisoformat(f"{run['date']}T{self.config['stages'][run['stage']]['deadline']}:00").replace(tzinfo=TZ)
+        if self.mode=='live' and observed.date().isoformat()==run['date']:
+            as_of=max(as_of,min(observed,deadline))
+        run['event_cutoff_time']=as_of.isoformat()
+        return as_of
     def status_only(self, run, status, message):
         run.update(status=status,warnings=[message],finished_at=datetime.now(TZ).isoformat())
         write_json(self.output/'data/latest/run_status.json',run)
@@ -167,6 +175,7 @@ class Pipeline:
                 run['warnings'].append('悟道采集未完整成功：'+','.join(run['wudao']['errors'])+'；可用数据明确展示，其余沿用原接口，不能声称已覆盖全市场题材。')
             run['warnings'].append('悟道热点按题材强度和行业涨幅展示；系统规则分独立计算。前十题材成分为当前分类，仅用于本次及后续研究。')
         evidence=None
+        event_as_of=as_of
         events=[]
         for item in read_json(self.project/'config/events.json',[])+(previous or {}).get('events',[]):
             try: events.append(Event.model_validate({k:v for k,v in item.items() if k not in {'expectation','expectation_basis'}}))
@@ -175,11 +184,15 @@ class Pipeline:
             events.extend(demo.events())
         elif self.config.get('catalyst_evidence',{}).get('enabled',False):
             evidence=CatalystEvidence(self.config,self.output)
+            cached=evidence.cached_events(as_of)
+            events.extend(cached)
+            evidence.status['cached_verified_events']=len(cached)
             if stage!='1135': events.extend(evidence.discover(as_of))
-            events=evidence.verify(events,as_of)
+            event_as_of=self.event_cutoff(run,as_of)
+            events=evidence.verify(events,event_as_of)
             run['catalyst_evidence']=evidence.status
             run['evidence_logs']=evidence.logs
-        early_events=expectation(events,{},as_of,self.config)
+        early_events=expectation(events,{},event_as_of,self.config)
         independent_codes={e['stock_code'] for e in early_events if independent(e,self.config)}
         if stage in ('0730','0830','2130'):
             quotes=[Quote.model_validate(q) for q in previous.get('quotes',[])]
@@ -272,22 +285,23 @@ class Pipeline:
                 run['limit_evidence']={'status':'SIMULATED','identified':len(limit_pool)}
             run['factor_count']=len(factors)
             run['warnings'].append(f"全市场快照经板块过滤，最多{self.config['sources']['max_history_stocks']}只历史日线；板块多日指标仅覆盖已采集成分。")
-        preliminary=analyze_stocks(quotes,factors,sectors,membership,expectation(events,factors,as_of,self.config),market,self.config,limit_pool)
+        preliminary=analyze_stocks(quotes,factors,sectors,membership,expectation(events,factors,event_as_of,self.config),market,self.config,limit_pool)
         preliminary_pools,_=pools(preliminary,stage,self.config,previous)
         candidate_codes=[s['stock_code'] for s in sorted([s for g in preliminary_pools.values() for s in g],key=lambda s:-(s['total_score'] or 0))]
         if not demo:
             try: events.extend(self.announcements.fetch('events',codes=candidate_codes))
             except Unavailable: run['warnings'].append('候选公告源不可用；保留独立发现与已知事件。')
+            event_as_of=self.event_cutoff(run,event_as_of)
             if evidence:
                 # One bounded PDF budget per stage; refresh only previously unread entries.
-                events=evidence.verify(events,as_of)
+                events=evidence.verify(events,event_as_of)
                 run['catalyst_evidence']=evidence.status
         if run.get('weekend_review'):
             observed = datetime.now(TZ)
             if observed.date() == date.fromisoformat(run['date']):
                 as_of = max(as_of, observed)
                 run['as_of_time'] = as_of.isoformat()
-        event_rows=expectation(events,factors,as_of,self.config)
+        event_rows=expectation(events,factors,event_as_of,self.config)
         date_only=sum(e.publish_time_precision=='date' for e in events)
         if date_only:
             run['warnings'].append(f'公告列表中{date_only}条仅精确到日期：当天记录须在研究截点前已被系统观察才纳入；首次观察时间独立保存，不冒充发布时间。标题分类仍须正文核验。')

@@ -21,7 +21,10 @@ def main():
     except Exception as exc:
         result['limit_pool']={'status':'UNAVAILABLE','error':type(exc).__name__}
     service=CatalystEvidence(config,output)
-    events=service.verify(service.discover(as_of),as_of)
+    discovered=service.discover(as_of)
+    cutoff=datetime.now(TZ)
+    events=service.verify(discovered,cutoff)
+    result['event_cutoff_time']=cutoff.isoformat()
     result['catalyst_evidence']=service.status
     result['events']=[e.model_dump(mode='json') for e in events]
     write_json(output/'result.json',result)

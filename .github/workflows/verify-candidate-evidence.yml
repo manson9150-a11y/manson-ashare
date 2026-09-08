@@ -1,0 +1,32 @@
+name: Verify candidate evidence sources
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'src/catalysts/evidence.py'
+      - 'src/collectors/limit_evidence.py'
+      - 'src/collectors/verify_candidate_evidence.py'
+      - '.github/workflows/verify-candidate-evidence.yml'
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+          cache-dependency-path: requirements.lock
+      - run: pip install -r requirements.lock && pip install --no-deps -e .
+      - name: Probe public limit-up data and official announcement evidence
+        run: python -u -m src.collectors.verify_candidate_evidence
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: candidate-evidence-verification
+          path: artifacts/candidate-evidence-verification
+          retention-days: 14

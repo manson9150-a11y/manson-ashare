@@ -10,6 +10,8 @@ def stage_markdown(run):
         lines[0]='## 周末初始化快照'
         lines[2]='\n模式：首次启动用初始化数据；不是历史晚间任务记录'
     for warning in run.get('warnings',[]):lines.append(f'\n- {warning}')
+    if run.get('event_cutoff_time'):
+        lines.append(f"\n公告观察截点：{run['event_cutoff_time']}；行情截点保持上方时间戳，首次观察不等同于公告发布时间。")
     if run.get('afternoon_message'):lines.append('\n**'+run['afternoon_message']+'**')
     w=run.get('wudao')
     if w:
@@ -21,6 +23,8 @@ def stage_markdown(run):
                 for row in panel['rows']:
                     lines.append(f"|{fmt(row['themeName'])}|{fmt(row.get('strength'),0)}|{fmt(row.get('pctChg'))}%|")
         if w.get('errors'): lines.append('采集缺口：'+','.join(w['errors']))
+        if 'member_requests' in w:
+            lines.append(f"本次成分请求 {w['member_requests']} 次，复用带时间标记的分类缓存 {w.get('member_cache_hits',0)} 个；热点榜仍为本次请求。")
     lines+=['\n### 已覆盖成分规则评分','\n|板块|类型|分数|状态|历史因子覆盖|','|---|---|---:|---|---:|']
     for s in run.get('sectors',[])[:10]:lines.append(f"|{fmt(s['name'])}|{s['kind']}|{fmt(s['score'])}|{s['state']}|{s['factor_coverage']:.0%}|")
     for pool,label in NAMES.items():

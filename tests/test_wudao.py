@@ -128,3 +128,43 @@ def test_each_formal_stage_requests_wudao_before_analysis(tmp_path,config,monkey
     assert r['wudao']['status']=='UNAVAILABLE'
     assert any('HTTP_429' in w for w in r['warnings'])
     assert read_json(p.stage_path(DAY,stage))['wudao']['status']=='UNAVAILABLE'
+
+
+def test_member_cache_persists_across_runs_without_caching_rankings(tmp_path,config,monkeypatch):
+    from datetime import timedelta
+    path=tmp_path/'members.json'
+    c=WudaoResearch(config,key='x',cache_path=path)
+    calls=[]
+    def call(name,args):
+        calls.append(name)
+        return member() if name=='theme_stocks' else ranking()
+    monkeypatch.setattr(c,'call',call)
+    first=c.collect(DAY,NOW,'1600')
+    assert calls.count('theme_stocks')==1
+    # Use the real observation timestamp, not a fabricated historical first-seen.
+    observed=datetime.fromisoformat(first['membership'][0]['observed_at'])
+    # Cached metadata must still be valid relative to that observation for the test.
+    from src.utils.io import read_json,write_json
+    saved=read_json(path);saved['801660k']['metadata_updated_at']=observed.isoformat();write_json(path,saved)
+    c2=WudaoResearch(config,key='x',cache_path=path)
+    monkeypatch.setattr(c2,'ranking',lambda *a: {'rows':ranking()['rows'],'snapshot_time':observed.isoformat()})
+    monkeypatch.setattr(c2,'members',lambda *a:pytest.fail('cached classification must not spend quota'))
+    second=c2.collect(observed.date(),observed+timedelta(minutes=1),'2130')
+    assert second['member_cache_hits']==1 and second['member_requests']==0
+    assert second['membership'][0]['observed_at']==observed.isoformat()
+    assert [x['operation'] for x in c2.logs][:2]==['ranking_featured','ranking_industry']
+    assert c2.cached_member(ranking()['rows'][0],observed-timedelta(seconds=1)) is None
+    assert c2.cached_member(ranking()['rows'][0],observed+timedelta(hours=25)) is None
+
+
+def test_membership_budget_bounds_requests_even_when_validation_fails(config,monkeypatch):
+    c=WudaoResearch(config,key='x');calls=[]
+    monkeypatch.setattr(c,'ranking',lambda *a:{'rows':[{'themeCode':str(n),'themeName':str(n)} for n in range(10)]})
+    def unavailable(*a):
+        calls.append(a)
+        raise WudaoError('MEMBERS_TIME_UNKNOWN')
+    monkeypatch.setattr(c,'members',unavailable)
+    r=c.collect(DAY,NOW,'2130')
+    assert len(calls)==4 and r['member_requests']==4
+    assert r['status']=='PARTIAL' and 'MEMBER_REQUEST_BUDGET' in r['errors']
+    assert r['membership']==[]
