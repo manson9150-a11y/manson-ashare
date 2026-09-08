@@ -1,0 +1,24 @@
+{
+  "run_id": "dd809e3a92d3439abdfc0c649d43c9b9",
+  "date": "2026-09-08",
+  "stage": "1135",
+  "status": "COMPLETE",
+  "started_at": "2026-09-08T11:43:27.738450+08:00",
+  "finished_at": "2026-09-08T11:45:14.391643+08:00",
+  "source_success_rate": 0.5833333333333334,
+  "failed_sources": [
+    "eastmoney",
+    "tencent",
+    "wudao_mcp"
+  ],
+  "stock_count": 5547,
+  "sector_count": 55,
+  "candidate_count": 4,
+  "google_docs": {
+    "status": "SYNCED",
+    "sent": 1,
+    "failed": 0
+  },
+  "dashboard_updated_at": "2026-09-08T11:45:14.391599+08:00",
+  "errors": []
+}
