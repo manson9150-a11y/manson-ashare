@@ -1,0 +1,427 @@
+## 21:30 晚间二筛
+
+时间戳：2026-09-08T21:45:50.585554+08:00 ｜ Run ID：24125b0d6ebe44ef81b83d909dbf89b7
+
+模式：真实数据任务
+
+状态：COMPLETE ｜ 数据质量：YELLOW
+
+市场：正常 ｜ Market Score：59.78
+行情基准日：2026-09-08；评分口径：BREADTH_MVP。
+
+- 悟道采集未完整成功：DAILY_LIMIT_EXCEEDED；可用数据明确展示，其余沿用原接口，不能声称已覆盖全市场题材。
+
+- 悟道热点按题材强度和行业涨幅展示；系统规则分独立计算。前十题材成分为当前分类，仅用于本次及后续研究。
+
+- 行情沿用 2026-09-08 正式收盘快照；本阶段刷新事件与悟道热点参考。隔夜变量未接入，市场分为前收盘参考。
+
+- 候选公告源不可用；保留独立发现与已知事件。
+
+- 公告列表中59条仅精确到日期：当天记录须在研究截点前已被系统观察才纳入；首次观察时间独立保存，不冒充发布时间。标题分类仍须正文核验。
+
+### 悟道热点参考
+状态：PARTIAL；行情日期：2026-09-08。原始题材强度不是系统百分制评分。
+
+题材强度榜；快照：2026-09-08T13:05:14.452000+00:00
+|板块|强度|涨跌幅|
+|---|---:|---:|
+|农业|11486|2.44%|
+|AI应用|6684|0.69%|
+|化工|4431|1.50%|
+|医药|4295|1.54%|
+|食品饮料|3557|2.11%|
+|文化传媒|3304|1.28%|
+|芯片|3195|-0.24%|
+|地产链|3045|1.36%|
+|石油石化|3001|3.02%|
+|通信|2630|-0.14%|
+
+行业涨幅榜；快照：2026-09-08T07:05:02.849000+00:00
+|板块|强度|涨跌幅|
+|---|---:|---:|
+|石油贸易|—|5.93%|
+|焦炭加工|—|5.35%|
+|种植业|—|4.62%|
+|石油加工|—|3.88%|
+|农药化肥|—|3.83%|
+|房产服务|—|3.70%|
+|橡胶|—|3.32%|
+|出版业|—|3.25%|
+|铜|—|3.15%|
+|石油开采|—|2.87%|
+采集缺口：DAILY_LIMIT_EXCEEDED
+
+### 已覆盖成分规则评分
+
+|板块|类型|分数|状态|历史因子覆盖|
+|---|---|---:|---|---:|
+|农药化肥|industry|94.35|持续强势|9%|
+|石油行业|industry|91.96|持续强势|14%|
+|飞机制造|industry|88.78|持续强势|7%|
+|纺织机械|industry|88.37|持续强势|0%|
+|船舶制造|industry|87.58|持续强势|14%|
+|综合行业|industry|86.10|持续强势|4%|
+|传媒娱乐|industry|85.53|持续强势|6%|
+|物资外贸|industry|84.22|持续强势|0%|
+|农业种植|concept|83.89|高位拥挤|20%|
+|供水供气|industry|82.46|持续强势|0%|
+
+### A 连板接力池
+
+|排名|代码 名称|板块|位置|综合分|交易性|主观概率|ATR状态|
+|---:|---|---|---|---:|---:|---|---|
+
+识别涨停线索 0 只，入选 0 只。供应商板数与日线推导板数分别展示；缺少证据不能解释为市场无涨停。本阶段继承前序名单，新的A池在16:00扫描建立。
+
+### B 趋势启动池
+
+|排名|代码 名称|板块|位置|综合分|交易性|主观概率|ATR状态|
+|---:|---|---|---|---:|---:|---|---|
+|1|300505 川金诺|磷化工|趋势观察|84.31|84.31|未校准/未输出|正常|
+|2|600150 中国船舶|船舶制造|趋势观察|83.58|83.58|未校准/未输出|正常|
+|3|600893 航发动力|飞机制造|趋势观察|83.43|83.43|未校准/未输出|正常|
+|4|600028 中国石化|石油行业|趋势观察|82.14|82.14|未校准/未输出|正常|
+|5|600026 中远海能|交通运输|趋势观察|81.84|81.84|未校准/未输出|正常|
+|6|002181 粤 传 媒|传媒娱乐|趋势观察|81.04|81.04|未校准/未输出|正常|
+|7|603588 高能环境|环保行业|趋势观察|80.74|80.74|未校准/未输出|正常|
+|8|600547 山东黄金|有色金属|趋势观察|80.25|80.25|未校准/未输出|正常|
+|9|000564 供销大集|商业百货|趋势观察|79.65|79.65|未校准/未输出|正常|
+|10|600186 莲花控股|食品行业|趋势观察|79.42|79.42|未校准/未输出|正常|
+|11|000712 锦龙股份|金融行业|趋势观察|78.59|78.59|未校准/未输出|正常|
+|12|002017 东信和平|电子信息|趋势观察|78.33|78.33|未校准/未输出|正常|
+|13|300456 赛微电子|其它行业|趋势观察|77.96|77.96|未校准/未输出|正常|
+|14|601872 招商轮船|交通运输|趋势观察|77.43|77.43|未校准/未输出|正常|
+|15|300364 中文在线|传媒娱乐|趋势观察|76.47|76.47|未校准/未输出|正常|
+|16|300468 四方精创|其它行业|趋势观察|76.41|76.41|未校准/未输出|正常|
+|17|000878 云南铜业|有色金属|趋势观察|75.59|75.59|未校准/未输出|正常|
+|18|002602 世纪华通|汽车制造|趋势观察|74.78|74.78|未校准/未输出|正常|
+|19|002015 协鑫能科|化纤行业|趋势观察|74.40|74.40|未校准/未输出|正常|
+|20|000070 特发信息|电子信息|趋势观察|73.78|73.78|未校准/未输出|正常|
+|21|688498 源杰科技|光通信设备|趋势观察|73.27|73.27|未校准/未输出|正常|
+|22|600601 方正科技|电子信息|趋势观察|73.16|73.16|未校准/未输出|正常|
+|23|002436 兴森科技|电子器件|趋势观察|72.24|72.24|未校准/未输出|正常|
+|24|600256 广汇能源|综合行业|趋势观察|72.18|72.18|未校准/未输出|警告|
+|25|601168 西部矿业|有色金属|趋势观察|71.75|71.75|未校准/未输出|正常|
+|26|600887 伊利股份|食品行业|趋势观察|71.41|71.41|未校准/未输出|正常|
+|27|600589 大位科技|塑料制品|趋势观察|71.21|71.21|未校准/未输出|正常|
+|28|600309 万华化学|化工行业|趋势观察|71.07|71.07|未校准/未输出|正常|
+|29|000519 中兵红箭|机械行业|趋势观察|70.90|70.90|未校准/未输出|正常|
+|30|601933 永辉超市|商业百货|趋势观察|70.55|70.55|未校准/未输出|正常|
+
+#### 300505 川金诺
+- 板数：—；Market/Sector：59.78/82.23；风险：低
+- 5/10/20日：6.90% / 19.86% / 19.99%；MA20距离：13.09%
+- 正因子：MA5>MA10>MA20，趋势与位置满足规则
+- 负因子：独立催化与龙虎榜尚未确认
+- 验证：板块维持扩散，价格守住MA20（20.276500000000002），ATR不过热
+- 失效：板块转弱、放量跌破MA20或出现重大风险公告
+
+#### 600150 中国船舶
+- 板数：—；Market/Sector：59.78/87.58；风险：低
+- 5/10/20日：13.51% / 15.48% / 15.04%；MA20距离：13.15%
+- 正因子：MA5>MA10>MA20，趋势与位置满足规则
+- 负因子：部分公告待人工复核，已核验事实见事件证据
+- 验证：板块维持扩散，价格守住MA20（34.539），ATR不过热
+- 失效：板块转弱、放量跌破MA20或出现重大风险公告
+
+#### 600893 航发动力
+- 板数：—；Market/Sector：59.78/88.78；风险：低
+- 5/10/20日：7.12% / 13.70% / 13.95%；MA20距离：9.62%
+- 正因子：MA5>MA10>MA20，趋势与位置满足规则
+- 负因子：部分公告待人工复核，已核验事实见事件证据
+- 验证：板块维持扩散，价格守住MA20（37.6315），ATR不过热
+- 失效：板块转弱、放量跌破MA20或出现重大风险公告
+
+#### 600028 中国石化
+- 板数：—；Market/Sector：59.78/91.96；风险：低
+- 5/10/20日：1.27% / 4.29% / 9.39%；MA20距离：5.89%
+- 正因子：MA5>MA10>MA20，趋势与位置满足规则
+- 负因子：部分公告待人工复核，已核验事实见事件证据
+- 验证：板块维持扩散，价格守住MA20（5.279），ATR不过热
+- 失效：板块转弱、放量跌破MA20或出现重大风险公告
+
+#### 600026 中远海能
+- 板数：—；Market/Sector：59.78/69.06；风险：低
+- 5/10/20日：6.08% / 6.25% / 24.11%；MA20距离：8.21%
+- 正因子：MA5>MA10>MA20，趋势与位置满足规则
+- 负因子：部分公告待人工复核，已核验事实见事件证据
+- 验证：板块维持扩散，价格守住MA20（18.695），ATR不过热
+- 失效：板块转弱、放量跌破MA20或出现重大风险公告
+
+#### 002181 粤 传 媒
+- 板数：—；Market/Sector：59.78/85.53；风险：低
+- 5/10/20日：7.41% / 23.09% / 11.61%；MA20距离：14.87%
+- 正因子：MA5>MA10>MA20，趋势与位置满足规则
+- 负因子：部分公告待人工复核，已核验事实见事件证据
+- 验证：板块维持扩散，价格守住MA20（8.958），ATR不过热
+- 失效：板块转弱、放量跌破MA20或出现重大风险公告
+
+#### 603588 高能环境
+- 板数：—；Market/Sector：59.78/82.28；风险：低
+- 5/10/20日：7.09% / 15.77% / 13.20%；MA20距离：9.67%
+- 正因子：MA5>MA10>MA20，趋势与位置满足规则
+- 负因子：部分公告待人工复核，已核验事实见事件证据
+- 验证：板块维持扩散，价格守住MA20（14.461500000000001），ATR不过热
+- 失效：板块转弱、放量跌破MA20或出现重大风险公告
+
+#### 600547 山东黄金
+- 板数：—；Market/Sector：59.78/70.96；风险：低
+- 5/10/20日：-2.39% / 2.97% / 19.83%；MA20距离：4.01%
+- 正因子：MA5>MA10>MA20，趋势与位置满足规则
+- 负因子：部分公告待人工复核，已核验事实见事件证据
+- 验证：板块维持扩散，价格守住MA20（34.6225），ATR不过热
+- 失效：板块转弱、放量跌破MA20或出现重大风险公告
+
+#### 000564 供销大集
+- 板数：—；Market/Sector：59.78/70.04；风险：低
+- 5/10/20日：4.22% / 19.31% / 19.31%；MA20距离：13.18%
+- 正因子：MA5>MA10>MA20，趋势与位置满足规则
+- 负因子：部分公告待人工复核，已核验事实见事件证据
+- 验证：板块维持扩散，价格守住MA20（1.5285），ATR不过热
+- 失效：板块转弱、放量跌破MA20或出现重大风险公告
+
+#### 600186 莲花控股
+- 板数：—；Market/Sector：59.78/73.18；风险：低
+- 5/10/20日：6.53% / 7.27% / 16.78%；MA20距离：4.65%
+- 正因子：MA5>MA10>MA20，趋势与位置满足规则
+- 负因子：部分公告待人工复核，已核验事实见事件证据
+- 验证：板块维持扩散，价格守住MA20（11.84），ATR不过热
+- 失效：板块转弱、放量跌破MA20或出现重大风险公告
+
+#### 000712 锦龙股份
+- 板数：—；Market/Sector：59.78/56.00；风险：低
+- 5/10/20日：-12.22% / 33.75% / 28.39%；MA20距离：12.26%
+- 正因子：MA5>MA10>MA20，趋势与位置满足规则
+- 负因子：部分公告待人工复核，已核验事实见事件证据
+- 验证：板块维持扩散，价格守住MA20（10.5555），ATR不过热
+- 失效：板块转弱、放量跌破MA20或出现重大风险公告
+
+#### 002017 东信和平
+- 板数：—；Market/Sector：59.78/60.13；风险：低
+- 5/10/20日：3.76% / 1.00% / 23.43%；MA20距离：11.24%
+- 正因子：MA5>MA10>MA20，趋势与位置满足规则
+- 负因子：部分公告待人工复核，已核验事实见事件证据
+- 验证：板块维持扩散，价格守住MA20（15.389499999999998），ATR不过热
+- 失效：板块转弱、放量跌破MA20或出现重大风险公告
+
+#### 300456 赛微电子
+- 板数：—；Market/Sector：59.78/65.68；风险：低
+- 5/10/20日：-5.22% / 21.17% / 19.02%；MA20距离：7.40%
+- 正因子：MA5>MA10>MA20，趋势与位置满足规则
+- 负因子：部分公告待人工复核，已核验事实见事件证据
+- 验证：板块维持扩散，价格守住MA20（35.0175），ATR不过热
+- 失效：板块转弱、放量跌破MA20或出现重大风险公告
+
+#### 601872 招商轮船
+- 板数：—；Market/Sector：59.78/69.06；风险：低
+- 5/10/20日：3.75% / 1.33% / 15.78%；MA20距离：3.43%
+- 正因子：MA5>MA10>MA20，趋势与位置满足规则
+- 负因子：独立催化与龙虎榜尚未确认
+- 验证：板块维持扩散，价格守住MA20（18.447），ATR不过热
+- 失效：板块转弱、放量跌破MA20或出现重大风险公告
+
+#### 300364 中文在线
+- 板数：—；Market/Sector：59.78/85.53；风险：低
+- 5/10/20日：-8.27% / 13.31% / 2.97%；MA20距离：5.80%
+- 正因子：MA5>MA10>MA20，趋势与位置满足规则
+- 负因子：部分公告待人工复核，已核验事实见事件证据
+- 验证：板块维持扩散，价格守住MA20（24.546），ATR不过热
+- 失效：板块转弱、放量跌破MA20或出现重大风险公告
+
+#### 300468 四方精创
+- 板数：—；Market/Sector：59.78/65.68；风险：低
+- 5/10/20日：3.10% / 5.33% / 16.11%；MA20距离：9.54%
+- 正因子：MA5>MA10>MA20，趋势与位置满足规则
+- 负因子：部分公告待人工复核，已核验事实见事件证据
+- 验证：板块维持扩散，价格守住MA20（23.0975），ATR不过热
+- 失效：板块转弱、放量跌破MA20或出现重大风险公告
+
+#### 000878 云南铜业
+- 板数：—；Market/Sector：59.78/70.96；风险：低
+- 5/10/20日：3.62% / 13.30% / 11.03%；MA20距离：8.07%
+- 正因子：MA5>MA10>MA20，趋势与位置满足规则
+- 负因子：部分公告待人工复核，已核验事实见事件证据
+- 验证：板块维持扩散，价格守住MA20（16.952），ATR不过热
+- 失效：板块转弱、放量跌破MA20或出现重大风险公告
+
+#### 002602 世纪华通
+- 板数：—；Market/Sector：59.78/64.93；风险：低
+- 5/10/20日：16.46% / 14.72% / 13.51%；MA20距离：12.48%
+- 正因子：MA5>MA10>MA20，趋势与位置满足规则
+- 负因子：独立催化与龙虎榜尚未确认
+- 验证：板块维持扩散，价格守住MA20（14.340499999999997），ATR不过热
+- 失效：板块转弱、放量跌破MA20或出现重大风险公告
+
+#### 002015 协鑫能科
+- 板数：—；Market/Sector：59.78/69.12；风险：低
+- 5/10/20日：-2.87% / 6.55% / 10.01%；MA20距离：5.92%
+- 正因子：MA5>MA10>MA20，趋势与位置满足规则
+- 负因子：独立催化与龙虎榜尚未确认
+- 验证：板块维持扩散，价格守住MA20（15.9745），ATR不过热
+- 失效：板块转弱、放量跌破MA20或出现重大风险公告
+
+#### 000070 特发信息
+- 板数：—；Market/Sector：59.78/60.13；风险：低
+- 5/10/20日：5.36% / 2.68% / 14.82%；MA20距离：6.49%
+- 正因子：MA5>MA10>MA20，趋势与位置满足规则
+- 负因子：独立催化与龙虎榜尚未确认
+- 验证：板块维持扩散，价格守住MA20（15.494499999999999），ATR不过热
+- 失效：板块转弱、放量跌破MA20或出现重大风险公告
+
+#### 688498 源杰科技
+- 板数：—；Market/Sector：59.78/40.92；风险：低
+- 5/10/20日：15.72% / 10.43% / 26.94%；MA20距离：10.65%
+- 正因子：MA5>MA10>MA20，趋势与位置满足规则
+- 负因子：部分公告待人工复核，已核验事实见事件证据
+- 验证：板块维持扩散，价格守住MA20（1549.882），ATR不过热
+- 失效：板块转弱、放量跌破MA20或出现重大风险公告
+
+#### 600601 方正科技
+- 板数：—；Market/Sector：59.78/60.13；风险：低
+- 5/10/20日：18.01% / 25.37% / 13.66%；MA20距离：14.86%
+- 正因子：MA5>MA10>MA20，趋势与位置满足规则
+- 负因子：独立催化与龙虎榜尚未确认
+- 验证：板块维持扩散，价格守住MA20（12.607），ATR不过热
+- 失效：板块转弱、放量跌破MA20或出现重大风险公告
+
+#### 002436 兴森科技
+- 板数：—；Market/Sector：59.78/46.91；风险：低
+- 5/10/20日：16.12% / 20.44% / 20.73%；MA20距离：13.85%
+- 正因子：MA5>MA10>MA20，趋势与位置满足规则
+- 负因子：部分公告待人工复核，已核验事实见事件证据
+- 验证：板块维持扩散，价格守住MA20（35.240500000000004），ATR不过热
+- 失效：板块转弱、放量跌破MA20或出现重大风险公告
+
+#### 600256 广汇能源
+- 板数：—；Market/Sector：59.78/86.10；风险：低
+- 5/10/20日：6.66% / 16.86% / 22.83%；MA20距离：13.60%
+- 正因子：MA5>MA10>MA20，趋势与位置满足规则
+- 负因子：部分公告待人工复核，已核验事实见事件证据
+- 验证：板块维持扩散，价格守住MA20（6.3469999999999995），ATR不过热
+- 失效：板块转弱、放量跌破MA20或出现重大风险公告
+
+#### 601168 西部矿业
+- 板数：—；Market/Sector：59.78/70.96；风险：低
+- 5/10/20日：1.83% / 11.54% / 3.77%；MA20距离：5.86%
+- 正因子：MA5>MA10>MA20，趋势与位置满足规则
+- 负因子：部分公告待人工复核，已核验事实见事件证据
+- 验证：板块维持扩散，价格守住MA20（38.436），ATR不过热
+- 失效：板块转弱、放量跌破MA20或出现重大风险公告
+
+#### 600887 伊利股份
+- 板数：—；Market/Sector：59.78/73.18；风险：低
+- 5/10/20日：0.11% / 2.43% / 1.65%；MA20距离：1.82%
+- 正因子：MA5>MA10>MA20，趋势与位置满足规则
+- 负因子：部分公告待人工复核，已核验事实见事件证据
+- 验证：板块维持扩散，价格守住MA20（26.056），ATR不过热
+- 失效：板块转弱、放量跌破MA20或出现重大风险公告
+
+#### 600589 大位科技
+- 板数：—；Market/Sector：59.78/70.87；风险：低
+- 5/10/20日：6.08% / 12.35% / 2.83%；MA20距离：4.42%
+- 正因子：MA5>MA10>MA20，趋势与位置满足规则
+- 负因子：独立催化与龙虎榜尚未确认
+- 验证：板块维持扩散，价格守住MA20（8.016），ATR不过热
+- 失效：板块转弱、放量跌破MA20或出现重大风险公告
+
+#### 600309 万华化学
+- 板数：—；Market/Sector：59.78/69.85；风险：低
+- 5/10/20日：1.39% / 7.16% / 3.23%；MA20距离：3.87%
+- 正因子：MA5>MA10>MA20，趋势与位置满足规则
+- 负因子：部分公告待人工复核，已核验事实见事件证据
+- 验证：板块维持扩散，价格守住MA20（75.17699999999999），ATR不过热
+- 失效：板块转弱、放量跌破MA20或出现重大风险公告
+
+#### 000519 中兵红箭
+- 板数：—；Market/Sector：59.78/61.23；风险：低
+- 5/10/20日：9.70% / 13.98% / 8.66%；MA20距离：8.68%
+- 正因子：MA5>MA10>MA20，趋势与位置满足规则
+- 负因子：独立催化与龙虎榜尚未确认
+- 验证：板块维持扩散，价格守住MA20（14.776999999999997），ATR不过热
+- 失效：板块转弱、放量跌破MA20或出现重大风险公告
+
+#### 601933 永辉超市
+- 板数：—；Market/Sector：59.78/70.04；风险：低
+- 5/10/20日：2.44% / 8.04% / 2.13%；MA20距离：5.64%
+- 正因子：MA5>MA10>MA20，趋势与位置满足规则
+- 负因子：部分公告待人工复核，已核验事实见事件证据
+- 验证：板块维持扩散，价格守住MA20（3.1805），ATR不过热
+- 失效：板块转弱、放量跌破MA20或出现重大风险公告
+
+### C 独立催化池
+
+|排名|代码 名称|板块|位置|综合分|交易性|主观概率|ATR状态|
+|---:|---|---|---|---:|---:|---|---|
+
+限定公告扫描：发现 0 条，正文读取 0 份，已核验事件 0 条，入选 0 只。支持重大已签合同及正向业绩预告的明确量化事实；其他类型或歧义留待人工复核。
+
+### 公告与风险线索（逐条标注核验状态）
+- 300468 · 关于刊发H股发行聆讯后资料集的公告 · 2026-09-07T07:43:31+08:00 · cninfo_announcements · https://www.cninfo.com.cn/new/disclosure/detail?stockCode=300468&announcementId=1225550384&orgId=9900024029&announcementTime=2026-09-07 · 待核验
+- 600309 · 万华化学2026年半年度权益分派实施公告 · 2026-09-07（仅日期） · cninfo_announcements · https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600309&announcementId=1225550253&orgId=gssh0600309&announcementTime=2026-09-07 · 待核验
+- 600028 · 中国石化H股公告-翌日披露表格 · 2026-09-05（仅日期） · cninfo_announcements · https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600028&announcementId=1225549260&orgId=gssh0600028&announcementTime=2026-09-05 · 待核验
+- 002181 · 关于与专业投资机构共同投资的公告 · 2026-09-05（仅日期） · cninfo_announcements · https://www.cninfo.com.cn/new/disclosure/detail?stockCode=002181&announcementId=1225549868&orgId=9900003823&announcementTime=2026-09-05 · 待核验
+- 600887 · 内蒙古伊利实业集团股份有限公司2023年持股计划（第三期）第二次持有人会议决议公告 · 2026-09-05（仅日期） · cninfo_announcements · https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600887&announcementId=1225547701&orgId=gssh0600887&announcementTime=2026-09-05 · 待核验
+- 600887 · 内蒙古伊利实业集团股份有限公司第六期长期服务计划第二次持有人会议决议公告 · 2026-09-05（仅日期） · cninfo_announcements · https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600887&announcementId=1225547678&orgId=gssh0600887&announcementTime=2026-09-05 · 待核验
+- 601933 · 中信证券股份有限公司关于永辉超市股份有限公司2025年度向特定对象发行A股股票之上市保荐书 · 2026-09-05（仅日期） · cninfo_announcements · https://www.cninfo.com.cn/new/disclosure/detail?stockCode=601933&announcementId=1225549292&orgId=9900016367&announcementTime=2026-09-05 · 待核验
+- 601933 · 关于对永辉超市股份有限公司向特定对象发行股票申请文件的审核问询函回复的专项说明 · 2026-09-05（仅日期） · cninfo_announcements · https://www.cninfo.com.cn/new/disclosure/detail?stockCode=601933&announcementId=1225549290&orgId=9900016367&announcementTime=2026-09-05 · 待核验
+- 601933 · 永辉超市股份有限公司关于调整向特定对象发行A股股票发行数量上限的公告 · 2026-09-05（仅日期） · cninfo_announcements · https://www.cninfo.com.cn/new/disclosure/detail?stockCode=601933&announcementId=1225549288&orgId=9900016367&announcementTime=2026-09-05 · 待核验
+- 601933 · 上海市通力律师事务所关于永辉超市股份有限公司向特定对象发行A股股票之补充法律意见书（三） · 2026-09-05（仅日期） · cninfo_announcements · https://www.cninfo.com.cn/new/disclosure/detail?stockCode=601933&announcementId=1225549285&orgId=9900016367&announcementTime=2026-09-05 · 待核验
+- 601933 · 安永华明会计师事务所（特殊普通合伙）关于永辉超市股份有限公司向特定对象发行A股股票的财务报告及审计报告 · 2026-09-05（仅日期） · cninfo_announcements · https://www.cninfo.com.cn/new/disclosure/detail?stockCode=601933&announcementId=1225549282&orgId=9900016367&announcementTime=2026-09-05 · 待核验
+- 601933 · 中信证券股份有限公司关于永辉超市股份有限公司2025年度向特定对象发行A股股票之发行保荐书 · 2026-09-05（仅日期） · cninfo_announcements · https://www.cninfo.com.cn/new/disclosure/detail?stockCode=601933&announcementId=1225549281&orgId=9900016367&announcementTime=2026-09-05 · 待核验
+- 601933 · 永辉超市股份有限公司关于向特定对象发行股票募集说明书等申请文件更新的提示性公告 · 2026-09-05（仅日期） · cninfo_announcements · https://www.cninfo.com.cn/new/disclosure/detail?stockCode=601933&announcementId=1225549280&orgId=9900016367&announcementTime=2026-09-05 · 待核验
+- 601933 · 永辉超市股份有限公司2025年度向特定对象发行A股股票募集说明书（修订稿） · 2026-09-05（仅日期） · cninfo_announcements · https://www.cninfo.com.cn/new/disclosure/detail?stockCode=601933&announcementId=1225549279&orgId=9900016367&announcementTime=2026-09-05 · 待核验
+- 601933 · 关于永辉超市股份有限公司申请向特定对象发行股票的审核问询函的回复 · 2026-09-05（仅日期） · cninfo_announcements · https://www.cninfo.com.cn/new/disclosure/detail?stockCode=601933&announcementId=1225549277&orgId=9900016367&announcementTime=2026-09-05 · 待核验
+- 600893 · 中国航发动力股份有限公司2026年第三次临时股东会会议材料 · 2026-09-04（仅日期） · cninfo_announcements · https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600893&announcementId=1225546574&orgId=gssh0600893&announcementTime=2026-09-04 · 待核验
+- 600028 · 中国石化H股公告-翌日披露表格 · 2026-09-04（仅日期） · cninfo_announcements · https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600028&announcementId=1225546575&orgId=gssh0600028&announcementTime=2026-09-04 · 待核验
+- 600547 · 股份发行人及根据《上市规则》第十九B章上市的香港预托证券发行人的证券变动月报表 · 2026-09-04（仅日期） · cninfo_announcements · https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600547&announcementId=1225546070&orgId=gssh0600547&announcementTime=2026-09-04 · 待核验
+- 000712 · 关于筹划重大资产重组事项的进展公告 · 2026-09-04（仅日期） · cninfo_announcements · https://www.cninfo.com.cn/new/disclosure/detail?stockCode=000712&announcementId=1225545561&orgId=gssz0000712&announcementTime=2026-09-04 · 待核验
+- 688498 · 陕西源杰半导体科技股份有限公司关于完成工商变更登记并换发营业执照的公告 · 2026-09-04（仅日期） · cninfo_announcements · https://www.cninfo.com.cn/new/disclosure/detail?stockCode=688498&announcementId=1225546633&orgId=9900052124&announcementTime=2026-09-04 · 待核验
+- 600309 · 万华化学关于使用闲置资金购买结构性存款的进展公告 · 2026-09-04（仅日期） · cninfo_announcements · https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600309&announcementId=1225545935&orgId=gssh0600309&announcementTime=2026-09-04 · 待核验
+- 600150 · 中国船舶工业股份有限公司关于控股子公司涉及仲裁结果的公告 · 2026-09-03（仅日期） · cninfo_announcements · https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600150&announcementId=1225544786&orgId=gssh0600150&announcementTime=2026-09-03 · 待核验
+- 600150 · 中国船舶工业股份有限公司关于公司下属子公司签订重大合同的公告 · 2026-09-03（仅日期） · cninfo_announcements · https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600150&announcementId=1225544785&orgId=gssh0600150&announcementTime=2026-09-03 · 待核验
+- 600028 · 中国石化H股公告-翌日披露表格 · 2026-09-03（仅日期） · cninfo_announcements · https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600028&announcementId=1225544429&orgId=gssh0600028&announcementTime=2026-09-03 · 待核验
+- 603588 · 高能环境2026年第四次临时股东会决议公告 · 2026-09-03（仅日期） · cninfo_announcements · https://www.cninfo.com.cn/new/disclosure/detail?stockCode=603588&announcementId=1225544680&orgId=9900023766&announcementTime=2026-09-03 · 待核验
+- 603588 · 高能环境：2026年第四次临时股东会的法律意见书 · 2026-09-03（仅日期） · cninfo_announcements · https://www.cninfo.com.cn/new/disclosure/detail?stockCode=603588&announcementId=1225544679&orgId=9900023766&announcementTime=2026-09-03 · 待核验
+- 000712 · 关于股东股份被第二次司法拍卖的进展公告 · 2026-09-03（仅日期） · cninfo_announcements · https://www.cninfo.com.cn/new/disclosure/detail?stockCode=000712&announcementId=1225544920&orgId=gssz0000712&announcementTime=2026-09-03 · 待核验
+- 688498 · 陕西源杰半导体科技股份有限公司关于参加科创板2026年半年度半导体制造、设备及材料行业集体业绩说明会的公告 · 2026-09-03（仅日期） · cninfo_announcements · https://www.cninfo.com.cn/new/disclosure/detail?stockCode=688498&announcementId=1225543133&orgId=9900052124&announcementTime=2026-09-03 · 待核验
+- 002436 · 关于回购股份进展的公告 · 2026-09-03（仅日期） · cninfo_announcements · https://www.cninfo.com.cn/new/disclosure/detail?stockCode=002436&announcementId=1225543866&orgId=9900012934&announcementTime=2026-09-03 · 待核验
+- 600028 · 中国石化H股公告-翌日披露表格 · 2026-09-02（仅日期） · cninfo_announcements · https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600028&announcementId=1225541756&orgId=gssh0600028&announcementTime=2026-09-02 · 待核验
+- 600028 · 关于以集中竞价交易方式回购A股股份的进展公告 · 2026-09-02（仅日期） · cninfo_announcements · https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600028&announcementId=1225540503&orgId=gssh0600028&announcementTime=2026-09-02 · 待核验
+- 600026 · 中远海能关于非执行董事离任的公告 · 2026-09-02（仅日期） · cninfo_announcements · https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600026&announcementId=1225540840&orgId=gssh0600026&announcementTime=2026-09-02 · 待核验
+- 600026 · 中远海能2026年第三次临时股东会决议公告 · 2026-09-02（仅日期） · cninfo_announcements · https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600026&announcementId=1225540838&orgId=gssh0600026&announcementTime=2026-09-02 · 待核验
+- 600026 · 国浩律师（上海）事务所关于中远海运能源运输股份有限公司2026年第三次临时股东会的法律意见书 · 2026-09-02（仅日期） · cninfo_announcements · https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600026&announcementId=1225540836&orgId=gssh0600026&announcementTime=2026-09-02 · 待核验
+- 000564 · 关于为全资子公司提供业务合同履约担保的公告 · 2026-09-02（仅日期） · cninfo_announcements · https://www.cninfo.com.cn/new/disclosure/detail?stockCode=000564&announcementId=1225541286&orgId=gssz0000564&announcementTime=2026-09-02 · 待核验
+- 000564 · 关于回购公司股份的进展公告 · 2026-09-02（仅日期） · cninfo_announcements · https://www.cninfo.com.cn/new/disclosure/detail?stockCode=000564&announcementId=1225541283&orgId=gssz0000564&announcementTime=2026-09-02 · 待核验
+- 600186 · 莲花控股股份有限公司2026年第二次临时股东会会议资料 · 2026-09-02（仅日期） · cninfo_announcements · https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600186&announcementId=1225541580&orgId=gssh0600186&announcementTime=2026-09-02 · 待核验
+- 600186 · 莲花控股股份有限公司关于以集中竞价交易方式回购公司股份的进展公告 · 2026-09-02（仅日期） · cninfo_announcements · https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600186&announcementId=1225541558&orgId=gssh0600186&announcementTime=2026-09-02 · 待核验
+- 002017 · 关于董事会延期换届的提示性公告 · 2026-09-02（仅日期） · cninfo_announcements · https://www.cninfo.com.cn/new/disclosure/detail?stockCode=002017&announcementId=1225542103&orgId=gssz0002017&announcementTime=2026-09-02 · 待核验
+- 300456 · 关于股东部分股份被司法冻结的进展公告 · 2026-09-02（仅日期） · cninfo_announcements · https://www.cninfo.com.cn/new/disclosure/detail?stockCode=300456&announcementId=1225542460&orgId=9900023823&announcementTime=2026-09-02 · 待核验
+- 300456 · 独立董事提名人声明与承诺（付三中） · 2026-09-02（仅日期） · cninfo_announcements · https://www.cninfo.com.cn/new/disclosure/detail?stockCode=300456&announcementId=1225542459&orgId=9900023823&announcementTime=2026-09-02 · 待核验
+- 300456 · 独立董事候选人声明与承诺（张路） · 2026-09-02（仅日期） · cninfo_announcements · https://www.cninfo.com.cn/new/disclosure/detail?stockCode=300456&announcementId=1225542458&orgId=9900023823&announcementTime=2026-09-02 · 待核验
+- 300456 · 独立董事候选人声明与承诺（付三中） · 2026-09-02（仅日期） · cninfo_announcements · https://www.cninfo.com.cn/new/disclosure/detail?stockCode=300456&announcementId=1225542457&orgId=9900023823&announcementTime=2026-09-02 · 待核验
+- 300456 · 独立董事候选人声明与承诺（王玮） · 2026-09-02（仅日期） · cninfo_announcements · https://www.cninfo.com.cn/new/disclosure/detail?stockCode=300456&announcementId=1225542456&orgId=9900023823&announcementTime=2026-09-02 · 待核验
+- 300456 · 独立董事提名人声明与承诺（王玮） · 2026-09-02（仅日期） · cninfo_announcements · https://www.cninfo.com.cn/new/disclosure/detail?stockCode=300456&announcementId=1225542455&orgId=9900023823&announcementTime=2026-09-02 · 待核验
+- 300456 · 独立董事提名人声明与承诺（张路） · 2026-09-02（仅日期） · cninfo_announcements · https://www.cninfo.com.cn/new/disclosure/detail?stockCode=300456&announcementId=1225542454&orgId=9900023823&announcementTime=2026-09-02 · 待核验
+- 300456 · 关于董事会换届选举的公告 · 2026-09-02（仅日期） · cninfo_announcements · https://www.cninfo.com.cn/new/disclosure/detail?stockCode=300456&announcementId=1225542453&orgId=9900023823&announcementTime=2026-09-02 · 待核验
+- 300456 · 关于召开2026年第二次临时股东会的通知 · 2026-09-02（仅日期） · cninfo_announcements · https://www.cninfo.com.cn/new/disclosure/detail?stockCode=300456&announcementId=1225542452&orgId=9900023823&announcementTime=2026-09-02 · 待核验
+- 300456 · 第五届董事会第三十一次会议决议公告 · 2026-09-02（仅日期） · cninfo_announcements · https://www.cninfo.com.cn/new/disclosure/detail?stockCode=300456&announcementId=1225542451&orgId=9900023823&announcementTime=2026-09-02 · 待核验
+- 000878 · 关于聘任总经理的公告 · 2026-09-02（仅日期） · cninfo_announcements · https://www.cninfo.com.cn/new/disclosure/detail?stockCode=000878&announcementId=1225541522&orgId=gssz0000878&announcementTime=2026-09-02 · 待核验
+- 000878 · 关于董事长辞职的公告 · 2026-09-02（仅日期） · cninfo_announcements · https://www.cninfo.com.cn/new/disclosure/detail?stockCode=000878&announcementId=1225541521&orgId=gssz0000878&announcementTime=2026-09-02 · 待核验
+- 000878 · 关于副董事长、总经理辞职及选举董事长的公告 · 2026-09-02（仅日期） · cninfo_announcements · https://www.cninfo.com.cn/new/disclosure/detail?stockCode=000878&announcementId=1225541520&orgId=gssz0000878&announcementTime=2026-09-02 · 待核验
+- 000878 · 第十届董事会第十五次会议决议公告 · 2026-09-02（仅日期） · cninfo_announcements · https://www.cninfo.com.cn/new/disclosure/detail?stockCode=000878&announcementId=1225541519&orgId=gssz0000878&announcementTime=2026-09-02 · 待核验
+- 601168 · 西部矿业第九届董事会第二次会议决议公告 · 2026-09-02（仅日期） · cninfo_announcements · https://www.cninfo.com.cn/new/disclosure/detail?stockCode=601168&announcementId=1225542353&orgId=9900003262&announcementTime=2026-09-02 · 待核验
+- 601168 · 西部矿业关于公司控股子公司向西藏日喀则市吉隆县捐赠的公告 · 2026-09-02（仅日期） · cninfo_announcements · https://www.cninfo.com.cn/new/disclosure/detail?stockCode=601168&announcementId=1225542335&orgId=9900003262&announcementTime=2026-09-02 · 待核验
+- 300364 · 关于控股股东、实际控制人部分股份质押的公告 · 2026-09-01T18:16:09+08:00 · cninfo_announcements · https://www.cninfo.com.cn/new/disclosure/detail?stockCode=300364&announcementId=1225541535&orgId=9900023871&announcementTime=2026-09-01 · 待核验
+- 600028 · 中国石化H股公告-翌日披露表格 · 2026-09-01（仅日期） · cninfo_announcements · https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600028&announcementId=1225538030&orgId=gssh0600028&announcementTime=2026-09-01 · 待核验
+- 603588 · 高能环境关于股份回购进展公告 · 2026-09-01（仅日期） · cninfo_announcements · https://www.cninfo.com.cn/new/disclosure/detail?stockCode=603588&announcementId=1225536214&orgId=9900023766&announcementTime=2026-09-01 · 待核验
+- 002436 · 关于回购股份事项前十名股东及前十名无限售条件股东持股情况的公告 · 2026-09-01（仅日期） · cninfo_announcements · https://www.cninfo.com.cn/new/disclosure/detail?stockCode=002436&announcementId=1225536564&orgId=9900012934&announcementTime=2026-09-01 · 待核验
+- 600256 · 广汇能源股份有限公司2026年第二次临时股东会会议材料 · 2026-09-01（仅日期） · cninfo_announcements · https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600256&announcementId=1225537129&orgId=gssh0600256&announcementTime=2026-09-01 · 待核验
+- 600887 · 内蒙古伊利实业集团股份有限公司关于回购股份事项前十名股东持股情况的公告 · 2026-09-01（仅日期） · cninfo_announcements · https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600887&announcementId=1225536213&orgId=gssh0600887&announcementTime=2026-09-01 · 待核验
+
+### 数据缺口
+
+炸板率、昨日涨停溢价、首板/连板梯队、1进2/2进3/3进4晋级率、最高板高度/梯队完整度、成交额相对5/10/20日均值、指数5/10/20日趋势、高位股亏钱效应、短线情绪周期、主力资金、外部市场、全市场涨跌停价覆盖、龙虎榜席位归因、未覆盖类型公告正文人工复核、历史复权事件校验、板块全部成分多日因子、消息发布前后因果验证
+
+### 淘汰记录
+
+这是规则研究记录。评分和主观概率不是收益承诺；没有可靠数据时不输出交易候选。
