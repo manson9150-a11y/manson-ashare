@@ -64,5 +64,16 @@
     "top3_hit_rate": null,
     "top5_hit_rate": null,
     "definition": "同阶段/同池日等权观察组合；命中=次日收盘上涨；不含费用、滑点、停牌与涨停无法成交约束"
+  },
+  "0830/POOL_C": {
+    "sample_size": 0,
+    "win_rate": null,
+    "average_return": null,
+    "median_return": null,
+    "max_drawdown": null,
+    "next_day_limit_up_rate": null,
+    "top3_hit_rate": null,
+    "top5_hit_rate": null,
+    "definition": "同阶段/同池日等权观察组合；命中=次日收盘上涨；不含费用、滑点、停牌与涨停无法成交约束"
   }
 }
