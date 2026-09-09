@@ -382,6 +382,9 @@ class Pipeline:
             try: pd.DataFrame(run['quotes']).to_parquet(path.parent/'daily_quotes.parquet',index=False)
             except Exception as exc: run['errors'].append({'module':'daily_quote_parquet','error':type(exc).__name__})
         keep={s['stock_code'] for group in run['pools'].values() for s in group}
+        quote_names={q['code']:q['name'] for q in run.get('quotes',[])}
+        run['limit_pool']=[{**row,'name':quote_names.get(row['code'],row.get('name',''))}
+                           for row in run.get('limit_pool',[])]
         run['quotes']=[q for q in run.get('quotes',[]) if q['code'] in keep]; run['factors']={k:v for k,v in run.get('factors',{}).items() if k in keep}
         chart_rows=[{'stock_code':code,**bar} for code,f in run['factors'].items() for bar in f.get('bars',[])]
         if chart_rows:

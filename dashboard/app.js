@@ -9,10 +9,11 @@ const demo=new URLSearchParams(location.search).get('demo')==='1';
 const replayParam=new URLSearchParams(location.search).get('replay');
 const replayDate=!demo&&/^\d{4}-\d{2}-\d{2}$/.test(replayParam||'')?replayParam:null;
 let wudaoSupplement=null;
+let evidenceSupplement=null,marketEvidence=null;
 let state={},activePool='POOL_A',downloadURL;
 function pill(label){return `<span class="pill ${/高位|高|极端|退潮|转弱/.test(label)?'red':/启动|中|警告/.test(label)?'orange':''}">${esc(label)}</span>`;}
 async function load(){
- $('refresh').disabled=true;wudaoSupplement=null;
+ $('refresh').disabled=true;wudaoSupplement=null;evidenceSupplement=null;
  try{
   const response=await fetch(`data/${demo?'demo':replayDate?`replays/${replayDate}`:'latest'}.json`,{cache:'no-store'});
   if(!response.ok)throw new Error('EMPTY');
@@ -30,6 +31,10 @@ async function load(){
  if(!demo&&!replayDate&&!state.wudao){try{
   const r=await fetch('data/wudao.json',{cache:'no-store'});
   if(r.ok){const w=await r.json();if(w.trade_date===state.quote_date&&Date.parse(w.requested_at)>=Date.parse(state.as_of_time))wudaoSupplement=w;}
+ }catch{}}
+ if(!demo&&!replayDate){try{
+  const r=await fetch('data/evidence_supplement.json',{cache:'no-store'});
+  if(r.ok)evidenceSupplement=await r.json();
  }catch{}}
  render();
  $('run-banner').hidden=true;
@@ -51,6 +56,7 @@ function renderWudao(){
 }
 function render(){
  renderWudao();
+ renderEvidence();
  const m=state.market||{},q=state.data_quality||{};
  $('mode-link').href=demo||replayDate?'./':'?demo=1';$('mode-link').textContent=demo||replayDate?'返回正式工作台 ↗':'查看演示 ↗';
  $('mode-banner').hidden=!demo&&!replayDate&&!state.bootstrap_origin;
@@ -77,7 +83,7 @@ function render(){
  $('sector-filter').innerHTML='<option value="">全部板块</option>'+options.map(s=>`<option>${esc(s)}</option>`).join('');
  for(const [i,k] of ['POOL_A','POOL_B','POOL_C'].entries())$(`count-${['a','b','c'][i]}`).textContent=state.pools?.[k]?.length||0;
  renderStocks();
- $('provenance').innerHTML=[['信息截点',state.as_of_time],['行情基准日',state.quote_date],['采集完成',state.finished_at],['Run ID',state.run_id?.slice(0,16)],['Google Docs',state.google_docs?.status||'NOT_CONFIGURED'],['AI增强',state.ai?.status||'DISABLED']].map(([k,v])=>`<dt>${esc(k)}</dt><dd>${esc(v)}</dd>`).join('');
+ $('provenance').innerHTML=[['正式报告截点',state.as_of_time],['公告观察截点',state.event_cutoff_time||state.as_of_time],['行情基准日',state.quote_date],['补充核验完成',marketEvidence?.supplement?marketEvidence.finished_at:'无独立补充'],['采集完成',state.finished_at],['Run ID',state.run_id?.slice(0,16)],['Google Docs',state.google_docs?.status||'NOT_CONFIGURED'],['AI增强',state.ai?.status||'DISABLED']].map(([k,v])=>`<dt>${esc(k)}</dt><dd>${esc(v)}</dd>`).join('');
  const sources={};for(const s of state.source_logs||[]){const old=sources[s.source_name]||{ok:0,total:0};old.total++;if(s.success)old.ok++;sources[s.source_name]=old;}
  $('source-list').innerHTML=Object.entries(sources).map(([k,v])=>`<div class="source-item"><span>${esc(k)}</span><span>${v.ok} / ${v.total} 成功</span></div>`).join('')||(demo?'<div class="source-item">SIMULATED · 仅用于功能验收</div>':'<div class="source-item">尚无采集记录</div>');
  $('missing-factors').innerHTML=(state.missing_factors||['等待首份数据质量报告']).map(s=>`<li>${esc(s)}</li>`).join('');
@@ -88,10 +94,43 @@ function render(){
  if(downloadURL)URL.revokeObjectURL(downloadURL);downloadURL=URL.createObjectURL(new Blob([JSON.stringify(state,null,2)],{type:'application/json'}));$('download').href=downloadURL;
 }
 function poolExplanation(pool){
+ if(pool==='POOL_A'&&!(state.pools?.POOL_A?.length)&&marketEvidence?.limit_pool?.length)return `该正式报告的 A 池为 0；市场数据已列出 ${marketEvidence.limit_pool.length} 条涨停记录，其中 ${marketEvidence.limit_pool.filter(r=>r.board_count>=2).length} 只连板股。请查看上方“涨停与连板梯队”；市场记录尚未全部通过策略、风险与交易性筛选，不直接计入 A 池。`;
+ if(pool==='POOL_C'&&!(state.pools?.POOL_C?.length)&&marketEvidence?.events?.some(e=>e.verified))return '该正式报告的 C 池为 0；上方公告更新已展示补充核验通过的合同事实。事实核验通过不等于通过全部入池条件，后续正式任务会结合价格、风险和新鲜度继续筛选。';
  if(state.pool_notes?.[pool])return state.pool_notes[pool];
  if(pool==='POOL_A'&&!(state.pools?.POOL_A?.length))return '该快照未记录完整涨停识别覆盖，不能将0只理解为市场无涨停。修复后的新一轮收盘扫描将提供证据与筛选原因。';
  if(pool==='POOL_C'&&!(state.pools?.POOL_C?.length))return '该快照未产出通过正文核验的独立催化候选。公告缺失或待核验不等于没有催化事件；新任务将独立扫描公告并展示核验证据。';
  return '';
+}
+function renderEvidence(){
+ marketEvidence=MansonEvidence.select(state,evidenceSupplement,{demo,replay:!!replayDate});
+ $('market-evidence').hidden=demo;
+ $('evidence-update').hidden=!marketEvidence?.supplement;
+ $('evidence-update').innerHTML=marketEvidence?.supplement?`已增加 ${esc(marketEvidence.trade_date)} 盘后补充核验 · ${esc(beijingTime(marketEvidence.finished_at))}。<a href="#market-evidence">查看涨停、连板及公告更新 →</a>`:'';
+ $('evidence-content').hidden=!marketEvidence;
+ $('evidence-empty').hidden=!!marketEvidence;
+ $('evidence-empty').innerHTML=replayDate?'当前为历史复盘，后续采集不混入历史结果。<a href="./#market-evidence">打开最新正式工作台 →</a>':'本报告尚无可展示的涨停证据；未将空表解释为市场无涨停。';
+ if(!marketEvidence)return;
+ const rows=marketEvidence.limit_pool||[],chain=rows.filter(r=>r.board_count>=2),verified=(marketEvidence.events||[]).filter(e=>e.verified&&e.verification?.status==='VERIFIED_RULE');
+ const known=rows.filter(r=>Number.isInteger(r.board_count)&&r.board_count>0);
+ const max=known.length?Math.max(...known.map(r=>r.board_count)):null;
+ $('evidence-note').textContent=`行情基准 ${marketEvidence.trade_date} · ${marketEvidence.supplement?'盘后补充采集':'正式任务记录'} · ${beijingTime(marketEvidence.observed_at)}。供应商板数与规则推导分别标注；市场涨停记录不等于 A 池策略候选。`;
+ $('evidence-metrics').innerHTML=[['涨停记录',rows.length],['连板股（2板起）',chain.length],['供应商最高板',max==null?'—':max+'板'],['正文事实核验通过',verified.length]].map(([k,v])=>`<div><span>${esc(k)}</span><strong>${esc(v)}</strong></div>`).join('');
+ $('limit-ladder').innerHTML=MansonEvidence.ladder(rows).map(([n,group])=>`<button type="button" data-board="${esc(n)}"><b>${n==='1'?'首板':esc(n)+'板'}</b><span>${group.length} 只</span></button>`).join('');
+ $('limit-board-filter').innerHTML='<option value="chain">只看连板（2板起）</option><option value="all">全部涨停记录</option>'+MansonEvidence.ladder(rows).map(([n,g])=>`<option value="${esc(n)}">${n==='1'?'首板':esc(n)+'板'} · ${g.length} 只</option>`).join('');
+ document.querySelectorAll('[data-board]').forEach(b=>b.addEventListener('click',()=>{$('limit-board-filter').value=b.dataset.board;renderLimitRows();}));
+ const reviewed=(marketEvidence.events||[]).filter(e=>e.verification);
+ const reason={CONTRACT_NOT_CONFIRMED:'合同签署或生效条件未满足现有核验规则','NO_SUPPORTED_MATERIAL_FACT; NEEDS_REVIEW':'未提取到现有规则支持的明确量化事实',DOCUMENT_READ_FAILED:'正文读取失败',ISSUER_NOT_MATCHED:'正文证券代码未匹配'};
+ $('evidence-events').innerHTML=reviewed.map(e=>`<article class="evidence-event"><div>${e.verified?pill('正文事实核验通过'):'<span class="pill orange">待进一步核验</span>'}<span>${esc(e.stock_code)}</span></div><h3><a href="${safeURL(e.document_url||e.url)}" target="_blank" rel="noopener noreferrer">${esc(e.title)} ↗</a></h3><p>${esc(e.verification.evidence||reason[e.verification.reason]||e.verification.reason||'尚无明确正文证据')}</p>${e.verification.score_basis?`<p>${esc(e.verification.score_basis)}</p>`:''}<small>公告 ${esc(e.publish_time_precision==='date'?e.publish_time.slice(0,10)+'（仅日期）':beijingTime(e.publish_time))} · 核验 ${esc(beijingTime(e.verification.observed_at))}</small></article>`).join('')||'<p class="empty">暂无完成正文核验的公告；不按标题补足 C 池。</p>';
+ const ce=marketEvidence.catalyst_evidence||{};
+ $('event-evidence-note').textContent=`限定扫描发现 ${ce.discovered??'—'} 条，正文读取 ${ce.documents_read??'—'} 份。核验事实仍需通过其余筛选，才进入 C 池。${marketEvidence.supplement?'本补充未改写原正式报告或原 Google Docs。':''}`;
+ renderLimitRows();
+}
+function sealTime(value){const s=String(value??'').padStart(6,'0');return /^\d{6}$/.test(s)&&value!=null?`${s.slice(0,2)}:${s.slice(2,4)}:${s.slice(4,6)}`:'—';}
+function renderLimitRows(){
+ const f=$('limit-board-filter').value,query=$('limit-search').value.trim();
+ const rows=(marketEvidence?.limit_pool||[]).filter(r=>(f==='all'||f==='chain'&&r.board_count>=2||String(r.board_count??'未知')===f)&&(!query||(r.name||'').includes(query)||r.code.includes(query))).sort((a,b)=>(b.board_count||0)-(a.board_count||0)||String(a.code).localeCompare(String(b.code)));
+ $('limit-shown').textContent=`显示 ${rows.length} / ${marketEvidence?.limit_pool?.length||0} 条`;
+ $('limit-rows').innerHTML=rows.map(r=>`<tr><td><strong>${esc(r.name||r.code)}</strong><span class="second-line">${esc(r.code)}</span></td><td>${r.board_count==null?'供应商未知':esc(r.board_count)+'板'}${r.derived_board_count?`<span class="second-line">规则推导 ${esc(r.derived_board_count)}板</span>`:''}</td><td>${num(r.limit_up_price)}</td><td>${sealTime(r.first_seal)}</td><td>${sealTime(r.last_seal)}</td><td>${r.break_count==null?'—':esc(r.break_count)}</td><td>${num(r.seal_amount==null?null:r.seal_amount/1e8)}</td><td>${esc(r.source==='eastmoney'?'东方财富':r.source)}${r.identity_basis==='rule_derived_not_vendor_confirmed'?'<span class="second-line">规则推导，待核验</span>':''}</td></tr>`).join('')||'<tr><td colspan="8" class="empty">当前条件下无记录。</td></tr>';
 }
 function renderStocks(){
  const group=(state.pools?.[activePool]||[]).filter(s=>(!$('sector-filter').value||s.sector===$('sector-filter').value)&&(!$('position-filter').value||s.position_type===$('position-filter').value)&&(!$('risk-filter').value||s.risk===$('risk-filter').value)).sort((a,b)=>(b[$('sort').value]??-1)-(a[$('sort').value]??-1));
@@ -119,6 +158,8 @@ function showDetail(code){
 }
 document.querySelectorAll('[data-pool]').forEach(b=>b.addEventListener('click',()=>{activePool=b.dataset.pool;document.querySelectorAll('[data-pool]').forEach(x=>x.setAttribute('aria-selected',String(x===b)));renderStocks();}));
 for(const id of ['sector-filter','position-filter','risk-filter','sort'])$(id).addEventListener('change',renderStocks);
+$('limit-board-filter').addEventListener('change',renderLimitRows);
+$('limit-search').addEventListener('input',renderLimitRows);
 $('refresh').addEventListener('click',load);$('close-detail').addEventListener('click',()=>$('detail').close());
 $('detail').addEventListener('click',e=>{if(e.target===$('detail')){const r=$('detail').getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)$('detail').close();}});
 load();
