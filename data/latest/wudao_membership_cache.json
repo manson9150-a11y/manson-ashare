@@ -47,8 +47,8 @@
       "920964"
     ],
     "source": "wudao_mcp",
-    "observed_at": "2026-09-09T07:40:27.304715+08:00",
-    "metadata_updated_at": "2026-09-08T13:01:13.687000+00:00",
+    "observed_at": "2026-09-10T07:40:39.220322+08:00",
+    "metadata_updated_at": "2026-09-09T13:01:09.729000+00:00",
     "requested_name": "农业",
     "match_type": "fuzzy"
   },
@@ -154,8 +154,8 @@
       "920809"
     ],
     "source": "wudao_mcp",
-    "observed_at": "2026-09-09T07:40:27.836425+08:00",
-    "metadata_updated_at": "2026-09-08T13:00:18.287000+00:00",
+    "observed_at": "2026-09-10T07:40:39.499148+08:00",
+    "metadata_updated_at": "2026-09-09T13:00:16.577000+00:00",
     "requested_name": "化工",
     "match_type": "fuzzy"
   },

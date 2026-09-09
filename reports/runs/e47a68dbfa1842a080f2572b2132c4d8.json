@@ -1,0 +1,23 @@
+{
+  "run_id": "e47a68dbfa1842a080f2572b2132c4d8",
+  "date": "2026-09-10",
+  "stage": "0730",
+  "status": "COMPLETE",
+  "started_at": "2026-09-10T07:40:36.420065+08:00",
+  "finished_at": "2026-09-10T07:40:59.857468+08:00",
+  "source_success_rate": 0.8235294117647058,
+  "failed_sources": [
+    "eastmoney",
+    "wudao_mcp"
+  ],
+  "stock_count": 33,
+  "sector_count": 56,
+  "candidate_count": 12,
+  "google_docs": {
+    "status": "SYNCED",
+    "sent": 1,
+    "failed": 0
+  },
+  "dashboard_updated_at": "2026-09-10T07:40:59.857441+08:00",
+  "errors": []
+}
