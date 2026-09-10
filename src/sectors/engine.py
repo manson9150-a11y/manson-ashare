@@ -15,7 +15,9 @@ def sector_scores(quotes, membership, factors, config):
         w = config['sector']['weights']
         # Optional missing components are not silently filled with a neutral score.
         score = (breadth*100*w['breadth'] + max(0,min(100,50+median*config['sector']['momentum_scale']))*w['momentum']) / (w['breadth']+w['momentum'])
-        if trend and len(trend)/len(members)>=config['sector']['min_factor_coverage']:
+        trend_coverage=len(trend)/len(members)
+        trend_available=bool(trend and trend_coverage>=config['sector']['min_factor_coverage'])
+        if trend_available:
             score = score*(w['breadth']+w['momentum']) + statistics.mean(trend)*100*w['trend']
         amounts = [q.amount for q in members]
         concentration = max(amounts)/sum(amounts) if sum(amounts)>0 else None
@@ -26,12 +28,13 @@ def sector_scores(quotes, membership, factors, config):
         elif high or (concentration and concentration > config['sector']['concentration_warning'] and breadth < 0.5):
             state = '高位拥挤'
         elif score >= config['sector']['strong_threshold']:
-            state = '持续强势'
+            persistent=trend_available and statistics.mean(f.get('consecutive_up_2',False) for f in fs)>=.5 and statistics.median([f.get('return_5d') or 0 for f in fs])>0
+            state = '持续强势' if persistent else '当日强势'
         elif score >= config['sector']['strengthening_threshold']:
-            state = '正在加强'
+            state = '当日加强'
         else:
             state = '启动观察'
-        item = {'id': sector['id'], 'name': sector['name'], 'kind': sector['kind'], 'score': round(score,2), 'state': state, 'member_count':len(members), 'up':sum(x>0 for x in changes), 'down':sum(x<0 for x in changes), 'breadth':breadth, 'return_1d':median, 'amount':sum(amounts), 'concentration':concentration, 'above_ma20_ratio': statistics.mean(trend) if trend else None, 'factor_coverage':len(fs)/len(members), 'history':{}, 'missing_factors':['龙头/先锋身份','连板梯队','真实资金拥挤度'], 'source':sector.get('source')}
+        item = {'id': sector['id'], 'name': sector['name'], 'kind': sector['kind'], 'score': round(score,2), 'state': state, 'member_count':len(members), 'up':sum(x>0 for x in changes), 'down':sum(x<0 for x in changes), 'breadth':breadth, 'return_1d':median, 'amount':sum(amounts), 'concentration':concentration, 'above_ma20_ratio': statistics.mean(trend) if trend else None, 'factor_coverage':len(fs)/len(members),'factor_member_count':len(fs),'trend_coverage':trend_coverage,'score_basis':'BREADTH_MOMENTUM_TREND' if trend_available else 'TODAY_BREADTH_MOMENTUM','state_basis':'多日因子覆盖达标且多数样本连续上涨、5日中位涨幅为正' if state=='持续强势' else '当前快照规则；不代表多日持续性', 'history':{}, 'missing_factors':['龙头/先锋身份','连板梯队','真实资金拥挤度'], 'source':sector.get('source')}
         for n in [3,5,10,20]:
             vals=[f[f'return_{n}d'] for f in fs if f.get(f'return_{n}d') is not None]
             item[f'return_{n}d']=statistics.median(vals) if vals else None

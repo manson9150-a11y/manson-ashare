@@ -1,0 +1,10 @@
+const test=require('node:test');const assert=require('node:assert/strict');require('../dashboard/research.js');const r=globalThis.MansonResearch;
+test('legacy stages keep original labels',()=>{assert.match(r.stageLabel('2130'),/21:30.*历史/);assert.match(r.stageLabel('2200'),/22:00/);assert.doesNotMatch(r.stageLabel('2200'),/历史/)});
+test('coverage distinguishes missing from zero',()=>{assert.equal(r.coverageText(null),'未记录');assert.equal(r.coverageText(0),'0%');assert.equal(r.coverageText(.85),'85%')});
+test('legacy score is not independent tradability',()=>{assert.equal(r.tradability({tradability_score:88,total_score:88}).independent,false);assert.equal(r.tradability({tradability_basis:'NOT_ASSESSED'}).independent,false)});
+test('sector persistence requires multi-day evidence',()=>{assert.equal(r.sectorPresentation({state:'持续强势',factor_coverage:.3,member_count:30}).label,'当日强势');assert.equal(r.sectorPresentation({state:'持续强势',factor_coverage:.8,score_basis:'BREADTH_MOMENTUM_TREND'}).label,'持续强势')});
+test('first board and consecutive boards are explicit',()=>{assert.match(r.boardLabel({board_count:1}),/首板/);assert.match(r.boardLabel({board_count:2}),/已连板/);assert.match(r.boardLabel({derived_board_count:3}),/待核验/)});
+test('existing ladder is not presented as no data',()=>{const items=r.factorStatuses({missing_factors:['首板/连板梯队']},{limit_pool:[{board_count:2}]});assert.equal(items[0].status,'NOT_INTEGRATED');assert.match(items[0].reason,/已有 1 条/)});
+test('conditions format floating point tails',()=>{assert.equal(r.formatCondition('MA20（5.969500000000001）'),'MA20（5.97）')});
+test('verified announcements without diagnostics do not invent rejection reasons',()=>{const result=r.catalystDiagnostics({pools:{POOL_C:[]}}, {events:[{verified:true,stock_code:'600001'}]});assert.match(result[0].reasons[0],/未保存/)});
+test('capability names do not imply data exists',()=>{assert.doesNotMatch(r.labels.NOT_INTEGRATED,/已有数据/);const items=r.factorStatuses({factor_statuses:[{id:'external',status:'NOT_INTEGRATED',reason:'未实现'}]});assert.equal(items[0].reason,'未实现')});

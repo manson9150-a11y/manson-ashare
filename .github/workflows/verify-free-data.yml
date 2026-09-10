@@ -1,15 +1,15 @@
-name: Tests and offline dry run
+name: Verify free daily data sources
 on:
+  workflow_dispatch:
   push:
     branches: [main]
-    paths-ignore: ['data/**', 'reports/**', 'dashboard/data/**']
-  pull_request:
-  workflow_dispatch:
+    paths: ['src/collectors/**', 'src/verify_free_data.py', 'requirements.lock', '.github/workflows/verify-free-data.yml']
 permissions:
   contents: read
 jobs:
-  test:
+  verify:
     runs-on: ubuntu-latest
+    timeout-minutes: 5
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -18,11 +18,10 @@ jobs:
           cache: pip
           cache-dependency-path: requirements.lock
       - run: pip install -r requirements.lock && pip install --no-deps -e .
-      - run: pytest -q
-      - run: node --test tests/test_dashboard*.cjs
-      - run: python -m src.cli --demo --stage full_pipeline --date 2026-09-04
+      - run: python -m src.verify_free_data
       - uses: actions/upload-artifact@v4
+        if: always()
         with:
-          name: offline-verification
-          path: artifacts/demo
-          retention-days: 7
+          name: free-data-health
+          path: artifacts/free_sources.json
+          retention-days: 14

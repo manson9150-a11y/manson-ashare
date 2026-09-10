@@ -39,3 +39,6 @@ tzdata==2026.3
 urllib3==2.7.0
 
 pypdf==6.10.0
+quickjs-ng==0.16.2.1
+
+baostock==0.9.3

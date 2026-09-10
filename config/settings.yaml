@@ -17,7 +17,7 @@ sources:
   min_market_coverage: 0.85
   min_history_coverage: 0.7
   max_source_failures: 6
-  enabled: [eastmoney, tencent, sina]
+  enabled: [eastmoney, tencent, sina, baostock]
 quality:
   max_abs_change_pct: 45
   conflict_price_pct: 0.5
@@ -37,7 +37,7 @@ sector:
   weights: {breadth: 0.5, momentum: 0.3, trend: 0.2}
   momentum_scale: 10
   min_factor_coverage: 0.7
-  allowed: [正在加强, 持续强势, 启动观察]
+  allowed: [当日强势, 当日加强, 正在加强, 持续强势, 启动观察]
 position:
   startup: {max_return_5d: 15, max_distance_ma20: 8, min_amount_ratio: 1.1}
   trend: {max_distance_ma20: 15, min_return_20d: 0}
@@ -99,7 +99,11 @@ ai:
 storage:
   max_snapshot_bars: 65
   evaluation_window_days: 40
+active_stages: ["0800", "1200", "2200"]
 stages:
+  '0800': {label: 盘前计划, time: '08:00', deadline: '09:10'}
+  '1200': {label: 午间验证, time: '12:00', deadline: '12:45'}
+  '2200': {label: 晚间复盘, time: '22:00', deadline: '23:59'}
   '0730': {label: 隔夜确认, time: '07:30', deadline: '08:29'}
   '0830': {label: 盘前终审, time: '08:30', deadline: '09:25'}
   '1135': {label: 午盘确认, time: '11:35', deadline: '12:45'}

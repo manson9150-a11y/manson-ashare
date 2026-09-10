@@ -1,6 +1,8 @@
 from datetime import timedelta
 
 def predecessor(day,stage,calendar):
+    if stage=='0800': return (calendar.previous(day),'2200')
+    if stage=='1200': return (day,'0800')
     if stage=='0730': return (calendar.previous(day),'2130')
     mapping={'2130':(day,'1600'),'0830':(day,'0730'),'1135':(day,'0830')}
     return mapping.get(stage)
@@ -11,14 +13,14 @@ def pools(stocks,stage,config,previous=None):
     previous_by_code={s['stock_code']:s for v in (previous or {}).get('pools',{}).values() for s in v}
     previous_codes=set(previous_by_code)
     for s in stocks:
-        fresh_catalyst=stage in ('2130','0730','0830') and s['independent_catalyst']
-        if stage!='1600' and s['stock_code'] not in previous_codes and not fresh_catalyst:
+        fresh_catalyst=stage in ('2130','0730','0830','0800') and s['independent_catalyst']
+        if stage not in ('1600','2200') and s['stock_code'] not in previous_codes and not fresh_catalyst:
             continue
         if s['position_type']=='排除' or (s['total_score'] or 0)<limits['min_score']:
             continue
         if fresh_catalyst and previous_by_code.get(s['stock_code'],{}).get('pool')!='POOL_A':
             pool='POOL_C'
-        elif stage!='1600':
+        elif stage not in ('1600','2200'):
             pool=previous_by_code[s['stock_code']]['pool']
         elif s['is_limit_up']:
             pool='POOL_A'
@@ -36,10 +38,10 @@ def pools(stocks,stage,config,previous=None):
         else:
             s['transition']='新入池'
         selected[pool].append(s)
-    cap={'POOL_A':limits['evening_limit_max'] if stage=='2130' else limits['limit_pool_max'],'POOL_B':limits['trend_pool_max'],'POOL_C':limits['catalyst_pool_max']}
+    cap={'POOL_A':limits['evening_limit_max'] if stage in ('2130','2200') else limits['limit_pool_max'],'POOL_B':limits['trend_pool_max'],'POOL_C':limits['catalyst_pool_max']}
     for pool in selected:
         selected[pool]=sorted(selected[pool],key=lambda s:(-(s['total_score'] or 0),s['stock_code']))[:cap[pool]]
-    total_cap={'0730':limits['overnight_max'],'0830':limits['premarket_max'],'1135':limits['midday_max']}.get(stage)
+    total_cap={'0730':limits['overnight_max'],'0830':limits['premarket_max'],'1135':limits['midday_max'],'0800':limits['premarket_max'],'1200':limits['midday_max']}.get(stage)
     if total_cap:
         best=sorted([s for group in selected.values() for s in group],key=lambda s:-(s['total_score'] or 0))[:total_cap]
         codes={s['stock_code'] for s in best}

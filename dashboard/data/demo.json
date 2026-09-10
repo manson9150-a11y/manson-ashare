@@ -1,27 +1,32 @@
 {
-  "run_id": "ace2ea54462043afb77761e457de6b57",
+  "run_id": "20e7d33cc83e4a4db00c4281af461be4",
   "date": "2026-09-04",
-  "stage": "2130",
-  "stage_label": "晚间二筛",
+  "stage": "2200",
+  "stage_label": "晚间复盘",
   "mode": "demo",
-  "started_at": "2026-09-05T19:24:22.562294+08:00",
-  "as_of_time": "2026-09-04T21:30:00+08:00",
+  "started_at": "2026-09-10T19:37:17.962153+08:00",
+  "as_of_time": "2026-09-04T22:00:00+08:00",
   "status": "COMPLETE",
   "warnings": [
     "DEMO / 模拟数据：所有企业、事件和评分仅用于流程测试。",
-    "行情沿用 2026-09-04 正式收盘快照；本阶段仅刷新事件。隔夜变量未接入，市场分为前收盘参考。"
+    "全市场快照经板块过滤，最多250只历史日线；板块多日指标仅覆盖已采集成分。"
   ],
   "errors": [],
   "data_quality": {
-    "status": "YELLOW",
+    "status": "GREEN",
     "coverage": 1.0,
     "accepted": 80,
     "rejected": [],
     "conflicts": [],
     "expected_trade_date": "2026-09-04",
-    "as_of_time": "2026-09-04T21:30:00+08:00",
+    "as_of_time": "2026-09-04T22:00:00+08:00",
     "history_coverage": 1.0,
-    "sector_mapping_coverage": 1.0
+    "sector_mapping_coverage": 1.0,
+    "candidate_score_coverage": 1.0,
+    "candidate_amount_coverage": 1.0,
+    "history_requested_count": 51,
+    "history_ready_count": 51,
+    "history_coverage_scope": "本次查询预算；不是全市场历史覆盖"
   },
   "pools": {
     "POOL_A": [
@@ -40,7 +45,7 @@
         "volume_ratio": null,
         "float_cap": null,
         "timestamp": "2026-09-04T15:00:00+08:00",
-        "fetched_at": "2026-09-04T16:00:00+08:00",
+        "fetched_at": "2026-09-04T22:00:00+08:00",
         "source": "SIMULATED",
         "reliability": 0.8,
         "fallback": false,
@@ -50,6 +55,8 @@
         "limit_up_price": 45.60462732700388,
         "limit_down_price": 37.31287690391226,
         "bars_count": 85,
+        "amount_history_coverage": 1.0,
+        "amount_history_status": "AVAILABLE",
         "ma5": 42.1013159519493,
         "distance_ma5": 8.321144590950436,
         "slope_ma5": 2.4895916095990955,
@@ -83,7 +90,7 @@
         "consecutive_up_2": true,
         "consecutive_up_3": true,
         "history_source": "SIMULATED",
-        "as_of_time": "2026-09-04T16:00:00+08:00",
+        "as_of_time": "2026-09-04T22:00:00+08:00",
         "bars": [
           {
             "timestamp": "2026-06-05T07:00:00+00:00",
@@ -757,7 +764,13 @@
           "position": 80,
           "volume": 83.51856805336003
         },
-        "tradability_score": 85.34,
+        "tradability_score": null,
+        "tradability_basis": "NOT_ASSESSED",
+        "risk_scope": "TECHNICAL_AND_KNOWN_FLAGS",
+        "technical_risk": "低",
+        "event_review_status": "UNREVIEWED",
+        "score_status": "COMPLETE",
+        "eligibility_notes": [],
         "subjective_probability": null,
         "probability_basis": "未校准，不输出伪精确概率",
         "deep_score": null,
@@ -772,10 +785,13 @@
           "reward_risk": null
         },
         "board_count": 1,
+        "derived_board_count": null,
+        "limit_identity_basis": null,
         "is_limit_up": true,
         "limit_details": {
           "code": "600066",
           "board_count": 1,
+          "limit_up_price": 45.60462732700388,
           "source": "SIMULATED",
           "trade_date": "2026-09-04"
         },
@@ -786,34 +802,23 @@
         "expectation_score": null,
         "positive_factor": "MA5>MA10>MA20，趋势与位置满足规则",
         "negative_factor": "独立催化与龙虎榜尚未确认",
-        "validation_condition": "板块维持扩散，价格守住MA20（40.50079454341231），ATR不过热",
+        "validation_condition": "板块维持扩散，价格守住MA20（40.50），ATR不过热",
         "invalidation_condition": "板块转弱、放量跌破MA20或出现重大风险公告",
         "exclusion_reason": null,
         "rank_history": [
           {
             "date": "2026-09-04",
-            "stage": "0730",
-            "rank": 1,
-            "score": 85.34
-          },
-          {
-            "date": "2026-09-04",
-            "stage": "0830",
-            "rank": 1,
-            "score": 85.34
-          },
-          {
-            "date": "2026-09-04",
-            "stage": "1600",
+            "stage": "0800",
             "rank": 1,
             "score": 85.34
           }
         ],
         "pool": "POOL_A",
-        "transition": "维持",
+        "transition": "新入池",
         "rank": 1,
         "date": "2026-09-04",
-        "stage": "2130"
+        "stage": "2200",
+        "wudao_themes": []
       },
       {
         "code": "600053",
@@ -830,7 +835,7 @@
         "volume_ratio": null,
         "float_cap": null,
         "timestamp": "2026-09-04T15:00:00+08:00",
-        "fetched_at": "2026-09-04T16:00:00+08:00",
+        "fetched_at": "2026-09-04T22:00:00+08:00",
         "source": "SIMULATED",
         "reliability": 0.8,
         "fallback": false,
@@ -840,6 +845,8 @@
         "limit_up_price": 39.30085219503615,
         "limit_down_price": 32.15524270502958,
         "bars_count": 85,
+        "amount_history_coverage": 1.0,
+        "amount_history_status": "AVAILABLE",
         "ma5": 36.39422243794091,
         "distance_ma5": 7.986514238768527,
         "slope_ma5": 2.1697146409824564,
@@ -873,7 +880,7 @@
         "consecutive_up_2": false,
         "consecutive_up_3": false,
         "history_source": "SIMULATED",
-        "as_of_time": "2026-09-04T16:00:00+08:00",
+        "as_of_time": "2026-09-04T22:00:00+08:00",
         "bars": [
           {
             "timestamp": "2026-06-05T07:00:00+00:00",
@@ -1547,7 +1554,13 @@
           "position": 80,
           "volume": 79.95062641474468
         },
-        "tradability_score": 85.17,
+        "tradability_score": null,
+        "tradability_basis": "NOT_ASSESSED",
+        "risk_scope": "TECHNICAL_AND_KNOWN_FLAGS",
+        "technical_risk": "低",
+        "event_review_status": "UNREVIEWED",
+        "score_status": "COMPLETE",
+        "eligibility_notes": [],
         "subjective_probability": null,
         "probability_basis": "未校准，不输出伪精确概率",
         "deep_score": null,
@@ -1562,10 +1575,13 @@
           "reward_risk": null
         },
         "board_count": 1,
+        "derived_board_count": null,
+        "limit_identity_basis": null,
         "is_limit_up": true,
         "limit_details": {
           "code": "600053",
           "board_count": 1,
+          "limit_up_price": 39.30085219503615,
           "source": "SIMULATED",
           "trade_date": "2026-09-04"
         },
@@ -1576,28 +1592,16 @@
         "expectation_score": null,
         "positive_factor": "MA5>MA10>MA20，趋势与位置满足规则",
         "negative_factor": "独立催化与龙虎榜尚未确认",
-        "validation_condition": "板块维持扩散，价格守住MA20（35.09606736241203），ATR不过热",
+        "validation_condition": "板块维持扩散，价格守住MA20（35.10），ATR不过热",
         "invalidation_condition": "板块转弱、放量跌破MA20或出现重大风险公告",
         "exclusion_reason": null,
-        "rank_history": [
-          {
-            "date": "2026-09-04",
-            "stage": "0730",
-            "rank": 2,
-            "score": 85.17
-          },
-          {
-            "date": "2026-09-04",
-            "stage": "1600",
-            "rank": 2,
-            "score": 85.17
-          }
-        ],
+        "rank_history": [],
         "pool": "POOL_A",
-        "transition": "维持",
+        "transition": "新入池",
         "rank": 2,
         "date": "2026-09-04",
-        "stage": "2130"
+        "stage": "2200",
+        "wudao_themes": []
       },
       {
         "code": "600027",
@@ -1614,7 +1618,7 @@
         "volume_ratio": null,
         "float_cap": null,
         "timestamp": "2026-09-04T15:00:00+08:00",
-        "fetched_at": "2026-09-04T16:00:00+08:00",
+        "fetched_at": "2026-09-04T22:00:00+08:00",
         "source": "SIMULATED",
         "reliability": 0.8,
         "fallback": false,
@@ -1624,6 +1628,8 @@
         "limit_up_price": 25.890401023994315,
         "limit_down_price": 21.183055383268073,
         "bars_count": 85,
+        "amount_history_coverage": 1.0,
+        "amount_history_status": "AVAILABLE",
         "ma5": 23.901463637604802,
         "distance_ma5": 8.321404147235011,
         "slope_ma5": 2.309463173457682,
@@ -1657,7 +1663,7 @@
         "consecutive_up_2": true,
         "consecutive_up_3": true,
         "history_source": "SIMULATED",
-        "as_of_time": "2026-09-04T16:00:00+08:00",
+        "as_of_time": "2026-09-04T22:00:00+08:00",
         "bars": [
           {
             "timestamp": "2026-06-05T07:00:00+00:00",
@@ -2331,7 +2337,13 @@
           "position": 80,
           "volume": 87.55739015824027
         },
-        "tradability_score": 84.91,
+        "tradability_score": null,
+        "tradability_basis": "NOT_ASSESSED",
+        "risk_scope": "TECHNICAL_AND_KNOWN_FLAGS",
+        "technical_risk": "低",
+        "event_review_status": "UNREVIEWED",
+        "score_status": "COMPLETE",
+        "eligibility_notes": [],
         "subjective_probability": null,
         "probability_basis": "未校准，不输出伪精确概率",
         "deep_score": null,
@@ -2346,10 +2358,13 @@
           "reward_risk": null
         },
         "board_count": 1,
+        "derived_board_count": null,
+        "limit_identity_basis": null,
         "is_limit_up": true,
         "limit_details": {
           "code": "600027",
           "board_count": 1,
+          "limit_up_price": 25.890401023994315,
           "source": "SIMULATED",
           "trade_date": "2026-09-04"
         },
@@ -2360,22 +2375,16 @@
         "expectation_score": null,
         "positive_factor": "MA5>MA10>MA20，趋势与位置满足规则",
         "negative_factor": "独立催化与龙虎榜尚未确认",
-        "validation_condition": "板块维持扩散，价格守住MA20（23.111211244847546），ATR不过热",
+        "validation_condition": "板块维持扩散，价格守住MA20（23.11），ATR不过热",
         "invalidation_condition": "板块转弱、放量跌破MA20或出现重大风险公告",
         "exclusion_reason": null,
-        "rank_history": [
-          {
-            "date": "2026-09-04",
-            "stage": "1600",
-            "rank": 3,
-            "score": 84.91
-          }
-        ],
+        "rank_history": [],
         "pool": "POOL_A",
-        "transition": "维持",
+        "transition": "新入池",
         "rank": 3,
         "date": "2026-09-04",
-        "stage": "2130"
+        "stage": "2200",
+        "wudao_themes": []
       },
       {
         "code": "600001",
@@ -2392,7 +2401,7 @@
         "volume_ratio": null,
         "float_cap": null,
         "timestamp": "2026-09-04T15:00:00+08:00",
-        "fetched_at": "2026-09-04T16:00:00+08:00",
+        "fetched_at": "2026-09-04T22:00:00+08:00",
         "source": "SIMULATED",
         "reliability": 0.8,
         "fallback": false,
@@ -2402,6 +2411,8 @@
         "limit_up_price": 15.444074766661553,
         "limit_down_price": 12.636061172723089,
         "bars_count": 85,
+        "amount_history_coverage": 1.0,
+        "amount_history_status": "AVAILABLE",
         "ma5": 14.188484101013596,
         "distance_ma5": 8.849364433218486,
         "slope_ma5": 2.4733708866800264,
@@ -2435,7 +2446,7 @@
         "consecutive_up_2": true,
         "consecutive_up_3": true,
         "history_source": "SIMULATED",
-        "as_of_time": "2026-09-04T16:00:00+08:00",
+        "as_of_time": "2026-09-04T22:00:00+08:00",
         "bars": [
           {
             "timestamp": "2026-06-05T07:00:00+00:00",
@@ -3109,7 +3120,13 @@
           "position": 80,
           "volume": 72.48216125598796
         },
-        "tradability_score": 84.76,
+        "tradability_score": null,
+        "tradability_basis": "NOT_ASSESSED",
+        "risk_scope": "TECHNICAL_AND_KNOWN_FLAGS",
+        "technical_risk": "低",
+        "event_review_status": "UNREVIEWED",
+        "score_status": "COMPLETE",
+        "eligibility_notes": [],
         "subjective_probability": null,
         "probability_basis": "未校准，不输出伪精确概率",
         "deep_score": null,
@@ -3124,10 +3141,13 @@
           "reward_risk": null
         },
         "board_count": 1,
+        "derived_board_count": null,
+        "limit_identity_basis": null,
         "is_limit_up": true,
         "limit_details": {
           "code": "600001",
           "board_count": 1,
+          "limit_up_price": 15.444074766661553,
           "source": "SIMULATED",
           "trade_date": "2026-09-04"
         },
@@ -3138,22 +3158,16 @@
         "expectation_score": null,
         "positive_factor": "MA5>MA10>MA20，趋势与位置满足规则",
         "negative_factor": "独立催化与龙虎榜尚未确认",
-        "validation_condition": "板块维持扩散，价格守住MA20（13.582324226397578），ATR不过热",
+        "validation_condition": "板块维持扩散，价格守住MA20（13.58），ATR不过热",
         "invalidation_condition": "板块转弱、放量跌破MA20或出现重大风险公告",
         "exclusion_reason": null,
-        "rank_history": [
-          {
-            "date": "2026-09-04",
-            "stage": "1600",
-            "rank": 4,
-            "score": 84.76
-          }
-        ],
+        "rank_history": [],
         "pool": "POOL_A",
-        "transition": "维持",
+        "transition": "新入池",
         "rank": 4,
         "date": "2026-09-04",
-        "stage": "2130"
+        "stage": "2200",
+        "wudao_themes": []
       }
     ],
     "POOL_B": [
@@ -3172,7 +3186,7 @@
         "volume_ratio": null,
         "float_cap": null,
         "timestamp": "2026-09-04T15:00:00+08:00",
-        "fetched_at": "2026-09-04T16:00:00+08:00",
+        "fetched_at": "2026-09-04T22:00:00+08:00",
         "source": "SIMULATED",
         "reliability": 0.8,
         "fallback": false,
@@ -3182,6 +3196,8 @@
         "limit_up_price": 34.967291557316116,
         "limit_down_price": 28.609602183258637,
         "bars_count": 85,
+        "amount_history_coverage": 1.0,
+        "amount_history_status": "AVAILABLE",
         "ma5": 31.80047530724962,
         "distance_ma5": 2.461229674188248,
         "slope_ma5": 0.9172195931714588,
@@ -3215,7 +3231,7 @@
         "consecutive_up_2": true,
         "consecutive_up_3": true,
         "history_source": "SIMULATED",
-        "as_of_time": "2026-09-04T16:00:00+08:00",
+        "as_of_time": "2026-09-04T22:00:00+08:00",
         "bars": [
           {
             "timestamp": "2026-06-05T07:00:00+00:00",
@@ -3889,7 +3905,13 @@
           "position": 90,
           "volume": 90
         },
-        "tradability_score": 87.17,
+        "tradability_score": null,
+        "tradability_basis": "NOT_ASSESSED",
+        "risk_scope": "TECHNICAL_AND_KNOWN_FLAGS",
+        "technical_risk": "低",
+        "event_review_status": "UNREVIEWED",
+        "score_status": "COMPLETE",
+        "eligibility_notes": [],
         "subjective_probability": null,
         "probability_basis": "未校准，不输出伪精确概率",
         "deep_score": null,
@@ -3904,6 +3926,8 @@
           "reward_risk": null
         },
         "board_count": null,
+        "derived_board_count": null,
+        "limit_identity_basis": null,
         "is_limit_up": false,
         "limit_details": {},
         "volume_type": "放量突破",
@@ -3913,40 +3937,29 @@
         "expectation_score": null,
         "positive_factor": "板块扩散、放量突破、位置合理",
         "negative_factor": "独立催化与龙虎榜尚未确认",
-        "validation_condition": "板块维持扩散，价格守住MA20（30.363459662473893），ATR不过热",
+        "validation_condition": "板块维持扩散，价格守住MA20（30.36），ATR不过热",
         "invalidation_condition": "板块转弱、放量跌破MA20或出现重大风险公告",
         "exclusion_reason": null,
         "rank_history": [
           {
             "date": "2026-09-04",
-            "stage": "0730",
+            "stage": "0800",
             "rank": 1,
             "score": 87.17
           },
           {
             "date": "2026-09-04",
-            "stage": "0830",
-            "rank": 1,
-            "score": 87.17
-          },
-          {
-            "date": "2026-09-04",
-            "stage": "1135",
+            "stage": "1200",
             "rank": 1,
             "score": 83.06
-          },
-          {
-            "date": "2026-09-04",
-            "stage": "1600",
-            "rank": 1,
-            "score": 87.17
           }
         ],
         "pool": "POOL_B",
-        "transition": "维持",
+        "transition": "新入池",
         "rank": 1,
         "date": "2026-09-04",
-        "stage": "2130"
+        "stage": "2200",
+        "wudao_themes": []
       },
       {
         "code": "600052",
@@ -3963,7 +3976,7 @@
         "volume_ratio": null,
         "float_cap": null,
         "timestamp": "2026-09-04T15:00:00+08:00",
-        "fetched_at": "2026-09-04T16:00:00+08:00",
+        "fetched_at": "2026-09-04T22:00:00+08:00",
         "source": "SIMULATED",
         "reliability": 0.8,
         "fallback": false,
@@ -3973,6 +3986,8 @@
         "limit_up_price": 38.542749102575314,
         "limit_down_price": 31.53497653847071,
         "bars_count": 85,
+        "amount_history_coverage": 1.0,
+        "amount_history_status": "AVAILABLE",
         "ma5": 34.83755929640134,
         "distance_ma5": 3.092280620089327,
         "slope_ma5": 1.083397502381489,
@@ -4006,7 +4021,7 @@
         "consecutive_up_2": true,
         "consecutive_up_3": true,
         "history_source": "SIMULATED",
-        "as_of_time": "2026-09-04T16:00:00+08:00",
+        "as_of_time": "2026-09-04T22:00:00+08:00",
         "bars": [
           {
             "timestamp": "2026-06-05T07:00:00+00:00",
@@ -4680,7 +4695,13 @@
           "position": 90,
           "volume": 90
         },
-        "tradability_score": 87.07,
+        "tradability_score": null,
+        "tradability_basis": "NOT_ASSESSED",
+        "risk_scope": "TECHNICAL_AND_KNOWN_FLAGS",
+        "technical_risk": "低",
+        "event_review_status": "UNREVIEWED",
+        "score_status": "COMPLETE",
+        "eligibility_notes": [],
         "subjective_probability": null,
         "probability_basis": "未校准，不输出伪精确概率",
         "deep_score": null,
@@ -4695,6 +4716,8 @@
           "reward_risk": null
         },
         "board_count": null,
+        "derived_board_count": null,
+        "limit_identity_basis": null,
         "is_limit_up": false,
         "limit_details": {},
         "volume_type": "放量突破",
@@ -4704,40 +4727,29 @@
         "expectation_score": null,
         "positive_factor": "板块扩散、放量突破、位置合理",
         "negative_factor": "独立催化与龙虎榜尚未确认",
-        "validation_condition": "板块维持扩散，价格守住MA20（33.722204034129284），ATR不过热",
+        "validation_condition": "板块维持扩散，价格守住MA20（33.72），ATR不过热",
         "invalidation_condition": "板块转弱、放量跌破MA20或出现重大风险公告",
         "exclusion_reason": null,
         "rank_history": [
           {
             "date": "2026-09-04",
-            "stage": "0730",
+            "stage": "0800",
             "rank": 2,
             "score": 87.07
           },
           {
             "date": "2026-09-04",
-            "stage": "0830",
-            "rank": 2,
-            "score": 87.07
-          },
-          {
-            "date": "2026-09-04",
-            "stage": "1135",
+            "stage": "1200",
             "rank": 3,
             "score": 82.95
-          },
-          {
-            "date": "2026-09-04",
-            "stage": "1600",
-            "rank": 2,
-            "score": 87.07
           }
         ],
         "pool": "POOL_B",
-        "transition": "维持",
+        "transition": "新入池",
         "rank": 2,
         "date": "2026-09-04",
-        "stage": "2130"
+        "stage": "2200",
+        "wudao_themes": []
       },
       {
         "code": "600028",
@@ -4754,7 +4766,7 @@
         "volume_ratio": null,
         "float_cap": null,
         "timestamp": "2026-09-04T15:00:00+08:00",
-        "fetched_at": "2026-09-04T16:00:00+08:00",
+        "fetched_at": "2026-09-04T22:00:00+08:00",
         "source": "SIMULATED",
         "reliability": 0.8,
         "fallback": false,
@@ -4764,6 +4776,8 @@
         "limit_up_price": 26.689918716503897,
         "limit_down_price": 21.837206222594094,
         "bars_count": 85,
+        "amount_history_coverage": 1.0,
+        "amount_history_status": "AVAILABLE",
         "ma5": 24.044121802573446,
         "distance_ma5": 3.435474730567467,
         "slope_ma5": 1.4311589218459098,
@@ -4797,7 +4811,7 @@
         "consecutive_up_2": true,
         "consecutive_up_3": true,
         "history_source": "SIMULATED",
-        "as_of_time": "2026-09-04T16:00:00+08:00",
+        "as_of_time": "2026-09-04T22:00:00+08:00",
         "bars": [
           {
             "timestamp": "2026-06-05T07:00:00+00:00",
@@ -5471,7 +5485,13 @@
           "position": 90,
           "volume": 89.22556870093428
         },
-        "tradability_score": 86.63,
+        "tradability_score": null,
+        "tradability_basis": "NOT_ASSESSED",
+        "risk_scope": "TECHNICAL_AND_KNOWN_FLAGS",
+        "technical_risk": "低",
+        "event_review_status": "UNREVIEWED",
+        "score_status": "COMPLETE",
+        "eligibility_notes": [],
         "subjective_probability": null,
         "probability_basis": "未校准，不输出伪精确概率",
         "deep_score": null,
@@ -5486,6 +5506,8 @@
           "reward_risk": null
         },
         "board_count": null,
+        "derived_board_count": null,
+        "limit_identity_basis": null,
         "is_limit_up": false,
         "limit_details": {},
         "volume_type": "放量突破",
@@ -5495,40 +5517,29 @@
         "expectation_score": null,
         "positive_factor": "板块扩散、放量突破、位置合理",
         "negative_factor": "独立催化与龙虎榜尚未确认",
-        "validation_condition": "板块维持扩散，价格守住MA20（23.123885543516657），ATR不过热",
+        "validation_condition": "板块维持扩散，价格守住MA20（23.12），ATR不过热",
         "invalidation_condition": "板块转弱、放量跌破MA20或出现重大风险公告",
         "exclusion_reason": null,
         "rank_history": [
           {
             "date": "2026-09-04",
-            "stage": "0730",
+            "stage": "0800",
             "rank": 3,
             "score": 86.63
           },
           {
             "date": "2026-09-04",
-            "stage": "0830",
-            "rank": 3,
-            "score": 86.63
-          },
-          {
-            "date": "2026-09-04",
-            "stage": "1135",
+            "stage": "1200",
             "rank": 2,
             "score": 83.01
-          },
-          {
-            "date": "2026-09-04",
-            "stage": "1600",
-            "rank": 3,
-            "score": 86.63
           }
         ],
         "pool": "POOL_B",
-        "transition": "维持",
+        "transition": "新入池",
         "rank": 3,
         "date": "2026-09-04",
-        "stage": "2130"
+        "stage": "2200",
+        "wudao_themes": []
       },
       {
         "code": "600041",
@@ -5545,7 +5556,7 @@
         "volume_ratio": null,
         "float_cap": null,
         "timestamp": "2026-09-04T15:00:00+08:00",
-        "fetched_at": "2026-09-04T16:00:00+08:00",
+        "fetched_at": "2026-09-04T22:00:00+08:00",
         "source": "SIMULATED",
         "reliability": 0.8,
         "fallback": false,
@@ -5555,6 +5566,8 @@
         "limit_up_price": 38.79122956365296,
         "limit_down_price": 31.738278733897875,
         "bars_count": 85,
+        "amount_history_coverage": 1.0,
+        "amount_history_status": "AVAILABLE",
         "ma5": 35.57425506944902,
         "distance_ma5": 1.6082358771219996,
         "slope_ma5": 0.5401783400648563,
@@ -5588,7 +5601,7 @@
         "consecutive_up_2": false,
         "consecutive_up_3": false,
         "history_source": "SIMULATED",
-        "as_of_time": "2026-09-04T16:00:00+08:00",
+        "as_of_time": "2026-09-04T22:00:00+08:00",
         "bars": [
           {
             "timestamp": "2026-06-05T07:00:00+00:00",
@@ -6262,7 +6275,13 @@
           "position": 90,
           "volume": 90
         },
-        "tradability_score": 86.24,
+        "tradability_score": null,
+        "tradability_basis": "NOT_ASSESSED",
+        "risk_scope": "TECHNICAL_AND_KNOWN_FLAGS",
+        "technical_risk": "低",
+        "event_review_status": "UNREVIEWED",
+        "score_status": "COMPLETE",
+        "eligibility_notes": [],
         "subjective_probability": null,
         "probability_basis": "未校准，不输出伪精确概率",
         "deep_score": null,
@@ -6277,6 +6296,8 @@
           "reward_risk": null
         },
         "board_count": null,
+        "derived_board_count": null,
+        "limit_identity_basis": null,
         "is_limit_up": false,
         "limit_details": {},
         "volume_type": "放量突破",
@@ -6286,34 +6307,23 @@
         "expectation_score": null,
         "positive_factor": "板块扩散、放量突破、位置合理",
         "negative_factor": "独立催化与龙虎榜尚未确认",
-        "validation_condition": "板块维持扩散，价格守住MA20（34.58985000247638），ATR不过热",
+        "validation_condition": "板块维持扩散，价格守住MA20（34.59），ATR不过热",
         "invalidation_condition": "板块转弱、放量跌破MA20或出现重大风险公告",
         "exclusion_reason": null,
         "rank_history": [
           {
             "date": "2026-09-04",
-            "stage": "0730",
-            "rank": 4,
-            "score": 86.24
-          },
-          {
-            "date": "2026-09-04",
-            "stage": "0830",
-            "rank": 4,
-            "score": 86.24
-          },
-          {
-            "date": "2026-09-04",
-            "stage": "1600",
+            "stage": "0800",
             "rank": 4,
             "score": 86.24
           }
         ],
         "pool": "POOL_B",
-        "transition": "维持",
+        "transition": "新入池",
         "rank": 4,
         "date": "2026-09-04",
-        "stage": "2130"
+        "stage": "2200",
+        "wudao_themes": []
       },
       {
         "code": "600011",
@@ -6330,7 +6340,7 @@
         "volume_ratio": null,
         "float_cap": null,
         "timestamp": "2026-09-04T15:00:00+08:00",
-        "fetched_at": "2026-09-04T16:00:00+08:00",
+        "fetched_at": "2026-09-04T22:00:00+08:00",
         "source": "SIMULATED",
         "reliability": 0.8,
         "fallback": false,
@@ -6340,6 +6350,8 @@
         "limit_up_price": 20.010201813893342,
         "limit_down_price": 16.37198330227637,
         "bars_count": 85,
+        "amount_history_coverage": 1.0,
+        "amount_history_status": "AVAILABLE",
         "ma5": 18.16981198498488,
         "distance_ma5": 2.6200485037792376,
         "slope_ma5": 0.9519708922883119,
@@ -6373,7 +6385,7 @@
         "consecutive_up_2": true,
         "consecutive_up_3": true,
         "history_source": "SIMULATED",
-        "as_of_time": "2026-09-04T16:00:00+08:00",
+        "as_of_time": "2026-09-04T22:00:00+08:00",
         "bars": [
           {
             "timestamp": "2026-06-05T07:00:00+00:00",
@@ -7047,7 +7059,13 @@
           "position": 90,
           "volume": 88.10426963872146
         },
-        "tradability_score": 86.09,
+        "tradability_score": null,
+        "tradability_basis": "NOT_ASSESSED",
+        "risk_scope": "TECHNICAL_AND_KNOWN_FLAGS",
+        "technical_risk": "低",
+        "event_review_status": "UNREVIEWED",
+        "score_status": "COMPLETE",
+        "eligibility_notes": [],
         "subjective_probability": null,
         "probability_basis": "未校准，不输出伪精确概率",
         "deep_score": null,
@@ -7062,6 +7080,8 @@
           "reward_risk": null
         },
         "board_count": null,
+        "derived_board_count": null,
+        "limit_identity_basis": null,
         "is_limit_up": false,
         "limit_details": {},
         "volume_type": "放量突破",
@@ -7071,34 +7091,29 @@
         "expectation_score": null,
         "positive_factor": "板块扩散、放量突破、位置合理",
         "negative_factor": "独立催化与龙虎榜尚未确认",
-        "validation_condition": "板块维持扩散，价格守住MA20（17.662572791819464），ATR不过热",
+        "validation_condition": "板块维持扩散，价格守住MA20（17.66），ATR不过热",
         "invalidation_condition": "板块转弱、放量跌破MA20或出现重大风险公告",
         "exclusion_reason": null,
         "rank_history": [
           {
             "date": "2026-09-04",
-            "stage": "0730",
+            "stage": "0800",
             "rank": 5,
             "score": 86.09
           },
           {
             "date": "2026-09-04",
-            "stage": "0830",
-            "rank": 5,
-            "score": 86.09
-          },
-          {
-            "date": "2026-09-04",
-            "stage": "1600",
-            "rank": 5,
-            "score": 86.09
+            "stage": "1200",
+            "rank": 4,
+            "score": 82.13
           }
         ],
         "pool": "POOL_B",
-        "transition": "维持",
+        "transition": "新入池",
         "rank": 5,
         "date": "2026-09-04",
-        "stage": "2130"
+        "stage": "2200",
+        "wudao_themes": []
       },
       {
         "code": "600073",
@@ -7115,7 +7130,7 @@
         "volume_ratio": null,
         "float_cap": null,
         "timestamp": "2026-09-04T15:00:00+08:00",
-        "fetched_at": "2026-09-04T16:00:00+08:00",
+        "fetched_at": "2026-09-04T22:00:00+08:00",
         "source": "SIMULATED",
         "reliability": 0.8,
         "fallback": false,
@@ -7125,6 +7140,8 @@
         "limit_up_price": 53.616589542587015,
         "limit_down_price": 43.868118716662096,
         "bars_count": 85,
+        "amount_history_coverage": 1.0,
+        "amount_history_status": "AVAILABLE",
         "ma5": 48.54201018785557,
         "distance_ma5": 2.923040866083837,
         "slope_ma5": 1.0974140338944283,
@@ -7158,7 +7175,7 @@
         "consecutive_up_2": true,
         "consecutive_up_3": true,
         "history_source": "SIMULATED",
-        "as_of_time": "2026-09-04T16:00:00+08:00",
+        "as_of_time": "2026-09-04T22:00:00+08:00",
         "bars": [
           {
             "timestamp": "2026-06-05T07:00:00+00:00",
@@ -7832,7 +7849,13 @@
           "position": 90,
           "volume": 89.02499375592188
         },
-        "tradability_score": 85.66,
+        "tradability_score": null,
+        "tradability_basis": "NOT_ASSESSED",
+        "risk_scope": "TECHNICAL_AND_KNOWN_FLAGS",
+        "technical_risk": "低",
+        "event_review_status": "UNREVIEWED",
+        "score_status": "COMPLETE",
+        "eligibility_notes": [],
         "subjective_probability": null,
         "probability_basis": "未校准，不输出伪精确概率",
         "deep_score": null,
@@ -7847,6 +7870,8 @@
           "reward_risk": null
         },
         "board_count": null,
+        "derived_board_count": null,
+        "limit_identity_basis": null,
         "is_limit_up": false,
         "limit_details": {},
         "volume_type": "放量突破",
@@ -7856,34 +7881,23 @@
         "expectation_score": null,
         "positive_factor": "板块扩散、放量突破、位置合理",
         "negative_factor": "独立催化与龙虎榜尚未确认",
-        "validation_condition": "板块维持扩散，价格守住MA20（46.86644401019295），ATR不过热",
+        "validation_condition": "板块维持扩散，价格守住MA20（46.87），ATR不过热",
         "invalidation_condition": "板块转弱、放量跌破MA20或出现重大风险公告",
         "exclusion_reason": null,
         "rank_history": [
           {
             "date": "2026-09-04",
-            "stage": "0730",
-            "rank": 6,
-            "score": 85.66
-          },
-          {
-            "date": "2026-09-04",
-            "stage": "0830",
-            "rank": 6,
-            "score": 85.66
-          },
-          {
-            "date": "2026-09-04",
-            "stage": "1600",
+            "stage": "0800",
             "rank": 6,
             "score": 85.66
           }
         ],
         "pool": "POOL_B",
-        "transition": "维持",
+        "transition": "新入池",
         "rank": 6,
         "date": "2026-09-04",
-        "stage": "2130"
+        "stage": "2200",
+        "wudao_themes": []
       },
       {
         "code": "600021",
@@ -7900,7 +7914,7 @@
         "volume_ratio": null,
         "float_cap": null,
         "timestamp": "2026-09-04T15:00:00+08:00",
-        "fetched_at": "2026-09-04T16:00:00+08:00",
+        "fetched_at": "2026-09-04T22:00:00+08:00",
         "source": "SIMULATED",
         "reliability": 0.8,
         "fallback": false,
@@ -7910,6 +7924,8 @@
         "limit_up_price": 26.04088734473482,
         "limit_down_price": 21.306180554783033,
         "bars_count": 85,
+        "amount_history_coverage": 1.0,
+        "amount_history_status": "AVAILABLE",
         "ma5": 23.70814766759441,
         "distance_ma5": 2.3503507685255887,
         "slope_ma5": 0.9396051561985974,
@@ -7943,7 +7959,7 @@
         "consecutive_up_2": true,
         "consecutive_up_3": false,
         "history_source": "SIMULATED",
-        "as_of_time": "2026-09-04T16:00:00+08:00",
+        "as_of_time": "2026-09-04T22:00:00+08:00",
         "bars": [
           {
             "timestamp": "2026-06-05T07:00:00+00:00",
@@ -8617,7 +8633,13 @@
           "position": 90,
           "volume": 90
         },
-        "tradability_score": 85.59,
+        "tradability_score": null,
+        "tradability_basis": "NOT_ASSESSED",
+        "risk_scope": "TECHNICAL_AND_KNOWN_FLAGS",
+        "technical_risk": "低",
+        "event_review_status": "UNREVIEWED",
+        "score_status": "COMPLETE",
+        "eligibility_notes": [],
         "subjective_probability": null,
         "probability_basis": "未校准，不输出伪精确概率",
         "deep_score": null,
@@ -8632,6 +8654,8 @@
           "reward_risk": null
         },
         "board_count": null,
+        "derived_board_count": null,
+        "limit_identity_basis": null,
         "is_limit_up": false,
         "limit_details": {},
         "volume_type": "放量突破",
@@ -8641,34 +8665,23 @@
         "expectation_score": null,
         "positive_factor": "板块扩散、放量突破、位置合理",
         "negative_factor": "独立催化与龙虎榜尚未确认",
-        "validation_condition": "板块维持扩散，价格守住MA20（22.933671379896104），ATR不过热",
+        "validation_condition": "板块维持扩散，价格守住MA20（22.93），ATR不过热",
         "invalidation_condition": "板块转弱、放量跌破MA20或出现重大风险公告",
         "exclusion_reason": null,
         "rank_history": [
           {
             "date": "2026-09-04",
-            "stage": "0730",
-            "rank": 7,
-            "score": 85.59
-          },
-          {
-            "date": "2026-09-04",
-            "stage": "0830",
-            "rank": 7,
-            "score": 85.59
-          },
-          {
-            "date": "2026-09-04",
-            "stage": "1600",
+            "stage": "0800",
             "rank": 7,
             "score": 85.59
           }
         ],
         "pool": "POOL_B",
-        "transition": "维持",
+        "transition": "新入池",
         "rank": 7,
         "date": "2026-09-04",
-        "stage": "2130"
+        "stage": "2200",
+        "wudao_themes": []
       },
       {
         "code": "600047",
@@ -8685,7 +8698,7 @@
         "volume_ratio": null,
         "float_cap": null,
         "timestamp": "2026-09-04T15:00:00+08:00",
-        "fetched_at": "2026-09-04T16:00:00+08:00",
+        "fetched_at": "2026-09-04T22:00:00+08:00",
         "source": "SIMULATED",
         "reliability": 0.8,
         "fallback": false,
@@ -8695,6 +8708,8 @@
         "limit_up_price": 32.54745295088502,
         "limit_down_price": 26.629734232542287,
         "bars_count": 85,
+        "amount_history_coverage": 1.0,
+        "amount_history_status": "AVAILABLE",
         "ma5": 29.589268281355764,
         "distance_ma5": 2.4976628118120514,
         "slope_ma5": 0.6906103807493569,
@@ -8728,7 +8743,7 @@
         "consecutive_up_2": true,
         "consecutive_up_3": false,
         "history_source": "SIMULATED",
-        "as_of_time": "2026-09-04T16:00:00+08:00",
+        "as_of_time": "2026-09-04T22:00:00+08:00",
         "bars": [
           {
             "timestamp": "2026-06-05T07:00:00+00:00",
@@ -9402,7 +9417,13 @@
           "position": 90,
           "volume": 90
         },
-        "tradability_score": 85.2,
+        "tradability_score": null,
+        "tradability_basis": "NOT_ASSESSED",
+        "risk_scope": "TECHNICAL_AND_KNOWN_FLAGS",
+        "technical_risk": "低",
+        "event_review_status": "UNREVIEWED",
+        "score_status": "COMPLETE",
+        "eligibility_notes": [],
         "subjective_probability": null,
         "probability_basis": "未校准，不输出伪精确概率",
         "deep_score": null,
@@ -9417,6 +9438,8 @@
           "reward_risk": null
         },
         "board_count": null,
+        "derived_board_count": null,
+        "limit_identity_basis": null,
         "is_limit_up": false,
         "limit_details": {},
         "volume_type": "放量突破",
@@ -9426,34 +9449,23 @@
         "expectation_score": null,
         "positive_factor": "板块扩散、放量突破、位置合理",
         "negative_factor": "独立催化与龙虎榜尚未确认",
-        "validation_condition": "板块维持扩散，价格守住MA20（28.88538070658563），ATR不过热",
+        "validation_condition": "板块维持扩散，价格守住MA20（28.89），ATR不过热",
         "invalidation_condition": "板块转弱、放量跌破MA20或出现重大风险公告",
         "exclusion_reason": null,
         "rank_history": [
           {
             "date": "2026-09-04",
-            "stage": "0730",
-            "rank": 8,
-            "score": 85.2
-          },
-          {
-            "date": "2026-09-04",
-            "stage": "0830",
-            "rank": 8,
-            "score": 85.2
-          },
-          {
-            "date": "2026-09-04",
-            "stage": "1600",
+            "stage": "0800",
             "rank": 8,
             "score": 85.2
           }
         ],
         "pool": "POOL_B",
-        "transition": "维持",
+        "transition": "新入池",
         "rank": 8,
         "date": "2026-09-04",
-        "stage": "2130"
+        "stage": "2200",
+        "wudao_themes": []
       },
       {
         "code": "600062",
@@ -9470,7 +9482,7 @@
         "volume_ratio": null,
         "float_cap": null,
         "timestamp": "2026-09-04T15:00:00+08:00",
-        "fetched_at": "2026-09-04T16:00:00+08:00",
+        "fetched_at": "2026-09-04T22:00:00+08:00",
         "source": "SIMULATED",
         "reliability": 0.8,
         "fallback": false,
@@ -9480,6 +9492,8 @@
         "limit_up_price": 38.36823602795127,
         "limit_down_price": 31.39219311377831,
         "bars_count": 85,
+        "amount_history_coverage": 1.0,
+        "amount_history_status": "AVAILABLE",
         "ma5": 35.19949850198195,
         "distance_ma5": 1.5702537157548768,
         "slope_ma5": 0.436524635206581,
@@ -9513,7 +9527,7 @@
         "consecutive_up_2": false,
         "consecutive_up_3": false,
         "history_source": "SIMULATED",
-        "as_of_time": "2026-09-04T16:00:00+08:00",
+        "as_of_time": "2026-09-04T22:00:00+08:00",
         "bars": [
           {
             "timestamp": "2026-06-05T07:00:00+00:00",
@@ -10187,7 +10201,13 @@
           "position": 90,
           "volume": 90
         },
-        "tradability_score": 85.18,
+        "tradability_score": null,
+        "tradability_basis": "NOT_ASSESSED",
+        "risk_scope": "TECHNICAL_AND_KNOWN_FLAGS",
+        "technical_risk": "低",
+        "event_review_status": "UNREVIEWED",
+        "score_status": "COMPLETE",
+        "eligibility_notes": [],
         "subjective_probability": null,
         "probability_basis": "未校准，不输出伪精确概率",
         "deep_score": null,
@@ -10202,6 +10222,8 @@
           "reward_risk": null
         },
         "board_count": null,
+        "derived_board_count": null,
+        "limit_identity_basis": null,
         "is_limit_up": false,
         "limit_details": {},
         "volume_type": "放量突破",
@@ -10211,28 +10233,23 @@
         "expectation_score": null,
         "positive_factor": "板块扩散、放量突破、位置合理",
         "negative_factor": "独立催化与龙虎榜尚未确认",
-        "validation_condition": "板块维持扩散，价格守住MA20（34.319123838039914），ATR不过热",
+        "validation_condition": "板块维持扩散，价格守住MA20（34.32），ATR不过热",
         "invalidation_condition": "板块转弱、放量跌破MA20或出现重大风险公告",
         "exclusion_reason": null,
         "rank_history": [
           {
             "date": "2026-09-04",
-            "stage": "0730",
-            "rank": 9,
-            "score": 85.18
-          },
-          {
-            "date": "2026-09-04",
-            "stage": "1600",
+            "stage": "0800",
             "rank": 9,
             "score": 85.18
           }
         ],
         "pool": "POOL_B",
-        "transition": "维持",
+        "transition": "新入池",
         "rank": 9,
         "date": "2026-09-04",
-        "stage": "2130"
+        "stage": "2200",
+        "wudao_themes": []
       },
       {
         "code": "600036",
@@ -10249,7 +10266,7 @@
         "volume_ratio": null,
         "float_cap": null,
         "timestamp": "2026-09-04T15:00:00+08:00",
-        "fetched_at": "2026-09-04T16:00:00+08:00",
+        "fetched_at": "2026-09-04T22:00:00+08:00",
         "source": "SIMULATED",
         "reliability": 0.8,
         "fallback": false,
@@ -10259,6 +10276,8 @@
         "limit_up_price": 32.70610765779481,
         "limit_down_price": 26.759542629104843,
         "bars_count": 85,
+        "amount_history_coverage": 1.0,
+        "amount_history_status": "AVAILABLE",
         "ma5": 29.898758143825354,
         "distance_ma5": 1.9311425091077083,
         "slope_ma5": 0.4495344010464031,
@@ -10292,7 +10311,7 @@
         "consecutive_up_2": true,
         "consecutive_up_3": false,
         "history_source": "SIMULATED",
-        "as_of_time": "2026-09-04T16:00:00+08:00",
+        "as_of_time": "2026-09-04T22:00:00+08:00",
         "bars": [
           {
             "timestamp": "2026-06-05T07:00:00+00:00",
@@ -10966,7 +10985,13 @@
           "position": 90,
           "volume": 90
         },
-        "tradability_score": 85.13,
+        "tradability_score": null,
+        "tradability_basis": "NOT_ASSESSED",
+        "risk_scope": "TECHNICAL_AND_KNOWN_FLAGS",
+        "technical_risk": "低",
+        "event_review_status": "UNREVIEWED",
+        "score_status": "COMPLETE",
+        "eligibility_notes": [],
         "subjective_probability": null,
         "probability_basis": "未校准，不输出伪精确概率",
         "deep_score": null,
@@ -10981,6 +11006,8 @@
           "reward_risk": null
         },
         "board_count": null,
+        "derived_board_count": null,
+        "limit_identity_basis": null,
         "is_limit_up": false,
         "limit_details": {},
         "volume_type": "放量突破",
@@ -10990,22 +11017,16 @@
         "expectation_score": null,
         "positive_factor": "板块扩散、放量突破、位置合理",
         "negative_factor": "独立催化与龙虎榜尚未确认",
-        "validation_condition": "板块维持扩散，价格守住MA20（29.241872285860563），ATR不过热",
+        "validation_condition": "板块维持扩散，价格守住MA20（29.24），ATR不过热",
         "invalidation_condition": "板块转弱、放量跌破MA20或出现重大风险公告",
         "exclusion_reason": null,
-        "rank_history": [
-          {
-            "date": "2026-09-04",
-            "stage": "1600",
-            "rank": 10,
-            "score": 85.13
-          }
-        ],
+        "rank_history": [],
         "pool": "POOL_B",
-        "transition": "维持",
+        "transition": "新入池",
         "rank": 10,
         "date": "2026-09-04",
-        "stage": "2130"
+        "stage": "2200",
+        "wudao_themes": []
       },
       {
         "code": "600038",
@@ -11022,7 +11043,7 @@
         "volume_ratio": null,
         "float_cap": null,
         "timestamp": "2026-09-04T15:00:00+08:00",
-        "fetched_at": "2026-09-04T16:00:00+08:00",
+        "fetched_at": "2026-09-04T22:00:00+08:00",
         "source": "SIMULATED",
         "reliability": 0.8,
         "fallback": false,
@@ -11032,6 +11053,8 @@
         "limit_up_price": 33.08402488740172,
         "limit_down_price": 27.068747635146856,
         "bars_count": 85,
+        "amount_history_coverage": 1.0,
+        "amount_history_status": "AVAILABLE",
         "ma5": 29.955146838219548,
         "distance_ma5": 2.9148549473059004,
         "slope_ma5": 0.8433109184235121,
@@ -11065,7 +11088,7 @@
         "consecutive_up_2": true,
         "consecutive_up_3": true,
         "history_source": "SIMULATED",
-        "as_of_time": "2026-09-04T16:00:00+08:00",
+        "as_of_time": "2026-09-04T22:00:00+08:00",
         "bars": [
           {
             "timestamp": "2026-06-05T07:00:00+00:00",
@@ -11739,7 +11762,13 @@
           "position": 90,
           "volume": 79.25245287957995
         },
-        "tradability_score": 84.94,
+        "tradability_score": null,
+        "tradability_basis": "NOT_ASSESSED",
+        "risk_scope": "TECHNICAL_AND_KNOWN_FLAGS",
+        "technical_risk": "低",
+        "event_review_status": "UNREVIEWED",
+        "score_status": "COMPLETE",
+        "eligibility_notes": [],
         "subjective_probability": null,
         "probability_basis": "未校准，不输出伪精确概率",
         "deep_score": null,
@@ -11754,6 +11783,8 @@
           "reward_risk": null
         },
         "board_count": null,
+        "derived_board_count": null,
+        "limit_identity_basis": null,
         "is_limit_up": false,
         "limit_details": {},
         "volume_type": "放量突破",
@@ -11763,22 +11794,16 @@
         "expectation_score": null,
         "positive_factor": "板块扩散、放量突破、位置合理",
         "negative_factor": "独立催化与龙虎榜尚未确认",
-        "validation_condition": "板块维持扩散，价格守住MA20（29.001882529005705），ATR不过热",
+        "validation_condition": "板块维持扩散，价格守住MA20（29.00），ATR不过热",
         "invalidation_condition": "板块转弱、放量跌破MA20或出现重大风险公告",
         "exclusion_reason": null,
-        "rank_history": [
-          {
-            "date": "2026-09-04",
-            "stage": "1600",
-            "rank": 11,
-            "score": 84.94
-          }
-        ],
+        "rank_history": [],
         "pool": "POOL_B",
-        "transition": "维持",
+        "transition": "新入池",
         "rank": 11,
         "date": "2026-09-04",
-        "stage": "2130"
+        "stage": "2200",
+        "wudao_themes": []
       },
       {
         "code": "600048",
@@ -11795,7 +11820,7 @@
         "volume_ratio": null,
         "float_cap": null,
         "timestamp": "2026-09-04T15:00:00+08:00",
-        "fetched_at": "2026-09-04T16:00:00+08:00",
+        "fetched_at": "2026-09-04T22:00:00+08:00",
         "source": "SIMULATED",
         "reliability": 0.8,
         "fallback": false,
@@ -11805,6 +11830,8 @@
         "limit_up_price": 34.67426466825306,
         "limit_down_price": 28.369852910388865,
         "bars_count": 85,
+        "amount_history_coverage": 1.0,
+        "amount_history_status": "AVAILABLE",
         "ma5": 31.36886431093502,
         "distance_ma5": 3.000573877297974,
         "slope_ma5": 0.9144510490573854,
@@ -11838,7 +11865,7 @@
         "consecutive_up_2": true,
         "consecutive_up_3": true,
         "history_source": "SIMULATED",
-        "as_of_time": "2026-09-04T16:00:00+08:00",
+        "as_of_time": "2026-09-04T22:00:00+08:00",
         "bars": [
           {
             "timestamp": "2026-06-05T07:00:00+00:00",
@@ -12512,7 +12539,13 @@
           "position": 90,
           "volume": 90
         },
-        "tradability_score": 84.39,
+        "tradability_score": null,
+        "tradability_basis": "NOT_ASSESSED",
+        "risk_scope": "TECHNICAL_AND_KNOWN_FLAGS",
+        "technical_risk": "低",
+        "event_review_status": "UNREVIEWED",
+        "score_status": "COMPLETE",
+        "eligibility_notes": [],
         "subjective_probability": null,
         "probability_basis": "未校准，不输出伪精确概率",
         "deep_score": null,
@@ -12527,6 +12560,8 @@
           "reward_risk": null
         },
         "board_count": null,
+        "derived_board_count": null,
+        "limit_identity_basis": null,
         "is_limit_up": false,
         "limit_details": {},
         "volume_type": "放量突破",
@@ -12536,22 +12571,16 @@
         "expectation_score": null,
         "positive_factor": "板块扩散、放量突破、位置合理",
         "negative_factor": "独立催化与龙虎榜尚未确认",
-        "validation_condition": "板块维持扩散，价格守住MA20（30.737284494341772），ATR不过热",
+        "validation_condition": "板块维持扩散，价格守住MA20（30.74），ATR不过热",
         "invalidation_condition": "板块转弱、放量跌破MA20或出现重大风险公告",
         "exclusion_reason": null,
-        "rank_history": [
-          {
-            "date": "2026-09-04",
-            "stage": "1600",
-            "rank": 12,
-            "score": 84.39
-          }
-        ],
+        "rank_history": [],
         "pool": "POOL_B",
-        "transition": "维持",
+        "transition": "新入池",
         "rank": 12,
         "date": "2026-09-04",
-        "stage": "2130"
+        "stage": "2200",
+        "wudao_themes": []
       },
       {
         "code": "600067",
@@ -12568,7 +12597,7 @@
         "volume_ratio": null,
         "float_cap": null,
         "timestamp": "2026-09-04T15:00:00+08:00",
-        "fetched_at": "2026-09-04T16:00:00+08:00",
+        "fetched_at": "2026-09-04T22:00:00+08:00",
         "source": "SIMULATED",
         "reliability": 0.8,
         "fallback": false,
@@ -12578,6 +12607,8 @@
         "limit_up_price": 45.03189352491157,
         "limit_down_price": 36.84427652038219,
         "bars_count": 85,
+        "amount_history_coverage": 1.0,
+        "amount_history_status": "AVAILABLE",
         "ma5": 41.07597554633962,
         "distance_ma5": 2.155911308483427,
         "slope_ma5": 0.5626441413697059,
@@ -12611,7 +12642,7 @@
         "consecutive_up_2": true,
         "consecutive_up_3": true,
         "history_source": "SIMULATED",
-        "as_of_time": "2026-09-04T16:00:00+08:00",
+        "as_of_time": "2026-09-04T22:00:00+08:00",
         "bars": [
           {
             "timestamp": "2026-06-05T07:00:00+00:00",
@@ -13285,7 +13316,13 @@
           "position": 90,
           "volume": 85.61637240601726
         },
-        "tradability_score": 84.29,
+        "tradability_score": null,
+        "tradability_basis": "NOT_ASSESSED",
+        "risk_scope": "TECHNICAL_AND_KNOWN_FLAGS",
+        "technical_risk": "低",
+        "event_review_status": "UNREVIEWED",
+        "score_status": "COMPLETE",
+        "eligibility_notes": [],
         "subjective_probability": null,
         "probability_basis": "未校准，不输出伪精确概率",
         "deep_score": null,
@@ -13300,6 +13337,8 @@
           "reward_risk": null
         },
         "board_count": null,
+        "derived_board_count": null,
+        "limit_identity_basis": null,
         "is_limit_up": false,
         "limit_details": {},
         "volume_type": "放量突破",
@@ -13309,22 +13348,16 @@
         "expectation_score": null,
         "positive_factor": "板块扩散、放量突破、位置合理",
         "negative_factor": "独立催化与龙虎榜尚未确认",
-        "validation_condition": "板块维持扩散，价格守住MA20（40.03111749986212），ATR不过热",
+        "validation_condition": "板块维持扩散，价格守住MA20（40.03），ATR不过热",
         "invalidation_condition": "板块转弱、放量跌破MA20或出现重大风险公告",
         "exclusion_reason": null,
-        "rank_history": [
-          {
-            "date": "2026-09-04",
-            "stage": "1600",
-            "rank": 13,
-            "score": 84.29
-          }
-        ],
+        "rank_history": [],
         "pool": "POOL_B",
-        "transition": "维持",
+        "transition": "新入池",
         "rank": 13,
         "date": "2026-09-04",
-        "stage": "2130"
+        "stage": "2200",
+        "wudao_themes": []
       },
       {
         "code": "600006",
@@ -13341,7 +13374,7 @@
         "volume_ratio": null,
         "float_cap": null,
         "timestamp": "2026-09-04T15:00:00+08:00",
-        "fetched_at": "2026-09-04T16:00:00+08:00",
+        "fetched_at": "2026-09-04T22:00:00+08:00",
         "source": "SIMULATED",
         "reliability": 0.8,
         "fallback": false,
@@ -13351,6 +13384,8 @@
         "limit_up_price": 18.45041560602722,
         "limit_down_price": 15.095794586749543,
         "bars_count": 85,
+        "amount_history_coverage": 1.0,
+        "amount_history_status": "AVAILABLE",
         "ma5": 16.808522464914553,
         "distance_ma5": 2.284021452122831,
         "slope_ma5": 0.6578390505101561,
@@ -13384,7 +13419,7 @@
         "consecutive_up_2": true,
         "consecutive_up_3": true,
         "history_source": "SIMULATED",
-        "as_of_time": "2026-09-04T16:00:00+08:00",
+        "as_of_time": "2026-09-04T22:00:00+08:00",
         "bars": [
           {
             "timestamp": "2026-06-05T07:00:00+00:00",
@@ -14058,7 +14093,13 @@
           "position": 90,
           "volume": 82.24263611611148
         },
-        "tradability_score": 84.2,
+        "tradability_score": null,
+        "tradability_basis": "NOT_ASSESSED",
+        "risk_scope": "TECHNICAL_AND_KNOWN_FLAGS",
+        "technical_risk": "低",
+        "event_review_status": "UNREVIEWED",
+        "score_status": "COMPLETE",
+        "eligibility_notes": [],
         "subjective_probability": null,
         "probability_basis": "未校准，不输出伪精确概率",
         "deep_score": null,
@@ -14073,6 +14114,8 @@
           "reward_risk": null
         },
         "board_count": null,
+        "derived_board_count": null,
+        "limit_identity_basis": null,
         "is_limit_up": false,
         "limit_details": {},
         "volume_type": "放量突破",
@@ -14082,22 +14125,16 @@
         "expectation_score": null,
         "positive_factor": "板块扩散、放量突破、位置合理",
         "negative_factor": "独立催化与龙虎榜尚未确认",
-        "validation_condition": "板块维持扩散，价格守住MA20（16.30275855265399），ATR不过热",
+        "validation_condition": "板块维持扩散，价格守住MA20（16.30），ATR不过热",
         "invalidation_condition": "板块转弱、放量跌破MA20或出现重大风险公告",
         "exclusion_reason": null,
-        "rank_history": [
-          {
-            "date": "2026-09-04",
-            "stage": "1600",
-            "rank": 14,
-            "score": 84.2
-          }
-        ],
+        "rank_history": [],
         "pool": "POOL_B",
-        "transition": "维持",
+        "transition": "新入池",
         "rank": 14,
         "date": "2026-09-04",
-        "stage": "2130"
+        "stage": "2200",
+        "wudao_themes": []
       },
       {
         "code": "600068",
@@ -14114,7 +14151,7 @@
         "volume_ratio": null,
         "float_cap": null,
         "timestamp": "2026-09-04T15:00:00+08:00",
-        "fetched_at": "2026-09-04T16:00:00+08:00",
+        "fetched_at": "2026-09-04T22:00:00+08:00",
         "source": "SIMULATED",
         "reliability": 0.8,
         "fallback": false,
@@ -14124,6 +14161,8 @@
         "limit_up_price": 47.0816929041611,
         "limit_down_price": 38.52138510340453,
         "bars_count": 85,
+        "amount_history_coverage": 1.0,
+        "amount_history_status": "AVAILABLE",
         "ma5": 43.04941540935336,
         "distance_ma5": 1.9098100675843055,
         "slope_ma5": 0.6667984700557295,
@@ -14157,7 +14196,7 @@
         "consecutive_up_2": true,
         "consecutive_up_3": false,
         "history_source": "SIMULATED",
-        "as_of_time": "2026-09-04T16:00:00+08:00",
+        "as_of_time": "2026-09-04T22:00:00+08:00",
         "bars": [
           {
             "timestamp": "2026-06-05T07:00:00+00:00",
@@ -14831,7 +14870,13 @@
           "position": 90,
           "volume": 90
         },
-        "tradability_score": 83.84,
+        "tradability_score": null,
+        "tradability_basis": "NOT_ASSESSED",
+        "risk_scope": "TECHNICAL_AND_KNOWN_FLAGS",
+        "technical_risk": "低",
+        "event_review_status": "UNREVIEWED",
+        "score_status": "COMPLETE",
+        "eligibility_notes": [],
         "subjective_probability": null,
         "probability_basis": "未校准，不输出伪精确概率",
         "deep_score": null,
@@ -14846,6 +14891,8 @@
           "reward_risk": null
         },
         "board_count": null,
+        "derived_board_count": null,
+        "limit_identity_basis": null,
         "is_limit_up": false,
         "limit_details": {},
         "volume_type": "放量突破",
@@ -14855,22 +14902,16 @@
         "expectation_score": null,
         "positive_factor": "板块扩散、放量突破、位置合理",
         "negative_factor": "独立催化与龙虎榜尚未确认",
-        "validation_condition": "板块维持扩散，价格守住MA20（42.114424705693395），ATR不过热",
+        "validation_condition": "板块维持扩散，价格守住MA20（42.11），ATR不过热",
         "invalidation_condition": "板块转弱、放量跌破MA20或出现重大风险公告",
         "exclusion_reason": null,
-        "rank_history": [
-          {
-            "date": "2026-09-04",
-            "stage": "1600",
-            "rank": 15,
-            "score": 83.84
-          }
-        ],
+        "rank_history": [],
         "pool": "POOL_B",
-        "transition": "维持",
+        "transition": "新入池",
         "rank": 15,
         "date": "2026-09-04",
-        "stage": "2130"
+        "stage": "2200",
+        "wudao_themes": []
       },
       {
         "code": "600032",
@@ -14887,7 +14928,7 @@
         "volume_ratio": null,
         "float_cap": null,
         "timestamp": "2026-09-04T15:00:00+08:00",
-        "fetched_at": "2026-09-04T16:00:00+08:00",
+        "fetched_at": "2026-09-04T22:00:00+08:00",
         "source": "SIMULATED",
         "reliability": 0.8,
         "fallback": false,
@@ -14897,6 +14938,8 @@
         "limit_up_price": 29.560265092868846,
         "limit_down_price": 24.185671439619963,
         "bars_count": 85,
+        "amount_history_coverage": 1.0,
+        "amount_history_status": "AVAILABLE",
         "ma5": 26.896379007153165,
         "distance_ma5": 2.4107834945919615,
         "slope_ma5": 0.599444562489948,
@@ -14930,7 +14973,7 @@
         "consecutive_up_2": true,
         "consecutive_up_3": false,
         "history_source": "SIMULATED",
-        "as_of_time": "2026-09-04T16:00:00+08:00",
+        "as_of_time": "2026-09-04T22:00:00+08:00",
         "bars": [
           {
             "timestamp": "2026-06-05T07:00:00+00:00",
@@ -15604,7 +15647,13 @@
           "position": 90,
           "volume": 90
         },
-        "tradability_score": 83.83,
+        "tradability_score": null,
+        "tradability_basis": "NOT_ASSESSED",
+        "risk_scope": "TECHNICAL_AND_KNOWN_FLAGS",
+        "technical_risk": "低",
+        "event_review_status": "UNREVIEWED",
+        "score_status": "COMPLETE",
+        "eligibility_notes": [],
         "subjective_probability": null,
         "probability_basis": "未校准，不输出伪精确概率",
         "deep_score": null,
@@ -15619,6 +15668,8 @@
           "reward_risk": null
         },
         "board_count": null,
+        "derived_board_count": null,
+        "limit_identity_basis": null,
         "is_limit_up": false,
         "limit_details": {},
         "volume_type": "放量突破",
@@ -15628,22 +15679,16 @@
         "expectation_score": null,
         "positive_factor": "板块扩散、放量突破、位置合理",
         "negative_factor": "独立催化与龙虎榜尚未确认",
-        "validation_condition": "板块维持扩散，价格守住MA20（26.476920200141006），ATR不过热",
+        "validation_condition": "板块维持扩散，价格守住MA20（26.48），ATR不过热",
         "invalidation_condition": "板块转弱、放量跌破MA20或出现重大风险公告",
         "exclusion_reason": null,
-        "rank_history": [
-          {
-            "date": "2026-09-04",
-            "stage": "1600",
-            "rank": 16,
-            "score": 83.83
-          }
-        ],
+        "rank_history": [],
         "pool": "POOL_B",
-        "transition": "维持",
+        "transition": "新入池",
         "rank": 16,
         "date": "2026-09-04",
-        "stage": "2130"
+        "stage": "2200",
+        "wudao_themes": []
       },
       {
         "code": "600046",
@@ -15660,7 +15705,7 @@
         "volume_ratio": null,
         "float_cap": null,
         "timestamp": "2026-09-04T15:00:00+08:00",
-        "fetched_at": "2026-09-04T16:00:00+08:00",
+        "fetched_at": "2026-09-04T22:00:00+08:00",
         "source": "SIMULATED",
         "reliability": 0.8,
         "fallback": false,
@@ -15670,6 +15715,8 @@
         "limit_up_price": 39.09834719695162,
         "limit_down_price": 31.989556797505873,
         "bars_count": 85,
+        "amount_history_coverage": 1.0,
+        "amount_history_status": "AVAILABLE",
         "ma5": 35.40349685476622,
         "distance_ma5": 2.9066449187623355,
         "slope_ma5": 1.0968923349350623,
@@ -15703,7 +15750,7 @@
         "consecutive_up_2": true,
         "consecutive_up_3": true,
         "history_source": "SIMULATED",
-        "as_of_time": "2026-09-04T16:00:00+08:00",
+        "as_of_time": "2026-09-04T22:00:00+08:00",
         "bars": [
           {
             "timestamp": "2026-06-05T07:00:00+00:00",
@@ -16377,7 +16424,13 @@
           "position": 90,
           "volume": 70.85979878633572
         },
-        "tradability_score": 83.66,
+        "tradability_score": null,
+        "tradability_basis": "NOT_ASSESSED",
+        "risk_scope": "TECHNICAL_AND_KNOWN_FLAGS",
+        "technical_risk": "低",
+        "event_review_status": "UNREVIEWED",
+        "score_status": "COMPLETE",
+        "eligibility_notes": [],
         "subjective_probability": null,
         "probability_basis": "未校准，不输出伪精确概率",
         "deep_score": null,
@@ -16392,6 +16445,8 @@
           "reward_risk": null
         },
         "board_count": null,
+        "derived_board_count": null,
+        "limit_identity_basis": null,
         "is_limit_up": false,
         "limit_details": {},
         "volume_type": "放量突破",
@@ -16401,22 +16456,16 @@
         "expectation_score": null,
         "positive_factor": "板块扩散、放量突破、位置合理",
         "negative_factor": "独立催化与龙虎榜尚未确认",
-        "validation_condition": "板块维持扩散，价格守住MA20（34.120286535411715），ATR不过热",
+        "validation_condition": "板块维持扩散，价格守住MA20（34.12），ATR不过热",
         "invalidation_condition": "板块转弱、放量跌破MA20或出现重大风险公告",
         "exclusion_reason": null,
-        "rank_history": [
-          {
-            "date": "2026-09-04",
-            "stage": "1600",
-            "rank": 17,
-            "score": 83.66
-          }
-        ],
+        "rank_history": [],
         "pool": "POOL_B",
-        "transition": "维持",
+        "transition": "新入池",
         "rank": 17,
         "date": "2026-09-04",
-        "stage": "2130"
+        "stage": "2200",
+        "wudao_themes": []
       },
       {
         "code": "600043",
@@ -16433,7 +16482,7 @@
         "volume_ratio": null,
         "float_cap": null,
         "timestamp": "2026-09-04T15:00:00+08:00",
-        "fetched_at": "2026-09-04T16:00:00+08:00",
+        "fetched_at": "2026-09-04T22:00:00+08:00",
         "source": "SIMULATED",
         "reliability": 0.8,
         "fallback": false,
@@ -16443,6 +16492,8 @@
         "limit_up_price": 36.06405270688285,
         "limit_down_price": 29.506952214722325,
         "bars_count": 85,
+        "amount_history_coverage": 1.0,
+        "amount_history_status": "AVAILABLE",
         "ma5": 32.799968472168665,
         "distance_ma5": 2.4547936710280105,
         "slope_ma5": 0.7208175012601847,
@@ -16476,7 +16527,7 @@
         "consecutive_up_2": true,
         "consecutive_up_3": true,
         "history_source": "SIMULATED",
-        "as_of_time": "2026-09-04T16:00:00+08:00",
+        "as_of_time": "2026-09-04T22:00:00+08:00",
         "bars": [
           {
             "timestamp": "2026-06-05T07:00:00+00:00",
@@ -17150,7 +17201,13 @@
           "position": 90,
           "volume": 87.48206791483162
         },
-        "tradability_score": 83.57,
+        "tradability_score": null,
+        "tradability_basis": "NOT_ASSESSED",
+        "risk_scope": "TECHNICAL_AND_KNOWN_FLAGS",
+        "technical_risk": "低",
+        "event_review_status": "UNREVIEWED",
+        "score_status": "COMPLETE",
+        "eligibility_notes": [],
         "subjective_probability": null,
         "probability_basis": "未校准，不输出伪精确概率",
         "deep_score": null,
@@ -17165,6 +17222,8 @@
           "reward_risk": null
         },
         "board_count": null,
+        "derived_board_count": null,
+        "limit_identity_basis": null,
         "is_limit_up": false,
         "limit_details": {},
         "volume_type": "放量突破",
@@ -17174,22 +17233,16 @@
         "expectation_score": null,
         "positive_factor": "板块扩散、放量突破、位置合理",
         "negative_factor": "独立催化与龙虎榜尚未确认",
-        "validation_condition": "板块维持扩散，价格守住MA20（32.26957794823794），ATR不过热",
+        "validation_condition": "板块维持扩散，价格守住MA20（32.27），ATR不过热",
         "invalidation_condition": "板块转弱、放量跌破MA20或出现重大风险公告",
         "exclusion_reason": null,
-        "rank_history": [
-          {
-            "date": "2026-09-04",
-            "stage": "1600",
-            "rank": 18,
-            "score": 83.57
-          }
-        ],
+        "rank_history": [],
         "pool": "POOL_B",
-        "transition": "维持",
+        "transition": "新入池",
         "rank": 18,
         "date": "2026-09-04",
-        "stage": "2130"
+        "stage": "2200",
+        "wudao_themes": []
       },
       {
         "code": "600056",
@@ -17206,7 +17259,7 @@
         "volume_ratio": null,
         "float_cap": null,
         "timestamp": "2026-09-04T15:00:00+08:00",
-        "fetched_at": "2026-09-04T16:00:00+08:00",
+        "fetched_at": "2026-09-04T22:00:00+08:00",
         "source": "SIMULATED",
         "reliability": 0.8,
         "fallback": false,
@@ -17216,6 +17269,8 @@
         "limit_up_price": 36.02859033072406,
         "limit_down_price": 29.477937543319683,
         "bars_count": 85,
+        "amount_history_coverage": 1.0,
+        "amount_history_status": "AVAILABLE",
         "ma5": 32.954772515680354,
         "distance_ma5": 1.873243153092119,
         "slope_ma5": 0.2567186222499185,
@@ -17249,7 +17304,7 @@
         "consecutive_up_2": false,
         "consecutive_up_3": false,
         "history_source": "SIMULATED",
-        "as_of_time": "2026-09-04T16:00:00+08:00",
+        "as_of_time": "2026-09-04T22:00:00+08:00",
         "bars": [
           {
             "timestamp": "2026-06-05T07:00:00+00:00",
@@ -17923,7 +17978,13 @@
           "position": 90,
           "volume": 90
         },
-        "tradability_score": 83.36,
+        "tradability_score": null,
+        "tradability_basis": "NOT_ASSESSED",
+        "risk_scope": "TECHNICAL_AND_KNOWN_FLAGS",
+        "technical_risk": "低",
+        "event_review_status": "UNREVIEWED",
+        "score_status": "COMPLETE",
+        "eligibility_notes": [],
         "subjective_probability": null,
         "probability_basis": "未校准，不输出伪精确概率",
         "deep_score": null,
@@ -17938,6 +17999,8 @@
           "reward_risk": null
         },
         "board_count": null,
+        "derived_board_count": null,
+        "limit_identity_basis": null,
         "is_limit_up": false,
         "limit_details": {},
         "volume_type": "放量突破",
@@ -17947,22 +18010,16 @@
         "expectation_score": null,
         "positive_factor": "板块扩散、放量突破、位置合理",
         "negative_factor": "独立催化与龙虎榜尚未确认",
-        "validation_condition": "板块维持扩散，价格守住MA20（32.606327304043475），ATR不过热",
+        "validation_condition": "板块维持扩散，价格守住MA20（32.61），ATR不过热",
         "invalidation_condition": "板块转弱、放量跌破MA20或出现重大风险公告",
         "exclusion_reason": null,
-        "rank_history": [
-          {
-            "date": "2026-09-04",
-            "stage": "1600",
-            "rank": 19,
-            "score": 83.36
-          }
-        ],
+        "rank_history": [],
         "pool": "POOL_B",
-        "transition": "维持",
+        "transition": "新入池",
         "rank": 19,
         "date": "2026-09-04",
-        "stage": "2130"
+        "stage": "2200",
+        "wudao_themes": []
       },
       {
         "code": "600003",
@@ -17979,7 +18036,7 @@
         "volume_ratio": null,
         "float_cap": null,
         "timestamp": "2026-09-04T15:00:00+08:00",
-        "fetched_at": "2026-09-04T16:00:00+08:00",
+        "fetched_at": "2026-09-04T22:00:00+08:00",
         "source": "SIMULATED",
         "reliability": 0.8,
         "fallback": false,
@@ -17989,6 +18046,8 @@
         "limit_up_price": 17.31123664300601,
         "limit_down_price": 14.163739071550369,
         "bars_count": 85,
+        "amount_history_coverage": 1.0,
+        "amount_history_status": "AVAILABLE",
         "ma5": 15.847976345852388,
         "distance_ma5": 1.7853932999578381,
         "slope_ma5": 0.3022073048715601,
@@ -18022,7 +18081,7 @@
         "consecutive_up_2": false,
         "consecutive_up_3": false,
         "history_source": "SIMULATED",
-        "as_of_time": "2026-09-04T16:00:00+08:00",
+        "as_of_time": "2026-09-04T22:00:00+08:00",
         "bars": [
           {
             "timestamp": "2026-06-05T07:00:00+00:00",
@@ -18696,7 +18755,13 @@
           "position": 90,
           "volume": 87.66217531268897
         },
-        "tradability_score": 82.92,
+        "tradability_score": null,
+        "tradability_basis": "NOT_ASSESSED",
+        "risk_scope": "TECHNICAL_AND_KNOWN_FLAGS",
+        "technical_risk": "低",
+        "event_review_status": "UNREVIEWED",
+        "score_status": "COMPLETE",
+        "eligibility_notes": [],
         "subjective_probability": null,
         "probability_basis": "未校准，不输出伪精确概率",
         "deep_score": null,
@@ -18711,6 +18776,8 @@
           "reward_risk": null
         },
         "board_count": null,
+        "derived_board_count": null,
+        "limit_identity_basis": null,
         "is_limit_up": false,
         "limit_details": {},
         "volume_type": "放量突破",
@@ -18720,22 +18787,16 @@
         "expectation_score": null,
         "positive_factor": "板块扩散、放量突破、位置合理",
         "negative_factor": "独立催化与龙虎榜尚未确认",
-        "validation_condition": "板块维持扩散，价格守住MA20（15.707334380967504），ATR不过热",
+        "validation_condition": "板块维持扩散，价格守住MA20（15.71），ATR不过热",
         "invalidation_condition": "板块转弱、放量跌破MA20或出现重大风险公告",
         "exclusion_reason": null,
-        "rank_history": [
-          {
-            "date": "2026-09-04",
-            "stage": "1600",
-            "rank": 20,
-            "score": 82.92
-          }
-        ],
+        "rank_history": [],
         "pool": "POOL_B",
-        "transition": "维持",
+        "transition": "新入池",
         "rank": 20,
         "date": "2026-09-04",
-        "stage": "2130"
+        "stage": "2200",
+        "wudao_themes": []
       },
       {
         "code": "600023",
@@ -18752,7 +18813,7 @@
         "volume_ratio": null,
         "float_cap": null,
         "timestamp": "2026-09-04T15:00:00+08:00",
-        "fetched_at": "2026-09-04T16:00:00+08:00",
+        "fetched_at": "2026-09-04T22:00:00+08:00",
         "source": "SIMULATED",
         "reliability": 0.8,
         "fallback": false,
@@ -18762,6 +18823,8 @@
         "limit_up_price": 26.254137069821862,
         "limit_down_price": 21.480657602581523,
         "bars_count": 85,
+        "amount_history_coverage": 1.0,
+        "amount_history_status": "AVAILABLE",
         "ma5": 24.040255376909155,
         "distance_ma5": 1.7629883129472335,
         "slope_ma5": 0.8452267498431976,
@@ -18795,7 +18858,7 @@
         "consecutive_up_2": false,
         "consecutive_up_3": false,
         "history_source": "SIMULATED",
-        "as_of_time": "2026-09-04T16:00:00+08:00",
+        "as_of_time": "2026-09-04T22:00:00+08:00",
         "bars": [
           {
             "timestamp": "2026-06-05T07:00:00+00:00",
@@ -19469,7 +19532,13 @@
           "position": 90,
           "volume": 76.34404275465533
         },
-        "tradability_score": 82.83,
+        "tradability_score": null,
+        "tradability_basis": "NOT_ASSESSED",
+        "risk_scope": "TECHNICAL_AND_KNOWN_FLAGS",
+        "technical_risk": "低",
+        "event_review_status": "UNREVIEWED",
+        "score_status": "COMPLETE",
+        "eligibility_notes": [],
         "subjective_probability": null,
         "probability_basis": "未校准，不输出伪精确概率",
         "deep_score": null,
@@ -19484,6 +19553,8 @@
           "reward_risk": null
         },
         "board_count": null,
+        "derived_board_count": null,
+        "limit_identity_basis": null,
         "is_limit_up": false,
         "limit_details": {},
         "volume_type": "放量突破",
@@ -19493,22 +19564,16 @@
         "expectation_score": null,
         "positive_factor": "板块扩散、放量突破、位置合理",
         "negative_factor": "独立催化与龙虎榜尚未确认",
-        "validation_condition": "板块维持扩散，价格守住MA20（23.471786026518025），ATR不过热",
+        "validation_condition": "板块维持扩散，价格守住MA20（23.47），ATR不过热",
         "invalidation_condition": "板块转弱、放量跌破MA20或出现重大风险公告",
         "exclusion_reason": null,
-        "rank_history": [
-          {
-            "date": "2026-09-04",
-            "stage": "1600",
-            "rank": 21,
-            "score": 82.83
-          }
-        ],
+        "rank_history": [],
         "pool": "POOL_B",
-        "transition": "维持",
+        "transition": "新入池",
         "rank": 21,
         "date": "2026-09-04",
-        "stage": "2130"
+        "stage": "2200",
+        "wudao_themes": []
       },
       {
         "code": "600063",
@@ -19525,7 +19590,7 @@
         "volume_ratio": null,
         "float_cap": null,
         "timestamp": "2026-09-04T15:00:00+08:00",
-        "fetched_at": "2026-09-04T16:00:00+08:00",
+        "fetched_at": "2026-09-04T22:00:00+08:00",
         "source": "SIMULATED",
         "reliability": 0.8,
         "fallback": false,
@@ -19535,6 +19600,8 @@
         "limit_up_price": 41.952117821758925,
         "limit_down_price": 34.32446003598457,
         "bars_count": 85,
+        "amount_history_coverage": 1.0,
+        "amount_history_status": "AVAILABLE",
         "ma5": 38.317744950623165,
         "distance_ma5": 2.0199549907432113,
         "slope_ma5": 0.4580017309035789,
@@ -19568,7 +19635,7 @@
         "consecutive_up_2": false,
         "consecutive_up_3": false,
         "history_source": "SIMULATED",
-        "as_of_time": "2026-09-04T16:00:00+08:00",
+        "as_of_time": "2026-09-04T22:00:00+08:00",
         "bars": [
           {
             "timestamp": "2026-06-05T07:00:00+00:00",
@@ -20242,7 +20309,13 @@
           "position": 90,
           "volume": 74.4370606738209
         },
-        "tradability_score": 82.44,
+        "tradability_score": null,
+        "tradability_basis": "NOT_ASSESSED",
+        "risk_scope": "TECHNICAL_AND_KNOWN_FLAGS",
+        "technical_risk": "低",
+        "event_review_status": "UNREVIEWED",
+        "score_status": "COMPLETE",
+        "eligibility_notes": [],
         "subjective_probability": null,
         "probability_basis": "未校准，不输出伪精确概率",
         "deep_score": null,
@@ -20257,6 +20330,8 @@
           "reward_risk": null
         },
         "board_count": null,
+        "derived_board_count": null,
+        "limit_identity_basis": null,
         "is_limit_up": false,
         "limit_details": {},
         "volume_type": "放量突破",
@@ -20266,22 +20341,16 @@
         "expectation_score": null,
         "positive_factor": "板块扩散、放量突破、位置合理",
         "negative_factor": "独立催化与龙虎榜尚未确认",
-        "validation_condition": "板块维持扩散，价格守住MA20（37.60301036830115），ATR不过热",
+        "validation_condition": "板块维持扩散，价格守住MA20（37.60），ATR不过热",
         "invalidation_condition": "板块转弱、放量跌破MA20或出现重大风险公告",
         "exclusion_reason": null,
-        "rank_history": [
-          {
-            "date": "2026-09-04",
-            "stage": "1600",
-            "rank": 22,
-            "score": 82.44
-          }
-        ],
+        "rank_history": [],
         "pool": "POOL_B",
-        "transition": "维持",
+        "transition": "新入池",
         "rank": 22,
         "date": "2026-09-04",
-        "stage": "2130"
+        "stage": "2200",
+        "wudao_themes": []
       },
       {
         "code": "600022",
@@ -20298,7 +20367,7 @@
         "volume_ratio": null,
         "float_cap": null,
         "timestamp": "2026-09-04T15:00:00+08:00",
-        "fetched_at": "2026-09-04T16:00:00+08:00",
+        "fetched_at": "2026-09-04T22:00:00+08:00",
         "source": "SIMULATED",
         "reliability": 0.8,
         "fallback": false,
@@ -20308,6 +20377,8 @@
         "limit_up_price": 23.326033118213182,
         "limit_down_price": 19.084936187628966,
         "bars_count": 85,
+        "amount_history_coverage": 1.0,
+        "amount_history_status": "AVAILABLE",
         "ma5": 21.273298893458154,
         "distance_ma5": 2.1732542663052357,
         "slope_ma5": 0.6136171006996927,
@@ -20341,7 +20412,7 @@
         "consecutive_up_2": true,
         "consecutive_up_3": false,
         "history_source": "SIMULATED",
-        "as_of_time": "2026-09-04T16:00:00+08:00",
+        "as_of_time": "2026-09-04T22:00:00+08:00",
         "bars": [
           {
             "timestamp": "2026-06-05T07:00:00+00:00",
@@ -21015,7 +21086,13 @@
           "position": 90,
           "volume": 81.76652630000123
         },
-        "tradability_score": 82.42,
+        "tradability_score": null,
+        "tradability_basis": "NOT_ASSESSED",
+        "risk_scope": "TECHNICAL_AND_KNOWN_FLAGS",
+        "technical_risk": "低",
+        "event_review_status": "UNREVIEWED",
+        "score_status": "COMPLETE",
+        "eligibility_notes": [],
         "subjective_probability": null,
         "probability_basis": "未校准，不输出伪精确概率",
         "deep_score": null,
@@ -21030,6 +21107,8 @@
           "reward_risk": null
         },
         "board_count": null,
+        "derived_board_count": null,
+        "limit_identity_basis": null,
         "is_limit_up": false,
         "limit_details": {},
         "volume_type": "放量突破",
@@ -21039,22 +21118,16 @@
         "expectation_score": null,
         "positive_factor": "板块扩散、放量突破、位置合理",
         "negative_factor": "独立催化与龙虎榜尚未确认",
-        "validation_condition": "板块维持扩散，价格守住MA20（21.18217966382613），ATR不过热",
+        "validation_condition": "板块维持扩散，价格守住MA20（21.18），ATR不过热",
         "invalidation_condition": "板块转弱、放量跌破MA20或出现重大风险公告",
         "exclusion_reason": null,
-        "rank_history": [
-          {
-            "date": "2026-09-04",
-            "stage": "1600",
-            "rank": 23,
-            "score": 82.42
-          }
-        ],
+        "rank_history": [],
         "pool": "POOL_B",
-        "transition": "维持",
+        "transition": "新入池",
         "rank": 23,
         "date": "2026-09-04",
-        "stage": "2130"
+        "stage": "2200",
+        "wudao_themes": []
       },
       {
         "code": "600051",
@@ -21071,7 +21144,7 @@
         "volume_ratio": null,
         "float_cap": null,
         "timestamp": "2026-09-04T15:00:00+08:00",
-        "fetched_at": "2026-09-04T16:00:00+08:00",
+        "fetched_at": "2026-09-04T22:00:00+08:00",
         "source": "SIMULATED",
         "reliability": 0.8,
         "fallback": false,
@@ -21081,6 +21154,8 @@
         "limit_up_price": 38.898554700348356,
         "limit_down_price": 31.826090209375923,
         "bars_count": 85,
+        "amount_history_coverage": 1.0,
+        "amount_history_status": "AVAILABLE",
         "ma5": 35.022050479376766,
         "distance_ma5": 3.4958833651898447,
         "slope_ma5": 1.1847734865615855,
@@ -21114,7 +21189,7 @@
         "consecutive_up_2": true,
         "consecutive_up_3": true,
         "history_source": "SIMULATED",
-        "as_of_time": "2026-09-04T16:00:00+08:00",
+        "as_of_time": "2026-09-04T22:00:00+08:00",
         "bars": [
           {
             "timestamp": "2026-06-05T07:00:00+00:00",
@@ -21788,7 +21863,13 @@
           "position": 90,
           "volume": 73.18347722149267
         },
-        "tradability_score": 82.32,
+        "tradability_score": null,
+        "tradability_basis": "NOT_ASSESSED",
+        "risk_scope": "TECHNICAL_AND_KNOWN_FLAGS",
+        "technical_risk": "低",
+        "event_review_status": "UNREVIEWED",
+        "score_status": "COMPLETE",
+        "eligibility_notes": [],
         "subjective_probability": null,
         "probability_basis": "未校准，不输出伪精确概率",
         "deep_score": null,
@@ -21803,6 +21884,8 @@
           "reward_risk": null
         },
         "board_count": null,
+        "derived_board_count": null,
+        "limit_identity_basis": null,
         "is_limit_up": false,
         "limit_details": {},
         "volume_type": "放量突破",
@@ -21812,22 +21895,16 @@
         "expectation_score": null,
         "positive_factor": "板块扩散、放量突破、位置合理",
         "negative_factor": "独立催化与龙虎榜尚未确认",
-        "validation_condition": "板块维持扩散，价格守住MA20（34.16328642331515），ATR不过热",
+        "validation_condition": "板块维持扩散，价格守住MA20（34.16），ATR不过热",
         "invalidation_condition": "板块转弱、放量跌破MA20或出现重大风险公告",
         "exclusion_reason": null,
-        "rank_history": [
-          {
-            "date": "2026-09-04",
-            "stage": "1600",
-            "rank": 24,
-            "score": 82.32
-          }
-        ],
+        "rank_history": [],
         "pool": "POOL_B",
-        "transition": "维持",
+        "transition": "新入池",
         "rank": 24,
         "date": "2026-09-04",
-        "stage": "2130"
+        "stage": "2200",
+        "wudao_themes": []
       },
       {
         "code": "600061",
@@ -21844,7 +21921,7 @@
         "volume_ratio": null,
         "float_cap": null,
         "timestamp": "2026-09-04T15:00:00+08:00",
-        "fetched_at": "2026-09-04T16:00:00+08:00",
+        "fetched_at": "2026-09-04T22:00:00+08:00",
         "source": "SIMULATED",
         "reliability": 0.8,
         "fallback": false,
@@ -21854,6 +21931,8 @@
         "limit_up_price": 42.296186416813626,
         "limit_down_price": 34.605970704665694,
         "bars_count": 85,
+        "amount_history_coverage": 1.0,
+        "amount_history_status": "AVAILABLE",
         "ma5": 38.4846448981373,
         "distance_ma5": 2.4105994197850977,
         "slope_ma5": 1.0181428396907055,
@@ -21887,7 +21966,7 @@
         "consecutive_up_2": false,
         "consecutive_up_3": false,
         "history_source": "SIMULATED",
-        "as_of_time": "2026-09-04T16:00:00+08:00",
+        "as_of_time": "2026-09-04T22:00:00+08:00",
         "bars": [
           {
             "timestamp": "2026-06-05T07:00:00+00:00",
@@ -22561,7 +22640,13 @@
           "position": 90,
           "volume": 72.90465387391126
         },
-        "tradability_score": 81.39,
+        "tradability_score": null,
+        "tradability_basis": "NOT_ASSESSED",
+        "risk_scope": "TECHNICAL_AND_KNOWN_FLAGS",
+        "technical_risk": "低",
+        "event_review_status": "UNREVIEWED",
+        "score_status": "COMPLETE",
+        "eligibility_notes": [],
         "subjective_probability": null,
         "probability_basis": "未校准，不输出伪精确概率",
         "deep_score": null,
@@ -22576,6 +22661,8 @@
           "reward_risk": null
         },
         "board_count": null,
+        "derived_board_count": null,
+        "limit_identity_basis": null,
         "is_limit_up": false,
         "limit_details": {},
         "volume_type": "放量突破",
@@ -22585,22 +22672,16 @@
         "expectation_score": null,
         "positive_factor": "板块扩散、放量突破、位置合理",
         "negative_factor": "独立催化与龙虎榜尚未确认",
-        "validation_condition": "板块维持扩散，价格守住MA20（37.73987656386568），ATR不过热",
+        "validation_condition": "板块维持扩散，价格守住MA20（37.74），ATR不过热",
         "invalidation_condition": "板块转弱、放量跌破MA20或出现重大风险公告",
         "exclusion_reason": null,
-        "rank_history": [
-          {
-            "date": "2026-09-04",
-            "stage": "1600",
-            "rank": 25,
-            "score": 81.39
-          }
-        ],
+        "rank_history": [],
         "pool": "POOL_B",
-        "transition": "维持",
+        "transition": "新入池",
         "rank": 25,
         "date": "2026-09-04",
-        "stage": "2130"
+        "stage": "2200",
+        "wudao_themes": []
       },
       {
         "code": "600012",
@@ -22617,7 +22698,7 @@
         "volume_ratio": null,
         "float_cap": null,
         "timestamp": "2026-09-04T15:00:00+08:00",
-        "fetched_at": "2026-09-04T16:00:00+08:00",
+        "fetched_at": "2026-09-04T22:00:00+08:00",
         "source": "SIMULATED",
         "reliability": 0.8,
         "fallback": false,
@@ -22627,6 +22708,8 @@
         "limit_up_price": 19.399287489446476,
         "limit_down_price": 15.872144309547116,
         "bars_count": 85,
+        "amount_history_coverage": 1.0,
+        "amount_history_status": "AVAILABLE",
         "ma5": 17.605516658405758,
         "distance_ma5": 2.6758211515112373,
         "slope_ma5": 0.47246974271026865,
@@ -22660,7 +22743,7 @@
         "consecutive_up_2": true,
         "consecutive_up_3": true,
         "history_source": "SIMULATED",
-        "as_of_time": "2026-09-04T16:00:00+08:00",
+        "as_of_time": "2026-09-04T22:00:00+08:00",
         "bars": [
           {
             "timestamp": "2026-06-05T07:00:00+00:00",
@@ -23334,7 +23417,13 @@
           "position": 90,
           "volume": 72.10078832963325
         },
-        "tradability_score": 81.3,
+        "tradability_score": null,
+        "tradability_basis": "NOT_ASSESSED",
+        "risk_scope": "TECHNICAL_AND_KNOWN_FLAGS",
+        "technical_risk": "低",
+        "event_review_status": "UNREVIEWED",
+        "score_status": "COMPLETE",
+        "eligibility_notes": [],
         "subjective_probability": null,
         "probability_basis": "未校准，不输出伪精确概率",
         "deep_score": null,
@@ -23349,6 +23438,8 @@
           "reward_risk": null
         },
         "board_count": null,
+        "derived_board_count": null,
+        "limit_identity_basis": null,
         "is_limit_up": false,
         "limit_details": {},
         "volume_type": "放量突破",
@@ -23358,22 +23449,16 @@
         "expectation_score": null,
         "positive_factor": "板块扩散、放量突破、位置合理",
         "negative_factor": "独立催化与龙虎榜尚未确认",
-        "validation_condition": "板块维持扩散，价格守住MA20（17.488020255749085），ATR不过热",
+        "validation_condition": "板块维持扩散，价格守住MA20（17.49），ATR不过热",
         "invalidation_condition": "板块转弱、放量跌破MA20或出现重大风险公告",
         "exclusion_reason": null,
-        "rank_history": [
-          {
-            "date": "2026-09-04",
-            "stage": "1600",
-            "rank": 26,
-            "score": 81.3
-          }
-        ],
+        "rank_history": [],
         "pool": "POOL_B",
-        "transition": "维持",
+        "transition": "新入池",
         "rank": 26,
         "date": "2026-09-04",
-        "stage": "2130"
+        "stage": "2200",
+        "wudao_themes": []
       },
       {
         "code": "600033",
@@ -23390,7 +23475,7 @@
         "volume_ratio": null,
         "float_cap": null,
         "timestamp": "2026-09-04T15:00:00+08:00",
-        "fetched_at": "2026-09-04T16:00:00+08:00",
+        "fetched_at": "2026-09-04T22:00:00+08:00",
         "source": "SIMULATED",
         "reliability": 0.8,
         "fallback": false,
@@ -23400,6 +23485,8 @@
         "limit_up_price": 30.46917635735638,
         "limit_down_price": 24.929326110564308,
         "bars_count": 85,
+        "amount_history_coverage": 1.0,
+        "amount_history_status": "AVAILABLE",
         "ma5": 27.655727463129484,
         "distance_ma5": 2.661311486602913,
         "slope_ma5": 0.9387598922663498,
@@ -23433,7 +23520,7 @@
         "consecutive_up_2": true,
         "consecutive_up_3": true,
         "history_source": "SIMULATED",
-        "as_of_time": "2026-09-04T16:00:00+08:00",
+        "as_of_time": "2026-09-04T22:00:00+08:00",
         "bars": [
           {
             "timestamp": "2026-06-05T07:00:00+00:00",
@@ -24107,7 +24194,13 @@
           "position": 80,
           "volume": 66.70797825722661
         },
-        "tradability_score": 79.62,
+        "tradability_score": null,
+        "tradability_basis": "NOT_ASSESSED",
+        "risk_scope": "TECHNICAL_AND_KNOWN_FLAGS",
+        "technical_risk": "低",
+        "event_review_status": "UNREVIEWED",
+        "score_status": "COMPLETE",
+        "eligibility_notes": [],
         "subjective_probability": null,
         "probability_basis": "未校准，不输出伪精确概率",
         "deep_score": null,
@@ -24122,6 +24215,8 @@
           "reward_risk": null
         },
         "board_count": null,
+        "derived_board_count": null,
+        "limit_identity_basis": null,
         "is_limit_up": false,
         "limit_details": {},
         "volume_type": "缩量上涨",
@@ -24131,22 +24226,16 @@
         "expectation_score": null,
         "positive_factor": "MA5>MA10>MA20，趋势与位置满足规则",
         "negative_factor": "独立催化与龙虎榜尚未确认",
-        "validation_condition": "板块维持扩散，价格守住MA20（27.026171081667165），ATR不过热",
+        "validation_condition": "板块维持扩散，价格守住MA20（27.03），ATR不过热",
         "invalidation_condition": "板块转弱、放量跌破MA20或出现重大风险公告",
         "exclusion_reason": null,
-        "rank_history": [
-          {
-            "date": "2026-09-04",
-            "stage": "1600",
-            "rank": 27,
-            "score": 79.62
-          }
-        ],
+        "rank_history": [],
         "pool": "POOL_B",
-        "transition": "维持",
+        "transition": "新入池",
         "rank": 27,
         "date": "2026-09-04",
-        "stage": "2130"
+        "stage": "2200",
+        "wudao_themes": []
       },
       {
         "code": "600013",
@@ -24163,7 +24252,7 @@
         "volume_ratio": null,
         "float_cap": null,
         "timestamp": "2026-09-04T15:00:00+08:00",
-        "fetched_at": "2026-09-04T16:00:00+08:00",
+        "fetched_at": "2026-09-04T22:00:00+08:00",
         "source": "SIMULATED",
         "reliability": 0.8,
         "fallback": false,
@@ -24173,6 +24262,8 @@
         "limit_up_price": 18.719770085498475,
         "limit_down_price": 15.31617552449875,
         "bars_count": 85,
+        "amount_history_coverage": 1.0,
+        "amount_history_status": "AVAILABLE",
         "ma5": 17.070918441609585,
         "distance_ma5": 2.1820951508152664,
         "slope_ma5": 0.4448793972112508,
@@ -24206,7 +24297,7 @@
         "consecutive_up_2": false,
         "consecutive_up_3": false,
         "history_source": "SIMULATED",
-        "as_of_time": "2026-09-04T16:00:00+08:00",
+        "as_of_time": "2026-09-04T22:00:00+08:00",
         "bars": [
           {
             "timestamp": "2026-06-05T07:00:00+00:00",
@@ -24880,7 +24971,13 @@
           "position": 80,
           "volume": 66.21410716622975
         },
-        "tradability_score": 79.34,
+        "tradability_score": null,
+        "tradability_basis": "NOT_ASSESSED",
+        "risk_scope": "TECHNICAL_AND_KNOWN_FLAGS",
+        "technical_risk": "低",
+        "event_review_status": "UNREVIEWED",
+        "score_status": "COMPLETE",
+        "eligibility_notes": [],
         "subjective_probability": null,
         "probability_basis": "未校准，不输出伪精确概率",
         "deep_score": null,
@@ -24895,6 +24992,8 @@
           "reward_risk": null
         },
         "board_count": null,
+        "derived_board_count": null,
+        "limit_identity_basis": null,
         "is_limit_up": false,
         "limit_details": {},
         "volume_type": "缩量上涨",
@@ -24904,22 +25003,16 @@
         "expectation_score": null,
         "positive_factor": "MA5>MA10>MA20，趋势与位置满足规则",
         "negative_factor": "独立催化与龙虎榜尚未确认",
-        "validation_condition": "板块维持扩散，价格守住MA20（16.575826676648347），ATR不过热",
+        "validation_condition": "板块维持扩散，价格守住MA20（16.58），ATR不过热",
         "invalidation_condition": "板块转弱、放量跌破MA20或出现重大风险公告",
         "exclusion_reason": null,
-        "rank_history": [
-          {
-            "date": "2026-09-04",
-            "stage": "1600",
-            "rank": 28,
-            "score": 79.34
-          }
-        ],
+        "rank_history": [],
         "pool": "POOL_B",
-        "transition": "维持",
+        "transition": "新入池",
         "rank": 28,
         "date": "2026-09-04",
-        "stage": "2130"
+        "stage": "2200",
+        "wudao_themes": []
       },
       {
         "code": "600077",
@@ -24936,7 +25029,7 @@
         "volume_ratio": null,
         "float_cap": null,
         "timestamp": "2026-09-04T15:00:00+08:00",
-        "fetched_at": "2026-09-04T16:00:00+08:00",
+        "fetched_at": "2026-09-04T22:00:00+08:00",
         "source": "SIMULATED",
         "reliability": 0.8,
         "fallback": false,
@@ -24946,6 +25039,8 @@
         "limit_up_price": 53.1866449973625,
         "limit_down_price": 43.516345906932955,
         "bars_count": 85,
+        "amount_history_coverage": 1.0,
+        "amount_history_status": "AVAILABLE",
         "ma5": 48.36406674508872,
         "distance_ma5": 2.473357130341336,
         "slope_ma5": 0.9816542110861137,
@@ -24979,7 +25074,7 @@
         "consecutive_up_2": true,
         "consecutive_up_3": true,
         "history_source": "SIMULATED",
-        "as_of_time": "2026-09-04T16:00:00+08:00",
+        "as_of_time": "2026-09-04T22:00:00+08:00",
         "bars": [
           {
             "timestamp": "2026-06-05T07:00:00+00:00",
@@ -25653,7 +25748,13 @@
           "position": 80,
           "volume": 67.17789853336023
         },
-        "tradability_score": 79.03,
+        "tradability_score": null,
+        "tradability_basis": "NOT_ASSESSED",
+        "risk_scope": "TECHNICAL_AND_KNOWN_FLAGS",
+        "technical_risk": "低",
+        "event_review_status": "UNREVIEWED",
+        "score_status": "COMPLETE",
+        "eligibility_notes": [],
         "subjective_probability": null,
         "probability_basis": "未校准，不输出伪精确概率",
         "deep_score": null,
@@ -25668,6 +25769,8 @@
           "reward_risk": null
         },
         "board_count": null,
+        "derived_board_count": null,
+        "limit_identity_basis": null,
         "is_limit_up": false,
         "limit_details": {},
         "volume_type": "缩量上涨",
@@ -25677,22 +25780,16 @@
         "expectation_score": null,
         "positive_factor": "MA5>MA10>MA20，趋势与位置满足规则",
         "negative_factor": "独立催化与龙虎榜尚未确认",
-        "validation_condition": "板块维持扩散，价格守住MA20（46.76056496368115），ATR不过热",
+        "validation_condition": "板块维持扩散，价格守住MA20（46.76），ATR不过热",
         "invalidation_condition": "板块转弱、放量跌破MA20或出现重大风险公告",
         "exclusion_reason": null,
-        "rank_history": [
-          {
-            "date": "2026-09-04",
-            "stage": "1600",
-            "rank": 29,
-            "score": 79.03
-          }
-        ],
+        "rank_history": [],
         "pool": "POOL_B",
-        "transition": "维持",
+        "transition": "新入池",
         "rank": 29,
         "date": "2026-09-04",
-        "stage": "2130"
+        "stage": "2200",
+        "wudao_themes": []
       },
       {
         "code": "600042",
@@ -25709,7 +25806,7 @@
         "volume_ratio": null,
         "float_cap": null,
         "timestamp": "2026-09-04T15:00:00+08:00",
-        "fetched_at": "2026-09-04T16:00:00+08:00",
+        "fetched_at": "2026-09-04T22:00:00+08:00",
         "source": "SIMULATED",
         "reliability": 0.8,
         "fallback": false,
@@ -25719,6 +25816,8 @@
         "limit_up_price": 31.608192848211598,
         "limit_down_price": 25.861248693991307,
         "bars_count": 85,
+        "amount_history_coverage": 1.0,
+        "amount_history_status": "AVAILABLE",
         "ma5": 28.85668497898869,
         "distance_ma5": 2.066778674766523,
         "slope_ma5": 0.7419991970769146,
@@ -25752,7 +25851,7 @@
         "consecutive_up_2": false,
         "consecutive_up_3": false,
         "history_source": "SIMULATED",
-        "as_of_time": "2026-09-04T16:00:00+08:00",
+        "as_of_time": "2026-09-04T22:00:00+08:00",
         "bars": [
           {
             "timestamp": "2026-06-05T07:00:00+00:00",
@@ -26426,7 +26525,13 @@
           "position": 80,
           "volume": 64.16921671827345
         },
-        "tradability_score": 78.89,
+        "tradability_score": null,
+        "tradability_basis": "NOT_ASSESSED",
+        "risk_scope": "TECHNICAL_AND_KNOWN_FLAGS",
+        "technical_risk": "低",
+        "event_review_status": "UNREVIEWED",
+        "score_status": "COMPLETE",
+        "eligibility_notes": [],
         "subjective_probability": null,
         "probability_basis": "未校准，不输出伪精确概率",
         "deep_score": null,
@@ -26441,6 +26546,8 @@
           "reward_risk": null
         },
         "board_count": null,
+        "derived_board_count": null,
+        "limit_identity_basis": null,
         "is_limit_up": false,
         "limit_details": {},
         "volume_type": "缩量上涨",
@@ -26450,22 +26557,16 @@
         "expectation_score": null,
         "positive_factor": "MA5>MA10>MA20，趋势与位置满足规则",
         "negative_factor": "独立催化与龙虎榜尚未确认",
-        "validation_condition": "板块维持扩散，价格守住MA20（28.224427721649526），ATR不过热",
+        "validation_condition": "板块维持扩散，价格守住MA20（28.22），ATR不过热",
         "invalidation_condition": "板块转弱、放量跌破MA20或出现重大风险公告",
         "exclusion_reason": null,
-        "rank_history": [
-          {
-            "date": "2026-09-04",
-            "stage": "1600",
-            "rank": 30,
-            "score": 78.89
-          }
-        ],
+        "rank_history": [],
         "pool": "POOL_B",
-        "transition": "维持",
+        "transition": "新入池",
         "rank": 30,
         "date": "2026-09-04",
-        "stage": "2130"
+        "stage": "2200",
+        "wudao_themes": []
       }
     ],
     "POOL_C": [
@@ -26484,7 +26585,7 @@
         "volume_ratio": null,
         "float_cap": null,
         "timestamp": "2026-09-04T15:00:00+08:00",
-        "fetched_at": "2026-09-04T16:00:00+08:00",
+        "fetched_at": "2026-09-04T22:00:00+08:00",
         "source": "SIMULATED",
         "reliability": 0.8,
         "fallback": false,
@@ -26494,6 +26595,8 @@
         "limit_up_price": 22.432003926215547,
         "limit_down_price": 18.35345775781272,
         "bars_count": 85,
+        "amount_history_coverage": 1.0,
+        "amount_history_status": "AVAILABLE",
         "ma5": 20.400113473157894,
         "distance_ma5": 2.4629061037708677,
         "slope_ma5": 0.923659603030802,
@@ -26527,7 +26630,7 @@
         "consecutive_up_2": true,
         "consecutive_up_3": true,
         "history_source": "SIMULATED",
-        "as_of_time": "2026-09-04T16:00:00+08:00",
+        "as_of_time": "2026-09-04T22:00:00+08:00",
         "bars": [
           {
             "timestamp": "2026-06-05T07:00:00+00:00",
@@ -27187,21 +27290,27 @@
         "sector_score": 92.5,
         "sector_state": "持续强势",
         "market_score": 69.44,
-        "position_type": "启动观察",
+        "position_type": "趋势观察",
         "atr_state": "正常",
         "atr_risk": 0,
         "risk_score": 0,
         "risk": "低",
         "hard_risk": false,
-        "total_score": 87.5,
+        "total_score": 85.0,
         "score_coverage": 1.0,
         "scores": {
           "trend": 79.17458557473505,
           "sector": 92.5,
-          "position": 90,
+          "position": 80,
           "volume": 90
         },
-        "tradability_score": 87.5,
+        "tradability_score": null,
+        "tradability_basis": "NOT_ASSESSED",
+        "risk_scope": "TECHNICAL_AND_KNOWN_FLAGS",
+        "technical_risk": "低",
+        "event_review_status": "SUPPORTED_FACTS_VERIFIED",
+        "score_status": "COMPLETE",
+        "eligibility_notes": [],
         "subjective_probability": null,
         "probability_basis": "未校准，不输出伪精确概率",
         "deep_score": null,
@@ -27216,6 +27325,8 @@
           "reward_risk": null
         },
         "board_count": null,
+        "derived_board_count": null,
+        "limit_identity_basis": null,
         "is_limit_up": false,
         "limit_details": {},
         "volume_type": "放量突破",
@@ -27225,8 +27336,10 @@
             "stock_code": "600017",
             "event_type": "重大合同",
             "title": "[模拟] 已核验重大合同，仅用于功能验收",
-            "event_time": "2026-09-04T20:30:00+08:00",
-            "publish_time": "2026-09-04T20:30:00+08:00",
+            "event_time": "2026-09-04T21:00:00+08:00",
+            "publish_time": "2026-09-04T21:00:00+08:00",
+            "publish_time_precision": "second",
+            "first_seen_at": null,
             "source": "SIMULATED",
             "url": "https://example.com/demo",
             "reliability": 1.0,
@@ -27236,6 +27349,8 @@
             "impact_score": 85.0,
             "verified": true,
             "canonical_id": "demo-contract",
+            "document_url": null,
+            "verification": null,
             "expectation": "Partially Priced",
             "expectation_basis": "规则代理：新鲜度与20日涨幅；未证明因果关系"
           }
@@ -27243,42 +27358,18 @@
         "independent_catalyst": true,
         "catalyst_score": 85.0,
         "expectation_score": null,
-        "positive_factor": "板块扩散、放量突破、位置合理",
-        "negative_factor": "未读取完整公告正文；需人工核验",
-        "validation_condition": "板块维持扩散，价格守住MA20（19.59461534439378），ATR不过热",
+        "positive_factor": "MA5>MA10>MA20，趋势与位置满足规则",
+        "negative_factor": "部分公告待人工复核，已核验事实见事件证据",
+        "validation_condition": "板块维持扩散，价格守住MA20（19.59），ATR不过热",
         "invalidation_condition": "板块转弱、放量跌破MA20或出现重大风险公告",
         "exclusion_reason": null,
-        "rank_history": [
-          {
-            "date": "2026-09-04",
-            "stage": "0730",
-            "rank": 1,
-            "score": 87.5
-          },
-          {
-            "date": "2026-09-04",
-            "stage": "0830",
-            "rank": 1,
-            "score": 87.5
-          },
-          {
-            "date": "2026-09-04",
-            "stage": "1135",
-            "rank": 1,
-            "score": 83.46
-          },
-          {
-            "date": "2026-09-04",
-            "stage": "1600",
-            "rank": 1,
-            "score": 87.5
-          }
-        ],
+        "rank_history": [],
         "pool": "POOL_C",
-        "transition": "维持",
+        "transition": "新入池",
         "rank": 1,
         "date": "2026-09-04",
-        "stage": "2130"
+        "stage": "2200",
+        "wudao_themes": []
       }
     ]
   },
@@ -27298,11 +27389,14 @@
       "concentration": 0.11265643184676037,
       "above_ma20_ratio": 1,
       "factor_coverage": 1.0,
+      "factor_member_count": 16,
+      "trend_coverage": 1.0,
+      "score_basis": "BREADTH_MOMENTUM_TREND",
+      "state_basis": "多日因子覆盖达标且多数样本连续上涨、5日中位涨幅为正",
       "history": {
-        "0830": 92.5,
-        "1135": 90.62,
-        "1600": 92.5,
-        "2130": 92.5
+        "0800": 92.5,
+        "1200": 90.62,
+        "2200": 92.5
       },
       "missing_factors": [
         "龙头/先锋身份",
@@ -27337,11 +27431,14 @@
       "concentration": 0.10972996964896456,
       "above_ma20_ratio": 1,
       "factor_coverage": 1.0,
+      "factor_member_count": 16,
+      "trend_coverage": 1.0,
+      "score_basis": "BREADTH_MOMENTUM_TREND",
+      "state_basis": "多日因子覆盖达标且多数样本连续上涨、5日中位涨幅为正",
       "history": {
-        "0830": 92.5,
-        "1135": 90.62,
-        "1600": 92.5,
-        "2130": 92.5
+        "0800": 92.5,
+        "1200": 90.62,
+        "2200": 92.5
       },
       "missing_factors": [
         "龙头/先锋身份",
@@ -27376,11 +27473,14 @@
       "concentration": 0.1267202053770448,
       "above_ma20_ratio": 0.9375,
       "factor_coverage": 1.0,
+      "factor_member_count": 16,
+      "trend_coverage": 1.0,
+      "score_basis": "BREADTH_MOMENTUM_TREND",
+      "state_basis": "多日因子覆盖达标且多数样本连续上涨、5日中位涨幅为正",
       "history": {
-        "0830": 91.25,
-        "1135": 90.62,
-        "1600": 91.25,
-        "2130": 91.25
+        "0800": 91.25,
+        "1200": 90.62,
+        "2200": 91.25
       },
       "missing_factors": [
         "龙头/先锋身份",
@@ -27413,13 +27513,16 @@
       "return_1d": -0.8000000000000007,
       "amount": 2759335861.566931,
       "concentration": 0.11186451888831726,
-      "above_ma20_ratio": null,
-      "factor_coverage": 0.0,
+      "above_ma20_ratio": 1,
+      "factor_coverage": 0.125,
+      "factor_member_count": 2,
+      "trend_coverage": 0.125,
+      "score_basis": "TODAY_BREADTH_MOMENTUM",
+      "state_basis": "当前快照规则；不代表多日持续性",
       "history": {
-        "0830": 23.56,
-        "1135": 23.56,
-        "1600": 23.56,
-        "2130": 23.56
+        "0800": 23.56,
+        "1200": 23.56,
+        "2200": 23.56
       },
       "missing_factors": [
         "龙头/先锋身份",
@@ -27427,14 +27530,14 @@
         "真实资金拥挤度"
       ],
       "source": "SIMULATED",
-      "return_3d": null,
-      "return_5d": null,
-      "return_10d": null,
-      "return_20d": null,
-      "consecutive_up_2": null,
-      "consecutive_up_3": null,
-      "new_high_5d": null,
-      "new_high_20d": null,
+      "return_3d": 10.190313747392754,
+      "return_5d": 11.293944960963298,
+      "return_10d": 13.303500002924029,
+      "return_20d": 15.39283535421092,
+      "consecutive_up_2": 1,
+      "consecutive_up_3": 1,
+      "new_high_5d": 2,
+      "new_high_20d": 2,
       "amount_mean_5d": null,
       "amount_mean_10d": null,
       "amount_mean_20d": null
@@ -27452,13 +27555,16 @@
       "return_1d": -0.8000000000000007,
       "amount": 1967167346.9658182,
       "concentration": 0.09053297977725497,
-      "above_ma20_ratio": null,
-      "factor_coverage": 0.0,
+      "above_ma20_ratio": 1,
+      "factor_coverage": 0.0625,
+      "factor_member_count": 1,
+      "trend_coverage": 0.0625,
+      "score_basis": "TODAY_BREADTH_MOMENTUM",
+      "state_basis": "当前快照规则；不代表多日持续性",
       "history": {
-        "0830": 19.66,
-        "1135": 19.66,
-        "1600": 19.66,
-        "2130": 19.66
+        "0800": 19.66,
+        "1200": 19.66,
+        "2200": 19.66
       },
       "missing_factors": [
         "龙头/先锋身份",
@@ -27466,14 +27572,14 @@
         "真实资金拥挤度"
       ],
       "source": "SIMULATED",
-      "return_3d": null,
-      "return_5d": null,
-      "return_10d": null,
-      "return_20d": null,
-      "consecutive_up_2": null,
-      "consecutive_up_3": null,
-      "new_high_5d": null,
-      "new_high_20d": null,
+      "return_3d": 9.727427211769735,
+      "return_5d": 9.411871674293359,
+      "return_10d": 8.360138714049903,
+      "return_20d": 8.784750415080222,
+      "consecutive_up_2": 0,
+      "consecutive_up_3": 0,
+      "new_high_5d": 1,
+      "new_high_20d": 1,
       "amount_mean_5d": null,
       "amount_mean_10d": null,
       "amount_mean_20d": null
@@ -27483,6 +27589,7 @@
     "score": 69.44,
     "environment": "正常",
     "basis": "BREADTH_MVP",
+    "score_basis_label": "上涨占比 + 涨跌幅中位数；新增市场证据尚未纳入评分",
     "up": 51,
     "down": 29,
     "flat": 0,
@@ -27491,12 +27598,24 @@
     "amount": 13930179440.445858,
     "limit_up_count": 7,
     "limit_down_count": 0,
+    "known_limit_up_count": 7,
+    "known_limit_down_count": 0,
+    "limit_up_price_coverage": 1.0,
+    "limit_down_price_coverage": 1.0,
+    "limit_pool_count": 7,
+    "first_board_count": 7,
+    "consecutive_board_count": 0,
+    "highest_board": 1,
+    "board_ladder": {
+      "1": 7
+    },
+    "board_count_coverage": 1.0,
+    "board_ladder_basis": "独立涨停名单中的供应商板数；不把推导板数混入供应商梯队",
+    "context": {},
     "missing_factors": [
       "炸板率",
       "昨日涨停溢价",
-      "首板/连板梯队",
       "1进2/2进3/3进4晋级率",
-      "最高板高度/梯队完整度",
       "成交额相对5/10/20日均值",
       "指数5/10/20日趋势",
       "高位股亏钱效应",
@@ -27505,40 +27624,211 @@
       "外部市场"
     ]
   },
-  "eliminations": [],
+  "eliminations": [
+    {
+      "stock_code": "600002",
+      "reason": "未达到启动、趋势或回调规则"
+    },
+    {
+      "stock_code": "600004",
+      "reason": "板块未通过第二层筛选"
+    },
+    {
+      "stock_code": "600005",
+      "reason": "板块未通过第二层筛选"
+    },
+    {
+      "stock_code": "600008",
+      "reason": "未达到启动、趋势或回调规则"
+    },
+    {
+      "stock_code": "600009",
+      "reason": "板块未通过第二层筛选"
+    },
+    {
+      "stock_code": "600010",
+      "reason": "板块未通过第二层筛选"
+    },
+    {
+      "stock_code": "600014",
+      "reason": "板块未通过第二层筛选"
+    },
+    {
+      "stock_code": "600015",
+      "reason": "板块未通过第二层筛选"
+    },
+    {
+      "stock_code": "600016",
+      "reason": "未达到启动、趋势或回调规则"
+    },
+    {
+      "stock_code": "600018",
+      "reason": "未达到启动、趋势或回调规则"
+    },
+    {
+      "stock_code": "600019",
+      "reason": "板块未通过第二层筛选"
+    },
+    {
+      "stock_code": "600020",
+      "reason": "板块未通过第二层筛选"
+    },
+    {
+      "stock_code": "600024",
+      "reason": "板块未通过第二层筛选"
+    },
+    {
+      "stock_code": "600025",
+      "reason": "板块未通过第二层筛选"
+    },
+    {
+      "stock_code": "600029",
+      "reason": "板块未通过第二层筛选"
+    },
+    {
+      "stock_code": "600030",
+      "reason": "板块未通过第二层筛选"
+    },
+    {
+      "stock_code": "600031",
+      "reason": "未达到启动、趋势或回调规则"
+    },
+    {
+      "stock_code": "600034",
+      "reason": "板块未通过第二层筛选"
+    },
+    {
+      "stock_code": "600035",
+      "reason": "板块未通过第二层筛选"
+    },
+    {
+      "stock_code": "600039",
+      "reason": "板块未通过第二层筛选"
+    },
+    {
+      "stock_code": "600040",
+      "reason": "板块未通过第二层筛选"
+    },
+    {
+      "stock_code": "600044",
+      "reason": "板块未通过第二层筛选"
+    },
+    {
+      "stock_code": "600045",
+      "reason": "板块未通过第二层筛选"
+    },
+    {
+      "stock_code": "600049",
+      "reason": "板块未通过第二层筛选"
+    },
+    {
+      "stock_code": "600050",
+      "reason": "板块未通过第二层筛选"
+    },
+    {
+      "stock_code": "600054",
+      "reason": "板块未通过第二层筛选"
+    },
+    {
+      "stock_code": "600055",
+      "reason": "板块未通过第二层筛选"
+    },
+    {
+      "stock_code": "600057",
+      "reason": "未达到启动、趋势或回调规则"
+    },
+    {
+      "stock_code": "600059",
+      "reason": "板块未通过第二层筛选"
+    },
+    {
+      "stock_code": "600060",
+      "reason": "板块未通过第二层筛选"
+    },
+    {
+      "stock_code": "600064",
+      "reason": "板块未通过第二层筛选"
+    },
+    {
+      "stock_code": "600065",
+      "reason": "板块未通过第二层筛选"
+    },
+    {
+      "stock_code": "600069",
+      "reason": "板块未通过第二层筛选"
+    },
+    {
+      "stock_code": "600070",
+      "reason": "板块未通过第二层筛选"
+    },
+    {
+      "stock_code": "600071",
+      "reason": "未达到启动、趋势或回调规则"
+    },
+    {
+      "stock_code": "600074",
+      "reason": "板块未通过第二层筛选"
+    },
+    {
+      "stock_code": "600075",
+      "reason": "板块未通过第二层筛选"
+    },
+    {
+      "stock_code": "600076",
+      "reason": "未达到启动、趋势或回调规则"
+    },
+    {
+      "stock_code": "600079",
+      "reason": "板块未通过第二层筛选"
+    },
+    {
+      "stock_code": "600080",
+      "reason": "板块未通过第二层筛选"
+    }
+  ],
   "missing_factors": [
     "炸板率",
     "昨日涨停溢价",
-    "首板/连板梯队",
-    "1进2/2进3/3进4晋级率",
-    "最高板高度/梯队完整度",
-    "成交额相对5/10/20日均值",
+    "连板晋级率",
+    "市场成交额5/10/20日基线",
     "指数5/10/20日趋势",
     "高位股亏钱效应",
     "短线情绪周期",
-    "主力资金",
+    "板块主力净额",
     "外部市场",
     "龙虎榜席位归因",
-    "公告正文语义核验",
+    "公告正文核验",
     "历史复权事件校验",
-    "板块全部成分多日因子",
+    "板块成分多日因子",
     "消息发布前后因果验证"
   ],
-  "scheduled_for": "2026-09-04T21:30:00+08:00",
-  "predecessor": {
-    "date": "2026-09-04",
-    "stage": "1600",
-    "run_id": "09a8bb9ceafd4b88938f5db7fbc818d6"
-  },
+  "schedule_version": 2,
+  "scheduled_for": "2026-09-04T22:00:00+08:00",
   "quote_date": "2026-09-04",
+  "universe_count": 80,
+  "valid_quote_count": 80,
+  "funnel": {
+    "universe": 80,
+    "valid_quotes": 80,
+    "sector_pass": 51,
+    "history_budget": 51,
+    "factor_ready": 51
+  },
+  "limit_evidence": {
+    "status": "SIMULATED",
+    "identified": 7
+  },
+  "factor_count": 51,
   "events": [
     {
       "event_id": "demo-contract",
       "stock_code": "600017",
       "event_type": "重大合同",
       "title": "[模拟] 已核验重大合同，仅用于功能验收",
-      "event_time": "2026-09-04T20:30:00+08:00",
-      "publish_time": "2026-09-04T20:30:00+08:00",
+      "event_time": "2026-09-04T21:00:00+08:00",
+      "publish_time": "2026-09-04T21:00:00+08:00",
+      "publish_time_precision": "second",
+      "first_seen_at": null,
       "source": "SIMULATED",
       "url": "https://example.com/demo",
       "reliability": 1.0,
@@ -27548,6 +27838,8 @@
       "impact_score": 85.0,
       "verified": true,
       "canonical_id": "demo-contract",
+      "document_url": null,
+      "verification": null,
       "expectation": "Partially Priced",
       "expectation_basis": "规则代理：新鲜度与20日涨幅；未证明因果关系"
     }
@@ -27557,59 +27849,302 @@
     {
       "code": "600001",
       "board_count": 1,
+      "limit_up_price": 15.444074766661553,
       "source": "SIMULATED",
-      "trade_date": "2026-09-04"
+      "trade_date": "2026-09-04",
+      "name": "模拟企业01"
     },
     {
       "code": "600014",
       "board_count": 1,
+      "limit_up_price": 24.771178882351045,
       "source": "SIMULATED",
-      "trade_date": "2026-09-04"
+      "trade_date": "2026-09-04",
+      "name": "模拟企业14"
     },
     {
       "code": "600027",
       "board_count": 1,
+      "limit_up_price": 25.890401023994315,
       "source": "SIMULATED",
-      "trade_date": "2026-09-04"
+      "trade_date": "2026-09-04",
+      "name": "模拟企业27"
     },
     {
       "code": "600040",
       "board_count": 1,
+      "limit_up_price": 24.709753806647754,
       "source": "SIMULATED",
-      "trade_date": "2026-09-04"
+      "trade_date": "2026-09-04",
+      "name": "模拟企业40"
     },
     {
       "code": "600053",
       "board_count": 1,
+      "limit_up_price": 39.30085219503615,
       "source": "SIMULATED",
-      "trade_date": "2026-09-04"
+      "trade_date": "2026-09-04",
+      "name": "模拟企业53"
     },
     {
       "code": "600066",
       "board_count": 1,
+      "limit_up_price": 45.60462732700388,
       "source": "SIMULATED",
-      "trade_date": "2026-09-04"
+      "trade_date": "2026-09-04",
+      "name": "模拟企业66"
     },
     {
       "code": "600079",
       "board_count": 1,
+      "limit_up_price": 50.75912707606602,
       "source": "SIMULATED",
-      "trade_date": "2026-09-04"
+      "trade_date": "2026-09-04",
+      "name": "模拟企业79"
     }
   ],
+  "pool_diagnostics": {
+    "POOL_A": {
+      "status": "AVAILABLE",
+      "identified": 7,
+      "selected": 4,
+      "evidence": {
+        "status": "SIMULATED",
+        "identified": 7
+      }
+    },
+    "POOL_C": {
+      "status": "AVAILABLE",
+      "verified_events": 1,
+      "selected": 1,
+      "evidence": {}
+    }
+  },
+  "pool_notes": {
+    "POOL_A": "识别涨停线索 7 只，入选 4 只。供应商板数与日线推导板数分别展示；缺少证据不能解释为市场无涨停。",
+    "POOL_C": "限定公告扫描：发现 0 条，正文读取 0 份，已核验事件 1 条，入选 1 只。支持重大已签合同及正向业绩预告的明确量化事实；其他类型或歧义留待人工复核。"
+  },
   "position_counts": {
     "启动观察": 27,
-    "趋势观察": 8,
+    "趋势观察": 13,
     "高位观察": 0,
     "回调观察": 0,
-    "排除": 0
+    "排除": 40
   },
+  "position_validation": {
+    "startup": "AVAILABLE",
+    "pullback": "AVAILABLE"
+  },
+  "catalyst_diagnostics": [
+    {
+      "stock_code": "600017",
+      "stock_name": "模拟企业17",
+      "passed": true,
+      "reasons": []
+    }
+  ],
+  "factor_statuses": [
+    {
+      "id": "breadth",
+      "label": "市场广度",
+      "status": "AVAILABLE",
+      "reason": "市场分仅使用上涨占比和涨跌幅中位数",
+      "coverage": 1.0,
+      "source": "全市场行情",
+      "as_of_time": "2026-09-04T22:00:00+08:00",
+      "used_in_score": true
+    },
+    {
+      "id": "ladder",
+      "label": "首板与连板梯队",
+      "status": "AVAILABLE",
+      "reason": "已知涨停记录7条；供应商口径与规则推导分开，未纳入广度评分",
+      "coverage": null,
+      "source": "涨停证据",
+      "as_of_time": "2026-09-04T22:00:00+08:00",
+      "used_in_score": false
+    },
+    {
+      "id": "highest_board",
+      "label": "供应商最高板",
+      "status": "AVAILABLE",
+      "reason": "供应商记录最高1板；不等于全市场梯队完整性已核验",
+      "coverage": null,
+      "source": "涨停证据",
+      "as_of_time": "2026-09-04T22:00:00+08:00",
+      "used_in_score": false
+    },
+    {
+      "id": "limit_coverage",
+      "label": "全市场涨跌停价覆盖",
+      "status": "AVAILABLE",
+      "reason": "独立涨停名单与全市场每只股票的上下限价格是不同覆盖口径",
+      "coverage": 1.0,
+      "source": null,
+      "as_of_time": "2026-09-04T22:00:00+08:00",
+      "used_in_score": false
+    },
+    {
+      "id": "stock_amount",
+      "label": "候选历史成交额",
+      "status": "AVAILABLE",
+      "reason": "35/35只候选具备成交额基线；缺失时启动/回调条件无法完整验证",
+      "coverage": 1.0,
+      "source": "历史日线",
+      "as_of_time": "2026-09-04T22:00:00+08:00",
+      "used_in_score": true
+    },
+    {
+      "id": "break_rate",
+      "label": "炸板率",
+      "status": "UNAVAILABLE",
+      "reason": "需要完整触板未封住名单及同口径涨停名单",
+      "coverage": null,
+      "source": null,
+      "as_of_time": "2026-09-04T22:00:00+08:00",
+      "used_in_score": false
+    },
+    {
+      "id": "yesterday_premium",
+      "label": "昨日涨停溢价",
+      "status": "UNAVAILABLE",
+      "reason": "需要前一交易日涨停集合及本日匹配行情",
+      "coverage": null,
+      "source": null,
+      "as_of_time": "2026-09-04T22:00:00+08:00",
+      "used_in_score": false
+    },
+    {
+      "id": "promotion",
+      "label": "连板晋级率",
+      "status": "UNAVAILABLE",
+      "reason": "需要跨交易日相同股票的板数迁移",
+      "coverage": null,
+      "source": null,
+      "as_of_time": "2026-09-04T22:00:00+08:00",
+      "used_in_score": false
+    },
+    {
+      "id": "market_amount",
+      "label": "市场成交额5/10/20日基线",
+      "status": "UNAVAILABLE",
+      "reason": "需要连续交易日、同口径全市场总成交额",
+      "coverage": null,
+      "source": null,
+      "as_of_time": "2026-09-04T22:00:00+08:00",
+      "used_in_score": false
+    },
+    {
+      "id": "index_trend",
+      "label": "指数5/10/20日趋势",
+      "status": "UNAVAILABLE",
+      "reason": "需要有效指数日线",
+      "coverage": null,
+      "source": null,
+      "as_of_time": "2026-09-04T22:00:00+08:00",
+      "used_in_score": false
+    },
+    {
+      "id": "high_board_loss",
+      "label": "高位股亏钱效应",
+      "status": "UNAVAILABLE",
+      "reason": "需要前一交易日高板群组及匹配行情",
+      "coverage": null,
+      "source": null,
+      "as_of_time": "2026-09-04T22:00:00+08:00",
+      "used_in_score": false
+    },
+    {
+      "id": "sentiment_cycle",
+      "label": "短线情绪周期",
+      "status": "NOT_INTEGRATED",
+      "reason": "周期模型尚未校准；广度分不代表完整短线情绪",
+      "coverage": null,
+      "source": null,
+      "as_of_time": "2026-09-04T22:00:00+08:00",
+      "used_in_score": false
+    },
+    {
+      "id": "main_flow",
+      "label": "板块主力净额",
+      "status": "UNAVAILABLE",
+      "reason": "0条板块供应商资金记录可用，非全市场资金归因，未纳入广度评分",
+      "coverage": null,
+      "source": "悟道",
+      "as_of_time": "2026-09-04T22:00:00+08:00",
+      "used_in_score": false
+    },
+    {
+      "id": "external",
+      "label": "外部市场",
+      "status": "NOT_INTEGRATED",
+      "reason": "隔夜外部变量尚未纳入；08:00市场分仍为前收盘参考",
+      "coverage": null,
+      "source": null,
+      "as_of_time": "2026-09-04T22:00:00+08:00",
+      "used_in_score": false
+    },
+    {
+      "id": "dragon_tiger",
+      "label": "龙虎榜席位归因",
+      "status": "NOT_INTEGRATED",
+      "reason": "席位记录不能直接证明买卖动机，归因未实现",
+      "coverage": null,
+      "source": null,
+      "as_of_time": "2026-09-04T22:00:00+08:00",
+      "used_in_score": false
+    },
+    {
+      "id": "announcements",
+      "label": "公告正文核验",
+      "status": "MANUAL",
+      "reason": "1/1条事件通过支持范围内事实核验；其余类型与歧义仍待复核",
+      "coverage": 1.0,
+      "source": "巨潮/公告原文",
+      "as_of_time": "2026-09-04T22:00:00+08:00",
+      "used_in_score": false
+    },
+    {
+      "id": "corporate_actions",
+      "label": "历史复权事件校验",
+      "status": "PARTIAL",
+      "reason": "现有未复权序列会隔离异常跳变；尚无完整公司行动校验",
+      "coverage": null,
+      "source": null,
+      "as_of_time": "2026-09-04T22:00:00+08:00",
+      "used_in_score": false
+    },
+    {
+      "id": "sector_history",
+      "label": "板块成分多日因子",
+      "status": "PARTIAL",
+      "reason": "51/80个板块成分席位有历史因子；跨板块股票可能重复",
+      "coverage": 0.6375,
+      "source": "历史日线",
+      "as_of_time": "2026-09-04T22:00:00+08:00",
+      "used_in_score": true
+    },
+    {
+      "id": "causality",
+      "label": "消息发布前后因果验证",
+      "status": "NOT_INTEGRATED",
+      "reason": "新鲜度和累计涨幅仅是反应代理，尚不能验证因果",
+      "coverage": null,
+      "source": null,
+      "as_of_time": "2026-09-04T22:00:00+08:00",
+      "used_in_score": false
+    }
+  ],
   "ai": {
     "status": "DEMO_DISABLED"
   },
   "evaluation": {
-    "1600/POOL_A": {
+    "2200/POOL_A": {
       "sample_size": 4,
+      "independent_days": 1,
+      "window_start": "2026-09-03",
+      "window_end": "2026-09-03",
+      "metric_version": 2,
       "win_rate": 0,
       "average_return": 0.0,
       "median_return": 0.0,
@@ -27617,10 +28152,14 @@
       "next_day_limit_up_rate": 1,
       "top3_hit_rate": 0,
       "top5_hit_rate": 0,
-      "definition": "同阶段/同池日等权观察组合；命中=次日收盘上涨；不含费用、滑点、停牌与涨停无法成交约束"
+      "definition": "信号当日收盘至下一交易日收盘。同阶段价格观察，不含费用、滑点、停牌及涨停成交约束；不是策略净收益。"
     },
-    "1600/POOL_B": {
+    "2200/POOL_B": {
       "sample_size": 30,
+      "independent_days": 1,
+      "window_start": "2026-09-03",
+      "window_end": "2026-09-03",
+      "metric_version": 2,
       "win_rate": 0,
       "average_return": 0.0,
       "median_return": 0.0,
@@ -27628,10 +28167,14 @@
       "next_day_limit_up_rate": 0,
       "top3_hit_rate": 0,
       "top5_hit_rate": 0,
-      "definition": "同阶段/同池日等权观察组合；命中=次日收盘上涨；不含费用、滑点、停牌与涨停无法成交约束"
+      "definition": "信号当日收盘至下一交易日收盘。同阶段价格观察，不含费用、滑点、停牌及涨停成交约束；不是策略净收益。"
     },
-    "1600/POOL_C": {
+    "2200/POOL_C": {
       "sample_size": 1,
+      "independent_days": 1,
+      "window_start": "2026-09-03",
+      "window_end": "2026-09-03",
+      "metric_version": 2,
       "win_rate": 0,
       "average_return": 0.0,
       "median_return": 0.0,
@@ -27639,10 +28182,14 @@
       "next_day_limit_up_rate": 0,
       "top3_hit_rate": 0,
       "top5_hit_rate": 0,
-      "definition": "同阶段/同池日等权观察组合；命中=次日收盘上涨；不含费用、滑点、停牌与涨停无法成交约束"
+      "definition": "信号当日收盘至下一交易日收盘。同阶段价格观察，不含费用、滑点、停牌及涨停成交约束；不是策略净收益。"
     },
-    "2130/POOL_A": {
-      "sample_size": 4,
+    "0800/POOL_A": {
+      "sample_size": 1,
+      "independent_days": 1,
+      "window_start": "2026-09-04",
+      "window_end": "2026-09-04",
+      "metric_version": 2,
       "win_rate": 0,
       "average_return": 0.0,
       "median_return": 0.0,
@@ -27650,10 +28197,14 @@
       "next_day_limit_up_rate": 1,
       "top3_hit_rate": 0,
       "top5_hit_rate": 0,
-      "definition": "同阶段/同池日等权观察组合；命中=次日收盘上涨；不含费用、滑点、停牌与涨停无法成交约束"
+      "definition": "前交易日收盘至信号当日收盘。同阶段价格观察，不含费用、滑点、停牌及涨停成交约束；不是策略净收益。"
     },
-    "2130/POOL_B": {
-      "sample_size": 30,
+    "0800/POOL_B": {
+      "sample_size": 9,
+      "independent_days": 1,
+      "window_start": "2026-09-04",
+      "window_end": "2026-09-04",
+      "metric_version": 2,
       "win_rate": 0,
       "average_return": 0.0,
       "median_return": 0.0,
@@ -27661,10 +28212,14 @@
       "next_day_limit_up_rate": 0,
       "top3_hit_rate": 0,
       "top5_hit_rate": 0,
-      "definition": "同阶段/同池日等权观察组合；命中=次日收盘上涨；不含费用、滑点、停牌与涨停无法成交约束"
+      "definition": "前交易日收盘至信号当日收盘。同阶段价格观察，不含费用、滑点、停牌及涨停成交约束；不是策略净收益。"
     },
-    "2130/POOL_C": {
-      "sample_size": 1,
+    "1200/POOL_B": {
+      "sample_size": 4,
+      "independent_days": 1,
+      "window_start": "2026-09-04",
+      "window_end": "2026-09-04",
+      "metric_version": 2,
       "win_rate": 0,
       "average_return": 0.0,
       "median_return": 0.0,
@@ -27672,105 +28227,38 @@
       "next_day_limit_up_rate": 0,
       "top3_hit_rate": 0,
       "top5_hit_rate": 0,
-      "definition": "同阶段/同池日等权观察组合；命中=次日收盘上涨；不含费用、滑点、停牌与涨停无法成交约束"
-    },
-    "0730/POOL_A": {
-      "sample_size": 0,
-      "win_rate": null,
-      "average_return": null,
-      "median_return": null,
-      "max_drawdown": null,
-      "next_day_limit_up_rate": null,
-      "top3_hit_rate": null,
-      "top5_hit_rate": null,
-      "definition": "同阶段/同池日等权观察组合；命中=次日收盘上涨；不含费用、滑点、停牌与涨停无法成交约束"
-    },
-    "0730/POOL_B": {
-      "sample_size": 0,
-      "win_rate": null,
-      "average_return": null,
-      "median_return": null,
-      "max_drawdown": null,
-      "next_day_limit_up_rate": null,
-      "top3_hit_rate": null,
-      "top5_hit_rate": null,
-      "definition": "同阶段/同池日等权观察组合；命中=次日收盘上涨；不含费用、滑点、停牌与涨停无法成交约束"
-    },
-    "0730/POOL_C": {
-      "sample_size": 0,
-      "win_rate": null,
-      "average_return": null,
-      "median_return": null,
-      "max_drawdown": null,
-      "next_day_limit_up_rate": null,
-      "top3_hit_rate": null,
-      "top5_hit_rate": null,
-      "definition": "同阶段/同池日等权观察组合；命中=次日收盘上涨；不含费用、滑点、停牌与涨停无法成交约束"
-    },
-    "0830/POOL_A": {
-      "sample_size": 0,
-      "win_rate": null,
-      "average_return": null,
-      "median_return": null,
-      "max_drawdown": null,
-      "next_day_limit_up_rate": null,
-      "top3_hit_rate": null,
-      "top5_hit_rate": null,
-      "definition": "同阶段/同池日等权观察组合；命中=次日收盘上涨；不含费用、滑点、停牌与涨停无法成交约束"
-    },
-    "0830/POOL_B": {
-      "sample_size": 0,
-      "win_rate": null,
-      "average_return": null,
-      "median_return": null,
-      "max_drawdown": null,
-      "next_day_limit_up_rate": null,
-      "top3_hit_rate": null,
-      "top5_hit_rate": null,
-      "definition": "同阶段/同池日等权观察组合；命中=次日收盘上涨；不含费用、滑点、停牌与涨停无法成交约束"
-    },
-    "0830/POOL_C": {
-      "sample_size": 0,
-      "win_rate": null,
-      "average_return": null,
-      "median_return": null,
-      "max_drawdown": null,
-      "next_day_limit_up_rate": null,
-      "top3_hit_rate": null,
-      "top5_hit_rate": null,
-      "definition": "同阶段/同池日等权观察组合；命中=次日收盘上涨；不含费用、滑点、停牌与涨停无法成交约束"
-    },
-    "1135/POOL_B": {
-      "sample_size": 0,
-      "win_rate": null,
-      "average_return": null,
-      "median_return": null,
-      "max_drawdown": null,
-      "next_day_limit_up_rate": null,
-      "top3_hit_rate": null,
-      "top5_hit_rate": null,
-      "definition": "同阶段/同池日等权观察组合；命中=次日收盘上涨；不含费用、滑点、停牌与涨停无法成交约束"
-    },
-    "1135/POOL_C": {
-      "sample_size": 0,
-      "win_rate": null,
-      "average_return": null,
-      "median_return": null,
-      "max_drawdown": null,
-      "next_day_limit_up_rate": null,
-      "top3_hit_rate": null,
-      "top5_hit_rate": null,
-      "definition": "同阶段/同池日等权观察组合；命中=次日收盘上涨；不含费用、滑点、停牌与涨停无法成交约束"
+      "definition": "信号当日上午收盘至当日收盘。同阶段价格观察，不含费用、滑点、停牌及涨停成交约束；不是策略净收益。"
     }
   },
   "source_logs": [],
   "source_success_rate": null,
   "failed_sources": [],
-  "stock_count": 35,
+  "stock_count": 80,
   "sector_count": 5,
   "candidate_count": 35,
-  "dashboard_updated_at": "2026-09-05T19:24:24.383050+08:00",
-  "finished_at": "2026-09-05T19:24:24.383058+08:00",
+  "dashboard_updated_at": "2026-09-10T19:37:18.412325+08:00",
+  "finished_at": "2026-09-10T19:37:18.412333+08:00",
+  "next_scheduled_at": "2026-09-10T22:00:00+08:00",
+  "active_schedule": [
+    {
+      "stage": "0800",
+      "label": "盘前计划",
+      "time": "08:00",
+      "deadline": "09:10"
+    },
+    {
+      "stage": "1200",
+      "label": "午间验证",
+      "time": "12:00",
+      "deadline": "12:45"
+    },
+    {
+      "stage": "2200",
+      "label": "晚间复盘",
+      "time": "22:00",
+      "deadline": "23:59"
+    }
+  ],
   "google_docs": {
     "status": "DEMO_DISABLED"
   }

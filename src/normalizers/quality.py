@@ -21,9 +21,9 @@ def validate_quotes(quotes, as_of, expected_date, config, stage, universe_count=
             reason = 'EXTREME_VALUE_OR_CORPORATE_ACTION'
         elif abs((q.price / q.previous_close - 1) * 100 - q.change_pct) > config['quality']['conflict_price_pct']:
             reason = 'PRICE_CHANGE_CONFLICT'
-        elif stage == '1135' and not time(11, 30) <= timestamp.time() <= time(11, 35):
+        elif stage in ('1135','1200') and not time(11, 30) <= timestamp.time() <= time(11, 35):
             reason = 'NOT_MORNING_CLOSE'
-        elif stage in ('1600', '2130', '0730', '0830') and timestamp.time() < time(15, 0):
+        elif stage in ('1600', '2130', '0730', '0830', '0800', '2200') and timestamp.time() < time(15, 0):
             reason = 'NOT_SESSION_CLOSE'
         if reason:
             rejected.append({'code': q.code, 'reason': reason, 'timestamp': q.timestamp.isoformat()})

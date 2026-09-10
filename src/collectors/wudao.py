@@ -124,7 +124,13 @@ class WudaoResearch:
             raise WudaoError('DATE_MISMATCH')
         stamp = datetime.fromisoformat(data.get('snapshotTime','').replace('Z','+00:00'))
         if stamp.tzinfo is None or stamp>as_of or stamp.astimezone(TZ).date()!=day: raise WudaoError('INVALID_SNAPSHOT_TIME')
-        if stage=='1135' and (as_of-stamp).total_seconds()>self.config.get('intraday_max_age_minutes',20)*60:
+        # During the lunch break an 11:30 morning-close snapshot remains current.
+        age_anchor=as_of
+        if stage=='1200':
+            close=as_of.replace(hour=11,minute=30,second=0,microsecond=0)
+            if not close<=stamp<=as_of: raise WudaoError('NOT_MORNING_CLOSE')
+            age_anchor=min(as_of,close)
+        if stage in ('1135','1200') and (age_anchor-stamp).total_seconds()>self.config.get('intraday_max_age_minutes',20)*60:
             raise WudaoError('STALE_INTRADAY')
         rows = data.get('rows')
         if not isinstance(rows,list) or not rows: raise WudaoError('EMPTY_RANKING')

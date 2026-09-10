@@ -20,6 +20,10 @@ def technical(frame, period=14):
     c = frame.close.astype(float)
     last = float(c.iloc[-1])
     out = {'price': last, 'bars_count': len(frame)}
+    amounts = pd.to_numeric(frame.get('amount', pd.Series(index=frame.index, dtype=float)), errors='coerce')
+    amounts = amounts.where(amounts >= 0)
+    out['amount_history_coverage'] = float(amounts.tail(21).notna().mean())
+    out['amount_history_status'] = 'AVAILABLE' if len(amounts) >= 21 and amounts.tail(21).notna().all() else 'PARTIAL' if amounts.notna().any() else 'UNAVAILABLE'
     for n in [5, 10, 20, 60]:
         ma = c.rolling(n).mean()
         out[f'ma{n}'] = ma.iloc[-1]
@@ -29,9 +33,9 @@ def technical(frame, period=14):
         out[f'return_{n}d'] = (last / c.iloc[-n - 1] - 1) * 100 if len(c) > n else None
     for n in [5, 10, 20]:
         # Baseline excludes current bar to avoid self-dilution.
-        mean = frame.amount.shift(1).rolling(n).mean().iloc[-1]
+        mean = amounts.shift(1).rolling(n).mean().iloc[-1]
         out[f'amount_mean_{n}d'] = mean
-        out[f'amount_ratio_{n}d'] = frame.amount.iloc[-1] / mean if mean > 0 else None
+        out[f'amount_ratio_{n}d'] = amounts.iloc[-1] / mean if mean > 0 else None
     atr = wilder_atr(frame, period).iloc[-1]
     out['atr'] = atr
     out['natr'] = atr / last * 100

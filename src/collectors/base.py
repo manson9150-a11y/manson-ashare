@@ -1,12 +1,17 @@
 from abc import ABC, abstractmethod
 from datetime import datetime
 import time
+import threading
 import httpx
 from tenacity import Retrying, stop_after_attempt, wait_exponential, retry_if_exception
 from src.models import SourceLog
 from src.utils.calendar import TZ
 
 class Unavailable(RuntimeError):
+    pass
+
+class UnsupportedOperation(Unavailable):
+    """An adapter does not supply this dataset; not a failed network source."""
     pass
 
 class Adapter(ABC):
@@ -45,6 +50,7 @@ class Collector:
         self.adapters = sorted(adapters, key=lambda a: a.fallback_priority)
         self.logs = []
         self.failures = {}
+        self._lock = threading.Lock()
     def fetch(self, operation, accept=None, **kwargs):
         errors = []
         for i, adapter in enumerate(self.adapters):
@@ -63,14 +69,22 @@ class Collector:
                 data_time = None
                 if operation == 'quotes' and result:
                     data_time = max(q.timestamp for q in result).isoformat()
-                elif operation == 'history' and not result.empty:
+                elif operation in ('history', 'index_history') and not result.empty:
                     data_time = result.timestamp.max().isoformat()
                 elif operation == 'events' and result:
                     data_time = max(e.publish_time for e in result).isoformat()
+                elif operation in ('limit_pool', 'broken_pool') and result:
+                    data_time = max(row['trade_date'] for row in result)
                 self.logs.append(SourceLog(source_name=adapter.source_name, operation=operation, success=True, fetched_at=datetime.now(TZ).isoformat(), timestamp=data_time, reliability_level=adapter.reliability_level, fallback_priority=adapter.fallback_priority, is_fallback=i > 0, count=len(result)).model_dump())
                 return result
+            except UnsupportedOperation:
+                continue
             except Exception as exc:
-                self.failures[key] = self.failures.get(key, 0) + 1
+                # Per-symbol schema/freshness failures must try the next provider,
+                # but must not disable a healthy endpoint for every other symbol.
+                if isinstance(exc, (httpx.TransportError, httpx.HTTPStatusError)):
+                    with self._lock:
+                        self.failures[key] = self.failures.get(key, 0) + 1
                 # Do not persist response bodies, URLs with credentials, or authentication details.
                 errors.append(adapter.source_name + ':' + type(exc).__name__)
                 status = exc.response.status_code if isinstance(exc, httpx.HTTPStatusError) else None

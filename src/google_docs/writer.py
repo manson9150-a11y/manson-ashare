@@ -9,9 +9,11 @@ STAGES=[('0730','隔夜确认'),('0830','盘前终审'),('1135','午盘确认'),
 
 def marker(day,stage): return f'[MANSON:{day}:{stage}:PENDING]'
 def completed(day,stage): return f'[MANSON:{day}:{stage}:COMPLETE]'
-def skeleton(day):
+ACTIVE_STAGES=[('0800','盘前计划'),('1200','午间验证'),('2200','晚间复盘')]
+
+def skeleton(day, stages=None):
     text=f'\n{day} A股智能分析\n[MANSON:{day}:DAY]\n'
-    for stage,label in STAGES:
+    for stage,label in (stages or STAGES):
         text+=f'\n{stage[:2]}:{stage[2:]} {label}\n{marker(day,stage)}\n'
     return text
 
@@ -52,7 +54,7 @@ class DocsOutbox:
         day,stage=item['date'],item['stage']
         if completed(day,stage) in text:return 'ALREADY_SENT'
         if f'[MANSON:{day}:DAY]' not in text:
-            body=skeleton(day)
+            body=skeleton(day,ACTIVE_STAGES if stage in dict(ACTIVE_STAGES) else STAGES)
             end=doc.get('body',{}).get('content',[{}])[-1].get('endIndex',2)-1
             requests=[{'insertText':{'endOfSegmentLocation':{},'text':body}}]
             offset=end
@@ -61,6 +63,11 @@ class DocsOutbox:
                     requests.append({'updateParagraphStyle':{'range':{'startIndex':offset,'endIndex':offset+len(line.encode('utf-16-le'))//2},'paragraphStyle':{'namedStyleType':'HEADING_1' if 'A股智能分析' in line else 'HEADING_2'},'fields':'namedStyleType'}})
                 offset+=len(line.encode('utf-16-le'))//2
             self.batch(requests,doc['revisionId'])
+            doc=self.get();text=all_text(doc)
+        if marker(day,stage) not in text and stage in dict(ACTIVE_STAGES) and any(marker(day,s) in text or completed(day,s) in text for s,_ in STAGES) and f'[MANSON:{day}:SCHEDULE_V2]' not in text:
+            # Append the new schedule once when a same-day legacy section already exists.
+            addition=f'\n[MANSON:{day}:SCHEDULE_V2]\n'+''.join(f'\n{s[:2]}:{s[2:]} {label}\n{marker(day,s)}\n' for s,label in ACTIVE_STAGES)
+            self.batch([{'insertText':{'endOfSegmentLocation':{},'text':addition}}],doc['revisionId'])
             doc=self.get();text=all_text(doc)
         if marker(day,stage) not in text:
             raise ValueError('stage placeholder removed by editor; manual recovery required')

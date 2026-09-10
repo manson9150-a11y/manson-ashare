@@ -1,21 +1,18 @@
 name: Daily A-share Research
 on:
   schedule:
-    # Cron uses UTC; 07:30 Shanghai is 23:30 the previous UTC day.
-    - cron: '30 23 * * 0-4'
-    - cron: '30 0 * * 1-5'
-    - cron: '35 3 * * 1-5'
-    - cron: '0 8 * * 1-5'
-    - cron: '30 13 * * 1-5'
-    # One authorized weekend session. The CLI also checks the exact year/date.
-    - cron: '30 13 6 9 *'
+    # Target start times in Asia/Shanghai: 08:00, 12:00, 22:00.
+    # The application checks exchange holidays and actual observation cutoffs.
+    - cron: '0 0 * * 1-5'
+    - cron: '0 4 * * 1-5'
+    - cron: '0 14 * * 1-5'
   workflow_dispatch:
     inputs:
       run_stage:
         description: '研究阶段；full_pipeline只执行当前合法时间窗，避免未来数据泄漏'
         type: choice
-        options: ['0730', '0830', '1135', '1600', '2130', full_pipeline]
-        default: '1600'
+        options: ['0800', '1200', '2200', full_pipeline]
+        default: '2200'
 concurrency:
   group: manson-production-data
   cancel-in-progress: false
@@ -44,7 +41,7 @@ jobs:
         env:
           TZ: Asia/Shanghai
           EVENT_SCHEDULE: ${{ github.event.schedule }}
-          RUN_STAGE: ${{ inputs.run_stage || '1600' }}
+          RUN_STAGE: ${{ inputs.run_stage || '2200' }}
           WUDAO_API_KEY: ${{ secrets.WUDAO_API_KEY }}
           GOOGLE_DOC_ID: ${{ secrets.GOOGLE_DOC_ID }}
           GOOGLE_SERVICE_ACCOUNT_JSON: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_JSON }}
@@ -56,7 +53,8 @@ jobs:
         run: |
           git config user.name 'manson-research[bot]'
           git config user.email 'manson-research[bot]@users.noreply.github.com'
-          git add data/bootstrap data/history data/latest data/pending reports dashboard/data/latest.json dashboard/data/run_status.json
+          mkdir -p data/cache
+          git add data/cache data/bootstrap data/history data/latest data/pending reports dashboard/data/latest.json dashboard/data/run_status.json
           if ! git diff --cached --quiet; then
             git commit -m "data: persist scheduled research [skip ci]"
             git pull --rebase origin main

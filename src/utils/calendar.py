@@ -34,3 +34,16 @@ class TradingCalendar:
 
 def stage_time(day, stage, config):
     return datetime.fromisoformat(f"{day}T{config['stages'][stage]['time']}:00").replace(tzinfo=TZ)
+
+def next_scheduled_time(now, calendar, config):
+    """Use the verified exchange calendar, including weekends and holidays."""
+    for offset in range(32):
+        day=now.astimezone(TZ).date()+timedelta(days=offset)
+        try:
+            if not calendar.is_trading_day(day): continue
+        except CalendarUnknown:
+            return None
+        for stage in config.get('active_stages',['0800','1200','2200']):
+            planned=stage_time(day,stage,config)
+            if planned>now: return planned.isoformat()
+    return None
