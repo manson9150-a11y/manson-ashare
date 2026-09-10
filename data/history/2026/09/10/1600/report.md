@@ -1,0 +1,492 @@
+## 16:00 收盘扫描
+
+时间戳：2026-09-10T16:14:07.514630+08:00 ｜ Run ID：befb42ab336b410ab52eb6712ca014b6
+
+模式：真实数据任务
+
+状态：COMPLETE ｜ 数据质量：YELLOW
+
+市场：偏弱 ｜ Market Score：22.41
+行情基准日：2026-09-10；评分口径：BREADTH_MVP。
+
+- 悟道采集未完整成功：MEMBERS_TIME_UNKNOWN,MEMBER_REQUEST_BUDGET；可用数据明确展示，其余沿用原接口，不能声称已覆盖全市场题材。
+
+- 悟道热点按题材强度和行业涨幅展示；系统规则分独立计算。前十题材成分为当前分类，仅用于本次及后续研究。
+
+- 全市场快照经板块过滤，最多250只历史日线；板块多日指标仅覆盖已采集成分。
+
+- 公告列表中60条仅精确到日期：当天记录须在研究截点前已被系统观察才纳入；首次观察时间独立保存，不冒充发布时间。标题分类仍须正文核验。
+
+- 板块成分映射覆盖 52.2%；未映射且无已核验独立事件的股票排除，不能声称完成所有个股的板块分析。
+
+公告观察截点：2026-09-10T16:16:22.891882+08:00；行情截点保持上方时间戳，首次观察不等同于公告发布时间。
+
+### 悟道热点参考
+状态：PARTIAL；行情日期：2026-09-10。原始题材强度不是系统百分制评分。
+
+题材强度榜；快照：2026-09-10T07:05:53.362000+00:00
+|板块|强度|涨跌幅|
+|---|---:|---:|
+|AI应用|2153|-1.19%|
+|ST板块|2041|0.16%|
+|电力|1622|-0.49%|
+|银行|1146|1.47%|
+|海洋经济|897|-1.02%|
+|芯片|885|-1.09%|
+|光伏|746|-0.94%|
+|商业航天|644|-1.00%|
+|通信|562|-0.94%|
+|医疗器械|453|-1.42%|
+
+行业涨幅榜；快照：2026-09-10T07:05:53.362000+00:00
+|板块|强度|涨跌幅|
+|---|---:|---:|
+|船舶|—|2.25%|
+|玻璃|—|1.86%|
+|银行|—|1.51%|
+|商贸代理|—|1.29%|
+|林业|—|1.06%|
+|路桥|—|0.89%|
+|火力发电|—|0.86%|
+|证券|—|0.76%|
+|电信运营|—|0.66%|
+|多元金融|—|0.54%|
+采集缺口：MEMBERS_TIME_UNKNOWN,MEMBER_REQUEST_BUDGET
+本次成分请求 4 次，复用带时间标记的分类缓存 3 个；热点榜仍为本次请求。
+
+### 已覆盖成分规则评分
+
+|板块|类型|分数|状态|历史因子覆盖|
+|---|---|---:|---|---:|
+|船舶制造|industry|85.87|持续强势|100%|
+|金融行业|industry|82.94|持续强势|100%|
+|电力行业|industry|64.97|正在加强|100%|
+|供水供气|industry|57.20|启动观察|100%|
+|飞机制造|industry|56.67|启动观察|100%|
+|玻璃行业|industry|45.76|高位拥挤|11%|
+|电力|concept|39.61|转弱/退潮|25%|
+|陶瓷行业|industry|39.60|转弱/退潮|0%|
+|公路桥梁|industry|39.18|转弱/退潮|0%|
+|环保行业|industry|39.13|转弱/退潮|0%|
+
+### A 连板接力池
+
+|排名|代码 名称|板块|位置|综合分|交易性|主观概率|ATR状态|
+|---:|---|---|---|---:|---:|---|---|
+
+识别涨停线索 35 只，入选 0 只。供应商板数与日线推导板数分别展示；缺少证据不能解释为市场无涨停。
+
+### B 趋势启动池
+
+|排名|代码 名称|板块|位置|综合分|交易性|主观概率|ATR状态|
+|---:|---|---|---|---:|---:|---|---|
+|1|601998 中信银行|金融行业|趋势观察|67.52|67.52|未校准/未输出|正常|
+|2|600830 香溢融通|金融行业|趋势观察|67.27|67.27|未校准/未输出|正常|
+|3|600685 中船防务|船舶制造|趋势观察|66.11|66.11|未校准/未输出|正常|
+|4|601169 北京银行|金融行业|趋势观察|65.87|65.87|未校准/未输出|正常|
+|5|300008 天海防务|船舶制造|趋势观察|65.62|65.62|未校准/未输出|正常|
+|6|600969 郴电国际|电力行业|趋势观察|65.46|65.46|未校准/未输出|正常|
+|7|002142 宁波银行|金融行业|趋势观察|64.85|64.85|未校准/未输出|正常|
+|8|601009 南京银行|金融行业|趋势观察|64.60|64.60|未校准/未输出|正常|
+|9|601601 中国太保|金融行业|趋势观察|64.55|64.55|未校准/未输出|正常|
+|10|601328 交通银行|金融行业|趋势观察|62.87|62.87|未校准/未输出|正常|
+|11|600036 招商银行|金融行业|趋势观察|62.80|62.80|未校准/未输出|正常|
+|12|000728 国元证券|金融行业|趋势观察|62.79|62.79|未校准/未输出|正常|
+|13|600072 中船科技|船舶制造|趋势观察|62.76|62.76|未校准/未输出|正常|
+|14|002608 江苏国信|船舶制造|趋势观察|62.55|62.55|未校准/未输出|正常|
+|15|601555 东吴证券|金融行业|趋势观察|62.28|62.28|未校准/未输出|正常|
+|16|600016 民生银行|金融行业|趋势观察|61.73|61.73|未校准/未输出|正常|
+|17|600643 爱建集团|金融行业|趋势观察|61.34|61.34|未校准/未输出|正常|
+|18|000776 广发证券|金融行业|趋势观察|60.18|60.18|未校准/未输出|正常|
+|19|600000 浦发银行|金融行业|趋势观察|59.96|59.96|未校准/未输出|正常|
+|20|601377 兴业证券|金融行业|趋势观察|59.79|59.79|未校准/未输出|正常|
+|21|601818 光大银行|金融行业|趋势观察|59.50|59.50|未校准/未输出|正常|
+|22|600316 洪都航空|飞机制造|趋势观察|59.23|59.23|未校准/未输出|正常|
+|23|600333 长春燃气|供水供气|趋势观察|57.74|57.74|未校准/未输出|正常|
+|24|600893 航发动力|飞机制造|趋势观察|57.65|57.65|未校准/未输出|正常|
+|25|000690 宝新能源|电力行业|趋势观察|57.59|57.59|未校准/未输出|正常|
+|26|600758 辽宁能源|供水供气|趋势观察|56.62|56.62|未校准/未输出|正常|
+|27|600769 祥龙电业|电力行业|趋势观察|56.41|56.41|未校准/未输出|正常|
+|28|600780 通宝能源|电力行业|趋势观察|56.37|56.37|未校准/未输出|正常|
+|29|000768 中航西飞|飞机制造|趋势观察|56.32|56.32|未校准/未输出|正常|
+|30|002692 远程股份|电力行业|趋势观察|56.26|56.26|未校准/未输出|正常|
+
+#### 601998 中信银行
+- 板数：—；Market/Sector：22.41/82.94；风险：低
+- 5/10/20日：1.71% / 3.12% / 16.12%；MA20距离：4.54%
+- 正因子：MA5>MA10>MA20，趋势与位置满足规则
+- 负因子：独立催化与龙虎榜尚未确认
+- 验证：板块维持扩散，价格守住MA20（8.542），ATR不过热
+- 失效：板块转弱、放量跌破MA20或出现重大风险公告
+
+#### 600830 香溢融通
+- 板数：—；Market/Sector：22.41/82.94；风险：低
+- 5/10/20日：-7.68% / 11.01% / 15.66%；MA20距离：6.68%
+- 正因子：MA5>MA10>MA20，趋势与位置满足规则
+- 负因子：部分公告待人工复核，已核验事实见事件证据
+- 验证：板块维持扩散，价格守住MA20（8.7925），ATR不过热
+- 失效：板块转弱、放量跌破MA20或出现重大风险公告
+
+#### 600685 中船防务
+- 板数：—；Market/Sector：22.41/85.87；风险：低
+- 5/10/20日：10.59% / 11.56% / 11.52%；MA20距离：10.48%
+- 正因子：MA5>MA10>MA20，趋势与位置满足规则
+- 负因子：部分公告待人工复核，已核验事实见事件证据
+- 验证：板块维持扩散，价格守住MA20（26.4565），ATR不过热
+- 失效：板块转弱、放量跌破MA20或出现重大风险公告
+
+#### 601169 北京银行
+- 板数：—；Market/Sector：22.41/82.94；风险：低
+- 5/10/20日：1.81% / 10.81% / 13.03%；MA20距离：7.00%
+- 正因子：MA5>MA10>MA20，趋势与位置满足规则
+- 负因子：独立催化与龙虎榜尚未确认
+- 验证：板块维持扩散，价格守住MA20（5.271），ATR不过热
+- 失效：板块转弱、放量跌破MA20或出现重大风险公告
+
+#### 300008 天海防务
+- 板数：—；Market/Sector：22.41/85.87；风险：低
+- 5/10/20日：7.61% / 9.16% / 10.59%；MA20距离：7.83%
+- 正因子：MA5>MA10>MA20，趋势与位置满足规则
+- 负因子：部分公告待人工复核，已核验事实见事件证据
+- 验证：板块维持扩散，价格守住MA20（6.297），ATR不过热
+- 失效：板块转弱、放量跌破MA20或出现重大风险公告
+
+- 悟道题材归属：海洋经济
+
+#### 600969 郴电国际
+- 板数：—；Market/Sector：22.41/64.97；风险：低
+- 5/10/20日：0.19% / 2.58% / 24.22%；MA20距离：10.88%
+- 正因子：MA5>MA10>MA20，趋势与位置满足规则
+- 负因子：部分公告待人工复核，已核验事实见事件证据
+- 验证：板块维持扩散，价格守住MA20（9.6685），ATR不过热
+- 失效：板块转弱、放量跌破MA20或出现重大风险公告
+
+- 悟道题材归属：电力
+
+#### 002142 宁波银行
+- 板数：—；Market/Sector：22.41/82.94；风险：低
+- 5/10/20日：4.27% / 6.28% / 11.09%；MA20距离：5.79%
+- 正因子：MA5>MA10>MA20，趋势与位置满足规则
+- 负因子：部分公告待人工复核，已核验事实见事件证据
+- 验证：板块维持扩散，价格守住MA20（33.906），ATR不过热
+- 失效：板块转弱、放量跌破MA20或出现重大风险公告
+
+#### 601009 南京银行
+- 板数：—；Market/Sector：22.41/82.94；风险：低
+- 5/10/20日：4.64% / 6.71% / 10.62%；MA20距离：5.37%
+- 正因子：MA5>MA10>MA20，趋势与位置满足规则
+- 负因子：部分公告待人工复核，已核验事实见事件证据
+- 验证：板块维持扩散，价格守住MA20（11.7675），ATR不过热
+- 失效：板块转弱、放量跌破MA20或出现重大风险公告
+
+#### 601601 中国太保
+- 板数：—；Market/Sector：22.41/82.94；风险：低
+- 5/10/20日：-1.20% / 5.09% / 10.52%；MA20距离：5.24%
+- 正因子：MA5>MA10>MA20，趋势与位置满足规则
+- 负因子：独立催化与龙虎榜尚未确认
+- 验证：板块维持扩散，价格守住MA20（31.954500000000003），ATR不过热
+- 失效：板块转弱、放量跌破MA20或出现重大风险公告
+
+#### 601328 交通银行
+- 板数：—；Market/Sector：22.41/82.94；风险：低
+- 5/10/20日：1.64% / 5.23% / 7.36%；MA20距离：3.35%
+- 正因子：MA5>MA10>MA20，趋势与位置满足规则
+- 负因子：部分公告待人工复核，已核验事实见事件证据
+- 验证：板块维持扩散，价格守住MA20（7.1985），ATR不过热
+- 失效：板块转弱、放量跌破MA20或出现重大风险公告
+
+#### 600036 招商银行
+- 板数：—；Market/Sector：22.41/82.94；风险：低
+- 5/10/20日：1.22% / 5.03% / 7.22%；MA20距离：4.08%
+- 正因子：MA5>MA10>MA20，趋势与位置满足规则
+- 负因子：部分公告待人工复核，已核验事实见事件证据
+- 验证：板块维持扩散，价格守住MA20（39.940999999999995），ATR不过热
+- 失效：板块转弱、放量跌破MA20或出现重大风险公告
+
+#### 000728 国元证券
+- 板数：—；Market/Sector：22.41/82.94；风险：低
+- 5/10/20日：0.91% / 0.39% / 7.19%；MA20距离：3.54%
+- 正因子：MA5>MA10>MA20，趋势与位置满足规则
+- 负因子：部分公告待人工复核，已核验事实见事件证据
+- 验证：板块维持扩散，价格守住MA20（7.484999999999999），ATR不过热
+- 失效：板块转弱、放量跌破MA20或出现重大风险公告
+
+#### 600072 中船科技
+- 板数：—；Market/Sector：22.41/85.87；风险：低
+- 5/10/20日：6.14% / 5.06% / 5.18%；MA20距离：5.45%
+- 正因子：MA5>MA10>MA20，趋势与位置满足规则
+- 负因子：部分公告待人工复核，已核验事实见事件证据
+- 验证：板块维持扩散，价格守住MA20（8.857000000000001），ATR不过热
+- 失效：板块转弱、放量跌破MA20或出现重大风险公告
+
+#### 002608 江苏国信
+- 板数：—；Market/Sector：22.41/85.87；风险：低
+- 5/10/20日：6.69% / 7.90% / 4.79%；MA20距离：6.34%
+- 正因子：MA5>MA10>MA20，趋势与位置满足规则
+- 负因子：独立催化与龙虎榜尚未确认
+- 验证：板块维持扩散，价格守住MA20（7.194），ATR不过热
+- 失效：板块转弱、放量跌破MA20或出现重大风险公告
+
+- 悟道题材归属：电力
+
+#### 601555 东吴证券
+- 板数：—；Market/Sector：22.41/82.94；风险：低
+- 5/10/20日：0.83% / 4.66% / 6.23%；MA20距离：4.04%
+- 正因子：MA5>MA10>MA20，趋势与位置满足规则
+- 负因子：部分公告待人工复核，已核验事实见事件证据
+- 验证：板块维持扩散，价格守住MA20（8.1985），ATR不过热
+- 失效：板块转弱、放量跌破MA20或出现重大风险公告
+
+#### 600016 民生银行
+- 板数：—；Market/Sector：22.41/82.94；风险：低
+- 5/10/20日：1.67% / 6.10% / 5.19%；MA20距离：3.59%
+- 正因子：MA5>MA10>MA20，趋势与位置满足规则
+- 负因子：部分公告待人工复核，已核验事实见事件证据
+- 验证：板块维持扩散，价格守住MA20（3.5235000000000007），ATR不过热
+- 失效：板块转弱、放量跌破MA20或出现重大风险公告
+
+#### 600643 爱建集团
+- 板数：—；Market/Sector：22.41/82.94；风险：低
+- 5/10/20日：1.45% / 1.69% / 4.47%；MA20距离：3.47%
+- 正因子：MA5>MA10>MA20，趋势与位置满足规则
+- 负因子：独立催化与龙虎榜尚未确认
+- 验证：板块维持扩散，价格守住MA20（4.069000000000001），ATR不过热
+- 失效：板块转弱、放量跌破MA20或出现重大风险公告
+
+#### 000776 广发证券
+- 板数：—；Market/Sector：22.41/82.94；风险：低
+- 5/10/20日：-1.94% / 0.60% / 2.26%；MA20距离：2.00%
+- 正因子：MA5>MA10>MA20，趋势与位置满足规则
+- 负因子：部分公告待人工复核，已核验事实见事件证据
+- 验证：板块维持扩散，价格守住MA20（21.2935），ATR不过热
+- 失效：板块转弱、放量跌破MA20或出现重大风险公告
+
+#### 600000 浦发银行
+- 板数：—；Market/Sector：22.41/82.94；风险：低
+- 5/10/20日：0.86% / 3.09% / 1.85%；MA20距离：1.90%
+- 正因子：MA5>MA10>MA20，趋势与位置满足规则
+- 负因子：独立催化与龙虎榜尚未确认
+- 验证：板块维持扩散，价格守住MA20（9.1755），ATR不过热
+- 失效：板块转弱、放量跌破MA20或出现重大风险公告
+
+#### 601377 兴业证券
+- 板数：—；Market/Sector：22.41/82.94；风险：低
+- 5/10/20日：0.84% / 0.34% / 1.53%；MA20距离：1.50%
+- 正因子：MA5>MA10>MA20，趋势与位置满足规则
+- 负因子：独立催化与龙虎榜尚未确认
+- 验证：板块维持扩散，价格守住MA20（5.8815），ATR不过热
+- 失效：板块转弱、放量跌破MA20或出现重大风险公告
+
+#### 601818 光大银行
+- 板数：—；Market/Sector：22.41/82.94；风险：低
+- 5/10/20日：-0.33% / 0.33% / 0.99%；MA20距离：0.66%
+- 正因子：MA5>MA10>MA20，趋势与位置满足规则
+- 负因子：独立催化与龙虎榜尚未确认
+- 验证：板块维持扩散，价格守住MA20（3.0300000000000002），ATR不过热
+- 失效：板块转弱、放量跌破MA20或出现重大风险公告
+
+#### 600316 洪都航空
+- 板数：—；Market/Sector：22.41/56.67；风险：低
+- 5/10/20日：5.88% / 15.84% / 17.98%；MA20距离：10.94%
+- 正因子：MA5>MA10>MA20，趋势与位置满足规则
+- 负因子：部分公告待人工复核，已核验事实见事件证据
+- 验证：板块维持扩散，价格守住MA20（30.520999999999997），ATR不过热
+- 失效：板块转弱、放量跌破MA20或出现重大风险公告
+
+#### 600333 长春燃气
+- 板数：—；Market/Sector：22.41/57.20；风险：低
+- 5/10/20日：5.94% / 13.72% / 14.81%；MA20距离：8.51%
+- 正因子：MA5>MA10>MA20，趋势与位置满足规则
+- 负因子：独立催化与龙虎榜尚未确认
+- 验证：板块维持扩散，价格守住MA20（6.571），ATR不过热
+- 失效：板块转弱、放量跌破MA20或出现重大风险公告
+
+#### 600893 航发动力
+- 板数：—；Market/Sector：22.41/56.67；风险：低
+- 5/10/20日：6.51% / 10.93% / 15.00%；MA20距离：9.37%
+- 正因子：MA5>MA10>MA20，趋势与位置满足规则
+- 负因子：部分公告待人工复核，已核验事实见事件证据
+- 验证：板块维持扩散，价格守住MA20（38.1375），ATR不过热
+- 失效：板块转弱、放量跌破MA20或出现重大风险公告
+
+#### 000690 宝新能源
+- 板数：—；Market/Sector：22.41/64.97；风险：低
+- 5/10/20日：7.13% / 7.13% / 9.36%；MA20距离：6.94%
+- 正因子：MA5>MA10>MA20，趋势与位置满足规则
+- 负因子：部分公告待人工复核，已核验事实见事件证据
+- 验证：板块维持扩散，价格守住MA20（4.9185），ATR不过热
+- 失效：板块转弱、放量跌破MA20或出现重大风险公告
+
+- 悟道题材归属：电力、国产芯片概念
+
+#### 600758 辽宁能源
+- 板数：—；Market/Sector：22.41/57.20；风险：低
+- 5/10/20日：9.92% / 11.76% / 12.71%；MA20距离：10.48%
+- 正因子：MA5>MA10>MA20，趋势与位置满足规则
+- 负因子：独立催化与龙虎榜尚未确认
+- 验证：板块维持扩散，价格守住MA20（3.6115000000000004），ATR不过热
+- 失效：板块转弱、放量跌破MA20或出现重大风险公告
+
+- 悟道题材归属：电力
+
+#### 600769 祥龙电业
+- 板数：—；Market/Sector：22.41/64.97；风险：低
+- 5/10/20日：4.28% / 6.56% / 7.13%；MA20距离：3.71%
+- 正因子：MA5>MA10>MA20，趋势与位置满足规则
+- 负因子：独立催化与龙虎榜尚未确认
+- 验证：板块维持扩散，价格守住MA20（15.505500000000001），ATR不过热
+- 失效：板块转弱、放量跌破MA20或出现重大风险公告
+
+#### 600780 通宝能源
+- 板数：—；Market/Sector：22.41/64.97；风险：低
+- 5/10/20日：1.43% / 7.95% / 7.05%；MA20距离：5.23%
+- 正因子：MA5>MA10>MA20，趋势与位置满足规则
+- 负因子：独立催化与龙虎榜尚未确认
+- 验证：板块维持扩散，价格守住MA20（6.063000000000001），ATR不过热
+- 失效：板块转弱、放量跌破MA20或出现重大风险公告
+
+- 悟道题材归属：电力
+
+#### 000768 中航西飞
+- 板数：—；Market/Sector：22.41/56.67；风险：低
+- 5/10/20日：2.00% / 10.85% / 12.49%；MA20距离：6.49%
+- 正因子：MA5>MA10>MA20，趋势与位置满足规则
+- 负因子：部分公告待人工复核，已核验事实见事件证据
+- 验证：板块维持扩散，价格守住MA20（22.067），ATR不过热
+- 失效：板块转弱、放量跌破MA20或出现重大风险公告
+
+#### 002692 远程股份
+- 板数：—；Market/Sector：22.41/64.97；风险：低
+- 5/10/20日：6.59% / 5.84% / 6.84%；MA20距离：5.87%
+- 正因子：MA5>MA10>MA20，趋势与位置满足规则
+- 负因子：独立催化与龙虎榜尚未确认
+- 验证：板块维持扩散，价格守住MA20（4.279），ATR不过热
+- 失效：板块转弱、放量跌破MA20或出现重大风险公告
+
+### C 独立催化池
+
+|排名|代码 名称|板块|位置|综合分|交易性|主观概率|ATR状态|
+|---:|---|---|---|---:|---:|---|---|
+
+限定公告扫描：发现 30 条，正文读取 3 份，已核验事件 1 条，入选 0 只。支持重大已签合同及正向业绩预告的明确量化事实；其他类型或歧义留待人工复核。
+
+### 公告与风险线索（逐条标注核验状态）
+- 920522 · 关于参加2026年河北辖区上市公司投资者网上集体接待日暨2026年半年报集体业绩说明会预告公告 · 2026-09-10（仅日期） · cninfo_announcements · https://www.cninfo.com.cn/new/disclosure/detail?stockCode=920522&announcementId=1225556880&orgId=gfbj0832522&announcementTime=2026-09-10 · 待核验
+- 000728 · 国元证券股份有限公司关于参加2026年安徽上市公司投资者网上集体接待日活动的公告 · 2026-09-10（仅日期） · cninfo_announcements · https://www.cninfo.com.cn/new/disclosure/detail?stockCode=000728&announcementId=1225555630&orgId=gssz0000728&announcementTime=2026-09-10 · 待核验
+- 000728 · 国元证券股份有限公司董事和高级管理人员管理办法 · 2026-09-10（仅日期） · cninfo_announcements · https://www.cninfo.com.cn/new/disclosure/detail?stockCode=000728&announcementId=1225555629&orgId=gssz0000728&announcementTime=2026-09-10 · 待核验
+- 000728 · 北京市天元律师事务所关于国元证券股份有限公司2026年第一次临时股东会的法律意见 · 2026-09-10（仅日期） · cninfo_announcements · https://www.cninfo.com.cn/new/disclosure/detail?stockCode=000728&announcementId=1225555628&orgId=gssz0000728&announcementTime=2026-09-10 · 待核验
+- 000728 · 国元证券股份有限公司2026年第一次临时股东会决议公告 · 2026-09-10（仅日期） · cninfo_announcements · https://www.cninfo.com.cn/new/disclosure/detail?stockCode=000728&announcementId=1225555627&orgId=gssz0000728&announcementTime=2026-09-10 · 待核验
+- 000690 · 关于参加2026年广东辖区投资者集体接待日暨辖区上市公司中报业绩说明会活动的公告 · 2026-09-10（仅日期） · cninfo_announcements · https://www.cninfo.com.cn/new/disclosure/detail?stockCode=000690&announcementId=1225555509&orgId=gssz0000690&announcementTime=2026-09-10 · 待核验
+- 300265 · 重大合同中标进展公告 · 2026-09-09T15:46:29+08:00 · cninfo_announcements · https://www.cninfo.com.cn/new/disclosure/detail?stockCode=300265&announcementId=1225554809&orgId=9900020970&announcementTime=2026-09-09 · 待核验
+  - 正文证据：CONTRACT_NOT_CONFIRMED；
+- 002498 · 公司关于重大经营合同中标的提示性公告 · 2026-09-09（仅日期） · cninfo_announcements · https://www.cninfo.com.cn/new/disclosure/detail?stockCode=002498&announcementId=1225552964&orgId=9900015674&announcementTime=2026-09-09 · 待核验
+  - 正文证据：CONTRACT_NOT_CONFIRMED；
+- 920871 · 关于参加2026年广东辖区投资者集体接待日暨辖区上市公司中报业绩说明会预告公告 · 2026-09-09（仅日期） · cninfo_announcements · https://www.cninfo.com.cn/new/disclosure/detail?stockCode=920871&announcementId=1225555716&orgId=gfbj0836871&announcementTime=2026-09-09 · 待核验
+- 920925 · 关于参加 2026 年广东辖区投资者集体接待日暨辖区上市公司中报业绩说明会预告公告 · 2026-09-09（仅日期） · cninfo_announcements · https://www.cninfo.com.cn/new/disclosure/detail?stockCode=920925&announcementId=1225555263&orgId=gfbj0872925&announcementTime=2026-09-09 · 待核验
+- 920080 · 关于参加2026年广东上市公司投资者集体接待日暨半年报业绩说明会预告公告 · 2026-09-09（仅日期） · cninfo_announcements · https://www.cninfo.com.cn/new/disclosure/detail?stockCode=920080&announcementId=1225556333&orgId=gfbj0833340&announcementTime=2026-09-09 · 待核验
+- 920892 · 关于参加2026广东上市公司投资者集体接待日暨半年报业绩说明会预告公告 · 2026-09-09（仅日期） · cninfo_announcements · https://www.cninfo.com.cn/new/disclosure/detail?stockCode=920892&announcementId=1225555498&orgId=gfbj0836892&announcementTime=2026-09-09 · 待核验
+- 600088 · 中视传媒股份有限公司关于参加2026年上海辖区上市公司集体接待日暨中报业绩说明会的预告公告 · 2026-09-09（仅日期） · cninfo_announcements · https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600088&announcementId=1225552787&orgId=gssh0600088&announcementTime=2026-09-09 · 待核验
+- 603687 · 浙江大胜达包装股份有限公司2026年半年度业绩说明会预告公告 · 2026-09-09（仅日期） · cninfo_announcements · https://www.cninfo.com.cn/new/disclosure/detail?stockCode=603687&announcementId=1225552794&orgId=9900036561&announcementTime=2026-09-09 · 待核验
+- 920124 · 关于参与2026年广东上市公司投资者集体接待日暨半年报业绩说明会预告公告 · 2026-09-09（仅日期） · cninfo_announcements · https://www.cninfo.com.cn/new/disclosure/detail?stockCode=920124&announcementId=1225555715&orgId=gfbj0838401&announcementTime=2026-09-09 · 待核验
+- 920523 · 关于参加2026年广东辖区上市公司投资者集体接待日暨半年报业绩说明会预告公告 · 2026-09-09（仅日期） · cninfo_announcements · https://www.cninfo.com.cn/new/disclosure/detail?stockCode=920523&announcementId=1225555900&orgId=gfbj0833523&announcementTime=2026-09-09 · 待核验
+- 601577 · 长沙银行股份有限公司2026年半年度业绩说明会预告公告 · 2026-09-09（仅日期） · cninfo_announcements · https://www.cninfo.com.cn/new/disclosure/detail?stockCode=601577&announcementId=1225553004&orgId=9900021960&announcementTime=2026-09-09 · 待核验
+- 920178 · 关于参加2026年广东辖区投资者集体接待日暨辖区上市公司中报业绩说明会预告公告 · 2026-09-09（仅日期） · cninfo_announcements · https://www.cninfo.com.cn/new/disclosure/detail?stockCode=920178&announcementId=1225555134&orgId=gfbj0874580&announcementTime=2026-09-09 · 待核验
+- 920001 · 关于参加2026年广东辖区投资者集体接待日暨辖区上市公司中报业绩说明会预告公告 · 2026-09-09（仅日期） · cninfo_announcements · https://www.cninfo.com.cn/new/disclosure/detail?stockCode=920001&announcementId=1225555506&orgId=9900037542&announcementTime=2026-09-09 · 待核验
+- 920693 · 关于参加2026年上海辖区上市公司集体接待日暨中报业绩说明会预告公告 · 2026-09-09（仅日期） · cninfo_announcements · https://www.cninfo.com.cn/new/disclosure/detail?stockCode=920693&announcementId=1225556326&orgId=nssc1000029&announcementTime=2026-09-09 · 待核验
+- 920375 · 关于参加2026年广东辖区投资者集体接待日暨辖区上市公司中报业绩说明会预告公告 · 2026-09-09（仅日期） · cninfo_announcements · https://www.cninfo.com.cn/new/disclosure/detail?stockCode=920375&announcementId=1225556330&orgId=gfbj0831175&announcementTime=2026-09-09 · 待核验
+- 920768 · 关于参加2026年广东辖区投资者集体接待日暨半年报业绩说明会预告公告 · 2026-09-09（仅日期） · cninfo_announcements · https://www.cninfo.com.cn/new/disclosure/detail?stockCode=920768&announcementId=1225556139&orgId=gfbj0831768&announcementTime=2026-09-09 · 待核验
+- 920926 · 关于参加2026年广东辖区投资者集体接待日暨辖区上市公司半年报业绩说明会预告公告 · 2026-09-09（仅日期） · cninfo_announcements · https://www.cninfo.com.cn/new/disclosure/detail?stockCode=920926&announcementId=1225555947&orgId=gfbj0870726&announcementTime=2026-09-09 · 待核验
+- 603012 · 创力集团2026年半年度业绩说明会预告公告 · 2026-09-09（仅日期） · cninfo_announcements · https://www.cninfo.com.cn/new/disclosure/detail?stockCode=603012&announcementId=1225553065&orgId=9900023710&announcementTime=2026-09-09 · 待核验
+- 920083 · 关于参加2026年广东辖区投资者集体接待日暨辖区上市公司中报业绩说明会预告公告 · 2026-09-09（仅日期） · cninfo_announcements · https://www.cninfo.com.cn/new/disclosure/detail?stockCode=920083&announcementId=1225555315&orgId=gfbj0873524&announcementTime=2026-09-09 · 待核验
+- 920556 · 关于参加2026年广东辖区投资者集体接待日暨辖区上市公司中报业绩说明会预告公告 · 2026-09-09（仅日期） · cninfo_announcements · https://www.cninfo.com.cn/new/disclosure/detail?stockCode=920556&announcementId=1225555002&orgId=9900023057&announcementTime=2026-09-09 · 待核验
+- 600969 · 郴电国际2026年第二次临时股东会法律意见书 · 2026-09-09（仅日期） · cninfo_announcements · https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600969&announcementId=1225553536&orgId=gssh0600969&announcementTime=2026-09-09 · 待核验
+- 600969 · 郴电国际2026年第二次临时股东会决议公告 · 2026-09-09（仅日期） · cninfo_announcements · https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600969&announcementId=1225553533&orgId=gssh0600969&announcementTime=2026-09-09 · 待核验
+- 600969 · 郴电国际关于召开2026年半年度业绩说明会的公告 · 2026-09-09（仅日期） · cninfo_announcements · https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600969&announcementId=1225553526&orgId=gssh0600969&announcementTime=2026-09-09 · 待核验
+- 600969 · 郴电国际累积投票制实施细则（经2026年第二次临时股东会审议通过） · 2026-09-09（仅日期） · cninfo_announcements · https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600969&announcementId=1225553521&orgId=gssh0600969&announcementTime=2026-09-09 · 待核验
+- 601009 · 南京银行股份有限公司关于优先股全部赎回及摘牌完成的公告 · 2026-09-09（仅日期） · cninfo_announcements · https://www.cninfo.com.cn/new/disclosure/detail?stockCode=601009&announcementId=1225553728&orgId=9900003284&announcementTime=2026-09-09 · 待核验
+- 601009 · 南京银行股份有限公司第十届董事会第二十二次会议决议公告 · 2026-09-09（仅日期） · cninfo_announcements · https://www.cninfo.com.cn/new/disclosure/detail?stockCode=601009&announcementId=1225553725&orgId=9900003284&announcementTime=2026-09-09 · 待核验
+- 600036 · 招商银行股份有限公司关于独立董事任职资格核准及董事会专门委员会成员调整的公告 · 2026-09-09（仅日期） · cninfo_announcements · https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600036&announcementId=1225554309&orgId=gssh0600036&announcementTime=2026-09-09 · 待核验
+- 000776 · 国泰海通证券股份有限公司关于广发证券股份有限公司涉及修订信息披露事务管理制度事项的临时受托管理事务报告 · 2026-09-08T19:16:07+08:00 · cninfo_announcements · https://www.cninfo.com.cn/new/disclosure/detail?stockCode=000776&announcementId=1225553050&orgId=gssz0000776&announcementTime=2026-09-08 · 待核验
+- 000776 · 招商证券股份有限公司关于广发证券股份有限公司2026年第一次临时受托管理事务报告 · 2026-09-08T19:16:07+08:00 · cninfo_announcements · https://www.cninfo.com.cn/new/disclosure/detail?stockCode=000776&announcementId=1225553025&orgId=gssz0000776&announcementTime=2026-09-08 · 待核验
+- 000776 · 东方证券股份有限公司关于广发证券股份有限公司2026年第二次临时受托管理事务报告 · 2026-09-08T19:15:16+08:00 · cninfo_announcements · https://www.cninfo.com.cn/new/disclosure/detail?stockCode=000776&announcementId=1225553077&orgId=gssz0000776&announcementTime=2026-09-08 · 待核验
+- 000776 · 华泰联合证券有限责任公司关于广发证券股份有限公司修订信息披露事务管理制度的临时受托管理事务报告 · 2026-09-08T19:15:16+08:00 · cninfo_announcements · https://www.cninfo.com.cn/new/disclosure/detail?stockCode=000776&announcementId=1225553043&orgId=gssz0000776&announcementTime=2026-09-08 · 待核验
+- 000776 · 平安证券股份有限公司关于广发证券股份有限公司修订《信息披露事务管理制度》的临时受托管理事务报告 · 2026-09-08T19:15:16+08:00 · cninfo_announcements · https://www.cninfo.com.cn/new/disclosure/detail?stockCode=000776&announcementId=1225553031&orgId=gssz0000776&announcementTime=2026-09-08 · 待核验
+- 688420 · 天津美腾科技股份有限公司关于控股子公司签订日常经营重大合同的公告 · 2026-09-08（仅日期） · cninfo_announcements · https://www.cninfo.com.cn/new/disclosure/detail?stockCode=688420&announcementId=1225550689&orgId=nssc1000863&announcementTime=2026-09-08 · 待核验
+  - 正文证据：CONTRACT_NOT_CONFIRMED；
+- 920110 · 关于参加2026年广东辖区上市公司投资者集体接待日暨半年报业绩说明会预告公告 · 2026-09-08（仅日期） · cninfo_announcements · https://www.cninfo.com.cn/new/disclosure/detail?stockCode=920110&announcementId=1225553484&orgId=gfbj0832110&announcementTime=2026-09-08 · 待核验
+- 920275 · 关于参加2026年广东辖区投资者集体接待日暨辖区上市公司中报业绩说明会预告公告 · 2026-09-08（仅日期） · cninfo_announcements · https://www.cninfo.com.cn/new/disclosure/detail?stockCode=920275&announcementId=1225553323&orgId=9900033375&announcementTime=2026-09-08 · 待核验
+- 920471 · 关于参加2026年河北辖区上市公司投资者网上集体接待日暨2026年半年报集体业绩说明会预告公告 · 2026-09-08（仅日期） · cninfo_announcements · https://www.cninfo.com.cn/new/disclosure/detail?stockCode=920471&announcementId=1225553490&orgId=gfbj0832471&announcementTime=2026-09-08 · 待核验
+- 920781 · 关于参加四川辖区2026年投资者网上集体接待日及半年度报告业绩说明会预告公告 · 2026-09-08（仅日期） · cninfo_announcements · https://www.cninfo.com.cn/new/disclosure/detail?stockCode=920781&announcementId=1225553170&orgId=gfbj0833781&announcementTime=2026-09-08 · 待核验
+- 300008 · 关于部分限售股份上市流通的提示性公告 · 2026-09-08（仅日期） · cninfo_announcements · https://www.cninfo.com.cn/new/disclosure/detail?stockCode=300008&announcementId=1225551359&orgId=9900008271&announcementTime=2026-09-08 · 待核验
+- 300008 · 关于对全资子公司增资的进展公告 · 2026-09-08（仅日期） · cninfo_announcements · https://www.cninfo.com.cn/new/disclosure/detail?stockCode=300008&announcementId=1225551120&orgId=9900008271&announcementTime=2026-09-08 · 待核验
+- 002142 · 北京大成（宁波）律师事务所关于宁波银行股份有限公司2026年第二次临时股东会的法律意见书 · 2026-09-08（仅日期） · cninfo_announcements · https://www.cninfo.com.cn/new/disclosure/detail?stockCode=002142&announcementId=1225551596&orgId=9900003281&announcementTime=2026-09-08 · 待核验
+- 002142 · 宁波银行股份有限公司2026年第二次临时股东会决议公告 · 2026-09-08（仅日期） · cninfo_announcements · https://www.cninfo.com.cn/new/disclosure/detail?stockCode=002142&announcementId=1225551595&orgId=9900003281&announcementTime=2026-09-08 · 待核验
+- 600036 · 招商银行股份有限公司关于高级管理人员离任的公告 · 2026-09-08（仅日期） · cninfo_announcements · https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600036&announcementId=1225552023&orgId=gssh0600036&announcementTime=2026-09-08 · 待核验
+- 600016 · 中国民生银行2026年半年度A股权益分派实施公告 · 2026-09-08（仅日期） · cninfo_announcements · https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600016&announcementId=1225551719&orgId=gssh0600016&announcementTime=2026-09-08 · 待核验
+- 600316 · 江西洪都航空工业股份有限公司关于召开2026年半年度业绩说明会的公告 · 2026-09-08（仅日期） · cninfo_announcements · https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600316&announcementId=1225550520&orgId=gssh0600316&announcementTime=2026-09-08 · 待核验
+- 000768 · 第九届董事会第二十二次会议决议公告 · 2026-09-08（仅日期） · cninfo_announcements · https://www.cninfo.com.cn/new/disclosure/detail?stockCode=000768&announcementId=1225551951&orgId=gssz0000768&announcementTime=2026-09-08 · 待核验
+- 301085 · 关于下属公司签订日常经营重大合同的公告 · 2026-09-07T17:48:10+08:00 · cninfo_announcements · https://www.cninfo.com.cn/new/disclosure/detail?stockCode=301085&announcementId=1225551464&orgId=nssc1000370&announcementTime=2026-09-07 · 已核验
+  - 正文证据：合同含税金额为118,841.88万元；规则分70：已签署生效的销售合同总额至少10亿元。含税总额不等于当期收入或利润，营收占比未核验，长期履约存在风险。
+- 920866 · 关于参加2026年广东辖区投资者集体接待日暨辖区上市公司中报业绩说明会预告公告 · 2026-09-07（仅日期） · cninfo_announcements · https://www.cninfo.com.cn/new/disclosure/detail?stockCode=920866&announcementId=1225551437&orgId=gfbj0870866&announcementTime=2026-09-07 · 待核验
+- 920247 · 关于参加2026年河北辖区上市公司投资者网上集体接待日暨2026年半年报集体业绩说明会预告公告 · 2026-09-07（仅日期） · cninfo_announcements · https://www.cninfo.com.cn/new/disclosure/detail?stockCode=920247&announcementId=1225551172&orgId=gfbj0836247&announcementTime=2026-09-07 · 待核验
+- 920729 · 关于参加2026年广东辖区投资者集体接待日暨辖区上市公司中报业绩说明会预告公告 · 2026-09-07（仅日期） · cninfo_announcements · https://www.cninfo.com.cn/new/disclosure/detail?stockCode=920729&announcementId=1225551868&orgId=gfbj0839729&announcementTime=2026-09-07 · 待核验
+- 600685 · 中船防务关于召开2026年半年度业绩说明会的公告 · 2026-09-05（仅日期） · cninfo_announcements · https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600685&announcementId=1225548850&orgId=gssh0600685&announcementTime=2026-09-05 · 待核验
+- 600072 · 中船科技股份有限公司关于董事辞职的公告 · 2026-09-05（仅日期） · cninfo_announcements · https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600072&announcementId=1225547763&orgId=gssh0600072&announcementTime=2026-09-05 · 待核验
+- 600316 · 江西洪都航空工业股份有限公司2026年第二次临时股东会会议材料 · 2026-09-05（仅日期） · cninfo_announcements · https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600316&announcementId=1225547722&orgId=gssh0600316&announcementTime=2026-09-05 · 待核验
+- 300008 · 关于对外投资设立参股公司的进展及全资子公司设立子公司的公告 · 2026-09-04（仅日期） · cninfo_announcements · https://www.cninfo.com.cn/new/disclosure/detail?stockCode=300008&announcementId=1225546720&orgId=9900008271&announcementTime=2026-09-04 · 待核验
+- 601555 · 东吴证券股份有限公司关于召开2026年半年度业绩说明会的公告 · 2026-09-04（仅日期） · cninfo_announcements · https://www.cninfo.com.cn/new/disclosure/detail?stockCode=601555&announcementId=1225545512&orgId=qsgn0000325&announcementTime=2026-09-04 · 待核验
+- 600893 · 中国航发动力股份有限公司2026年第三次临时股东会会议材料 · 2026-09-04（仅日期） · cninfo_announcements · https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600893&announcementId=1225546574&orgId=gssh0600893&announcementTime=2026-09-04 · 待核验
+- 600830 · 香溢融通股票交易异常波动公告 · 2026-09-03（仅日期） · cninfo_announcements · https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600830&announcementId=1225545071&orgId=gssh0600830&announcementTime=2026-09-03 · 待核验
+- 600685 · 中船防务H股公告_股份发行人的证券变动月报表 · 2026-09-03（仅日期） · cninfo_announcements · https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600685&announcementId=1225543917&orgId=gssh0600685&announcementTime=2026-09-03 · 待核验
+- 601328 · 交通银行关于调整境内优先股票面股息率的公告 · 2026-09-03（仅日期） · cninfo_announcements · https://www.cninfo.com.cn/new/disclosure/detail?stockCode=601328&announcementId=1225544702&orgId=9900002841&announcementTime=2026-09-03 · 待核验
+- 601328 · 交通银行H股公告 · 2026-09-03（仅日期） · cninfo_announcements · https://www.cninfo.com.cn/new/disclosure/detail?stockCode=601328&announcementId=1225544166&orgId=9900002841&announcementTime=2026-09-03 · 待核验
+- 601555 · 东吴证券股份有限公司关于证券投资基金托管资格获批的公告 · 2026-09-03（仅日期） · cninfo_announcements · https://www.cninfo.com.cn/new/disclosure/detail?stockCode=601555&announcementId=1225544364&orgId=qsgn0000325&announcementTime=2026-09-03 · 待核验
+- 000776 · 关于持股5%以上股东2026年非公开发行可交换公司债券（第一期）发行完成的公告 · 2026-09-03（仅日期） · cninfo_announcements · https://www.cninfo.com.cn/new/disclosure/detail?stockCode=000776&announcementId=1225543744&orgId=gssz0000776&announcementTime=2026-09-03 · 待核验
+
+### 数据缺口
+
+炸板率、昨日涨停溢价、首板/连板梯队、1进2/2进3/3进4晋级率、最高板高度/梯队完整度、成交额相对5/10/20日均值、指数5/10/20日趋势、高位股亏钱效应、短线情绪周期、主力资金、外部市场、全市场涨跌停价覆盖、龙虎榜席位归因、未覆盖类型公告正文人工复核、历史复权事件校验、板块全部成分多日因子、消息发布前后因果验证
+
+### 淘汰记录
+- 920268：HISTORY_ValueError
+- 688808：板块未通过第二层筛选
+- 688498：板块未通过第二层筛选
+- 600519：板块未通过第二层筛选
+- 688256：板块未通过第二层筛选
+- 300308：板块未通过第二层筛选
+- 688826：板块未通过第二层筛选
+- 002371：板块未通过第二层筛选
+- 300757：板块未通过第二层筛选
+- 688072：板块未通过第二层筛选
+- 920045：板块未通过第二层筛选
+- 688809：板块未通过第二层筛选
+- 688836：板块未通过第二层筛选
+- 688802：板块未通过第二层筛选
+- 688627：板块未通过第二层筛选
+- 601869：板块未通过第二层筛选
+- 001309：板块未通过第二层筛选
+- 300502：板块未通过第二层筛选
+- 688630：板块未通过第二层筛选
+- 688025：板块未通过第二层筛选
+- 688502：板块未通过第二层筛选
+- 688766：板块未通过第二层筛选
+- 002916：板块未通过第二层筛选
+- 301377：板块未通过第二层筛选
+- 301666：板块未通过第二层筛选
+- 603444：板块未通过第二层筛选
+- 603986：板块未通过第二层筛选
+- 688795：板块未通过第二层筛选
+- 688200：板块未通过第二层筛选
+- 688807：板块未通过第二层筛选
+- 688027：板块未通过第二层筛选
+- 301308：板块未通过第二层筛选
+- 300750：板块未通过第二层筛选
+- 688012：板块未通过第二层筛选
+- 688037：板块未通过第二层筛选
+- 301717：板块未通过第二层筛选
+- 603061：板块未通过第二层筛选
+- 688167：板块未通过第二层筛选
+- 688519：板块未通过第二层筛选
+- 688361：板块未通过第二层筛选
+
+这是规则研究记录。评分和主观概率不是收益承诺；没有可靠数据时不输出交易候选。
