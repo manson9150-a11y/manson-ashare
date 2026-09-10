@@ -1,6 +1,10 @@
 {
-  "1600/POOL_B": {
+  "1600/POOL_B/旧口径": {
     "sample_size": 90,
+    "independent_days": 3,
+    "window_start": "2026-09-07",
+    "window_end": "2026-09-09",
+    "metric_version": 1,
     "win_rate": 0.4,
     "average_return": -0.1737979746458641,
     "median_return": -0.9061430372905688,
@@ -8,10 +12,14 @@
     "next_day_limit_up_rate": null,
     "top3_hit_rate": 0.5555555555555556,
     "top5_hit_rate": 0.5333333333333333,
-    "definition": "同阶段/同池日等权观察组合；命中=次日收盘上涨；不含费用、滑点、停牌与涨停无法成交约束"
+    "definition": "旧口径：报告日期下一交易日收盘相对快照基价；盘前可能跨两交易日。同阶段价格观察，不含费用、滑点、停牌及涨停成交约束；不是策略净收益。"
   },
-  "2130/POOL_B": {
+  "2130/POOL_B/旧口径": {
     "sample_size": 89,
+    "independent_days": 3,
+    "window_start": "2026-09-07",
+    "window_end": "2026-09-09",
+    "metric_version": 1,
     "win_rate": 0.39325842696629215,
     "average_return": -0.19910132628650534,
     "median_return": -0.9340659340659196,
@@ -19,10 +27,14 @@
     "next_day_limit_up_rate": null,
     "top3_hit_rate": 0.5555555555555556,
     "top5_hit_rate": 0.5333333333333333,
-    "definition": "同阶段/同池日等权观察组合；命中=次日收盘上涨；不含费用、滑点、停牌与涨停无法成交约束"
+    "definition": "旧口径：报告日期下一交易日收盘相对快照基价；盘前可能跨两交易日。同阶段价格观察，不含费用、滑点、停牌及涨停成交约束；不是策略净收益。"
   },
-  "0730/POOL_B": {
+  "0730/POOL_B/旧口径": {
     "sample_size": 23,
+    "independent_days": 2,
+    "window_start": "2026-09-08",
+    "window_end": "2026-09-09",
+    "metric_version": 1,
     "win_rate": 0.30434782608695654,
     "average_return": -0.8087857592778451,
     "median_return": -3.3707865168539186,
@@ -30,10 +42,14 @@
     "next_day_limit_up_rate": null,
     "top3_hit_rate": 0.6666666666666666,
     "top5_hit_rate": 0.6,
-    "definition": "同阶段/同池日等权观察组合；命中=次日收盘上涨；不含费用、滑点、停牌与涨停无法成交约束"
+    "definition": "旧口径：报告日期下一交易日收盘相对快照基价；盘前可能跨两交易日。同阶段价格观察，不含费用、滑点、停牌及涨停成交约束；不是策略净收益。"
   },
-  "0830/POOL_B": {
+  "0830/POOL_B/旧口径": {
     "sample_size": 19,
+    "independent_days": 2,
+    "window_start": "2026-09-08",
+    "window_end": "2026-09-09",
+    "metric_version": 1,
     "win_rate": 0.3684210526315789,
     "average_return": 0.03197057115418233,
     "median_return": -1.828499369482972,
@@ -41,10 +57,14 @@
     "next_day_limit_up_rate": null,
     "top3_hit_rate": 0.6666666666666666,
     "top5_hit_rate": 0.6,
-    "definition": "同阶段/同池日等权观察组合；命中=次日收盘上涨；不含费用、滑点、停牌与涨停无法成交约束"
+    "definition": "旧口径：报告日期下一交易日收盘相对快照基价；盘前可能跨两交易日。同阶段价格观察，不含费用、滑点、停牌及涨停成交约束；不是策略净收益。"
   },
-  "1135/POOL_B": {
+  "1135/POOL_B/旧口径": {
     "sample_size": 8,
+    "independent_days": 2,
+    "window_start": "2026-09-08",
+    "window_end": "2026-09-09",
+    "metric_version": 1,
     "win_rate": 0.5,
     "average_return": -0.2380236074539021,
     "median_return": 0.17459963796356837,
@@ -52,10 +72,14 @@
     "next_day_limit_up_rate": null,
     "top3_hit_rate": 0.4,
     "top5_hit_rate": 0.5,
-    "definition": "同阶段/同池日等权观察组合；命中=次日收盘上涨；不含费用、滑点、停牌与涨停无法成交约束"
+    "definition": "旧口径：报告日期下一交易日收盘相对快照基价；盘前可能跨两交易日。同阶段价格观察，不含费用、滑点、停牌及涨停成交约束；不是策略净收益。"
   },
-  "0730/POOL_C": {
+  "0730/POOL_C/旧口径": {
     "sample_size": 1,
+    "independent_days": 1,
+    "window_start": "2026-09-09",
+    "window_end": "2026-09-09",
+    "metric_version": 1,
     "win_rate": 1,
     "average_return": 7.270887539751358,
     "median_return": 7.270887539751358,
@@ -63,10 +87,14 @@
     "next_day_limit_up_rate": null,
     "top3_hit_rate": 1,
     "top5_hit_rate": 1,
-    "definition": "同阶段/同池日等权观察组合；命中=次日收盘上涨；不含费用、滑点、停牌与涨停无法成交约束"
+    "definition": "旧口径：报告日期下一交易日收盘相对快照基价；盘前可能跨两交易日。同阶段价格观察，不含费用、滑点、停牌及涨停成交约束；不是策略净收益。"
   },
-  "0830/POOL_C": {
+  "0830/POOL_C/旧口径": {
     "sample_size": 1,
+    "independent_days": 1,
+    "window_start": "2026-09-09",
+    "window_end": "2026-09-09",
+    "metric_version": 1,
     "win_rate": 1,
     "average_return": 7.270887539751358,
     "median_return": 7.270887539751358,
@@ -74,10 +102,14 @@
     "next_day_limit_up_rate": null,
     "top3_hit_rate": 1,
     "top5_hit_rate": 1,
-    "definition": "同阶段/同池日等权观察组合；命中=次日收盘上涨；不含费用、滑点、停牌与涨停无法成交约束"
+    "definition": "旧口径：报告日期下一交易日收盘相对快照基价；盘前可能跨两交易日。同阶段价格观察，不含费用、滑点、停牌及涨停成交约束；不是策略净收益。"
   },
-  "1135/POOL_C": {
+  "1135/POOL_C/旧口径": {
     "sample_size": 1,
+    "independent_days": 1,
+    "window_start": "2026-09-09",
+    "window_end": "2026-09-09",
+    "metric_version": 1,
     "win_rate": 1,
     "average_return": 2.8979478646699697,
     "median_return": 2.8979478646699697,
@@ -85,10 +117,14 @@
     "next_day_limit_up_rate": null,
     "top3_hit_rate": 1,
     "top5_hit_rate": 1,
-    "definition": "同阶段/同池日等权观察组合；命中=次日收盘上涨；不含费用、滑点、停牌与涨停无法成交约束"
+    "definition": "旧口径：报告日期下一交易日收盘相对快照基价；盘前可能跨两交易日。同阶段价格观察，不含费用、滑点、停牌及涨停成交约束；不是策略净收益。"
   },
-  "1600/POOL_A": {
+  "1600/POOL_A/旧口径": {
     "sample_size": 2,
+    "independent_days": 1,
+    "window_start": "2026-09-09",
+    "window_end": "2026-09-09",
+    "metric_version": 1,
     "win_rate": 0.5,
     "average_return": 0.4261500609604174,
     "median_return": 0.4261500609604174,
@@ -96,10 +132,14 @@
     "next_day_limit_up_rate": null,
     "top3_hit_rate": 0.5,
     "top5_hit_rate": 0.5,
-    "definition": "同阶段/同池日等权观察组合；命中=次日收盘上涨；不含费用、滑点、停牌与涨停无法成交约束"
+    "definition": "旧口径：报告日期下一交易日收盘相对快照基价；盘前可能跨两交易日。同阶段价格观察，不含费用、滑点、停牌及涨停成交约束；不是策略净收益。"
   },
-  "2130/POOL_A": {
+  "2130/POOL_A/旧口径": {
     "sample_size": 2,
+    "independent_days": 1,
+    "window_start": "2026-09-09",
+    "window_end": "2026-09-09",
+    "metric_version": 1,
     "win_rate": 0.5,
     "average_return": 0.4261500609604174,
     "median_return": 0.4261500609604174,
@@ -107,10 +147,14 @@
     "next_day_limit_up_rate": null,
     "top3_hit_rate": 0.5,
     "top5_hit_rate": 0.5,
-    "definition": "同阶段/同池日等权观察组合；命中=次日收盘上涨；不含费用、滑点、停牌与涨停无法成交约束"
+    "definition": "旧口径：报告日期下一交易日收盘相对快照基价；盘前可能跨两交易日。同阶段价格观察，不含费用、滑点、停牌及涨停成交约束；不是策略净收益。"
   },
-  "0730/POOL_A": {
+  "0730/POOL_A/旧口径": {
     "sample_size": 0,
+    "independent_days": 0,
+    "window_start": null,
+    "window_end": null,
+    "metric_version": 1,
     "win_rate": null,
     "average_return": null,
     "median_return": null,
@@ -118,10 +162,14 @@
     "next_day_limit_up_rate": null,
     "top3_hit_rate": null,
     "top5_hit_rate": null,
-    "definition": "同阶段/同池日等权观察组合；命中=次日收盘上涨；不含费用、滑点、停牌与涨停无法成交约束"
+    "definition": "等待前瞻观察。同阶段价格观察，不含费用、滑点、停牌及涨停成交约束；不是策略净收益。"
   },
-  "0830/POOL_A": {
+  "0830/POOL_A/旧口径": {
     "sample_size": 0,
+    "independent_days": 0,
+    "window_start": null,
+    "window_end": null,
+    "metric_version": 1,
     "win_rate": null,
     "average_return": null,
     "median_return": null,
@@ -129,6 +177,21 @@
     "next_day_limit_up_rate": null,
     "top3_hit_rate": null,
     "top5_hit_rate": null,
-    "definition": "同阶段/同池日等权观察组合；命中=次日收盘上涨；不含费用、滑点、停牌与涨停无法成交约束"
+    "definition": "等待前瞻观察。同阶段价格观察，不含费用、滑点、停牌及涨停成交约束；不是策略净收益。"
+  },
+  "2200/POOL_B": {
+    "sample_size": 0,
+    "independent_days": 0,
+    "window_start": null,
+    "window_end": null,
+    "metric_version": 2,
+    "win_rate": null,
+    "average_return": null,
+    "median_return": null,
+    "max_drawdown": null,
+    "next_day_limit_up_rate": null,
+    "top3_hit_rate": null,
+    "top5_hit_rate": null,
+    "definition": "等待前瞻观察。同阶段价格观察，不含费用、滑点、停牌及涨停成交约束；不是策略净收益。"
   }
 }
