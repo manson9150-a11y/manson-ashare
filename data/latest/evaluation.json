@@ -193,5 +193,20 @@
     "top3_hit_rate": null,
     "top5_hit_rate": null,
     "definition": "等待前瞻观察。同阶段价格观察，不含费用、滑点、停牌及涨停成交约束；不是策略净收益。"
+  },
+  "0800/POOL_B": {
+    "sample_size": 0,
+    "independent_days": 0,
+    "window_start": null,
+    "window_end": null,
+    "metric_version": 2,
+    "win_rate": null,
+    "average_return": null,
+    "median_return": null,
+    "max_drawdown": null,
+    "next_day_limit_up_rate": null,
+    "top3_hit_rate": null,
+    "top5_hit_rate": null,
+    "definition": "等待前瞻观察。同阶段价格观察，不含费用、滑点、停牌及涨停成交约束；不是策略净收益。"
   }
 }
