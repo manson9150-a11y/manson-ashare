@@ -28,6 +28,7 @@ from src.reports.render import stage_markdown, daily_markdown
 from src.google_docs.writer import DocsOutbox
 from src.ai.analyst import enhance
 from src.evaluation.engine import update_outcomes
+from src.research.stocks import enabled as stock_focus, history_candidates, attach as attach_research, tracking_seed
 
 class Pipeline:
     def __init__(self, project, output=None, mode='live', config=None):
@@ -100,6 +101,11 @@ class Pipeline:
             if previous.get('bootstrap_origin'):
                 run['bootstrap_origin'] = copy.deepcopy(previous['bootstrap_origin'])
                 run['warnings'].append('首次启动链：承接周末初始化快照；使用事后行业分类，历史公告风险未完整核验。本轮不计入常规因子效果统计。')
+        if previous and stage=='0800' and stock_focus(self.config,stage):
+            previous=tracking_seed(previous,read_json(self.output/'data/latest/stock_research_seed.json',{}),as_of)
+            if previous.get('research_seed_origin'):
+                run['research_seed_origin']=previous['research_seed_origin']
+                run['warnings'].append('本次承接改版后明确生成时间的个股研究名单；此前冻结阶段仍保持原结果。')
         try: self.compute(run,day,stage,as_of,previous)
         except Exception as exc:
             run['status']='DEGRADED'; run['data_quality']['status']='RED'; run['errors'].append({'module':'pipeline','error':type(exc).__name__})
@@ -281,6 +287,11 @@ class Pipeline:
             # Reserve history for A/C identities before filling the trend budget.
             selected=sorted([q for q in quotes if q.code in wanted],
                 key=lambda q:(0 if q.code in independent_codes else 1 if q.code in limit_codes else 2,-q.amount))[:self.config['sources']['max_history_stocks']]
+            if stock_focus(self.config,stage) and stage=='2200':
+                last=read_json(self.output/'data/latest/latest.json',{})
+                tracked=[s['stock_code'] for g in last.get('pools',{}).values() for s in g]
+                selected=history_candidates(quotes,independent_codes,good_codes,self.config,tracked)
+                wanted={q.code for q in selected}
             factors={}; failures=[]
             def calculate(q):
                 return self.stock_factors(q,expected,as_of,stage,demo)
@@ -301,7 +312,7 @@ class Pipeline:
             else:
                 run['limit_evidence']={'status':'SIMULATED','identified':len(limit_pool)}
             run['factor_count']=len(factors)
-            run['warnings'].append(f"全市场快照经板块过滤，最多{self.config['sources']['max_history_stocks']}只历史日线；板块多日指标仅覆盖已采集成分。")
+            run['warnings'].append(f"全行情按个股涨幅、成交额、换手与事件线索分配最多{self.config['sources']['max_history_stocks']}只历史日线；历史指标仍为预算内覆盖。" if stock_focus(self.config,stage) else f"全市场快照经板块过滤，最多{self.config['sources']['max_history_stocks']}只历史日线；板块多日指标仅覆盖已采集成分。")
         if stage in ('1600','2200','1135','1200'):
             if not demo:
                 try:
@@ -336,10 +347,14 @@ class Pipeline:
             stocks=midday_validate(stocks,previous,market,self.config); seen={s['stock_code'] for s in stocks}
             missing=[{**s,'validation_label':'D 证伪','morning_return':None,'negative_factor':'午盘行情不足，不能确认'} for group in previous['pools'].values() for s in group if s['stock_code'] not in seen]
             run['validations']=stocks+missing
-            if market.get('environment')!='强': run['afternoon_message']='今日午后不适合连板接力。'
-        selected,changes=pools(stocks,stage,self.config,previous)
+            if market.get('environment')!='强': run['afternoon_message']='午间继续核验个股承接；市场广度尚未达到强势阈值。'
+        research_previous=previous
+        if stock_focus(self.config,stage) and stage=='2200':
+            research_previous=read_json(self.output/'data/latest/latest.json',{})
+            if research_previous and research_previous.get('as_of_time','')>=run['as_of_time']: research_previous={}
+        selected,changes=pools(stocks,stage,self.config,research_previous)
         if stage in ('1135','1200'):
-            selected={k:[s for s in v if s.get('validation_label','').startswith(('S','A','B'))] for k,v in selected.items()}
+            selected={k:[s for s in v if k=='POOL_H' or s.get('validation_label','').startswith(('S','A','B'))] for k,v in selected.items()}
             if market.get('environment')!='强': selected['POOL_A']=[]
         for group in selected.values():
             for stock in group: stock.update(date=str(day),stage=stage)
@@ -347,7 +362,7 @@ class Pipeline:
             mapped={c for sector in membership for c in sector['codes']}
             mapping_coverage=sum(q.code in mapped for q in quotes)/max(len(quotes),1)
             run['data_quality']['sector_mapping_coverage']=mapping_coverage
-            if mapping_coverage<1: run['warnings'].append(f'板块成分映射覆盖 {mapping_coverage:.1%}；未映射且无已核验独立事件的股票排除，不能声称完成所有个股的板块分析。')
+            if mapping_coverage<1: run['warnings'].append(f'板块成分映射覆盖 {mapping_coverage:.1%}；'+('个股研究不再因缺少映射而直接排除。' if stock_focus(self.config,stage) else '未映射且无已核验独立事件的股票排除。'))
         run.update(pools=selected,market=market,sectors=sectors,events=event_rows,transitions=changes,membership=membership,limit_pool=limit_pool)
         identified=sum(s['is_limit_up'] for s in stocks)
         le=run.get('limit_evidence',{})
@@ -399,7 +414,7 @@ class Pipeline:
         history_coverage=run['data_quality'].get('history_coverage',1)
         if history_coverage<self.config['sources']['min_history_coverage']:
             run['warnings'].append('历史数据覆盖低于阈值，停止发布候选。')
-        if not sectors or history_coverage<self.config['sources']['min_history_coverage']:
+        if (not sectors and not stock_focus(self.config,stage)) or history_coverage<self.config['sources']['min_history_coverage']:
             run['data_quality']['status']='RED'; run['warnings'].append('历史因子或板块映射不足，不发布候选。'); run['pools']={k:[] for k in selected}
             run['data_quality'].update(candidate_score_coverage=None,candidate_amount_coverage=None)
             for item in run['catalyst_diagnostics']:
@@ -409,6 +424,11 @@ class Pipeline:
         run['status']='DEGRADED' if run['data_quality']['status']=='RED' else 'COMPLETE'
         run['ai']={'status':'DEMO_DISABLED'} if demo else enhance(run['pools'],self.config,as_of)
         run['quotes']=[q.model_dump(mode='json') for q in quotes]; run['factors']=factors
+        if stock_focus(self.config,stage):
+            prior=research_previous
+            if prior and prior.get('as_of_time','')>=run['as_of_time']: prior={}
+            attach_research(run,self.config,prior,datetime.now(TZ).isoformat())
+            run['pool_notes']['POOL_A']='连板池已停用；连板天梯请在悟道查看。'
         if run.get('bootstrap_origin'):
             run['missing_factors'] += ['初始化历史公告风险完整核验', '初始化当时行业成分快照']
             run['data_quality']['status'] = 'RED' if run['data_quality']['status']=='RED' else 'YELLOW'

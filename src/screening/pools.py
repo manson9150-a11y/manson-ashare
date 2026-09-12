@@ -8,6 +8,8 @@ def predecessor(day,stage,calendar):
     return mapping.get(stage)
 
 def pools(stocks,stage,config,previous=None):
+    from src.research.stocks import enabled, select
+    if enabled(config,stage): return select(stocks,stage,config,previous)
     limits=config['candidate_pool']
     selected={'POOL_A':[],'POOL_B':[],'POOL_C':[]}
     previous_by_code={s['stock_code']:s for v in (previous or {}).get('pools',{}).values() for s in v}

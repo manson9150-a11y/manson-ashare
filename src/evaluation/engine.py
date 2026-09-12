@@ -41,6 +41,7 @@ def update_outcomes(root,run,calendar,config):
     definition=('前交易日收盘至信号当日收盘' if stage in ('0800','0730','0830') else
                 '信号当日上午收盘至当日收盘' if stage in ('1200','1135') else '信号当日收盘至下一交易日收盘')
     for pool,group in run.get('pools',{}).items():
+        if pool=='POOL_H': continue  # Volatility observations are not entry candidates.
         for s in group:
             key=(run['date'],stage,s['stock_code'],pool)
             lookup.setdefault(key,{'date':run['date'],'stage':stage,'stock_code':s['stock_code'],'pool':pool,'rank':s['rank'],

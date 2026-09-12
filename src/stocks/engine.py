@@ -4,6 +4,7 @@ from src.catalysts.engine import independent
 def clamp(x): return max(0,min(100,x))
 
 def analyze_stocks(quotes,factors,sectors,membership,events,market,config,limit_pool=None):
+    focus=config.get('stock_research',{}).get('enabled',False)
     sectors_by_id={s['id']:s for s in sectors}
     links={}
     for s in membership:
@@ -20,10 +21,13 @@ def analyze_stocks(quotes,factors,sectors,membership,events,market,config,limit_
         hard=any(e['event_type'] in config['risk']['hard_event_types'] for e in ev)
         hard=hard or (config['risk']['exclude_st'] and ('ST' in q.name.upper() or '退' in q.name)) or q.amount<config['risk']['min_amount']
         independent_events=[e for e in ev if independent(e,config)]
-        position,reason=classify(f,sector if not independent_events else {**sector,'state':None},config,hard)
-        if sector['score'] is None and not independent_events:
+        position,reason=classify(f,sector if not independent_events and not focus else {**sector,'state':None},config,hard)
+        if focus and not hard and position=='排除' and all(f.get(k) is not None for k in ('ma20','slope_ma20','return_5d','distance_ma20','amount_ratio_5d','move_atr')):
+            if f.get('breakout') and f['slope_ma20']>0 and 0<f['return_5d']<=config['position']['startup']['max_return_5d'] and 0<=f['distance_ma20']<=config['position']['startup']['max_distance_ma20'] and f['amount_ratio_5d']>=config['position']['startup']['min_amount_ratio'] and f['move_atr']<config['atr']['extreme_multiple']:
+                position,reason='启动观察','个股放量突破、MA20向上；板块归属仅作背景参考'
+        if sector['score'] is None and not independent_events and not focus:
             position,reason='排除','缺少可靠板块映射'
-        if sector.get('state') not in config['sector']['allowed'] and not independent_events and position!='高位观察':
+        if sector.get('state') not in config['sector']['allowed'] and not independent_events and position!='高位观察' and not focus:
             position,reason='排除','板块未通过第二层筛选'
         atr=f.get('move_atr')
         atr_state='未知' if atr is None else '极端' if atr>=config['atr']['extreme_multiple'] else '警告' if atr>=config['atr']['warning_multiple'] else '正常'

@@ -2,6 +2,7 @@ NAMES={'POOL_A':'A 涨停晋级观察','POOL_B':'B 趋势观察池','POOL_C':'C 
 def fmt(x,digits=2):return '—' if x is None else f'{x:.{digits}f}' if isinstance(x,(float,int)) else str(x).replace('|','／').replace('\n',' ')
 
 def stage_markdown(run):
+    if run.get('stock_research'): return stock_markdown(run)
     m=run.get('market',{})
     lines=[f"## {run['stage'][:2]}:{run['stage'][2:]} {run['stage_label']}",f"\n时间戳：{run['as_of_time']} ｜ Run ID：{run['run_id']}",f"\n模式：{'演示模拟数据，不是市场判断' if run['mode']=='demo' else '真实数据任务'}",f"\n状态：{run['status']} ｜ 数据质量：{run['data_quality']['status']}",f"\n市场：{m.get('environment') or '数据不足，不评级'} ｜ 市场广度参考分：{fmt(m.get('score'))}",f"行情基准日：{run.get('quote_date','—')}；评分口径：{m.get('basis','—')}。"]
     if run['mode']=='retrospective':
@@ -57,6 +58,35 @@ def stage_markdown(run):
     lines+=['\n### 淘汰记录']
     for s in run.get('eliminations',[])[:40]:lines.append(f"- {s.get('stock_code',s.get('code'))}：{s.get('reason',s.get('exclusion_reason'))}")
     lines+=['\n这是规则研究记录。评分和主观概率不是收益承诺；没有可靠数据时不输出交易候选。']
+    return '\n'.join(lines)+'\n'
+
+def stock_markdown(run):
+    from src.research.stocks import LABELS
+    research=run['stock_research']
+    lines=[f"## {run['stage_label']} · 个股研究",f"\n行情日期：{run.get('quote_date')}；报告截点：{run['as_of_time']}。",
+           f"\n{research['note']}",f"\n市场背景：{run.get('market',{}).get('environment') or '未确认'}。市场全景与连板天梯：https://stock.quicktiny.cn/ai",
+           f"\n悟道本阶段调用状态：{run.get('wudao',{}).get('status','未记录')}。"]
+    for pool,label in LABELS.items():
+        lines.append(f'\n### {label}')
+        if not run['pools'].get(pool): lines.append('本阶段暂无满足条件的个股，不补足数量。')
+        for s in run['pools'].get(pool,[]):
+            r=s['research'];p=r['price_plan'];c=r['catalyst']
+            lines += [f"\n#### {s['stock_name']} {s['stock_code']}",f"\n**{r['headline']}**\n\n{r['conclusion']}",
+                      f"\n价格计划：{p['label']}。{p['trigger']}",
+                      f"\n失效参考：{fmt(p.get('invalidation_price'))}；行情时间：{p.get('quote_time')}。",
+                      f"\n催化判断：{c['headline']}。{c['conclusion']}",f"\n下一步核验：{c.get('next_check','待补充')}",
+                      f"\n跟踪变化：{r['change']['label']}。"]
+            if p.get('reward_risk_to_resistance') is not None: lines.append(f"至20日高点的空间/失效距离 {fmt(p['reward_risk_to_resistance'])}；高点只是阻力参考，不是目标收益。")
+    lines.append('\n### 公告的经营含义')
+    for c in research.get('catalyst_reviews',[]):
+        lines += [f"\n**{c['stock_name']} {c['stock_code']}：{c['headline']}**",c['conclusion'],f"下一步：{c['next_check']}"]
+        for source in c.get('sources',[]): lines.append(f"依据：{source['url']} （{source['published_at']}）")
+    if run.get('transitions'):
+        lines.append('\n### 暂停跟踪')
+        lines += [f"- {s['stock_code']}：{s['reason']}" for s in run['transitions']]
+    lines += ['\n### 数据边界', f"历史指标成功数：{research.get('coverage',{}).get('factor_ready','未记录')}；只代表本次预算样本。",
+              '价格区间是条件研究，不保证可成交；未经完整公司行动核验，遇除权、重大新信息或下一报告需重算。',
+              '公告仅限当前扫描范围，未发现不等于没有风险。']
     return '\n'.join(lines)+'\n'
 
 def daily_markdown(day,runs):

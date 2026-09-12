@@ -13,7 +13,7 @@ from src.utils.io import write_json
 from src.utils.io import read_json
 from src.models import Event
 
-RULE_VERSION = 'official_pdf_facts_v1'
+RULE_VERSION = 'official_pdf_facts_v2'
 
 
 def verify_text(event, text, observed_at):
@@ -26,10 +26,23 @@ def verify_text(event, text, observed_at):
             'verification': {**audit, 'reason': reason}, **changes})
     if not re.search(r'(?:证券|股票)代码[:：]?' + event.stock_code + r'(?!\d)', text[:1800]):
         return result('ISSUER_NOT_MATCHED')
+    # Record adverse revisions before testing positive size thresholds. A large
+    # remaining amount must not turn a shrinking existing order into new upside.
+    reduction = re.search(r'(?:合同|工程)(?:总价|金额|价款|价)[^。；;]{0,50}?(?:调减|下调|减少|缩减)', text)
+    if reduction:
+        audit.update(business_direction='NEGATIVE_REVISION', contract_status='AMENDED',
+                     analysis='公告披露合同规模调减。剩余金额不是新增订单；需核对已确认收入、未执行部分与回款，不能直接推算利润损失。')
+        return result('CONTRACT_REDUCTION_REQUIRES_REVIEW')
     if any(w in event.title for w in ['更正', '补充', '风险', '终止', '解除', '减持', '框架', '意向', '诉讼']):
         return result('AMBIGUOUS_OR_RISK_TITLE')
-    if re.search(r'未签订|未签署|尚未签|尚未生效|合同.{0,12}(?:终止|解除|取消)|(?:终止|解除|取消).{0,12}合同', text):
+    if re.search(r'(?:尚未|未)(?:正式)?(?:签订|签署)[^。；;]{0,16}?合同|尚未生效', text):
+        audit.update(contract_status='NOT_CONFIRMED', analysis='公告存在尚未签约或生效的明确表述。中标、意向或预计金额仍需转成正式履约承诺，收入和回款尚未兑现。')
         return result('CONTRACT_NOT_CONFIRMED')
+    if re.search(r'合同(?:已|已经|现已|被)(?:正式)?(?:终止|解除|取消)|(?:决定|已协商一致|双方协商一致)(?:终止|解除|取消)(?:该|上述|本)?合同', text):
+        audit.update(business_direction='CANCELLED', contract_status='CANCELLED', analysis='正文出现合同终止或解除的明确状态，应先核对损失与剩余权利义务，不能认定新增利好。')
+        return result('CONTRACT_NOT_CONFIRMED')
+    if re.search(r'(?:公司|子公司)[^。；;]{0,100}?(?:签订|签署)[^。；;]{0,40}?合同', text):
+        audit.update(contract_status='SIGNED_DISCLOSED', analysis='正文披露签约，但签约事实与重要性是两回事。需核对相对营收规模、交付验收、回款与利润率，合同总额不等于本期利润。')
     # A signed contract with quantified materiality against a FULL fiscal year's revenue.
     denominator = r'(?:最近一个会计年度|上一年度|上年度|上年|20\d{2}年(?:度)?)'
     pattern = (r'(?:本次|该|上述)?(?:合同|订单)(?:总)?金额.{0,50}?占(?:公司)?'

@@ -1,4 +1,13 @@
 timezone: Asia/Shanghai
+stock_research:
+  enabled: true
+  momentum_max: 12
+  catalyst_max: 5
+  volatile_max: 8
+  hot_return_5d: 20
+  hot_return_20d: 40
+  hot_natr: 7
+  min_reward_risk: 1.5
 weekend_evenings:
   '2026-09-06': '2026-09-07'
 announcements:

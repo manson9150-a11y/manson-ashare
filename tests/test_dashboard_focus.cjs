@@ -1,0 +1,8 @@
+const test=require('node:test');const assert=require('node:assert/strict');require('../dashboard/focus.js');const f=MansonFocus;
+const run={run_id:'a',mode:'live',status:'COMPLETE',quote_date:'2026-09-11',as_of_time:'2026-09-11T22:00:00+08:00',pools:{POOL_A:[{stock_code:'A'}],POOL_B:[{stock_code:'B'}]}};
+const extra={base_run_id:'a',mode:'live',quote_date:'2026-09-11',projection:{generated_at:'2026-09-11T23:59:00+08:00'},stock_research:{version:'v1'},pools:{POOL_B:[{stock_code:'C'}]}};
+test('projection only applies to exactly the frozen run and mode',()=>{assert.equal(f.overlay(run,extra).pools.POOL_B[0].stock_code,'C');for(const r of [{...run,run_id:'b'},{...run,mode:'retrospective'},{...run,mode:'demo'},{...run,status:'DEGRADED'}])assert.equal(f.overlay(r,extra),r);assert.equal(f.overlay(run,{...extra,quote_date:'2026-09-10'}),run)});
+test('future and invalid projections are ignored',()=>{for(const generated_at of ['invalid','9999-01-01','2026-09-10'])assert.equal(f.overlay(run,{...extra,projection:{generated_at}}),run)});
+test('retired ladder never appears in focus lists',()=>{assert.deepEqual(f.items(run).map(s=>s.stock_code),['B'])});
+test('volatile name with independent catalyst is also discoverable in catalyst filter',()=>{const s={stock_code:'600001',stock_name:'测试',pool:'POOL_H',independent_catalyst:true};assert.ok(f.matches(s,'volatile'));assert.ok(f.matches(s,'catalyst','600001'));assert.ok(!f.matches(s,'momentum'));assert.ok(!f.matches(s,'catalyst','999'))});
+test('legacy reports never get invented entry prices',()=>assert.equal(f.legacy({price:10}).price_plan.entry_zone,null));

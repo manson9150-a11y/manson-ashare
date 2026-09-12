@@ -1,0 +1,283 @@
+{
+  "schema_version": "catalyst_document_review_v1",
+  "generated_at": "2026-09-12T00:04:36.379184+08:00",
+  "source_snapshot_run_id": "0c883789a66f47e28fe80fb22e912ab5",
+  "source_snapshot_date": "2026-09-11",
+  "source_snapshot_stage": "2200",
+  "source_snapshot_cutoff": "2026-09-11T22:10:00.027291+08:00",
+  "analysis_timing": "2026-09-12逐份重读官方PDF后补充的事后分析；不是2026-09-11原任务当时的结论，也不改写原始冻结快照。",
+  "analyst_basis": "DOCUMENT_REVIEW",
+  "items": [
+    {
+      "stock_code": "002586",
+      "stock_name": "围海股份",
+      "stance": "风险",
+      "headline": "合同规模调减，不能把剩余订单当新增利好",
+      "conclusion": "本次实质是原项目规模缩减：合同价由6.539亿元调整为3亿元，减少约54.1%。剩余合同仍有业务价值，但相对原合同的订单预期下降；不应仅凭“重大合同”标题或14.34%的营收占比判断为正向独立催化。",
+      "business_impact": "公司披露因政府土地流转、用地指标调整而签署补充协议，且不属于任何一方违约。工程总价减少3.539亿元，不等于当期收入或利润同额减少；收入、毛利与现金流影响还取决于已完成工程量、剩余施工和结算。",
+      "next_check": [
+        "核对原合同已确认收入与未执行订单，区分存量收缩对未来收入的实际影响。",
+        "跟踪调整后项目开工、月度工程量确认、付款与回款；合同未提供足够利润测算依据。"
+      ],
+      "facts": [
+        {
+          "label": "原签约合同价",
+          "value": 653900000,
+          "unit": "元",
+          "source_id": "069b7b12999d9261f6b8"
+        },
+        {
+          "label": "补充协议合同价",
+          "value": 300000000,
+          "unit": "元",
+          "source_id": "069b7b12999d9261f6b8"
+        },
+        {
+          "label": "合同价减少",
+          "value": 353900000,
+          "unit": "元",
+          "source_id": "069b7b12999d9261f6b8",
+          "derived": true,
+          "calculation": "653900000 - 300000000"
+        },
+        {
+          "label": "合同价调减比例",
+          "value": 54.12,
+          "unit": "%",
+          "source_id": "069b7b12999d9261f6b8",
+          "derived": true,
+          "calculation": "(653900000 - 300000000) / 653900000 * 100"
+        },
+        {
+          "label": "调整后合同金额占2025年经审计营业总收入",
+          "value": 14.34,
+          "unit": "%",
+          "source_id": "069b7b12999d9261f6b8"
+        },
+        {
+          "label": "调整后工期",
+          "value": 360,
+          "unit": "日历天",
+          "source_id": "069b7b12999d9261f6b8"
+        },
+        {
+          "label": "经确认月度工程量的进度款支付比例",
+          "value": 80,
+          "unit": "%",
+          "source_id": "069b7b12999d9261f6b8"
+        }
+      ],
+      "source_event_ids": [
+        "069b7b12999d9261f6b8"
+      ],
+      "sources": [
+        {
+          "source_id": "069b7b12999d9261f6b8",
+          "url": "https://static.cninfo.com.cn/finalpage/2026-09-11/1225556900.PDF",
+          "title": "关于签订重大合同的进展公告",
+          "published_at": "2026-09-11T00:00:00+08:00",
+          "publish_time_precision": "date",
+          "read_at": "2026-09-12T00:04:36.379184+08:00"
+        }
+      ],
+      "analyst_basis": "DOCUMENT_REVIEW",
+      "independent_catalyst_assessment": "不支持正向独立催化；应优先标记合同缩减风险",
+      "analysis_inference": "订单预期下降是根据同一项目新旧合同金额比较得出的判断，不等于预测股价下跌。",
+      "reviewed_at": "2026-09-12T00:04:36.379184+08:00"
+    },
+    {
+      "stock_code": "300265",
+      "stock_name": "通光线缆",
+      "stance": "待证实",
+      "headline": "中标额恢复原预期，尚待正式合同落地",
+      "conclusion": "9月9日部分中标缺失使金额降至1.0762亿元；9月10日补充名单恢复光缆中标，总额回到最初预中标的1.295亿元。这是同一项目的预期修复，应合并跟踪，不能把两次公告金额相加，也不宜认作超出原预期的新订单。",
+      "business_impact": "订单规模相当于2025年经审计营收的5.09%，有助于后续业务量，但公告明确尚未签署正式合同；形成订单、交货及收入确认仍有不确定性，不能据此推算利润增幅。",
+      "next_check": [
+        "跟踪正式签约、实际采购订单、交货安排和验收进度。",
+        "若后续规模、价格或履约条件改变，再评估是否形成真正超出原预期的增量。"
+      ],
+      "facts": [
+        {
+          "label": "9月9日披露的中标金额",
+          "value": 107620000,
+          "unit": "元",
+          "source_id": "fecb3e098743f716341e"
+        },
+        {
+          "label": "9月9日营收占比",
+          "value": 4.23,
+          "unit": "%",
+          "source_id": "fecb3e098743f716341e"
+        },
+        {
+          "label": "9月10日恢复的中标总金额",
+          "value": 129500000,
+          "unit": "元",
+          "source_id": "62e9e124889993b7199e"
+        },
+        {
+          "label": "9月10日营收占比",
+          "value": 5.09,
+          "unit": "%",
+          "source_id": "62e9e124889993b7199e"
+        },
+        {
+          "label": "补充名单恢复部分相对前次公告的金额",
+          "value": 21880000,
+          "unit": "元",
+          "source_id": "62e9e124889993b7199e",
+          "derived": true,
+          "calculation": "129500000 - 107620000"
+        },
+        {
+          "label": "正式合同状态",
+          "value": "公告披露尚未签署",
+          "unit": null,
+          "source_id": "62e9e124889993b7199e"
+        }
+      ],
+      "source_event_ids": [
+        "fecb3e098743f716341e",
+        "62e9e124889993b7199e"
+      ],
+      "sources": [
+        {
+          "source_id": "fecb3e098743f716341e",
+          "url": "https://static.cninfo.com.cn/finalpage/2026-09-09/1225554809.PDF",
+          "title": "重大合同中标进展公告",
+          "published_at": "2026-09-09T15:46:29+08:00",
+          "publish_time_precision": "second",
+          "read_at": "2026-09-12T00:04:36.379184+08:00"
+        },
+        {
+          "source_id": "62e9e124889993b7199e",
+          "url": "https://static.cninfo.com.cn/finalpage/2026-09-10/1225556933.PDF",
+          "title": "重大合同中标进展公告",
+          "published_at": "2026-09-10T16:18:28+08:00",
+          "publish_time_precision": "second",
+          "read_at": "2026-09-12T00:04:36.379184+08:00"
+        }
+      ],
+      "analyst_basis": "DOCUMENT_REVIEW",
+      "independent_catalyst_assessment": "暂不支持；恢复原预期且未正式签约，规模也低于现有10%营收门槛",
+      "analysis_inference": "“预期修复”来自同一采购项目连续公告的金额变化，未证明市场定价充分或股价因果关系。",
+      "reviewed_at": "2026-09-12T00:04:36.379184+08:00"
+    },
+    {
+      "stock_code": "002498",
+      "stock_name": "汉缆股份",
+      "stance": "待证实",
+      "headline": "国网中标提供订单线索，先等书面确认与签约",
+      "conclusion": "公司及全资子公司预计合计中标约6.34亿元，占上年营收6.09%。金额对业务有一定贡献，但目前依据是公开中标名单，尚未收到书面中标通知、也未签正式合同；适合作为订单落地跟踪，证据不足以认定强独立催化。",
+      "business_impact": "中标内容涉及电缆、附件和导地线，若后续合同落实可增加相应产品订单。中标估算金额不等于当期收入；交货节奏、最终合同条款和毛利均需进一步披露。",
+      "next_check": [
+        "核验书面中标通知和正式合同，确认最终金额及交货、付款条款。",
+        "跟踪定期报告中的执行进度、收入与回款；避免把中标金额直接当作利润增量。"
+      ],
+      "facts": [
+        {
+          "label": "公司及全资子公司估算中标总金额",
+          "value": 634000000,
+          "unit": "元",
+          "source_id": "22ad3fb8a8d8dc140b4a"
+        },
+        {
+          "label": "占2025年经审计营收比例",
+          "value": 6.09,
+          "unit": "%",
+          "source_id": "22ad3fb8a8d8dc140b4a"
+        },
+        {
+          "label": "书面中标通知状态",
+          "value": "公告披露尚未取得",
+          "unit": null,
+          "source_id": "22ad3fb8a8d8dc140b4a"
+        },
+        {
+          "label": "正式合同状态",
+          "value": "公告披露未签订",
+          "unit": null,
+          "source_id": "22ad3fb8a8d8dc140b4a"
+        }
+      ],
+      "source_event_ids": [
+        "22ad3fb8a8d8dc140b4a"
+      ],
+      "sources": [
+        {
+          "source_id": "22ad3fb8a8d8dc140b4a",
+          "url": "https://static.cninfo.com.cn/finalpage/2026-09-09/1225552964.PDF",
+          "title": "公司关于重大经营合同中标的提示性公告",
+          "published_at": "2026-09-09T00:00:00+08:00",
+          "publish_time_precision": "date",
+          "read_at": "2026-09-12T00:04:36.379184+08:00"
+        }
+      ],
+      "analyst_basis": "DOCUMENT_REVIEW",
+      "independent_catalyst_assessment": "暂不支持；正式承诺和执行条件未确认，规模低于现有10%营收门槛",
+      "analysis_inference": "潜在业务贡献是基于产品中标信息的条件判断，并非已实现收入或利润。",
+      "reviewed_at": "2026-09-12T00:04:36.379184+08:00"
+    },
+    {
+      "stock_code": "688420",
+      "stock_name": "美腾科技",
+      "stance": "正向",
+      "headline": "已披露设备销售签约，业绩弹性仍待量化",
+      "conclusion": "控股子公司已披露签订约2,886.18万元含税的智能干选机销售合同，属于可核对的经营增量；原系统把通用“解除条款”误判成合同未确认，不能沿用这一否定结论。但本公告没有可直接使用的公司全年营收占比，规模不足以证明强独立催化，且9月8日公告在9月11日晚快照已超出72小时新鲜度。",
+      "business_impact": "收入取决于设备交付、验收、安装调试及相应会计确认，可能分布在2026年及以后期间。含税合同总额不能直接作为收入或利润；交易对手主要财务数据未披露，履约与回款仍值得跟踪。",
+      "next_check": [
+        "核验双方签章后的生效与交付、验收节点，跟踪合同回款。",
+        "补齐公司经审计营收、该合同归属和利润率口径，再判断其相对业务规模的重要性。"
+      ],
+      "facts": [
+        {
+          "label": "智能干选机及配套系统合同含税总额",
+          "value": 28861760,
+          "unit": "元",
+          "source_id": "f9f095ddb09197966c57"
+        },
+        {
+          "label": "签约主体",
+          "value": "控股子公司山东莱芜煤机智能科技有限公司",
+          "unit": null,
+          "source_id": "f9f095ddb09197966c57"
+        },
+        {
+          "label": "合同生效约定",
+          "value": "双方签字盖章后生效",
+          "unit": null,
+          "source_id": "f9f095ddb09197966c57"
+        },
+        {
+          "label": "合同履行内容",
+          "value": "设备交付、到货验收、安装调试、质保等",
+          "unit": null,
+          "source_id": "f9f095ddb09197966c57"
+        },
+        {
+          "label": "交易对手主要财务数据",
+          "value": "公告披露无法获取",
+          "unit": null,
+          "source_id": "f9f095ddb09197966c57"
+        }
+      ],
+      "source_event_ids": [
+        "f9f095ddb09197966c57"
+      ],
+      "sources": [
+        {
+          "source_id": "f9f095ddb09197966c57",
+          "url": "https://static.cninfo.com.cn/finalpage/2026-09-08/1225550689.PDF",
+          "title": "天津美腾科技股份有限公司关于控股子公司签订日常经营重大合同的公告",
+          "published_at": "2026-09-08T00:00:00+08:00",
+          "publish_time_precision": "date",
+          "read_at": "2026-09-12T00:04:36.379184+08:00"
+        }
+      ],
+      "analyst_basis": "DOCUMENT_REVIEW",
+      "independent_catalyst_assessment": "经营方向正向；强度未核定，且不能当作本轮72小时内的新催化",
+      "analysis_inference": "正向仅指已披露销售合同可能带来业务增量，不是股价判断；一般解除条款不代表已经解除。",
+      "reviewed_at": "2026-09-12T00:04:36.379184+08:00"
+    }
+  ]
+}
