@@ -1,0 +1,25 @@
+{
+  "run_id": "e34dba9d4a734b35b72fe4fb72967bbd",
+  "date": "2026-09-15",
+  "stage": "0800",
+  "status": "COMPLETE",
+  "started_at": "2026-09-15T08:19:47.903600+08:00",
+  "finished_at": "2026-09-15T08:19:55.474853+08:00",
+  "source_success_rate": 0.5714285714285714,
+  "failed_sources": [
+    "cninfo_announcements",
+    "cninfo_catalyst_discovery",
+    "eastmoney_announcements",
+    "wudao_mcp"
+  ],
+  "stock_count": 20,
+  "sector_count": 54,
+  "candidate_count": 20,
+  "google_docs": {
+    "status": "SYNCED",
+    "sent": 1,
+    "failed": 0
+  },
+  "dashboard_updated_at": "2026-09-15T08:19:55.474844+08:00",
+  "errors": []
+}
