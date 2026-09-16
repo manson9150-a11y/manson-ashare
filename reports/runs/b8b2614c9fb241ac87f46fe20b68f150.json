@@ -1,0 +1,28 @@
+{
+  "run_id": "b8b2614c9fb241ac87f46fe20b68f150",
+  "date": "2026-09-16",
+  "stage": "2200",
+  "status": "COMPLETE",
+  "started_at": "2026-09-16T22:09:22.216329+08:00",
+  "finished_at": "2026-09-16T22:11:32.776707+08:00",
+  "source_success_rate": 0.6018957345971564,
+  "failed_sources": [
+    "baostock",
+    "cninfo_announcements",
+    "cninfo_catalyst_discovery",
+    "eastmoney",
+    "eastmoney_announcements",
+    "sina",
+    "tencent"
+  ],
+  "stock_count": 5548,
+  "sector_count": 57,
+  "candidate_count": 20,
+  "google_docs": {
+    "status": "SYNCED",
+    "sent": 1,
+    "failed": 0
+  },
+  "dashboard_updated_at": "2026-09-16T22:11:32.776697+08:00",
+  "errors": []
+}
