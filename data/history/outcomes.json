@@ -6841,7 +6841,7 @@
     "next_low_return": -4.230317273795525,
     "next_limit_up": false,
     "next_3d_return": -3.81903642773207,
-    "next_5d_return": null,
+    "next_5d_return": -5.229142185663926,
     "observed_close_date": "2026-09-14"
   },
   {
@@ -6866,7 +6866,7 @@
     "next_low_return": -3.9894256188416133,
     "next_limit_up": false,
     "next_3d_return": -4.590242730112948,
-    "next_5d_return": null,
+    "next_5d_return": -5.815909637106465,
     "observed_close_date": "2026-09-14"
   },
   {
@@ -6891,7 +6891,7 @@
     "next_low_return": -3.2098765432098664,
     "next_limit_up": false,
     "next_3d_return": -4.395061728395067,
-    "next_5d_return": null,
+    "next_5d_return": -5.382716049382719,
     "observed_close_date": "2026-09-14"
   },
   {
@@ -6916,7 +6916,7 @@
     "next_low_return": -4.248088360237889,
     "next_limit_up": false,
     "next_3d_return": -5.055225148683085,
-    "next_5d_return": null,
+    "next_5d_return": -5.055225148683085,
     "observed_close_date": "2026-09-14"
   },
   {
@@ -6941,7 +6941,7 @@
     "next_low_return": 0.809716599190291,
     "next_limit_up": false,
     "next_3d_return": -1.4170040485830038,
-    "next_5d_return": null,
+    "next_5d_return": -2.429149797570851,
     "observed_close_date": "2026-09-14"
   },
   {
@@ -6966,7 +6966,7 @@
     "next_low_return": -0.9009009009009028,
     "next_limit_up": false,
     "next_3d_return": 6.45645645645645,
-    "next_5d_return": null,
+    "next_5d_return": 8.90890890890892,
     "observed_close_date": "2026-09-14"
   },
   {
@@ -6991,7 +6991,7 @@
     "next_low_return": -4.921259842519687,
     "next_limit_up": false,
     "next_3d_return": -0.9842519685039353,
-    "next_5d_return": null,
+    "next_5d_return": 0.3937007874015741,
     "observed_close_date": "2026-09-14"
   },
   {
@@ -7016,7 +7016,7 @@
     "next_low_return": 2.154492905937988,
     "next_limit_up": false,
     "next_3d_return": -4.046242774566466,
-    "next_5d_return": null,
+    "next_5d_return": -4.256437204414098,
     "observed_close_date": "2026-09-14"
   },
   {
@@ -7041,7 +7041,7 @@
     "next_low_return": -1.2678288431061668,
     "next_limit_up": false,
     "next_3d_return": -3.4865293185419977,
-    "next_5d_return": null,
+    "next_5d_return": -3.3280507131537185,
     "observed_close_date": "2026-09-14"
   },
   {
@@ -7066,7 +7066,7 @@
     "next_low_return": -3.8548752834467126,
     "next_limit_up": false,
     "next_3d_return": 0.22675736961450532,
-    "next_5d_return": null,
+    "next_5d_return": -2.4943310657596474,
     "observed_close_date": "2026-09-14"
   },
   {
@@ -7091,7 +7091,7 @@
     "next_low_return": -0.8919722497522264,
     "next_limit_up": false,
     "next_3d_return": -1.090188305252715,
-    "next_5d_return": null,
+    "next_5d_return": 2.6759167492566904,
     "observed_close_date": "2026-09-14"
   },
   {
@@ -7116,7 +7116,7 @@
     "next_low_return": 6.104651162790686,
     "next_limit_up": true,
     "next_3d_return": 8.139534883720945,
-    "next_5d_return": null,
+    "next_5d_return": 7.1220930232558155,
     "observed_close_date": "2026-09-14"
   },
   {
@@ -7141,7 +7141,7 @@
     "next_low_return": -1.6417910447761197,
     "next_limit_up": true,
     "next_3d_return": 12.313432835820892,
-    "next_5d_return": null,
+    "next_5d_return": 17.611940298507456,
     "observed_close_date": "2026-09-14"
   },
   {
@@ -7166,7 +7166,7 @@
     "next_low_return": 10.000000000000009,
     "next_limit_up": true,
     "next_3d_return": 9.913043478260875,
-    "next_5d_return": null,
+    "next_5d_return": 7.478260869565223,
     "observed_close_date": "2026-09-14"
   },
   {
@@ -7191,7 +7191,7 @@
     "next_low_return": -4.230317273795525,
     "next_limit_up": false,
     "next_3d_return": -3.81903642773207,
-    "next_5d_return": null,
+    "next_5d_return": -5.229142185663926,
     "observed_close_date": "2026-09-14"
   },
   {
@@ -7216,7 +7216,7 @@
     "next_low_return": -3.1650339110776193,
     "next_limit_up": false,
     "next_3d_return": -3.8432554634513894,
-    "next_5d_return": null,
+    "next_5d_return": -5.124340617935186,
     "observed_close_date": "2026-09-14"
   },
   {
@@ -7241,7 +7241,7 @@
     "next_low_return": null,
     "next_limit_up": false,
     "next_3d_return": -5.8490566037735725,
-    "next_5d_return": null,
+    "next_5d_return": -2.264150943396226,
     "observed_close_date": "2026-09-14"
   },
   {
@@ -7266,7 +7266,7 @@
     "next_low_return": null,
     "next_limit_up": false,
     "next_3d_return": 3.1522793404461513,
-    "next_5d_return": null,
+    "next_5d_return": 5.528612997090199,
     "observed_close_date": "2026-09-14"
   },
   {
@@ -7291,7 +7291,7 @@
     "next_low_return": null,
     "next_limit_up": false,
     "next_3d_return": -4.3222003929273,
-    "next_5d_return": null,
+    "next_5d_return": -5.3045186640471425,
     "observed_close_date": "2026-09-14"
   },
   {
@@ -7316,7 +7316,7 @@
     "next_low_return": null,
     "next_limit_up": false,
     "next_3d_return": -2.7156549520766737,
-    "next_5d_return": null,
+    "next_5d_return": -2.5559105431309903,
     "observed_close_date": "2026-09-14"
   },
   {
@@ -7341,7 +7341,7 @@
     "next_low_return": null,
     "next_limit_up": true,
     "next_3d_return": 13.072877535687443,
-    "next_5d_return": null,
+    "next_5d_return": 18.407212622088643,
     "observed_close_date": "2026-09-14"
   },
   {
@@ -7366,7 +7366,7 @@
     "next_low_return": null,
     "next_limit_up": false,
     "next_3d_return": 1.8433179723502224,
-    "next_5d_return": null,
+    "next_5d_return": -0.9216589861751112,
     "observed_close_date": "2026-09-14"
   },
   {
@@ -7391,7 +7391,7 @@
     "next_low_return": null,
     "next_limit_up": false,
     "next_3d_return": -2.965779467680607,
-    "next_5d_return": null,
+    "next_5d_return": -4.258555133079856,
     "observed_close_date": "2026-09-14"
   },
   {
@@ -7416,7 +7416,7 @@
     "next_low_return": null,
     "next_limit_up": false,
     "next_3d_return": -2.2978215458072104,
-    "next_5d_return": null,
+    "next_5d_return": -3.7302297821545816,
     "observed_close_date": "2026-09-14"
   },
   {
@@ -8140,7 +8140,7 @@
     "next_high_return": 1.812688821752273,
     "next_low_return": -5.0604229607250755,
     "next_limit_up": false,
-    "next_3d_return": null,
+    "next_3d_return": -6.042296072507558,
     "next_5d_return": null,
     "observed_close_date": "2026-09-16"
   },
@@ -8165,7 +8165,7 @@
     "next_high_return": 5.657708628005653,
     "next_low_return": -2.8288543140028266,
     "next_limit_up": false,
-    "next_3d_return": null,
+    "next_3d_return": -3.8189533239038287,
     "next_5d_return": null,
     "observed_close_date": "2026-09-16"
   },
@@ -8190,7 +8190,7 @@
     "next_high_return": 1.7145738779626996,
     "next_low_return": -3.17700453857791,
     "next_limit_up": false,
-    "next_3d_return": null,
+    "next_3d_return": 3.429147755925377,
     "next_5d_return": null,
     "observed_close_date": "2026-09-16"
   },
@@ -8215,7 +8215,7 @@
     "next_high_return": -1.000953288846529,
     "next_low_return": -5.529075309818876,
     "next_limit_up": false,
-    "next_3d_return": null,
+    "next_3d_return": -6.244041944709244,
     "next_5d_return": null,
     "observed_close_date": "2026-09-16"
   },
@@ -8240,7 +8240,7 @@
     "next_high_return": 6.8531771849924095,
     "next_low_return": -2.3639123834309217,
     "next_limit_up": false,
-    "next_3d_return": null,
+    "next_3d_return": -1.51810887009326,
     "next_5d_return": null,
     "observed_close_date": "2026-09-16"
   },
@@ -8265,7 +8265,7 @@
     "next_high_return": 10.038610038610042,
     "next_low_return": 0.5791505791505891,
     "next_limit_up": false,
-    "next_3d_return": null,
+    "next_3d_return": 7.14285714285714,
     "next_5d_return": null,
     "observed_close_date": "2026-09-16"
   },
@@ -8290,7 +8290,7 @@
     "next_high_return": -1.2964054213317588,
     "next_low_return": -9.723040659988202,
     "next_limit_up": false,
-    "next_3d_return": null,
+    "next_3d_return": -6.3052445492044695,
     "next_5d_return": null,
     "observed_close_date": "2026-09-16"
   },
@@ -8315,7 +8315,7 @@
     "next_high_return": 4.306220095693791,
     "next_low_return": -1.4354066985645897,
     "next_limit_up": false,
-    "next_3d_return": null,
+    "next_3d_return": 1.9670388091440838,
     "next_5d_return": null,
     "observed_close_date": "2026-09-16"
   },
@@ -8340,7 +8340,7 @@
     "next_high_return": 3.463203463203457,
     "next_low_return": -1.9415584415584441,
     "next_limit_up": false,
-    "next_3d_return": null,
+    "next_3d_return": -1.5173160173160172,
     "next_5d_return": null,
     "observed_close_date": "2026-09-16"
   },
@@ -8365,7 +8365,7 @@
     "next_high_return": 2.081121257167129,
     "next_low_return": -3.1641537481418625,
     "next_limit_up": false,
-    "next_3d_return": null,
+    "next_3d_return": -4.3958377574856655,
     "next_5d_return": null,
     "observed_close_date": "2026-09-16"
   },
@@ -8390,7 +8390,7 @@
     "next_high_return": 0.5982053838484491,
     "next_low_return": -4.619474908607513,
     "next_limit_up": false,
-    "next_3d_return": null,
+    "next_3d_return": -4.120970422067128,
     "next_5d_return": null,
     "observed_close_date": "2026-09-16"
   },
@@ -8415,7 +8415,7 @@
     "next_high_return": 6.452669505404507,
     "next_low_return": -4.454634785456923,
     "next_limit_up": false,
-    "next_3d_return": null,
+    "next_3d_return": 4.159842777595801,
     "next_5d_return": null,
     "observed_close_date": "2026-09-16"
   },
@@ -8440,7 +8440,7 @@
     "next_high_return": 1.812688821752273,
     "next_low_return": -5.0604229607250755,
     "next_limit_up": false,
-    "next_3d_return": null,
+    "next_3d_return": -6.042296072507558,
     "next_5d_return": null,
     "observed_close_date": "2026-09-16"
   },
@@ -8465,7 +8465,7 @@
     "next_high_return": 5.657708628005653,
     "next_low_return": -2.8288543140028266,
     "next_limit_up": false,
-    "next_3d_return": null,
+    "next_3d_return": -3.8189533239038287,
     "next_5d_return": null,
     "observed_close_date": "2026-09-16"
   },
@@ -8490,7 +8490,7 @@
     "next_high_return": 1.7145738779626996,
     "next_low_return": -3.17700453857791,
     "next_limit_up": false,
-    "next_3d_return": null,
+    "next_3d_return": 3.429147755925377,
     "next_5d_return": null,
     "observed_close_date": "2026-09-16"
   },
@@ -8515,7 +8515,7 @@
     "next_high_return": -1.000953288846529,
     "next_low_return": -5.529075309818876,
     "next_limit_up": false,
-    "next_3d_return": null,
+    "next_3d_return": -6.244041944709244,
     "next_5d_return": null,
     "observed_close_date": "2026-09-16"
   },
@@ -8540,7 +8540,7 @@
     "next_high_return": 6.8531771849924095,
     "next_low_return": -2.3639123834309217,
     "next_limit_up": false,
-    "next_3d_return": null,
+    "next_3d_return": -1.51810887009326,
     "next_5d_return": null,
     "observed_close_date": "2026-09-16"
   },
@@ -8565,7 +8565,7 @@
     "next_high_return": 10.038610038610042,
     "next_low_return": 0.5791505791505891,
     "next_limit_up": false,
-    "next_3d_return": null,
+    "next_3d_return": 7.14285714285714,
     "next_5d_return": null,
     "observed_close_date": "2026-09-16"
   },
@@ -8590,7 +8590,7 @@
     "next_high_return": -1.2964054213317588,
     "next_low_return": -9.723040659988202,
     "next_limit_up": false,
-    "next_3d_return": null,
+    "next_3d_return": -6.3052445492044695,
     "next_5d_return": null,
     "observed_close_date": "2026-09-16"
   },
@@ -8615,7 +8615,7 @@
     "next_high_return": 4.306220095693791,
     "next_low_return": -1.4354066985645897,
     "next_limit_up": false,
-    "next_3d_return": null,
+    "next_3d_return": 1.9670388091440838,
     "next_5d_return": null,
     "observed_close_date": "2026-09-16"
   },
@@ -8640,7 +8640,7 @@
     "next_high_return": 3.463203463203457,
     "next_low_return": -1.9415584415584441,
     "next_limit_up": false,
-    "next_3d_return": null,
+    "next_3d_return": -1.5173160173160172,
     "next_5d_return": null,
     "observed_close_date": "2026-09-16"
   },
@@ -8665,7 +8665,7 @@
     "next_high_return": 2.081121257167129,
     "next_low_return": -3.1641537481418625,
     "next_limit_up": false,
-    "next_3d_return": null,
+    "next_3d_return": -4.3958377574856655,
     "next_5d_return": null,
     "observed_close_date": "2026-09-16"
   },
@@ -8690,7 +8690,7 @@
     "next_high_return": 0.5982053838484491,
     "next_low_return": -4.619474908607513,
     "next_limit_up": false,
-    "next_3d_return": null,
+    "next_3d_return": -4.120970422067128,
     "next_5d_return": null,
     "observed_close_date": "2026-09-16"
   },
@@ -8715,7 +8715,7 @@
     "next_high_return": 6.452669505404507,
     "next_low_return": -4.454634785456923,
     "next_limit_up": false,
-    "next_3d_return": null,
+    "next_3d_return": 4.159842777595801,
     "next_5d_return": null,
     "observed_close_date": "2026-09-16"
   },
@@ -8740,7 +8740,7 @@
     "next_high_return": null,
     "next_low_return": null,
     "next_limit_up": false,
-    "next_3d_return": null,
+    "next_3d_return": 3.900709219858167,
     "next_5d_return": null,
     "observed_close_date": "2026-09-16"
   },
@@ -8765,7 +8765,7 @@
     "next_high_return": null,
     "next_low_return": null,
     "next_limit_up": false,
-    "next_3d_return": null,
+    "next_3d_return": -4.30127881541309,
     "next_5d_return": null,
     "observed_close_date": "2026-09-16"
   },
@@ -8790,7 +8790,7 @@
     "next_high_return": null,
     "next_low_return": null,
     "next_limit_up": false,
-    "next_3d_return": null,
+    "next_3d_return": -5.40029417944946,
     "next_5d_return": null,
     "observed_close_date": "2026-09-16"
   },
@@ -8815,7 +8815,7 @@
     "next_high_return": null,
     "next_low_return": null,
     "next_limit_up": false,
-    "next_3d_return": null,
+    "next_3d_return": -0.6563115292058774,
     "next_5d_return": null,
     "observed_close_date": "2026-09-16"
   },
@@ -9485,13 +9485,14 @@
     "sector_score": null,
     "distance_ma20": 13.303956497281089,
     "atr": 1.1282485666705113,
-    "next_open_return": null,
-    "next_close_return": null,
-    "next_high_return": null,
-    "next_low_return": null,
-    "next_limit_up": null,
+    "next_open_return": 4.799338022341737,
+    "next_close_return": 0.12412081092261218,
+    "next_high_return": 8.109226313611906,
+    "next_low_return": -0.4551096400496557,
+    "next_limit_up": false,
     "next_3d_return": null,
-    "next_5d_return": null
+    "next_5d_return": null,
+    "observed_close_date": "2026-09-18"
   },
   {
     "date": "2026-09-17",
@@ -9509,13 +9510,14 @@
     "sector_score": null,
     "distance_ma20": 12.226120666388596,
     "atr": 0.942985682449598,
-    "next_open_return": null,
-    "next_close_return": null,
-    "next_high_return": null,
-    "next_low_return": null,
-    "next_limit_up": null,
+    "next_open_return": 1.311762133799732,
+    "next_close_return": 3.060778312199375,
+    "next_high_return": 3.54175776125929,
+    "next_low_return": 0.21862702229995534,
+    "next_limit_up": false,
     "next_3d_return": null,
-    "next_5d_return": null
+    "next_5d_return": null,
+    "observed_close_date": "2026-09-18"
   },
   {
     "date": "2026-09-17",
@@ -9533,13 +9535,14 @@
     "sector_score": 37.44,
     "distance_ma20": 12.477545944452118,
     "atr": 0.7277112615381182,
-    "next_open_return": null,
-    "next_close_return": null,
-    "next_high_return": null,
-    "next_low_return": null,
-    "next_limit_up": null,
+    "next_open_return": 0.0,
+    "next_close_return": 1.4742014742014753,
+    "next_high_return": 5.896805896805879,
+    "next_low_return": -4.484029484029484,
+    "next_limit_up": false,
     "next_3d_return": null,
-    "next_5d_return": null
+    "next_5d_return": null,
+    "observed_close_date": "2026-09-18"
   },
   {
     "date": "2026-09-17",
@@ -9557,13 +9560,14 @@
     "sector_score": null,
     "distance_ma20": 14.928089417145806,
     "atr": 4.414214424809587,
-    "next_open_return": null,
-    "next_close_return": null,
-    "next_high_return": null,
-    "next_low_return": null,
-    "next_limit_up": null,
+    "next_open_return": -0.5044843049327397,
+    "next_close_return": -0.3643497757847558,
+    "next_high_return": 0.26625560538116044,
+    "next_low_return": -3.74159192825112,
+    "next_limit_up": false,
     "next_3d_return": null,
-    "next_5d_return": null
+    "next_5d_return": null,
+    "observed_close_date": "2026-09-18"
   },
   {
     "date": "2026-09-17",
@@ -9581,13 +9585,14 @@
     "sector_score": 40.01,
     "distance_ma20": 12.618818549162958,
     "atr": 3.979619918640581,
-    "next_open_return": null,
-    "next_close_return": null,
-    "next_high_return": null,
-    "next_low_return": null,
-    "next_limit_up": null,
+    "next_open_return": 1.2848551120830942,
+    "next_close_return": 1.421541826134498,
+    "next_high_return": 3.2531437944231856,
+    "next_low_return": -0.6424275560415471,
+    "next_limit_up": false,
     "next_3d_return": null,
-    "next_5d_return": null
+    "next_5d_return": null,
+    "observed_close_date": "2026-09-18"
   },
   {
     "date": "2026-09-17",
@@ -9605,13 +9610,14 @@
     "sector_score": 35.97,
     "distance_ma20": 13.578526710983363,
     "atr": 3.675960607331476,
-    "next_open_return": null,
-    "next_close_return": null,
-    "next_high_return": null,
-    "next_low_return": null,
-    "next_limit_up": null,
+    "next_open_return": 10.001703867779877,
+    "next_close_return": 2.60691770318624,
+    "next_high_return": 10.001703867779877,
+    "next_low_return": -1.5164423240756508,
+    "next_limit_up": false,
     "next_3d_return": null,
-    "next_5d_return": null
+    "next_5d_return": null,
+    "observed_close_date": "2026-09-18"
   },
   {
     "date": "2026-09-17",
@@ -9629,13 +9635,14 @@
     "sector_score": 60.4,
     "distance_ma20": 10.11523687580025,
     "atr": 0.14913817953036795,
-    "next_open_return": null,
-    "next_close_return": null,
-    "next_high_return": null,
-    "next_low_return": null,
-    "next_limit_up": null,
+    "next_open_return": 2.9900332225913706,
+    "next_close_return": -0.33222591362125353,
+    "next_high_return": 2.9900332225913706,
+    "next_low_return": -1.3289036544850363,
+    "next_limit_up": false,
     "next_3d_return": null,
-    "next_5d_return": null
+    "next_5d_return": null,
+    "observed_close_date": "2026-09-18"
   },
   {
     "date": "2026-09-17",
@@ -9653,13 +9660,14 @@
     "sector_score": null,
     "distance_ma20": 11.183167603401056,
     "atr": 0.8703456834941079,
-    "next_open_return": null,
-    "next_close_return": null,
-    "next_high_return": null,
-    "next_low_return": null,
-    "next_limit_up": null,
+    "next_open_return": -1.166558651976668,
+    "next_close_return": -3.3700583279326013,
+    "next_high_return": -1.166558651976668,
+    "next_low_return": -4.925469863901489,
+    "next_limit_up": false,
     "next_3d_return": null,
-    "next_5d_return": null
+    "next_5d_return": null,
+    "observed_close_date": "2026-09-18"
   },
   {
     "date": "2026-09-17",
@@ -9677,13 +9685,14 @@
     "sector_score": 40.01,
     "distance_ma20": 13.155833985904476,
     "atr": 0.8672972208893022,
-    "next_open_return": null,
-    "next_close_return": null,
-    "next_high_return": null,
-    "next_low_return": null,
-    "next_limit_up": null,
+    "next_open_return": -1.1369253583786487,
+    "next_close_return": -0.9886307464162081,
+    "next_high_return": 0.4943153732080985,
+    "next_low_return": -1.8289668808699977,
+    "next_limit_up": false,
     "next_3d_return": null,
-    "next_5d_return": null
+    "next_5d_return": null,
+    "observed_close_date": "2026-09-18"
   },
   {
     "date": "2026-09-17",
@@ -9701,13 +9710,14 @@
     "sector_score": 34.69,
     "distance_ma20": 10.994505833693434,
     "atr": 0.9493904775531368,
-    "next_open_return": null,
-    "next_close_return": null,
-    "next_high_return": null,
-    "next_low_return": null,
-    "next_limit_up": null,
+    "next_open_return": 0.8898776418242438,
+    "next_close_return": -1.5572858731924377,
+    "next_high_return": 1.2235817575083408,
+    "next_low_return": -3.170189098998888,
+    "next_limit_up": false,
     "next_3d_return": null,
-    "next_5d_return": null
+    "next_5d_return": null,
+    "observed_close_date": "2026-09-18"
   },
   {
     "date": "2026-09-17",
@@ -9725,13 +9735,14 @@
     "sector_score": 40.01,
     "distance_ma20": 10.572259941804084,
     "atr": 0.3501326393521527,
-    "next_open_return": null,
-    "next_close_return": null,
-    "next_high_return": null,
-    "next_low_return": null,
-    "next_limit_up": null,
+    "next_open_return": -0.2339181286549863,
+    "next_close_return": 1.4035087719298067,
+    "next_high_return": 3.040935672514622,
+    "next_low_return": -2.923976608187129,
+    "next_limit_up": false,
     "next_3d_return": null,
-    "next_5d_return": null
+    "next_5d_return": null,
+    "observed_close_date": "2026-09-18"
   },
   {
     "date": "2026-09-17",
@@ -9749,13 +9760,14 @@
     "sector_score": 65.72,
     "distance_ma20": 11.324376199616125,
     "atr": 0.17199878127465623,
-    "next_open_return": null,
-    "next_close_return": null,
-    "next_high_return": null,
-    "next_low_return": null,
-    "next_limit_up": null,
+    "next_open_return": 1.2315270935960854,
+    "next_close_return": -1.724137931034464,
+    "next_high_return": 4.187192118226624,
+    "next_low_return": -1.970443349753681,
+    "next_limit_up": false,
     "next_3d_return": null,
-    "next_5d_return": null
+    "next_5d_return": null,
+    "observed_close_date": "2026-09-18"
   },
   {
     "date": "2026-09-18",
@@ -9773,13 +9785,14 @@
     "sector_score": null,
     "distance_ma20": 13.303956497281089,
     "atr": 1.1282485666705113,
-    "next_open_return": null,
-    "next_close_return": null,
-    "next_high_return": null,
-    "next_low_return": null,
-    "next_limit_up": null,
+    "next_open_return": 4.799338022341737,
+    "next_close_return": 0.12412081092261218,
+    "next_high_return": 8.109226313611906,
+    "next_low_return": -0.4551096400496557,
+    "next_limit_up": false,
     "next_3d_return": null,
-    "next_5d_return": null
+    "next_5d_return": null,
+    "observed_close_date": "2026-09-18"
   },
   {
     "date": "2026-09-18",
@@ -9797,13 +9810,14 @@
     "sector_score": null,
     "distance_ma20": 12.226120666388596,
     "atr": 0.942985682449598,
-    "next_open_return": null,
-    "next_close_return": null,
-    "next_high_return": null,
-    "next_low_return": null,
-    "next_limit_up": null,
+    "next_open_return": 1.311762133799732,
+    "next_close_return": 3.060778312199375,
+    "next_high_return": 3.54175776125929,
+    "next_low_return": 0.21862702229995534,
+    "next_limit_up": false,
     "next_3d_return": null,
-    "next_5d_return": null
+    "next_5d_return": null,
+    "observed_close_date": "2026-09-18"
   },
   {
     "date": "2026-09-18",
@@ -9821,13 +9835,14 @@
     "sector_score": 37.44,
     "distance_ma20": 12.477545944452118,
     "atr": 0.7277112615381182,
-    "next_open_return": null,
-    "next_close_return": null,
-    "next_high_return": null,
-    "next_low_return": null,
-    "next_limit_up": null,
+    "next_open_return": 0.0,
+    "next_close_return": 1.4742014742014753,
+    "next_high_return": 5.896805896805879,
+    "next_low_return": -4.484029484029484,
+    "next_limit_up": false,
     "next_3d_return": null,
-    "next_5d_return": null
+    "next_5d_return": null,
+    "observed_close_date": "2026-09-18"
   },
   {
     "date": "2026-09-18",
@@ -9845,13 +9860,14 @@
     "sector_score": null,
     "distance_ma20": 14.928089417145806,
     "atr": 4.414214424809587,
-    "next_open_return": null,
-    "next_close_return": null,
-    "next_high_return": null,
-    "next_low_return": null,
-    "next_limit_up": null,
+    "next_open_return": -0.5044843049327397,
+    "next_close_return": -0.3643497757847558,
+    "next_high_return": 0.26625560538116044,
+    "next_low_return": -3.74159192825112,
+    "next_limit_up": false,
     "next_3d_return": null,
-    "next_5d_return": null
+    "next_5d_return": null,
+    "observed_close_date": "2026-09-18"
   },
   {
     "date": "2026-09-18",
@@ -9869,13 +9885,14 @@
     "sector_score": 40.01,
     "distance_ma20": 12.618818549162958,
     "atr": 3.979619918640581,
-    "next_open_return": null,
-    "next_close_return": null,
-    "next_high_return": null,
-    "next_low_return": null,
-    "next_limit_up": null,
+    "next_open_return": 1.2848551120830942,
+    "next_close_return": 1.421541826134498,
+    "next_high_return": 3.2531437944231856,
+    "next_low_return": -0.6424275560415471,
+    "next_limit_up": false,
     "next_3d_return": null,
-    "next_5d_return": null
+    "next_5d_return": null,
+    "observed_close_date": "2026-09-18"
   },
   {
     "date": "2026-09-18",
@@ -9893,13 +9910,14 @@
     "sector_score": 35.97,
     "distance_ma20": 13.578526710983363,
     "atr": 3.675960607331476,
-    "next_open_return": null,
-    "next_close_return": null,
-    "next_high_return": null,
-    "next_low_return": null,
-    "next_limit_up": null,
+    "next_open_return": 10.001703867779877,
+    "next_close_return": 2.60691770318624,
+    "next_high_return": 10.001703867779877,
+    "next_low_return": -1.5164423240756508,
+    "next_limit_up": false,
     "next_3d_return": null,
-    "next_5d_return": null
+    "next_5d_return": null,
+    "observed_close_date": "2026-09-18"
   },
   {
     "date": "2026-09-18",
@@ -9917,13 +9935,14 @@
     "sector_score": 60.4,
     "distance_ma20": 10.11523687580025,
     "atr": 0.14913817953036795,
-    "next_open_return": null,
-    "next_close_return": null,
-    "next_high_return": null,
-    "next_low_return": null,
-    "next_limit_up": null,
+    "next_open_return": 2.9900332225913706,
+    "next_close_return": -0.33222591362125353,
+    "next_high_return": 2.9900332225913706,
+    "next_low_return": -1.3289036544850363,
+    "next_limit_up": false,
     "next_3d_return": null,
-    "next_5d_return": null
+    "next_5d_return": null,
+    "observed_close_date": "2026-09-18"
   },
   {
     "date": "2026-09-18",
@@ -9941,13 +9960,14 @@
     "sector_score": null,
     "distance_ma20": 11.183167603401056,
     "atr": 0.8703456834941079,
-    "next_open_return": null,
-    "next_close_return": null,
-    "next_high_return": null,
-    "next_low_return": null,
-    "next_limit_up": null,
+    "next_open_return": -1.166558651976668,
+    "next_close_return": -3.3700583279326013,
+    "next_high_return": -1.166558651976668,
+    "next_low_return": -4.925469863901489,
+    "next_limit_up": false,
     "next_3d_return": null,
-    "next_5d_return": null
+    "next_5d_return": null,
+    "observed_close_date": "2026-09-18"
   },
   {
     "date": "2026-09-18",
@@ -9965,13 +9985,14 @@
     "sector_score": 40.01,
     "distance_ma20": 13.155833985904476,
     "atr": 0.8672972208893022,
-    "next_open_return": null,
-    "next_close_return": null,
-    "next_high_return": null,
-    "next_low_return": null,
-    "next_limit_up": null,
+    "next_open_return": -1.1369253583786487,
+    "next_close_return": -0.9886307464162081,
+    "next_high_return": 0.4943153732080985,
+    "next_low_return": -1.8289668808699977,
+    "next_limit_up": false,
     "next_3d_return": null,
-    "next_5d_return": null
+    "next_5d_return": null,
+    "observed_close_date": "2026-09-18"
   },
   {
     "date": "2026-09-18",
@@ -9989,13 +10010,14 @@
     "sector_score": 34.69,
     "distance_ma20": 10.994505833693434,
     "atr": 0.9493904775531368,
-    "next_open_return": null,
-    "next_close_return": null,
-    "next_high_return": null,
-    "next_low_return": null,
-    "next_limit_up": null,
+    "next_open_return": 0.8898776418242438,
+    "next_close_return": -1.5572858731924377,
+    "next_high_return": 1.2235817575083408,
+    "next_low_return": -3.170189098998888,
+    "next_limit_up": false,
     "next_3d_return": null,
-    "next_5d_return": null
+    "next_5d_return": null,
+    "observed_close_date": "2026-09-18"
   },
   {
     "date": "2026-09-18",
@@ -10013,13 +10035,14 @@
     "sector_score": 40.01,
     "distance_ma20": 10.572259941804084,
     "atr": 0.3501326393521527,
-    "next_open_return": null,
-    "next_close_return": null,
-    "next_high_return": null,
-    "next_low_return": null,
-    "next_limit_up": null,
+    "next_open_return": -0.2339181286549863,
+    "next_close_return": 1.4035087719298067,
+    "next_high_return": 3.040935672514622,
+    "next_low_return": -2.923976608187129,
+    "next_limit_up": false,
     "next_3d_return": null,
-    "next_5d_return": null
+    "next_5d_return": null,
+    "observed_close_date": "2026-09-18"
   },
   {
     "date": "2026-09-18",
@@ -10037,13 +10060,14 @@
     "sector_score": 65.72,
     "distance_ma20": 11.324376199616125,
     "atr": 0.17199878127465623,
-    "next_open_return": null,
-    "next_close_return": null,
-    "next_high_return": null,
-    "next_low_return": null,
-    "next_limit_up": null,
+    "next_open_return": 1.2315270935960854,
+    "next_close_return": -1.724137931034464,
+    "next_high_return": 4.187192118226624,
+    "next_low_return": -1.970443349753681,
+    "next_limit_up": false,
     "next_3d_return": null,
-    "next_5d_return": null
+    "next_5d_return": null,
+    "observed_close_date": "2026-09-18"
   },
   {
     "date": "2026-09-18",
@@ -10062,12 +10086,13 @@
     "distance_ma20": 14.912040001219552,
     "atr": 3.898932781594826,
     "next_open_return": null,
-    "next_close_return": null,
+    "next_close_return": -1.5654019633855043,
     "next_high_return": null,
     "next_low_return": null,
-    "next_limit_up": null,
+    "next_limit_up": false,
     "next_3d_return": null,
-    "next_5d_return": null
+    "next_5d_return": null,
+    "observed_close_date": "2026-09-18"
   },
   {
     "date": "2026-09-18",
@@ -10086,12 +10111,13 @@
     "distance_ma20": 11.734697950678985,
     "atr": 4.30319910875176,
     "next_open_return": null,
-    "next_close_return": null,
+    "next_close_return": 1.6004572735067057,
     "next_high_return": null,
     "next_low_return": null,
-    "next_limit_up": null,
+    "next_limit_up": false,
     "next_3d_return": null,
-    "next_5d_return": null
+    "next_5d_return": null,
+    "observed_close_date": "2026-09-18"
   },
   {
     "date": "2026-09-18",
@@ -10110,12 +10136,13 @@
     "distance_ma20": 11.717495987158898,
     "atr": 0.35869459368414175,
     "next_open_return": null,
-    "next_close_return": null,
+    "next_close_return": -0.34482758620688614,
     "next_high_return": null,
     "next_low_return": null,
-    "next_limit_up": null,
+    "next_limit_up": false,
     "next_3d_return": null,
-    "next_5d_return": null
+    "next_5d_return": null,
+    "observed_close_date": "2026-09-18"
   },
   {
     "date": "2026-09-18",
@@ -10134,12 +10161,13 @@
     "distance_ma20": 9.738372093023262,
     "atr": 0.14777116670677024,
     "next_open_return": null,
-    "next_close_return": null,
+    "next_close_return": -0.6622516556291425,
     "next_high_return": null,
     "next_low_return": null,
-    "next_limit_up": null,
+    "next_limit_up": false,
     "next_3d_return": null,
-    "next_5d_return": null
+    "next_5d_return": null,
+    "observed_close_date": "2026-09-18"
   },
   {
     "date": "2026-09-18",
@@ -10158,12 +10186,13 @@
     "distance_ma20": 14.617316742212093,
     "atr": 3.8962491353792283,
     "next_open_return": null,
-    "next_close_return": null,
+    "next_close_return": 1.1251049538203217,
     "next_high_return": null,
     "next_low_return": null,
-    "next_limit_up": null,
+    "next_limit_up": false,
     "next_3d_return": null,
-    "next_5d_return": null
+    "next_5d_return": null,
+    "observed_close_date": "2026-09-18"
   },
   {
     "date": "2026-09-18",
@@ -10182,12 +10211,13 @@
     "distance_ma20": 9.175061257827387,
     "atr": 0.1775702968978951,
     "next_open_return": null,
-    "next_close_return": null,
+    "next_close_return": -0.4987531172069737,
     "next_high_return": null,
     "next_low_return": null,
-    "next_limit_up": null,
+    "next_limit_up": false,
     "next_3d_return": null,
-    "next_5d_return": null
+    "next_5d_return": null,
+    "observed_close_date": "2026-09-18"
   },
   {
     "date": "2026-09-18",
@@ -10206,12 +10236,13 @@
     "distance_ma20": 13.565548993163755,
     "atr": 1.1876593833369031,
     "next_open_return": null,
-    "next_close_return": null,
+    "next_close_return": -0.9009009009009139,
     "next_high_return": null,
     "next_low_return": null,
-    "next_limit_up": null,
+    "next_limit_up": false,
     "next_3d_return": null,
-    "next_5d_return": null
+    "next_5d_return": null,
+    "observed_close_date": "2026-09-18"
   },
   {
     "date": "2026-09-18",
@@ -10230,12 +10261,13 @@
     "distance_ma20": 11.19764143071702,
     "atr": 0.8389188479686377,
     "next_open_return": null,
-    "next_close_return": null,
+    "next_close_return": 0.20010005002502051,
     "next_high_return": null,
     "next_low_return": null,
-    "next_limit_up": null,
+    "next_limit_up": false,
     "next_3d_return": null,
-    "next_5d_return": null
+    "next_5d_return": null,
+    "observed_close_date": "2026-09-18"
   },
   {
     "date": "2026-09-18",
@@ -10253,6 +10285,295 @@
     "sector_score": 87.35,
     "distance_ma20": 10.07226274872426,
     "atr": 0.7293033142853955,
+    "next_open_return": null,
+    "next_close_return": 2.8002489110143136,
+    "next_high_return": null,
+    "next_low_return": null,
+    "next_limit_up": false,
+    "next_3d_return": null,
+    "next_5d_return": null,
+    "observed_close_date": "2026-09-18"
+  },
+  {
+    "date": "2026-09-18",
+    "stage": "2200",
+    "stock_code": "603686",
+    "pool": "POOL_B",
+    "rank": 1,
+    "position_type": "趋势观察",
+    "base_price": 15.47,
+    "base_quote_date": "2026-09-18",
+    "signal_time": "2026-09-18T22:08:02.876649+08:00",
+    "first_observation_date": "2026-09-21",
+    "observation_definition": "信号当日收盘至下一交易日收盘",
+    "metric_version": 2,
+    "sector_score": 57.45,
+    "distance_ma20": 14.924596983879335,
+    "atr": 0.5906270652798983,
+    "next_open_return": null,
+    "next_close_return": null,
+    "next_high_return": null,
+    "next_low_return": null,
+    "next_limit_up": null,
+    "next_3d_return": null,
+    "next_5d_return": null
+  },
+  {
+    "date": "2026-09-18",
+    "stage": "2200",
+    "stock_code": "301072",
+    "pool": "POOL_B",
+    "rank": 2,
+    "position_type": "趋势观察",
+    "base_price": 50.91,
+    "base_quote_date": "2026-09-18",
+    "signal_time": "2026-09-18T22:08:02.876649+08:00",
+    "first_observation_date": "2026-09-21",
+    "observation_definition": "信号当日收盘至下一交易日收盘",
+    "metric_version": 2,
+    "sector_score": null,
+    "distance_ma20": 14.63376190583412,
+    "atr": 2.572586850466474,
+    "next_open_return": null,
+    "next_close_return": null,
+    "next_high_return": null,
+    "next_low_return": null,
+    "next_limit_up": null,
+    "next_3d_return": null,
+    "next_5d_return": null
+  },
+  {
+    "date": "2026-09-18",
+    "stage": "2200",
+    "stock_code": "301071",
+    "pool": "POOL_B",
+    "rank": 3,
+    "position_type": "趋势观察",
+    "base_price": 71.1,
+    "base_quote_date": "2026-09-18",
+    "signal_time": "2026-09-18T22:08:02.876649+08:00",
+    "first_observation_date": "2026-09-21",
+    "observation_definition": "信号当日收盘至下一交易日收盘",
+    "metric_version": 2,
+    "sector_score": null,
+    "distance_ma20": 13.421550094517976,
+    "atr": 4.303301240124864,
+    "next_open_return": null,
+    "next_close_return": null,
+    "next_high_return": null,
+    "next_low_return": null,
+    "next_limit_up": null,
+    "next_3d_return": null,
+    "next_5d_return": null
+  },
+  {
+    "date": "2026-09-18",
+    "stage": "2200",
+    "stock_code": "001212",
+    "pool": "POOL_B",
+    "rank": 4,
+    "position_type": "趋势观察",
+    "base_price": 37.98,
+    "base_quote_date": "2026-09-18",
+    "signal_time": "2026-09-18T22:08:02.876649+08:00",
+    "first_observation_date": "2026-09-21",
+    "observation_definition": "信号当日收盘至下一交易日收盘",
+    "metric_version": 2,
+    "sector_score": 72.55,
+    "distance_ma20": 11.648416256338656,
+    "atr": 1.7515137619257195,
+    "next_open_return": null,
+    "next_close_return": null,
+    "next_high_return": null,
+    "next_low_return": null,
+    "next_limit_up": null,
+    "next_3d_return": null,
+    "next_5d_return": null
+  },
+  {
+    "date": "2026-09-18",
+    "stage": "2200",
+    "stock_code": "002025",
+    "pool": "POOL_B",
+    "rank": 5,
+    "position_type": "趋势观察",
+    "base_price": 74.2,
+    "base_quote_date": "2026-09-18",
+    "signal_time": "2026-09-18T22:08:02.876649+08:00",
+    "first_observation_date": "2026-09-21",
+    "observation_definition": "信号当日收盘至下一交易日收盘",
+    "metric_version": 2,
+    "sector_score": 75.72,
+    "distance_ma20": 13.215032270861627,
+    "atr": 3.8986955198798126,
+    "next_open_return": null,
+    "next_close_return": null,
+    "next_high_return": null,
+    "next_low_return": null,
+    "next_limit_up": null,
+    "next_3d_return": null,
+    "next_5d_return": null
+  },
+  {
+    "date": "2026-09-18",
+    "stage": "2200",
+    "stock_code": "603082",
+    "pool": "POOL_B",
+    "rank": 6,
+    "position_type": "趋势观察",
+    "base_price": 51.4,
+    "base_quote_date": "2026-09-18",
+    "signal_time": "2026-09-18T22:08:02.876649+08:00",
+    "first_observation_date": "2026-09-21",
+    "observation_definition": "信号当日收盘至下一交易日收盘",
+    "metric_version": 2,
+    "sector_score": null,
+    "distance_ma20": 12.004532479135332,
+    "atr": 3.398850178077104,
+    "next_open_return": null,
+    "next_close_return": null,
+    "next_high_return": null,
+    "next_low_return": null,
+    "next_limit_up": null,
+    "next_3d_return": null,
+    "next_5d_return": null
+  },
+  {
+    "date": "2026-09-18",
+    "stage": "2200",
+    "stock_code": "300548",
+    "pool": "POOL_B",
+    "rank": 7,
+    "position_type": "趋势观察",
+    "base_price": 238.8,
+    "base_quote_date": "2026-09-18",
+    "signal_time": "2026-09-18T22:08:02.876649+08:00",
+    "first_observation_date": "2026-09-21",
+    "observation_definition": "信号当日收盘至下一交易日收盘",
+    "metric_version": 2,
+    "sector_score": 88.6,
+    "distance_ma20": 13.467359127992907,
+    "atr": 15.414684257411382,
+    "next_open_return": null,
+    "next_close_return": null,
+    "next_high_return": null,
+    "next_low_return": null,
+    "next_limit_up": null,
+    "next_3d_return": null,
+    "next_5d_return": null
+  },
+  {
+    "date": "2026-09-18",
+    "stage": "2200",
+    "stock_code": "002137",
+    "pool": "POOL_B",
+    "rank": 8,
+    "position_type": "趋势观察",
+    "base_price": 8.67,
+    "base_quote_date": "2026-09-18",
+    "signal_time": "2026-09-18T22:08:02.876649+08:00",
+    "first_observation_date": "2026-09-21",
+    "observation_definition": "信号当日收盘至下一交易日收盘",
+    "metric_version": 2,
+    "sector_score": 75.72,
+    "distance_ma20": 11.353711790393017,
+    "atr": 0.36154189779860696,
+    "next_open_return": null,
+    "next_close_return": null,
+    "next_high_return": null,
+    "next_low_return": null,
+    "next_limit_up": null,
+    "next_3d_return": null,
+    "next_5d_return": null
+  },
+  {
+    "date": "2026-09-18",
+    "stage": "2200",
+    "stock_code": "301108",
+    "pool": "POOL_B",
+    "rank": 9,
+    "position_type": "趋势观察",
+    "base_price": 46.26,
+    "base_quote_date": "2026-09-18",
+    "signal_time": "2026-09-18T22:08:02.876649+08:00",
+    "first_observation_date": "2026-09-21",
+    "observation_definition": "信号当日收盘至下一交易日收盘",
+    "metric_version": 2,
+    "sector_score": null,
+    "distance_ma20": 14.703694520208277,
+    "atr": 2.182524524242057,
+    "next_open_return": null,
+    "next_close_return": null,
+    "next_high_return": null,
+    "next_low_return": null,
+    "next_limit_up": null,
+    "next_3d_return": null,
+    "next_5d_return": null
+  },
+  {
+    "date": "2026-09-18",
+    "stage": "2200",
+    "stock_code": "000981",
+    "pool": "POOL_B",
+    "rank": 10,
+    "position_type": "趋势观察",
+    "base_price": 3.0,
+    "base_quote_date": "2026-09-18",
+    "signal_time": "2026-09-18T22:08:02.876649+08:00",
+    "first_observation_date": "2026-09-21",
+    "observation_definition": "信号当日收盘至下一交易日收盘",
+    "metric_version": 2,
+    "sector_score": 76.33,
+    "distance_ma20": 9.051254089422024,
+    "atr": 0.14777604254384938,
+    "next_open_return": null,
+    "next_close_return": null,
+    "next_high_return": null,
+    "next_low_return": null,
+    "next_limit_up": null,
+    "next_3d_return": null,
+    "next_5d_return": null
+  },
+  {
+    "date": "2026-09-18",
+    "stage": "2200",
+    "stock_code": "688048",
+    "pool": "POOL_B",
+    "rank": 11,
+    "position_type": "趋势观察",
+    "base_price": 342.0,
+    "base_quote_date": "2026-09-18",
+    "signal_time": "2026-09-18T22:08:02.876649+08:00",
+    "first_observation_date": "2026-09-21",
+    "observation_definition": "信号当日收盘至下一交易日收盘",
+    "metric_version": 2,
+    "sector_score": 88.6,
+    "distance_ma20": 14.125347673528088,
+    "atr": 23.6211807167658,
+    "next_open_return": null,
+    "next_close_return": null,
+    "next_high_return": null,
+    "next_low_return": null,
+    "next_limit_up": null,
+    "next_3d_return": null,
+    "next_5d_return": null
+  },
+  {
+    "date": "2026-09-18",
+    "stage": "2200",
+    "stock_code": "688313",
+    "pool": "POOL_B",
+    "rank": 12,
+    "position_type": "趋势观察",
+    "base_price": 170.38,
+    "base_quote_date": "2026-09-18",
+    "signal_time": "2026-09-18T22:08:02.876649+08:00",
+    "first_observation_date": "2026-09-21",
+    "observation_definition": "信号当日收盘至下一交易日收盘",
+    "metric_version": 2,
+    "sector_score": 88.6,
+    "distance_ma20": 11.722758643300924,
+    "atr": 10.306708056444453,
     "next_open_return": null,
     "next_close_return": null,
     "next_high_return": null,
