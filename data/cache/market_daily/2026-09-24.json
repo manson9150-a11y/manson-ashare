@@ -1,0 +1,953 @@
+{
+  "trade_date": "2026-09-24",
+  "as_of_time": "2026-09-24T22:08:39.175965+08:00",
+  "amount": 1668503272700.0,
+  "amount_quote_count": 5556,
+  "quote_coverage": 0.9977,
+  "limit_pool": [
+    {
+      "code": "000498",
+      "limit_up_price": 5.65,
+      "board_count": 1,
+      "first_seal": 92500,
+      "last_seal": 93136,
+      "break_count": 1,
+      "seal_amount": 59982095,
+      "source": "eastmoney",
+      "trade_date": "2026-09-24",
+      "identity_basis": "vendor_limit_price",
+      "derived_board_count": 1,
+      "board_count_basis": "vendor"
+    },
+    {
+      "code": "000850",
+      "limit_up_price": 5.12,
+      "board_count": 2,
+      "first_seal": 92500,
+      "last_seal": 92500,
+      "break_count": 0,
+      "seal_amount": 160092487,
+      "source": "eastmoney",
+      "trade_date": "2026-09-24",
+      "identity_basis": "vendor_limit_price",
+      "derived_board_count": 2,
+      "board_count_basis": "vendor"
+    },
+    {
+      "code": "001234",
+      "limit_up_price": 35.4,
+      "board_count": 4,
+      "first_seal": 92500,
+      "last_seal": 92500,
+      "break_count": 0,
+      "seal_amount": 360840625,
+      "source": "eastmoney",
+      "trade_date": "2026-09-24",
+      "identity_basis": "vendor_limit_price",
+      "derived_board_count": 4,
+      "board_count_basis": "vendor"
+    },
+    {
+      "code": "600825",
+      "limit_up_price": 7.77,
+      "board_count": 4,
+      "first_seal": 92502,
+      "last_seal": 92502,
+      "break_count": 0,
+      "seal_amount": 1761208868,
+      "source": "eastmoney",
+      "trade_date": "2026-09-24",
+      "identity_basis": "vendor_limit_price"
+    },
+    {
+      "code": "601567",
+      "limit_up_price": 16.25,
+      "board_count": 1,
+      "first_seal": 92502,
+      "last_seal": 92502,
+      "break_count": 0,
+      "seal_amount": 234273390,
+      "source": "eastmoney",
+      "trade_date": "2026-09-24",
+      "identity_basis": "vendor_limit_price",
+      "derived_board_count": 1,
+      "board_count_basis": "vendor"
+    },
+    {
+      "code": "603949",
+      "limit_up_price": 16.9,
+      "board_count": 2,
+      "first_seal": 93001,
+      "last_seal": 93001,
+      "break_count": 0,
+      "seal_amount": 78925298,
+      "source": "eastmoney",
+      "trade_date": "2026-09-24",
+      "identity_basis": "vendor_limit_price",
+      "derived_board_count": 2,
+      "board_count_basis": "vendor"
+    },
+    {
+      "code": "002819",
+      "limit_up_price": 26.66,
+      "board_count": 2,
+      "first_seal": 93006,
+      "last_seal": 94145,
+      "break_count": 2,
+      "seal_amount": 97599594,
+      "source": "eastmoney",
+      "trade_date": "2026-09-24",
+      "identity_basis": "vendor_limit_price",
+      "derived_board_count": 2,
+      "board_count_basis": "vendor"
+    },
+    {
+      "code": "601811",
+      "limit_up_price": 20.35,
+      "board_count": 5,
+      "first_seal": 93006,
+      "last_seal": 93006,
+      "break_count": 0,
+      "seal_amount": 135765309,
+      "source": "eastmoney",
+      "trade_date": "2026-09-24",
+      "identity_basis": "vendor_limit_price",
+      "derived_board_count": 5,
+      "board_count_basis": "vendor"
+    },
+    {
+      "code": "002321",
+      "limit_up_price": 2.27,
+      "board_count": 1,
+      "first_seal": 93021,
+      "last_seal": 93021,
+      "break_count": 0,
+      "seal_amount": 40973727,
+      "source": "eastmoney",
+      "trade_date": "2026-09-24",
+      "identity_basis": "vendor_limit_price",
+      "derived_board_count": 1,
+      "board_count_basis": "vendor"
+    },
+    {
+      "code": "002238",
+      "limit_up_price": 8.43,
+      "board_count": 3,
+      "first_seal": 93036,
+      "last_seal": 131036,
+      "break_count": 3,
+      "seal_amount": 12686711,
+      "source": "eastmoney",
+      "trade_date": "2026-09-24",
+      "identity_basis": "vendor_limit_price",
+      "derived_board_count": 3,
+      "board_count_basis": "vendor"
+    },
+    {
+      "code": "002614",
+      "limit_up_price": 8.33,
+      "board_count": 4,
+      "first_seal": 93057,
+      "last_seal": 93130,
+      "break_count": 1,
+      "seal_amount": 103658628,
+      "source": "eastmoney",
+      "trade_date": "2026-09-24",
+      "identity_basis": "vendor_limit_price",
+      "derived_board_count": 4,
+      "board_count_basis": "vendor"
+    },
+    {
+      "code": "002413",
+      "limit_up_price": 8.97,
+      "board_count": 1,
+      "first_seal": 93157,
+      "last_seal": 130957,
+      "break_count": 2,
+      "seal_amount": 106051987,
+      "source": "eastmoney",
+      "trade_date": "2026-09-24",
+      "identity_basis": "vendor_limit_price",
+      "derived_board_count": 1,
+      "board_count_basis": "vendor"
+    },
+    {
+      "code": "603500",
+      "limit_up_price": 10.42,
+      "board_count": 1,
+      "first_seal": 93203,
+      "last_seal": 93230,
+      "break_count": 1,
+      "seal_amount": 78088042,
+      "source": "eastmoney",
+      "trade_date": "2026-09-24",
+      "identity_basis": "vendor_limit_price",
+      "derived_board_count": 1,
+      "board_count_basis": "vendor"
+    },
+    {
+      "code": "000710",
+      "limit_up_price": 11.01,
+      "board_count": 1,
+      "first_seal": 93227,
+      "last_seal": 93227,
+      "break_count": 0,
+      "seal_amount": 43684377,
+      "source": "eastmoney",
+      "trade_date": "2026-09-24",
+      "identity_basis": "vendor_limit_price",
+      "derived_board_count": 1,
+      "board_count_basis": "vendor"
+    },
+    {
+      "code": "002119",
+      "limit_up_price": 29.61,
+      "board_count": 2,
+      "first_seal": 93315,
+      "last_seal": 102727,
+      "break_count": 1,
+      "seal_amount": 143093937,
+      "source": "eastmoney",
+      "trade_date": "2026-09-24",
+      "identity_basis": "vendor_limit_price",
+      "derived_board_count": 2,
+      "board_count_basis": "vendor"
+    },
+    {
+      "code": "000790",
+      "limit_up_price": 4.68,
+      "board_count": 1,
+      "first_seal": 93339,
+      "last_seal": 93339,
+      "break_count": 0,
+      "seal_amount": 86277204,
+      "source": "eastmoney",
+      "trade_date": "2026-09-24",
+      "identity_basis": "vendor_limit_price",
+      "derived_board_count": 1,
+      "board_count_basis": "vendor"
+    },
+    {
+      "code": "603396",
+      "limit_up_price": 35.64,
+      "board_count": 2,
+      "first_seal": 93423,
+      "last_seal": 93511,
+      "break_count": 1,
+      "seal_amount": 72841138,
+      "source": "eastmoney",
+      "trade_date": "2026-09-24",
+      "identity_basis": "vendor_limit_price",
+      "derived_board_count": 2,
+      "board_count_basis": "vendor"
+    },
+    {
+      "code": "603230",
+      "limit_up_price": 18.47,
+      "board_count": 1,
+      "first_seal": 93435,
+      "last_seal": 141117,
+      "break_count": 6,
+      "seal_amount": 16643317,
+      "source": "eastmoney",
+      "trade_date": "2026-09-24",
+      "identity_basis": "vendor_limit_price",
+      "derived_board_count": 1,
+      "board_count_basis": "vendor"
+    },
+    {
+      "code": "002395",
+      "limit_up_price": 14.05,
+      "board_count": 1,
+      "first_seal": 93515,
+      "last_seal": 94318,
+      "break_count": 1,
+      "seal_amount": 31754545,
+      "source": "eastmoney",
+      "trade_date": "2026-09-24",
+      "identity_basis": "vendor_limit_price",
+      "derived_board_count": 1,
+      "board_count_basis": "vendor"
+    },
+    {
+      "code": "002909",
+      "limit_up_price": 8.29,
+      "board_count": 2,
+      "first_seal": 93539,
+      "last_seal": 101921,
+      "break_count": 2,
+      "seal_amount": 89284129,
+      "source": "eastmoney",
+      "trade_date": "2026-09-24",
+      "identity_basis": "vendor_limit_price",
+      "derived_board_count": 2,
+      "board_count_basis": "vendor"
+    },
+    {
+      "code": "002622",
+      "limit_up_price": 2.72,
+      "board_count": 1,
+      "first_seal": 93642,
+      "last_seal": 93642,
+      "break_count": 0,
+      "seal_amount": 35267835,
+      "source": "eastmoney",
+      "trade_date": "2026-09-24",
+      "identity_basis": "vendor_limit_price",
+      "derived_board_count": 1,
+      "board_count_basis": "vendor"
+    },
+    {
+      "code": "000678",
+      "limit_up_price": 9.68,
+      "board_count": 1,
+      "first_seal": 93700,
+      "last_seal": 93700,
+      "break_count": 0,
+      "seal_amount": 38513215,
+      "source": "eastmoney",
+      "trade_date": "2026-09-24",
+      "identity_basis": "vendor_limit_price",
+      "derived_board_count": 1,
+      "board_count_basis": "vendor"
+    },
+    {
+      "code": "002029",
+      "limit_up_price": 9.26,
+      "board_count": 1,
+      "first_seal": 93730,
+      "last_seal": 105800,
+      "break_count": 4,
+      "seal_amount": 25589084,
+      "source": "eastmoney",
+      "trade_date": "2026-09-24",
+      "identity_basis": "vendor_limit_price",
+      "derived_board_count": 1,
+      "board_count_basis": "vendor"
+    },
+    {
+      "code": "603278",
+      "limit_up_price": 9.8,
+      "board_count": 1,
+      "first_seal": 93754,
+      "last_seal": 93821,
+      "break_count": 1,
+      "seal_amount": 46766776,
+      "source": "eastmoney",
+      "trade_date": "2026-09-24",
+      "identity_basis": "vendor_limit_price",
+      "derived_board_count": 1,
+      "board_count_basis": "vendor"
+    },
+    {
+      "code": "688682",
+      "limit_up_price": 37.94,
+      "board_count": 1,
+      "first_seal": 93937,
+      "last_seal": 95340,
+      "break_count": 2,
+      "seal_amount": 11694777,
+      "source": "eastmoney",
+      "trade_date": "2026-09-24",
+      "identity_basis": "vendor_limit_price",
+      "derived_board_count": 1,
+      "board_count_basis": "vendor"
+    },
+    {
+      "code": "600792",
+      "limit_up_price": 5.7,
+      "board_count": 1,
+      "first_seal": 93954,
+      "last_seal": 101145,
+      "break_count": 1,
+      "seal_amount": 59100450,
+      "source": "eastmoney",
+      "trade_date": "2026-09-24",
+      "identity_basis": "vendor_limit_price",
+      "derived_board_count": 1,
+      "board_count_basis": "vendor"
+    },
+    {
+      "code": "603767",
+      "limit_up_price": 14.74,
+      "board_count": 1,
+      "first_seal": 94031,
+      "last_seal": 101352,
+      "break_count": 1,
+      "seal_amount": 71913512,
+      "source": "eastmoney",
+      "trade_date": "2026-09-24",
+      "identity_basis": "vendor_limit_price",
+      "derived_board_count": 1,
+      "board_count_basis": "vendor"
+    },
+    {
+      "code": "301699",
+      "limit_up_price": 35.54,
+      "board_count": 1,
+      "first_seal": 94218,
+      "last_seal": 94903,
+      "break_count": 1,
+      "seal_amount": 108161938,
+      "source": "eastmoney",
+      "trade_date": "2026-09-24",
+      "identity_basis": "vendor_limit_price"
+    },
+    {
+      "code": "600358",
+      "limit_up_price": 5.72,
+      "board_count": 1,
+      "first_seal": 94313,
+      "last_seal": 102446,
+      "break_count": 7,
+      "seal_amount": 14241084,
+      "source": "eastmoney",
+      "trade_date": "2026-09-24",
+      "identity_basis": "vendor_limit_price",
+      "derived_board_count": 1,
+      "board_count_basis": "vendor"
+    },
+    {
+      "code": "605018",
+      "limit_up_price": 12.74,
+      "board_count": 1,
+      "first_seal": 94645,
+      "last_seal": 94645,
+      "break_count": 0,
+      "seal_amount": 36697570,
+      "source": "eastmoney",
+      "trade_date": "2026-09-24",
+      "identity_basis": "vendor_limit_price",
+      "derived_board_count": 1,
+      "board_count_basis": "vendor"
+    },
+    {
+      "code": "002164",
+      "limit_up_price": 13.06,
+      "board_count": 1,
+      "first_seal": 95030,
+      "last_seal": 132209,
+      "break_count": 4,
+      "seal_amount": 24716050,
+      "source": "eastmoney",
+      "trade_date": "2026-09-24",
+      "identity_basis": "vendor_limit_price",
+      "derived_board_count": 1,
+      "board_count_basis": "vendor"
+    },
+    {
+      "code": "600815",
+      "limit_up_price": 4.65,
+      "board_count": 1,
+      "first_seal": 95844,
+      "last_seal": 145414,
+      "break_count": 3,
+      "seal_amount": 19591380,
+      "source": "eastmoney",
+      "trade_date": "2026-09-24",
+      "identity_basis": "vendor_limit_price",
+      "derived_board_count": 1,
+      "board_count_basis": "vendor"
+    },
+    {
+      "code": "603065",
+      "limit_up_price": 16.27,
+      "board_count": 1,
+      "first_seal": 95848,
+      "last_seal": 101118,
+      "break_count": 2,
+      "seal_amount": 89086385,
+      "source": "eastmoney",
+      "trade_date": "2026-09-24",
+      "identity_basis": "vendor_limit_price",
+      "derived_board_count": 1,
+      "board_count_basis": "vendor"
+    },
+    {
+      "code": "601218",
+      "limit_up_price": 5.5,
+      "board_count": 1,
+      "first_seal": 100221,
+      "last_seal": 100406,
+      "break_count": 1,
+      "seal_amount": 37167900,
+      "source": "eastmoney",
+      "trade_date": "2026-09-24",
+      "identity_basis": "vendor_limit_price",
+      "derived_board_count": 1,
+      "board_count_basis": "vendor"
+    },
+    {
+      "code": "600843",
+      "limit_up_price": 8.37,
+      "board_count": 2,
+      "first_seal": 100448,
+      "last_seal": 100448,
+      "break_count": 0,
+      "seal_amount": 13278084,
+      "source": "eastmoney",
+      "trade_date": "2026-09-24",
+      "identity_basis": "vendor_limit_price",
+      "derived_board_count": 2,
+      "board_count_basis": "vendor"
+    },
+    {
+      "code": "002836",
+      "limit_up_price": 12.27,
+      "board_count": 1,
+      "first_seal": 102630,
+      "last_seal": 102630,
+      "break_count": 0,
+      "seal_amount": 28292166,
+      "source": "eastmoney",
+      "trade_date": "2026-09-24",
+      "identity_basis": "vendor_limit_price",
+      "derived_board_count": 1,
+      "board_count_basis": "vendor"
+    },
+    {
+      "code": "600189",
+      "limit_up_price": 9.1,
+      "board_count": 1,
+      "first_seal": 103531,
+      "last_seal": 110719,
+      "break_count": 1,
+      "seal_amount": 40469674,
+      "source": "eastmoney",
+      "trade_date": "2026-09-24",
+      "identity_basis": "vendor_limit_price",
+      "derived_board_count": 1,
+      "board_count_basis": "vendor"
+    },
+    {
+      "code": "603042",
+      "limit_up_price": 18.73,
+      "board_count": 1,
+      "first_seal": 104309,
+      "last_seal": 104524,
+      "break_count": 1,
+      "seal_amount": 36482855,
+      "source": "eastmoney",
+      "trade_date": "2026-09-24",
+      "identity_basis": "vendor_limit_price",
+      "derived_board_count": 1,
+      "board_count_basis": "vendor"
+    },
+    {
+      "code": "301689",
+      "limit_up_price": 83.88,
+      "board_count": 1,
+      "first_seal": 134027,
+      "last_seal": 150000,
+      "break_count": 2,
+      "seal_amount": 1448355,
+      "source": "eastmoney",
+      "trade_date": "2026-09-24",
+      "identity_basis": "vendor_limit_price"
+    },
+    {
+      "code": "603375",
+      "limit_up_price": 49.25,
+      "board_count": 1,
+      "first_seal": 134211,
+      "last_seal": 134211,
+      "break_count": 0,
+      "seal_amount": 68472964,
+      "source": "eastmoney",
+      "trade_date": "2026-09-24",
+      "identity_basis": "vendor_limit_price",
+      "derived_board_count": 1,
+      "board_count_basis": "vendor"
+    },
+    {
+      "code": "603970",
+      "limit_up_price": 12.17,
+      "board_count": 1,
+      "first_seal": 135611,
+      "last_seal": 135611,
+      "break_count": 0,
+      "seal_amount": 34516420,
+      "source": "eastmoney",
+      "trade_date": "2026-09-24",
+      "identity_basis": "vendor_limit_price",
+      "derived_board_count": 1,
+      "board_count_basis": "vendor"
+    },
+    {
+      "code": "301311",
+      "limit_up_price": 17.98,
+      "board_count": 1,
+      "first_seal": 140236,
+      "last_seal": 142821,
+      "break_count": 1,
+      "seal_amount": 6911206,
+      "source": "eastmoney",
+      "trade_date": "2026-09-24",
+      "identity_basis": "vendor_limit_price",
+      "derived_board_count": 1,
+      "board_count_basis": "vendor"
+    },
+    {
+      "code": "002205",
+      "limit_up_price": 12.78,
+      "board_count": 1,
+      "first_seal": 141712,
+      "last_seal": 142012,
+      "break_count": 1,
+      "seal_amount": 41144455,
+      "source": "eastmoney",
+      "trade_date": "2026-09-24",
+      "identity_basis": "vendor_limit_price",
+      "derived_board_count": 1,
+      "board_count_basis": "vendor"
+    },
+    {
+      "code": "000592",
+      "limit_up_price": 8.78,
+      "board_count": 1,
+      "first_seal": 142342,
+      "last_seal": 142342,
+      "break_count": 0,
+      "seal_amount": 356540944,
+      "source": "eastmoney",
+      "trade_date": "2026-09-24",
+      "identity_basis": "vendor_limit_price",
+      "derived_board_count": 1,
+      "board_count_basis": "vendor"
+    },
+    {
+      "code": "300300",
+      "limit_up_price": 10.81,
+      "board_count": 1,
+      "first_seal": 142403,
+      "last_seal": 142536,
+      "break_count": 2,
+      "seal_amount": 97693331,
+      "source": "eastmoney",
+      "trade_date": "2026-09-24",
+      "identity_basis": "vendor_limit_price",
+      "derived_board_count": 1,
+      "board_count_basis": "vendor"
+    },
+    {
+      "code": "600802",
+      "limit_up_price": 6.62,
+      "board_count": 2,
+      "first_seal": 142413,
+      "last_seal": 142413,
+      "break_count": 0,
+      "seal_amount": 76295572,
+      "source": "eastmoney",
+      "trade_date": "2026-09-24",
+      "identity_basis": "vendor_limit_price",
+      "derived_board_count": 2,
+      "board_count_basis": "vendor"
+    },
+    {
+      "code": "000905",
+      "limit_up_price": 9.81,
+      "board_count": 1,
+      "first_seal": 143900,
+      "last_seal": 143900,
+      "break_count": 0,
+      "seal_amount": 118476753,
+      "source": "eastmoney",
+      "trade_date": "2026-09-24",
+      "identity_basis": "vendor_limit_price",
+      "derived_board_count": 1,
+      "board_count_basis": "vendor"
+    },
+    {
+      "code": "000753",
+      "limit_up_price": 5.35,
+      "board_count": 1,
+      "first_seal": 143948,
+      "last_seal": 143948,
+      "break_count": 0,
+      "seal_amount": 79515980,
+      "source": "eastmoney",
+      "trade_date": "2026-09-24",
+      "identity_basis": "vendor_limit_price",
+      "derived_board_count": 1,
+      "board_count_basis": "vendor"
+    },
+    {
+      "code": "920748",
+      "limit_up_price": 36.5,
+      "board_count": 1,
+      "first_seal": 144534,
+      "last_seal": 144701,
+      "break_count": 1,
+      "seal_amount": 11936850,
+      "source": "eastmoney",
+      "trade_date": "2026-09-24",
+      "identity_basis": "vendor_limit_price"
+    },
+    {
+      "code": "002679",
+      "limit_up_price": 11.58,
+      "board_count": 1,
+      "first_seal": 144551,
+      "last_seal": 144551,
+      "break_count": 0,
+      "seal_amount": 65311200,
+      "source": "eastmoney",
+      "trade_date": "2026-09-24",
+      "identity_basis": "vendor_limit_price",
+      "derived_board_count": 1,
+      "board_count_basis": "vendor"
+    },
+    {
+      "code": "603122",
+      "limit_up_price": 14.93,
+      "board_count": 1,
+      "first_seal": 144814,
+      "last_seal": 144859,
+      "break_count": 1,
+      "seal_amount": 23349027,
+      "source": "eastmoney",
+      "trade_date": "2026-09-24",
+      "identity_basis": "vendor_limit_price",
+      "derived_board_count": 1,
+      "board_count_basis": "vendor"
+    },
+    {
+      "code": "002264",
+      "limit_up_price": 8.13,
+      "board_count": 1,
+      "first_seal": 145024,
+      "last_seal": 145024,
+      "break_count": 0,
+      "seal_amount": 68454591,
+      "source": "eastmoney",
+      "trade_date": "2026-09-24",
+      "identity_basis": "vendor_limit_price"
+    },
+    {
+      "code": "001317",
+      "trade_date": "2026-09-24",
+      "source": "tencent",
+      "identity_basis": "vendor_limit_price",
+      "limit_up_price": 65.3,
+      "board_count": null,
+      "derived_board_count": 1,
+      "board_count_basis": "UNKNOWN; see derived_board_count"
+    }
+  ],
+  "limit_pool_complete": true,
+  "limit_pool_provider": "eastmoney",
+  "quotes": {
+    "000498": {
+      "price": 5.65,
+      "change_pct": 9.92
+    },
+    "000850": {
+      "price": 5.12,
+      "change_pct": 10.11
+    },
+    "001234": {
+      "price": 35.4,
+      "change_pct": 10.01
+    },
+    "600825": {
+      "price": 7.77,
+      "change_pct": 10.06
+    },
+    "601567": {
+      "price": 16.25,
+      "change_pct": 10.02
+    },
+    "603949": {
+      "price": 16.9,
+      "change_pct": 10.03
+    },
+    "002819": {
+      "price": 26.66,
+      "change_pct": 9.98
+    },
+    "601811": {
+      "price": 20.35,
+      "change_pct": 10.0
+    },
+    "002321": {
+      "price": 2.27,
+      "change_pct": 10.19
+    },
+    "002238": {
+      "price": 8.43,
+      "change_pct": 10.05
+    },
+    "002614": {
+      "price": 8.33,
+      "change_pct": 10.04
+    },
+    "002413": {
+      "price": 8.97,
+      "change_pct": 10.06
+    },
+    "603500": {
+      "price": 10.42,
+      "change_pct": 10.03
+    },
+    "000710": {
+      "price": 11.01,
+      "change_pct": 9.99
+    },
+    "002119": {
+      "price": 29.61,
+      "change_pct": 9.99
+    },
+    "000790": {
+      "price": 4.68,
+      "change_pct": 10.12
+    },
+    "603396": {
+      "price": 35.64,
+      "change_pct": 10.0
+    },
+    "603230": {
+      "price": 18.47,
+      "change_pct": 10.01
+    },
+    "002395": {
+      "price": 14.05,
+      "change_pct": 10.02
+    },
+    "002909": {
+      "price": 8.29,
+      "change_pct": 9.95
+    },
+    "002622": {
+      "price": 2.72,
+      "change_pct": 10.12
+    },
+    "000678": {
+      "price": 9.68,
+      "change_pct": 10.0
+    },
+    "002029": {
+      "price": 9.26,
+      "change_pct": 9.98
+    },
+    "603278": {
+      "price": 9.8,
+      "change_pct": 9.99
+    },
+    "688682": {
+      "price": 37.94,
+      "change_pct": 19.99
+    },
+    "600792": {
+      "price": 5.7,
+      "change_pct": 10.04
+    },
+    "603767": {
+      "price": 14.74,
+      "change_pct": 10.0
+    },
+    "301699": {
+      "price": 35.54,
+      "change_pct": 19.99
+    },
+    "600358": {
+      "price": 5.72,
+      "change_pct": 10.0
+    },
+    "605018": {
+      "price": 12.74,
+      "change_pct": 10.02
+    },
+    "002164": {
+      "price": 13.06,
+      "change_pct": 10.03
+    },
+    "600815": {
+      "price": 4.65,
+      "change_pct": 9.93
+    },
+    "603065": {
+      "price": 16.27,
+      "change_pct": 10.01
+    },
+    "601218": {
+      "price": 5.5,
+      "change_pct": 10.0
+    },
+    "600843": {
+      "price": 8.37,
+      "change_pct": 9.99
+    },
+    "002836": {
+      "price": 12.27,
+      "change_pct": 10.04
+    },
+    "600189": {
+      "price": 9.1,
+      "change_pct": 10.04
+    },
+    "603042": {
+      "price": 18.73,
+      "change_pct": 9.98
+    },
+    "301689": {
+      "price": 83.88,
+      "change_pct": 20.0
+    },
+    "603375": {
+      "price": 49.25,
+      "change_pct": 10.01
+    },
+    "603970": {
+      "price": 12.17,
+      "change_pct": 10.04
+    },
+    "301311": {
+      "price": 17.98,
+      "change_pct": 20.03
+    },
+    "002205": {
+      "price": 12.78,
+      "change_pct": 9.98
+    },
+    "000592": {
+      "price": 8.78,
+      "change_pct": 10.03
+    },
+    "300300": {
+      "price": 10.81,
+      "change_pct": 19.98
+    },
+    "600802": {
+      "price": 6.62,
+      "change_pct": 9.97
+    },
+    "000905": {
+      "price": 9.81,
+      "change_pct": 9.98
+    },
+    "000753": {
+      "price": 5.35,
+      "change_pct": 10.08
+    },
+    "920748": {
+      "price": 36.5,
+      "change_pct": 29.99
+    },
+    "002679": {
+      "price": 11.58,
+      "change_pct": 9.97
+    },
+    "603122": {
+      "price": 14.93,
+      "change_pct": 10.02
+    },
+    "002264": {
+      "price": 8.13,
+      "change_pct": 10.01
+    },
+    "001317": {
+      "price": 65.3,
+      "change_pct": 10.01
+    }
+  }
+}
