@@ -13869,5 +13869,29 @@
     "next_limit_up": null,
     "next_3d_return": null,
     "next_5d_return": null
+  },
+  {
+    "date": "2026-09-28",
+    "stage": "1200",
+    "stock_code": "603116",
+    "pool": "POOL_B",
+    "rank": 2,
+    "position_type": "趋势观察",
+    "base_price": 7.23,
+    "base_quote_date": "2026-09-28",
+    "signal_time": "2026-09-28T12:06:30.880210+08:00",
+    "first_observation_date": "2026-09-28",
+    "observation_definition": "信号当日上午收盘至当日收盘",
+    "metric_version": 2,
+    "sector_score": 15.87,
+    "distance_ma20": 11.824298198128535,
+    "atr": 0.2786526016748014,
+    "next_open_return": null,
+    "next_close_return": null,
+    "next_high_return": null,
+    "next_low_return": null,
+    "next_limit_up": null,
+    "next_3d_return": null,
+    "next_5d_return": null
   }
 ]
