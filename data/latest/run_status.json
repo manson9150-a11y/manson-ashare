@@ -1,27 +1,13 @@
 {
-  "run_id": "1c196a1652d842239f8c9ce338f8b8e8",
-  "date": "2026-09-25",
-  "stage": "2200",
-  "stage_label": "晚间复盘",
-  "mode": "live",
-  "started_at": "2026-09-25T22:09:28.211895+08:00",
-  "as_of_time": "2026-09-25T22:00:00+08:00",
-  "status": "NON_TRADING_DAY",
+  "run_id": "93e5ca138e2a43f3912f159ce9d10fc0",
+  "date": "2026-09-28",
+  "stage": "0800",
+  "status": "COMPLETE",
+  "finished_at": "2026-09-28T08:20:54.096130+08:00",
   "warnings": [
-    "休市；未采集或生成伪行情报告"
-  ],
-  "errors": [],
-  "data_quality": {
-    "status": "RED"
-  },
-  "pools": {
-    "POOL_A": [],
-    "POOL_B": [],
-    "POOL_C": []
-  },
-  "sectors": [],
-  "market": {},
-  "eliminations": [],
-  "missing_factors": [],
-  "finished_at": "2026-09-25T22:09:28.373402+08:00"
+    "悟道采集未完整成功：MEMBERS_TIME_UNKNOWN,MEMBER_REQUEST_BUDGET,TRUNCATED_MEMBERS；可用数据明确展示，其余沿用原接口，不能声称已覆盖全市场题材。",
+    "悟道热点按题材强度和行业涨幅展示；系统规则分独立计算。前十题材成分为当前分类，仅用于本次及后续研究。",
+    "行情沿用 2026-09-24 正式收盘快照；本阶段刷新事件与悟道热点参考。隔夜变量未接入，市场分为前收盘参考。",
+    "公告列表中50条仅精确到日期：当天记录须在研究截点前已被系统观察才纳入；首次观察时间独立保存，不冒充发布时间。标题分类仍须正文核验。"
+  ]
 }
