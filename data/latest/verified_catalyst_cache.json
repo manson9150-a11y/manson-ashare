@@ -1,1 +1,35 @@
-[]
+[
+  {
+    "event_id": "8063750f758e94e654f8",
+    "stock_code": "300589",
+    "event_type": "重大合同",
+    "title": "关于签订重大销售合同的公告",
+    "event_time": "2026-09-29T11:38:11+08:00",
+    "publish_time": "2026-09-29T11:38:11+08:00",
+    "publish_time_precision": "second",
+    "first_seen_at": "2026-09-29T22:10:33.994776+08:00",
+    "source": "cninfo_announcements",
+    "url": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=300589&announcementId=1225586459&orgId=9900030788&announcementTime=2026-09-29",
+    "reliability": 0.95,
+    "freshness": 0.0,
+    "directness": 1.0,
+    "priced_in_score": null,
+    "impact_score": 80.0,
+    "verified": true,
+    "canonical_id": "cninfo:1225586459:300589",
+    "document_url": "https://static.cninfo.com.cn/finalpage/2026-09-29/1225586459.PDF",
+    "verification": {
+      "status": "VERIFIED_RULE",
+      "rule_version": "official_pdf_facts_v2",
+      "observed_at": "2026-09-29T22:10:37.954216+08:00",
+      "document_url": "https://static.cninfo.com.cn/finalpage/2026-09-29/1225586459.PDF",
+      "text_sha256": "45ceb27f66c79df0b75cdaf55f90b8c695fb7e81ef538a1f307cbdda8a614711",
+      "contract_status": "SIGNED_DISCLOSED",
+      "analysis": "正文披露签约，但签约事实与重要性是两回事。需核对相对营收规模、交付验收、回款与利润率，合同总额不等于本期利润。",
+      "rule": "SIGNED_CONTRACT_REVENUE_10PCT",
+      "evidence": "本次合同总金额3,998万美元，占公司2025年度经审计营业收入的38.35%",
+      "materiality_pct": 38.35,
+      "score_basis": "规则分：已签合同金额占完整年度营收10%以上为70分，20%以上为80分；不代表收益概率。"
+    }
+  }
+]
