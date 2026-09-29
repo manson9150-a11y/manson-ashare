@@ -1,0 +1,23 @@
+{
+  "run_id": "fe568b32465143baab6303cf865b5a87",
+  "date": "2026-09-29",
+  "stage": "1200",
+  "status": "COMPLETE",
+  "started_at": "2026-09-29T12:05:59.497548+08:00",
+  "finished_at": "2026-09-29T12:07:41.952355+08:00",
+  "source_success_rate": 0.9230769230769231,
+  "failed_sources": [
+    "eastmoney",
+    "tencent"
+  ],
+  "stock_count": 5557,
+  "sector_count": 58,
+  "candidate_count": 10,
+  "google_docs": {
+    "status": "SYNCED",
+    "sent": 1,
+    "failed": 0
+  },
+  "dashboard_updated_at": "2026-09-29T12:07:41.952337+08:00",
+  "errors": []
+}
