@@ -1,0 +1,22 @@
+{
+  "run_id": "644b1acb72b745258e3257b2ad270889",
+  "date": "2026-09-30",
+  "stage": "0800",
+  "status": "COMPLETE",
+  "started_at": "2026-09-30T08:20:14.569995+08:00",
+  "finished_at": "2026-09-30T08:20:39.801864+08:00",
+  "source_success_rate": 0.8235294117647058,
+  "failed_sources": [
+    "wudao_mcp"
+  ],
+  "stock_count": 21,
+  "sector_count": 56,
+  "candidate_count": 20,
+  "google_docs": {
+    "status": "SYNCED",
+    "sent": 1,
+    "failed": 0
+  },
+  "dashboard_updated_at": "2026-09-30T08:20:39.801842+08:00",
+  "errors": []
+}
