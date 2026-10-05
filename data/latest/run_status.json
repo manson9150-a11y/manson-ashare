@@ -1,11 +1,11 @@
 {
-  "run_id": "2e9565b0e49c4c48b57ee1f9fe22dd96",
-  "date": "2026-10-02",
-  "stage": "2200",
-  "stage_label": "晚间复盘",
+  "run_id": "03114027343140e9ab98ce007f0d615c",
+  "date": "2026-10-05",
+  "stage": "0800",
+  "stage_label": "盘前计划",
   "mode": "live",
-  "started_at": "2026-10-02T22:10:46.307547+08:00",
-  "as_of_time": "2026-10-02T22:00:00+08:00",
+  "started_at": "2026-10-05T08:21:23.596715+08:00",
+  "as_of_time": "2026-10-05T08:00:00+08:00",
   "status": "NON_TRADING_DAY",
   "warnings": [
     "休市；未采集或生成伪行情报告"
@@ -23,5 +23,5 @@
   "market": {},
   "eliminations": [],
   "missing_factors": [],
-  "finished_at": "2026-10-02T22:10:46.411166+08:00"
+  "finished_at": "2026-10-05T08:21:23.756577+08:00"
 }
