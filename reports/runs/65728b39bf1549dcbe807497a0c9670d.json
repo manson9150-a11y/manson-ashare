@@ -1,0 +1,27 @@
+{
+  "run_id": "65728b39bf1549dcbe807497a0c9670d",
+  "date": "2026-10-16",
+  "stage": "2200",
+  "stage_label": "晚间复盘",
+  "mode": "live",
+  "started_at": "2026-10-16T01:58:48.652874+08:00",
+  "as_of_time": "2026-10-16T22:00:00+08:00",
+  "status": "OUTSIDE_STAGE_WINDOW",
+  "warnings": [
+    "超出阶段时间窗。历史阶段只可读取已保存快照，不能用当前接口倒填。"
+  ],
+  "errors": [],
+  "data_quality": {
+    "status": "RED"
+  },
+  "pools": {
+    "POOL_A": [],
+    "POOL_B": [],
+    "POOL_C": []
+  },
+  "sectors": [],
+  "market": {},
+  "eliminations": [],
+  "missing_factors": [],
+  "finished_at": "2026-10-16T01:58:48.811423+08:00"
+}
