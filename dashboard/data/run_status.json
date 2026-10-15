@@ -1,11 +1,11 @@
 {
-  "run_id": "08c720b221144c838d799b75b1a88acd",
+  "run_id": "c2bf79b512444c0e8086e37689360fb5",
   "date": "2026-10-15",
-  "stage": "0800",
-  "stage_label": "盘前计划",
+  "stage": "1200",
+  "stage_label": "午间验证",
   "mode": "live",
-  "started_at": "2026-10-15T11:45:33.770330+08:00",
-  "as_of_time": "2026-10-15T08:00:00+08:00",
+  "started_at": "2026-10-15T16:43:41.649581+08:00",
+  "as_of_time": "2026-10-15T12:00:00+08:00",
   "status": "OUTSIDE_STAGE_WINDOW",
   "warnings": [
     "超出阶段时间窗。历史阶段只可读取已保存快照，不能用当前接口倒填。"
@@ -23,5 +23,5 @@
   "market": {},
   "eliminations": [],
   "missing_factors": [],
-  "finished_at": "2026-10-15T11:45:33.889207+08:00"
+  "finished_at": "2026-10-15T16:43:41.750259+08:00"
 }
