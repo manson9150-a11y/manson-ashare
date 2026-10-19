@@ -1,14 +1,14 @@
 {
-  "run_id": "0e76e5f8414543a8b03e5506f5ba4c1d",
-  "date": "2026-10-17",
-  "stage": "2200",
-  "stage_label": "晚间复盘",
+  "run_id": "d7dd94f185644a72afdd55f57ea0bbeb",
+  "date": "2026-10-19",
+  "stage": "0800",
+  "stage_label": "盘前计划",
   "mode": "live",
-  "started_at": "2026-10-17T01:47:34.158527+08:00",
-  "as_of_time": "2026-10-17T22:00:00+08:00",
-  "status": "NON_TRADING_DAY",
+  "started_at": "2026-10-19T11:48:20.206823+08:00",
+  "as_of_time": "2026-10-19T08:00:00+08:00",
+  "status": "OUTSIDE_STAGE_WINDOW",
   "warnings": [
-    "休市；未采集或生成伪行情报告"
+    "超出阶段时间窗。历史阶段只可读取已保存快照，不能用当前接口倒填。"
   ],
   "errors": [],
   "data_quality": {
@@ -23,5 +23,5 @@
   "market": {},
   "eliminations": [],
   "missing_factors": [],
-  "finished_at": "2026-10-17T01:47:34.309940+08:00"
+  "finished_at": "2026-10-19T11:48:20.372199+08:00"
 }
