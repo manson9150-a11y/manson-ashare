@@ -1,0 +1,27 @@
+{
+  "run_id": "5d145759e500421ab5661cbce9b23699",
+  "date": "2026-10-27",
+  "stage": "0800",
+  "stage_label": "盘前计划",
+  "mode": "live",
+  "started_at": "2026-10-27T12:12:30.081282+08:00",
+  "as_of_time": "2026-10-27T08:00:00+08:00",
+  "status": "OUTSIDE_STAGE_WINDOW",
+  "warnings": [
+    "超出阶段时间窗。历史阶段只可读取已保存快照，不能用当前接口倒填。"
+  ],
+  "errors": [],
+  "data_quality": {
+    "status": "RED"
+  },
+  "pools": {
+    "POOL_A": [],
+    "POOL_B": [],
+    "POOL_C": []
+  },
+  "sectors": [],
+  "market": {},
+  "eliminations": [],
+  "missing_factors": [],
+  "finished_at": "2026-10-27T12:12:30.242838+08:00"
+}
