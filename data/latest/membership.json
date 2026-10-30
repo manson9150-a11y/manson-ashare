@@ -1,5 +1,5 @@
 {
-  "observed_at": "2026-10-29T12:54:03.630834+08:00",
+  "observed_at": "2026-10-30T18:39:09.855564+08:00",
   "source": "https://vip.stock.finance.sina.com.cn/q/view/newSinaHy.php",
   "scope": "行业分类元数据；不使用该页面的无日期行情",
   "sectors": [
@@ -2777,7 +2777,8 @@
         "920288",
         "920289",
         "920296",
-        "920298"
+        "920298",
+        "920306"
       ],
       "source": "sina_industry_metadata"
     },
