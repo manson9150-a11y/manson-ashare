@@ -1,14 +1,14 @@
 {
-  "run_id": "733fdb68201742f6b2a258d229912e9d",
-  "date": "2026-11-13",
-  "stage": "1200",
-  "stage_label": "午间验证",
+  "run_id": "3b9fd4b577234a1b9faffbaba904e15b",
+  "date": "2026-11-14",
+  "stage": "2200",
+  "stage_label": "晚间复盘",
   "mode": "live",
-  "started_at": "2026-11-13T19:45:42.264181+08:00",
-  "as_of_time": "2026-11-13T12:00:00+08:00",
-  "status": "OUTSIDE_STAGE_WINDOW",
+  "started_at": "2026-11-14T04:44:52.682521+08:00",
+  "as_of_time": "2026-11-14T22:00:00+08:00",
+  "status": "NON_TRADING_DAY",
   "warnings": [
-    "超出阶段时间窗。历史阶段只可读取已保存快照，不能用当前接口倒填。"
+    "休市；未采集或生成伪行情报告"
   ],
   "errors": [],
   "data_quality": {
@@ -23,5 +23,5 @@
   "market": {},
   "eliminations": [],
   "missing_factors": [],
-  "finished_at": "2026-11-13T19:45:42.336275+08:00"
+  "finished_at": "2026-11-14T04:44:52.721386+08:00"
 }

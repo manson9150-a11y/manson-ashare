@@ -1,0 +1,27 @@
+{
+  "run_id": "3b9fd4b577234a1b9faffbaba904e15b",
+  "date": "2026-11-14",
+  "stage": "2200",
+  "stage_label": "晚间复盘",
+  "mode": "live",
+  "started_at": "2026-11-14T04:44:52.682521+08:00",
+  "as_of_time": "2026-11-14T22:00:00+08:00",
+  "status": "NON_TRADING_DAY",
+  "warnings": [
+    "休市；未采集或生成伪行情报告"
+  ],
+  "errors": [],
+  "data_quality": {
+    "status": "RED"
+  },
+  "pools": {
+    "POOL_A": [],
+    "POOL_B": [],
+    "POOL_C": []
+  },
+  "sectors": [],
+  "market": {},
+  "eliminations": [],
+  "missing_factors": [],
+  "finished_at": "2026-11-14T04:44:52.721386+08:00"
+}
