@@ -1,11 +1,11 @@
 {
-  "run_id": "dd69feef82bd424ea8dcd5b9cf122d0c",
-  "date": "2026-11-25",
-  "stage": "1200",
-  "stage_label": "午间验证",
+  "run_id": "49a966544d014408a055090ca3cf2f24",
+  "date": "2026-11-26",
+  "stage": "2200",
+  "stage_label": "晚间复盘",
   "mode": "live",
-  "started_at": "2026-11-25T21:45:59.023110+08:00",
-  "as_of_time": "2026-11-25T12:00:00+08:00",
+  "started_at": "2026-11-26T06:55:00.387158+08:00",
+  "as_of_time": "2026-11-26T22:00:00+08:00",
   "status": "OUTSIDE_STAGE_WINDOW",
   "warnings": [
     "超出阶段时间窗。历史阶段只可读取已保存快照，不能用当前接口倒填。"
@@ -23,5 +23,5 @@
   "market": {},
   "eliminations": [],
   "missing_factors": [],
-  "finished_at": "2026-11-25T21:45:59.095045+08:00"
+  "finished_at": "2026-11-26T06:55:00.457196+08:00"
 }
